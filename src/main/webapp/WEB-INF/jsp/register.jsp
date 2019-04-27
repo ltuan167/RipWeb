@@ -4,9 +4,9 @@
 %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Register page</title>
 </head>
 <body>
-    <h2>${message4}</h2>
+    <h2>cxvcvm</h2>
 </body>
 </html>
