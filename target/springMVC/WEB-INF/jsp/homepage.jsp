@@ -59,7 +59,7 @@
 </head>
 <body>
 
-<form action="/register" style="max-width:500px;margin:auto" method="get">
+<form action="/register" style="max-width:500px;margin:auto" method="post">
     <h2>Register Form</h2>
     <div class="input-container">
         <i class="fa fa-user icon"></i>

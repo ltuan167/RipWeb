@@ -18,7 +18,7 @@ public class HomepageController {
         model.addAttribute("message1", "Hello spring mvc ");
         return "homepage";
     }
-    @RequestMapping(method = RequestMethod.GET,value = "/register")
+    @RequestMapping(method = RequestMethod.POST,value = "/register")
     public String register(ModelMap model1) {
         model1.addAttribute("message4","Welcome to register page");
         return "register";
