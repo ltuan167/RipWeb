@@ -10,5 +10,10 @@ public class HomepageController {
     public String homepage() {
         return "homepage";
     }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/chat")
+    public String chat() {
+        return "chat";
+    }
 }
 
