@@ -1,0 +1,20 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Test and run" type="JUnit" factoryName="JUnit">
+    <module name="springMVC" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="com.test.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <option name="PACKAGE_NAME" value="com.test" />
+    <option name="MAIN_CLASS_NAME" value="" />
+    <option name="METHOD_NAME" value="" />
+    <option name="TEST_OBJECT" value="package" />
+    <option name="PARAMETERS" value="" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+      <option name="RunConfigurationTask" enabled="true" run_configuration_name="Tomcat 9.0.16" run_configuration_type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" />
+    </method>
+  </configuration>
+</component>
