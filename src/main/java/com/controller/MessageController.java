@@ -1,28 +1,37 @@
 package com.controller;
 
 import com.model.ChatMessage;
+import com.model.Greeting;
+import com.model.HelloMessage;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.messaging.simp.SimpMessageHeaderAccessor;
+import org.springframework.messaging.simp.SimpMessageSendingOperations;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.util.HtmlUtils;
+
+import java.util.Map;
 
 @Controller
 public class MessageController {
 
-	@MessageMapping("/chat.sendMessage")
-	@SendTo("/topic/public")
-	public ChatMessage sendMessage(@Payload ChatMessage chatMessage) {
-		return chatMessage;
+	@MessageMapping("/hello")
+	@SendTo("/topic/greetings")
+	public Greeting greeting(HelloMessage message, SimpMessageHeaderAccessor headerAccessor) throws Exception {
+		String sessionId = headerAccessor.getSessionAttributes().get("sessionId").toString();
+		System.out.println(sessionId + ": " + message.getName());
+		return new Greeting("Hello, " + HtmlUtils.htmlEscape(message.getName()) + "!");
 	}
 
-	@MessageMapping("/chat.addUser")
-	@SendTo("/topic/public")
-	public ChatMessage addUser(@Payload ChatMessage chatMessage,
-	                           SimpMessageHeaderAccessor headerAccessor) {
-		// Add username in web socket session
-		headerAccessor.getSessionAttributes().put("username", chatMessage.getSender());
-		return chatMessage;
-	}
+	@Autowired
+	private SimpMessageSendingOperations messagingTemplate;
+
+//	@MessageMapping("/message")
+//	public void processMessageFromClient(@Payload String message, SimpMessageHeaderAccessor  headerAccessor) throws Exception {
+//		headerAccessor.setSessionId(sessionId);
+//		messagingTemplate.convertAndSend("/topic/reply", new Gson().fromJson(message, Map.class).get("name"));
+//	}
 
 }
