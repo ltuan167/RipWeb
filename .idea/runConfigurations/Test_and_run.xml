@@ -14,7 +14,7 @@
     <option name="PARAMETERS" value="" />
     <method v="2">
       <option name="Make" enabled="true" />
-      <option name="RunConfigurationTask" enabled="true" run_configuration_name="Tomcat 9.0.16" run_configuration_type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" />
+      <option name="RunConfigurationTask" enabled="true" run_configuration_name="Tomcat 9.0.19" run_configuration_type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" />
     </method>
   </configuration>
 </component>
