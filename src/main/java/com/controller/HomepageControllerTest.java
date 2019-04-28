@@ -17,6 +17,7 @@ public class HomepageControllerTest {
 		return ShrinkWrap.create(JavaArchive.class)
 				.addClass(HomepageController.class)
 				.addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml");
+		
 	}
 
 	@Test
