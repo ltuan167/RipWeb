@@ -7,6 +7,10 @@ public class Test {
 	private String  name;
 	private String  description;
 
+	public Test(Integer id) {
+		this.id = id;
+	}
+
 	public Integer getId() {return id;}
 	public void setId(Integer id) {this.id = id;}
 
