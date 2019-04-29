@@ -22,11 +22,11 @@ function connect() {
     var socket = new SockJS('/gs-guide-websocket');
     stompClient = Stomp.over(socket);
     stompClient.connect({}, function (frame) {
-        console.log("SESSIONID: ");
-        console.log(socket);
+        // console.log("SESSIONID: ");
+        // console.log(socket);
         setConnected(true);
         console.log('Connected: ' + frame);
-        stompClient.subscribe('/topic/' + socket.sessionId, function (greeting) {
+        stompClient.subscribe('/topic/greetings', function (greeting) {
             showGreeting(JSON.parse(greeting.body).content);
         });
     });

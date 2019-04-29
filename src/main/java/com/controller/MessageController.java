@@ -25,10 +25,9 @@ public class MessageController {
 		String sessionId = headerAccessor.getSessionId();
 //		headerAccessor.getSessionAttributes()
 //		String sessionId = headerAccessor.getSessionId();
-//		headerAccessor.getSessionAttributes().put()
 		System.out.println(sessionId + ": " + message.getName());
 		Greeting greeting = new Greeting("Hellooooooo, " + HtmlUtils.htmlEscape(message.getName()) + "!");
-		messagingTemplate.convertAndSend("/topic/"+sessionId, greeting);
+		messagingTemplate.convertAndSend("/topic/greetings", greeting);
 //		System.out.println(headerAccessor.getUser().getName());
 		return greeting;
 	}
