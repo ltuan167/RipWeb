@@ -1,32 +1,37 @@
 package com.controller;
 
-import com.model.ChatMessage;
 import com.model.Greeting;
 import com.model.HelloMessage;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.messaging.MessageHeaders;
 import org.springframework.messaging.handler.annotation.MessageMapping;
-import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.messaging.simp.SimpMessageHeaderAccessor;
 import org.springframework.messaging.simp.SimpMessageSendingOperations;
+import org.springframework.messaging.simp.SimpMessageType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.util.HtmlUtils;
-
-import java.util.Map;
 
 @Controller
 public class MessageController {
 
-	@MessageMapping("/hello")
-	@SendTo("/topic/greetings")
-	public Greeting greeting(HelloMessage message, SimpMessageHeaderAccessor headerAccessor) throws Exception {
-		String sessionId = headerAccessor.getSessionAttributes().get("sessionId").toString();
-		System.out.println(sessionId + ": " + message.getName());
-		return new Greeting("Hello, " + HtmlUtils.htmlEscape(message.getName()) + "!");
-	}
-
 	@Autowired
-	private SimpMessageSendingOperations messagingTemplate;
+	public SimpMessageSendingOperations messagingTemplate;
+
+	@MessageMapping("/hello")
+//	@SendTo("/topic/greetings")
+	public Greeting greeting(HelloMessage message, SimpMessageHeaderAccessor headerAccessor) throws Exception {
+//		String sessionId = headerAccessor.getSessionAttributes().get("sessionId").toString();
+		String sessionId = headerAccessor.getSessionId();
+//		headerAccessor.getSessionAttributes()
+//		String sessionId = headerAccessor.getSessionId();
+//		headerAccessor.getSessionAttributes().put()
+		System.out.println(sessionId + ": " + message.getName());
+		Greeting greeting = new Greeting("Hellooooooo, " + HtmlUtils.htmlEscape(message.getName()) + "!");
+		messagingTemplate.convertAndSend("/topic/"+sessionId, greeting);
+//		System.out.println(headerAccessor.getUser().getName());
+		return greeting;
+	}
 
 //	@MessageMapping("/message")
 //	public void processMessageFromClient(@Payload String message, SimpMessageHeaderAccessor  headerAccessor) throws Exception {
