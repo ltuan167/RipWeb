@@ -21,11 +21,6 @@ public class UserController {
 
 	@RequestMapping(value = "/signupdemo")
 	public String signupdemo(Model model) {
-		User demoUser = new User();
-		demoUser.setUsername("hungthuanmk");
-		demoUser.setName("Thuan Ng.");
-		demoUser.setPassword("Thuan Ng.");
-		userService.save( demoUser);
 		model.addAttribute("listUser",userService.findAll());
 		return "userlist";
 	}

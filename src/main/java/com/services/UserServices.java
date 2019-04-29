@@ -2,8 +2,9 @@ package com.services;
 
 import java.util.List;
 
-import com.Dao.UserDao;
-import com.entity.User;
+
+import com.dao.UserDAO;
+import com.entities.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -11,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class UserServices {
     @Autowired
-    private UserDao userDao;
+    private UserDAO userDao;
 
     public List<User> findAll() {
         return userDao.findAll();
@@ -31,6 +32,6 @@ public class UserServices {
 
     public void delete(int id){
         // validate business
-        //userDao.delete(id);
+        userDao.delete(userDao.findById(id));
     }
 }
