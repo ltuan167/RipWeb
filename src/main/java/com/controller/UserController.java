@@ -1,21 +1,32 @@
 package com.controller;
 
-import com.Dao.UserDao;
-import com.services.UserServices;
+import com.entities.User;
+import com.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class UserController {
-    @Autowired
-    private UserServices userServices;
-    @RequestMapping(method = RequestMethod.GET, value = "/UserList")
-    public String signup(ModelMap model) {
-        model.addAttribute("listUser", userServices.findAll());
-        return "UserList";
-    }
-}
 
+	@Autowired
+	private UserService userService;
+
+	@RequestMapping(value = "/userlist")
+	public String listUser(Model model) {
+		model.addAttribute("listUser",userService.findAll());
+		return "userlist";
+	}
+
+	@RequestMapping(value = "/signupdemo")
+	public String signupdemo(Model model) {
+		User demoUser = new User();
+		demoUser.setUsername("hungthuanmk");
+		demoUser.setName("Thuan Ng.");
+		demoUser.setPassword("Thuan Ng.");
+		userService.save( demoUser);
+		model.addAttribute("listUser",userService.findAll());
+		return "userlist";
+	}
+}
