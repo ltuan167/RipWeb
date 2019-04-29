@@ -1,5 +1,6 @@
 package com.controller;
 
+import com.entities.User;
 import com.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,6 +15,17 @@ public class UserController {
 
 	@RequestMapping(value = "/userlist")
 	public String listUser(Model model) {
+		model.addAttribute("listUser",userService.findAll());
+		return "userlist";
+	}
+
+	@RequestMapping(value = "/signupdemo")
+	public String signupdemo(Model model) {
+		User demoUser = new User();
+		demoUser.setUsername("hungthuanmk");
+		demoUser.setName("Thuan Ng.");
+		demoUser.setPassword("Thuan Ng.");
+		userService.save( demoUser);
 		model.addAttribute("listUser",userService.findAll());
 		return "userlist";
 	}
