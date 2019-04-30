@@ -32,8 +32,9 @@ public class UserDAO {
 		Session session = this.sessionFactory.getCurrentSession();
 		session.remove(user);
 	}
-	public List<User> findAll() {
+	public List<User> findValidUser(final String email) {
 		Session session = this.sessionFactory.getCurrentSession();
-		return session.createQuery("FROM User", User.class).getResultList();
+		String hql = "SELECT password FROM User WHERE email='"+email+"'";
+		return  session.createNativeQuery(hql).getResultList();
 	}
 }

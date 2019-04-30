@@ -28,20 +28,22 @@
         <th>Name</th>
         <th>DOB</th>
     </tr>
-    <c:if test="${not empty listUser}">
-        <c:forEach var="user" items="${listUser}">
-            <tr style="border: 1px black solid">
-                <td>${user.id}</td>
-                <td>${user.username}</td>
-                <td>${user.password}</td>
-                <td>${user.name}</td>
-                <td>${user.dob}</td>
-<%--                <td> <a href="${urlView}/${customer.id}">View</a></td>--%>
-<%--                <td> <a href="${urlUpdate}/${customer.id}">Edit</a></td>--%>
-<%--                <td> <a href="${urlDelete}/${customer.id}">Delete</a></td>--%>
-            </tr>
-        </c:forEach>
-    </c:if>
+<%--    <c:if test="${not empty listUser}">--%>
+<%--        <c:forEach var="user" items="${listUser}">--%>
+<%--            <tr style="border: 1px black solid">--%>
+<%--                <td>${user.id}</td>--%>
+<%--                <td>${user.username}</td>--%>
+<%--                <td>${user.email}</td>--%>
+<%--                <td>${user.password}</td>--%>
+<%--                <td>${user.name}</td>--%>
+<%--                <td>${user.dob}</td>--%>
+<%--&lt;%&ndash;                <td> <a href="${urlView}/${customer.id}">View</a></td>&ndash;%&gt;--%>
+<%--&lt;%&ndash;                <td> <a href="${urlUpdate}/${customer.id}">Edit</a></td>&ndash;%&gt;--%>
+<%--&lt;%&ndash;                <td> <a href="${urlDelete}/${customer.id}">Delete</a></td>&ndash;%&gt;--%>
+<%--            </tr>--%>
+<%--        </c:forEach>--%>
+<%--    </c:if>--%>
 </table>
+<h2>${listUser}</h2>
 </body>
 </html>

@@ -14,8 +14,8 @@ public class UserServices {
     @Autowired
     private UserDAO userDao;
 
-    public List<User> findAll() {
-        return userDao.findAll();
+    public List<User> findValidUser(String email) {
+        return userDao.findValidUser(email);
     }
     public User findById(int id) {
         return userDao.findById(id);
