@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="resources/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ABeeZee">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta">
-    <link rel="stylesheet" href="resources/css/signup .css">
+    <link rel="stylesheet" href="resources/css/signup.css">
 </head>
 
 <body>
@@ -17,9 +17,10 @@
         <form method="post">
             <h2 class="text-center" style="font-size: 50px;font-family: Allerta, sans-serif;color: rgb(80,94,108);padding: 10px 0px 0px;margin: 0px 0px 10px;"><strong>Hello</strong></h2>
             <p class="text-center" style="margin: 0px 0px 50px;font-family: ABeeZee, sans-serif;font-size: 15px;"><strong>Sign up by entering the details below</strong></p>
-            <div class="form-group"><input class="form-control" type="email" name="name" placeholder="Name"></div>
-            <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email"></div>
-            <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password"></div>
+            <div class="form-group"><input class="form-control" type="email" name="name" required="" placeholder="Name"></div>
+            <div class="form-group"><input class="form-control" type="date" name="date" value="Date" required=""></div>
+            <div class="form-group"><input class="form-control" type="email" name="email" required="" placeholder="Email"></div>
+            <div class="form-group"><input class="form-control" type="password" name="password" required="" placeholder="Password"></div>
             <div class="form-group">
                 <div class="form-check" style="font-family: ABeeZee, sans-serif;"><label class="form-check-label"><input class="form-check-input" type="checkbox">I agree to the license terms.</label></div>
             </div>

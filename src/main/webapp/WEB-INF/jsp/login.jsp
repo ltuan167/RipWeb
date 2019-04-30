@@ -28,8 +28,8 @@
         <form method="post">
             <h2 class="text-center" style="font-size: 60px;margin: 0px 0px 10px;font-family: Allerta, sans-serif;"><strong>Welcome to RIPWEB!</strong></h2>
             <p class="text-center" style="margin: 0px 0px 50px;font-family: ABeeZee, sans-serif;font-size: 19px;"><strong>Sign in to your account</strong></p>
-            <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email"></div>
-            <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password"></div>
+            <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email" required=""></div>
+            <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password" required=""></div>
             <div class="form-group">
                 <div class="form-check"><label class="form-check-label"><input class="form-check-input" type="checkbox">Remember Password</label></div>
             </div>
