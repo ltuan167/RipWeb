@@ -37,4 +37,15 @@ public class UserDAO {
 		String hql = "SELECT password FROM User WHERE email='"+email+"'";
 		return  session.createNativeQuery(hql).getResultList();
 	}
+	public Integer registerNewUser (final String usrnm,
+									final String emailre,
+									final String psw) {
+		Session session = this.sessionFactory.getCurrentSession();
+		String hql = "INSERT INTO User(username, email, password, id) VALUE (?,?,?,?)";
+		return  session.createNativeQuery(hql).
+				setParameter(1,usrnm).
+				setParameter(2,emailre).
+				setParameter(3,psw).
+				setParameter(4,5).executeUpdate();
+	}
 }

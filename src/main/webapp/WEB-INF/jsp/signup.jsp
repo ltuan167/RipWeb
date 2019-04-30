@@ -20,7 +20,7 @@
 </head>
 <body>
 
-<form action="/register" style="max-width:500px;margin:auto" method="post">
+<form action="/registerResult" style="max-width:500px;margin:auto" method="post">
     <h2>Register Form</h2>
     <div class="input-container">
         <i class="fa fa-user icon"></i>
@@ -29,7 +29,7 @@
 
     <div class="input-container">
         <i class="fa fa-envelope icon"></i>
-        <input class="input-field" type="text" placeholder="Email" name="email">
+        <input class="input-field" type="text" placeholder="Email" name="emailre">
     </div>
 
     <div class="input-container">

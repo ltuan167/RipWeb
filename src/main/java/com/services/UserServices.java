@@ -17,6 +17,7 @@ public class UserServices {
     public List<User> findValidUser(String email) {
         return userDao.findValidUser(email);
     }
+
     public User findById(int id) {
         return userDao.findById(id);
     }
@@ -34,4 +35,9 @@ public class UserServices {
         // validate business
         userDao.delete(userDao.findById(id));
     }
+
+    public Integer registerNewUser(String usrnm, String emailre, String psw ) {
+        return userDao.registerNewUser(usrnm,emailre,psw);
+    }
+
 }
