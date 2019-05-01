@@ -29,6 +29,9 @@ public class MessageController {
 		return greeting;
 	}
 
+//	@MessageMapping("/{sessionId}/{gamePIN}")
+//	public String roomMessage(HelloMessage message, SimpMessageHeaderAccessor headerAccessor)
+
 //	@MessageMapping("/message")
 //	public void processMessageFromClient(@Payload String message, SimpMessageHeaderAccessor  headerAccessor) throws Exception {
 //		headerAccessor.setSessionId(sessionId);
