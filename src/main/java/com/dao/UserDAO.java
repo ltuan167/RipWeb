@@ -41,11 +41,10 @@ public class UserDAO {
 									final String emailre,
 									final String psw) {
 		Session session = this.sessionFactory.getCurrentSession();
-		String hql = "INSERT INTO User(username, email, password, id) VALUE (?,?,?,?)";
+		String hql = "INSERT INTO User(username, email, password) VALUE (?,?,?)";
 		return  session.createNativeQuery(hql).
 				setParameter(1,usrnm).
 				setParameter(2,emailre).
-				setParameter(3,psw).
-				setParameter(4,5).executeUpdate();
+				setParameter(3,psw).executeUpdate();
 	}
 }

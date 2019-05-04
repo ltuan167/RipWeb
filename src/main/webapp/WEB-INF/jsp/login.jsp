@@ -33,7 +33,9 @@
             <div class="form-group">
                 <div class="form-check"><label class="form-check-label"><input class="form-check-input" type="checkbox">Remember Password</label></div>
             </div>
-            <div class="form-group"><button class="btn btn-primary btn-block" type="submit" style="background-image: linear-gradient(to right bottom, #046bd1, #008fe6, #00ade5, #00c8d5, #00e0be);">Sign In</button></div><a href="#" class="already" style="font-family: ABeeZee, sans-serif;">Don't have an account? <span style="text-decoration: underline;">Sign up</span></a></form>
+            <div class="form-group"><button class="btn btn-primary btn-block" type="submit" style="background-image: linear-gradient(to right bottom, #046bd1, #008fe6, #00ade5, #00c8d5, #00e0be);">Sign In</button></div>
+            <a href="/signup" class="already" style="font-family: ABeeZee, sans-serif;">Don't have an account? <span style="text-decoration: underline;">Sign up</span></a>
+        </form>
     </div>
 </div>
 <script src="resources/js/jquery.min.js"></script>

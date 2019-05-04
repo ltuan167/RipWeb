@@ -12,5 +12,6 @@
 </head>
 <body>
     <h2>${registerNewUser}</h2>
+    <h2>You have register successfully</h2>
 </body>
 </html>
