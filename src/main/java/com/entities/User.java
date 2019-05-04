@@ -4,7 +4,8 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "User")
+@Table(name = "User", catalog = "spring_security",
+		uniqueConstraints = @UniqueConstraint(columnNames = {"username", "email"}))
 public class User {
 	@Id
 	@Column(name = "id")
@@ -14,7 +15,7 @@ public class User {
 	@Column(name = "username", unique = true)
 	private String username;
 
-	@Column(name = "email")
+	@Column(name = "email", unique = true)
 	private String email;
 
 	@Column(name = "password")

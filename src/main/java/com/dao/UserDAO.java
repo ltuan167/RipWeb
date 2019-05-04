@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.List;
 
 @Repository(value = "userDAO")
@@ -46,5 +47,13 @@ public class UserDAO {
 				setParameter(1,usrnm).
 				setParameter(2,emailre).
 				setParameter(3,psw).executeUpdate();
+	}
+
+	public User loadUserbyEmail (final String email) {
+		List<User> users = new ArrayList<>();
+		Session session = this.sessionFactory.getCurrentSession();
+		users = session.createQuery("from User where email=?", User.class)
+									.setParameter(0, email).list();
+		return users.size() > 0 ? users.get(0) : null;
 	}
 }
