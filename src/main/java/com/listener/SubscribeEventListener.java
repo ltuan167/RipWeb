@@ -14,17 +14,14 @@ public class SubscribeEventListener implements ApplicationListener {
 	public void onApplicationEvent(ApplicationEvent event) {
 		if (event instanceof  SessionConnectedEvent) {
 			SessionConnectedEvent e = (SessionConnectedEvent)event;
-//			String sessionId = e.toString();
-//			String attributes = (String)((GenericMessage)e.getMessage().getHeaders().get("simpConnectMessage")).getHeaders().get("simpSessionAttributes");
-//			attributes.substring(attributes.indexOf("="))
-//			String version = headerAccessor.getAck();
-			System.out.println(String.format("[CONNECTED] SessionID: %s","")); // SessionID
+			System.out.println(String.format("[WS][NEW CONNECTION]: %s", e)); // SessionID
 		}
 		if (event instanceof  SessionSubscribeEvent) {
 			SessionSubscribeEvent e = (SessionSubscribeEvent)event;
-//			System.out.println(StompHeaderAccessor.wrap(e.getMessage()).getDestination()); //GET SUBSCRIBE TOPIC
 			StompHeaderAccessor headerAccessor = StompHeaderAccessor.wrap(e.getMessage());
-			System.out.println(headerAccessor.getSessionAttributes().get("sessionId").toString() + " CONNECTED!");
+			String subscribedTopic = StompHeaderAccessor.wrap(e.getMessage()).getDestination(); //GET SUBSCRIBE TOPIC
+			String sessionId = headerAccessor.getSessionAttributes().get("sessionId").toString();
+			System.out.println(String.format("[WS][SESSIONID=%s] SUBSCRIBED [%s]", sessionId, subscribedTopic));
 		}
 	}
 
