@@ -19,9 +19,9 @@ public class UserController {
 		return "userlist";
 	}
 
-//	@RequestMapping(value = "/signupdemo")
-//	public String signupdemo(Model model) {
-//		model.addAttribute("listUser",userServices.findAll());
-//		return "userlist";
-//	}
+	@RequestMapping(value = "/signupdemo")
+	public String signupdemo(Model model) {
+		model.addAttribute("listUser",userService.findAll());
+		return "userlist";
+	}
 }

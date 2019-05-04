@@ -21,17 +21,15 @@ function setConnected(connected) {
 function connect() {
     var socket = new SockJS('/gs-guide-websocket');
     stompClient = Stomp.over(socket);
-    let sessionId = $.cookie('sessionId');
-    if (sessionId) {
-        stompClient.connect({}, function (frame) {
-            setConnected(true);
-            console.log('Connected: ' + frame);
-            stompClient.subscribe('/topic/' + sessionId, function (greeting) {
-                showGreeting(JSON.parse(greeting.body).content);
-            });
+    stompClient.connect({}, function (frame) {
+        console.log("SESSIONID: ");
+        console.log(socket);
+        setConnected(true);
+        console.log('Connected: ' + frame);
+        stompClient.subscribe('/topic/' + socket.sessionId, function (greeting) {
+            showGreeting(JSON.parse(greeting.body).content);
         });
-    }
-
+    });
 }
 
 function disconnect() {
