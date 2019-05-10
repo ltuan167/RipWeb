@@ -25,7 +25,7 @@
 <div class="text-center d-block register-photo" style="margin: auto;padding: 40px 10px 10px;height: 1080px;width: auto;">
     <div class="form-container">
         <div class="image-holder" style="background-image: url('resources/img/image.png');background-position: center;"></div>
-        <form method="post" action="loginResult">
+        <form method="post" action="j_spring_security_login">
             <h2 class="text-center" style="font-size: 60px;margin: 0px 0px 10px;font-family: Allerta, sans-serif;"><strong>Welcome to RIPWEB!</strong></h2>
             <p class="text-center" style="margin: 0px 0px 50px;font-family: ABeeZee, sans-serif;font-size: 19px;"><strong>Sign in to your account</strong></p>
             <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email"></div>
