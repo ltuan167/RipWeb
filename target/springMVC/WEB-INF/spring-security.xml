@@ -15,7 +15,7 @@
                 logout-success-url="/logout" delete-cookies="JSESSIONID" />
     </http>
     <authentication-manager>
-        <authentication-provider user-service-ref="com.services.MyUserDetailsService">
+        <authentication-provider user-service-ref="myUserDetailsService">
             <password-encoder hash="bcrypt"/>
         </authentication-provider>
     </authentication-manager>
