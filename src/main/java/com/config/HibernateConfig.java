@@ -15,9 +15,9 @@ import java.util.Properties;
 
 import static org.hibernate.cfg.AvailableSettings.*;
 
-@Configuration
-@PropertySource("classpath:jdbc.properties")
-@EnableTransactionManagement
+//@Configuration
+//@PropertySource("classpath:jdbc.properties")
+//@EnableTransactionManagement
 public class HibernateConfig {
 
 	@Autowired

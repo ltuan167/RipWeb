@@ -19,6 +19,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
 		vr.setPrefix("/WEB-INF/jsp/");
 		// set the extension of views
 		vr.setSuffix(".jsp");
+		System.out.println(vr);
 		return vr;
 	}
 
