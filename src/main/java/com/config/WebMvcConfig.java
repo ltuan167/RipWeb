@@ -4,6 +4,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
@@ -19,8 +20,15 @@ public class WebMvcConfig implements WebMvcConfigurer {
 		vr.setPrefix("/WEB-INF/jsp/");
 		// set the extension of views
 		vr.setSuffix(".jsp");
-		System.out.println(vr);
+		System.out.println("Loaded Web MVC Config");
 		return vr;
+	}
+
+	@Override
+	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+		registry
+				.addResourceHandler("/resources/**")
+				.addResourceLocations("/WEB-INF/resources/");
 	}
 
 }

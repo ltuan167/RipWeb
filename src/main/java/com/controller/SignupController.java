@@ -4,26 +4,26 @@ import com.services.UserServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class SignupController {
-	@Autowired
-	UserServices userServices;
-	@RequestMapping(method = RequestMethod.GET, value = "/signup")
-	public String signup() {
+//	@Autowired
+//	UserServices userServices;
+
+	@GetMapping("/signup")
+	public String getSignup() {
 		return "signup";
 	}
 
-	@RequestMapping(value = "/registerResult")
-	public String signupResult(@RequestParam String usrnm,
-							   @RequestParam String emailre,
-							   @RequestParam String psw,
+	@PostMapping("/signup")
+	public String signup(@RequestParam String email,
+							   @RequestParam String nickname,
+							   @RequestParam String password,
 							   ModelMap model) {
-		model.addAttribute("registerNewUser", userServices.registerNewUser(usrnm,emailre,psw));
-		return "registerResult";
+//		model.addAttribute("registerNewUser", userServices.registerNewUser(usrnm,emailre,psw));
+		model.addAttribute("message", "Sign up successfully!");
+		return "login";
 	}
 }
 

@@ -10,12 +10,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class UserController {
 
-	@Autowired
-	private UserServices userServices;
+//	@Autowired
+//	private UserServices userServices;
 
 	@RequestMapping(value = "/userlist")
 	public String listUser(Model model) {
-		model.addAttribute("listUser",userServices.findValidUser(""));
+//		model.addAttribute("listUser",userServices.findValidUser(""));
 		return "userlist";
 	}
 

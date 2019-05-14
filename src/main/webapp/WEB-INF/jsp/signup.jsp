@@ -11,31 +11,37 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Add icon library -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link rel="stylesheet" href="resources/css/signup.css">
-
     <link rel="icon" href="resources/icon/favicon.png">
 
     <title>RIPWEB! Signup</title>
 </head>
 <body>
 
-<form action="/registerResult" style="max-width:500px;margin:auto" method="post">
+<form action="/signup" style="max-width:500px;margin:auto" method="post">
     <h2>Register Form</h2>
     <div class="input-container">
-        <i class="fa fa-user icon"></i>
-        <input class="input-field" type="text" placeholder="Username" name="usrnm">
+        <i class="fa fa-envelope icon"></i>
+        <input class="input-field" type="email" placeholder="Email" name="email" required autofocus>
     </div>
 
     <div class="input-container">
-        <i class="fa fa-envelope icon"></i>
-        <input class="input-field" type="text" placeholder="Email" name="emailre">
+        <i class="fa fa-user-tag icon"></i>
+        <input class="input-field" type="text" placeholder="Nickname" name="nickname" required>
     </div>
 
     <div class="input-container">
         <i class="fa fa-key icon"></i>
-        <input class="input-field" type="password" placeholder="Password" name="psw">
+        <input class="input-field" type="password" placeholder="Password" name="password" required>
     </div>
+
+    <div class="input-container">
+        <i class="fa fa-key icon"></i>
+        <input class="input-field" type="password" placeholder="Re-enter password" name="repassword" required>
+    </div>
+
+<%--    THIS SECTION FOR LEE TUAN ONLY, VALIDATE FORM --%>
 
     <button type="submit" class="btn">Register</button>
 </form>
