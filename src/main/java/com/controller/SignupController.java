@@ -11,9 +11,7 @@ public class SignupController {
 //	UserServices userServices;
 
 	@GetMapping("/signup")
-	public String getSignup() {
-		return "signup";
-	}
+	public String getSignup() { return "signup"; }
 
 	@PostMapping("/signup")
 	public String signup(@RequestParam String email,
