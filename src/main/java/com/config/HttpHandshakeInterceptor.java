@@ -12,13 +12,16 @@ import java.util.Map;
 public class HttpHandshakeInterceptor implements HandshakeInterceptor {
 
 	@Override
-	public boolean beforeHandshake(ServerHttpRequest serverHttpRequest, ServerHttpResponse serverHttpResponse, WebSocketHandler webSocketHandler, Map<String, Object> attributes) throws Exception {
+	public boolean beforeHandshake(ServerHttpRequest serverHttpRequest,
+	                               ServerHttpResponse serverHttpResponse,
+	                               WebSocketHandler webSocketHandler,
+	                               Map<String, Object> attributes) throws Exception {
 		if (serverHttpRequest instanceof ServletServerHttpRequest) {
 			ServletServerHttpRequest servletRequest = (ServletServerHttpRequest) serverHttpRequest;
 			HttpSession session = servletRequest.getServletRequest().getSession();
 
 			attributes.put("sessionId", session.getId());
-			System.out.println("Begin handshake with " + session.getId());
+			System.out.println("[HttpHandshake] Begin handshake with " + session.getId());
 		}
 		return true;
 	}
@@ -27,7 +30,7 @@ public class HttpHandshakeInterceptor implements HandshakeInterceptor {
 	public void afterHandshake(org.springframework.http.server.ServerHttpRequest serverHttpRequest, ServerHttpResponse serverHttpResponse, WebSocketHandler webSocketHandler, Exception e) {
 		ServletServerHttpRequest servletRequest = (ServletServerHttpRequest) serverHttpRequest;
 		HttpSession session = servletRequest.getServletRequest().getSession();
-		System.out.println("End handshake with " + session.getId());
+		System.out.println("[HttpHandshake] End handshake with " + session.getId());
 	}
 
 }
