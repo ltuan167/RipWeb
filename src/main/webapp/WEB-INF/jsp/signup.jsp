@@ -18,7 +18,7 @@
     <title>RIPWEB! Signup</title>
 </head>
 <body>
-<form action="/signup" style="max-width:500px;margin:auto" method="post" name ="regisform" onsubmit="checkValid()">
+<form action="/signup" style="max-width:500px;margin:auto" method="post" name ="regisform" onsubmit="return checkValid()" >
     <h2>Register Form</h2>
     <div class="input-container">
         <i class="fa fa-envelope icon"></i>
@@ -32,7 +32,7 @@
 
     <div class="input-container">
         <i class="fa fa-key icon"></i>
-        <input class="input-field" id="" type="password" placeholder="Password" name="password" required>
+        <input class="input-field" type="password" placeholder="Password" name="password" required>
     </div>
 
     <div class="input-container">
@@ -48,11 +48,12 @@
 <%--    THIS SECTION FOR LEE TUAN ONLY, VALIDATE FORM --%>
 <script>
     function checkValid() {
-        var regisform = document.regisform
-        var password= regisform.password
-        var repassword = regisform.repassword
-        alert("pass" + password + " repass" + repassword)
-        // if (password != (repassword)) {
-        //     alert("Please enter the same password")
+        var password = document.regisform.password.value;
+        var repassword = document.regisform.repassword.value;
+        if (password != repassword) {
+            alert("Please enter the same password");
+            return false;
+        } else
+            return true;
     }
 </script>
