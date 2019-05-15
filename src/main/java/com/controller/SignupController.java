@@ -17,10 +17,12 @@ public class SignupController {
 
 	@PostMapping("/signup")
 	public String signup(@RequestParam String email,
-							   @RequestParam String nickname,
-							   @RequestParam String password,
-							   ModelMap model) {
-//		model.addAttribute("registerNewUser", userServices.registerNewUser(usrnm,emailre,psw));
+	                     @RequestParam String nickname,
+	                     @RequestParam String password,
+                         @RequestParam String repassword,
+                         ModelMap model) {
+		// ADD USER TO DB HERE
+//		model.addAttribute("registerNewUser", userServices.registerNewUser(usrnm, emailre,psw));
 		model.addAttribute("message", "Sign up successfully!");
 		return "login";
 	}
