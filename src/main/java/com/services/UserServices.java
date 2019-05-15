@@ -1,11 +1,16 @@
 package com.services;
 
-//@Service
-//@Transactional
+import com.dao.UserDAO;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+@Service
+@Transactional
 public class UserServices {
-//    @Autowired
-//    private UserDAO userDao;
-//
+    @Autowired
+    private UserDAO userDao;
+
 //    public List<User> findValidUser(String email) {
 //        return userDao.findValidUser(email);
 //    }
@@ -28,8 +33,8 @@ public class UserServices {
 //        userDao.delete(userDao.findById(id));
 //    }
 //
-//    public Integer registerNewUser(String usrnm, String emailre, String psw ) {
-//        return userDao.registerNewUser(usrnm,emailre,psw);
-//    }
+    public Integer registerNewUser(String email, String name, String psw ) {
+        return userDao.registerNewUser(email, name, psw);
+    }
 
 }

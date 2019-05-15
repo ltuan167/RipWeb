@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 
@@ -20,12 +21,12 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta">
     <link rel="stylesheet" href="resources/css/styles.min.css">
 </head>
-
 <body style="background-color: rgb(255,255,255);">
 <div class="text-center d-block register-photo" style="margin: auto;padding: 40px 10px 10px;height: 1080px;width: auto;">
     <div class="form-container">
 <%--        <div class="image-holder" style="background-image: url('resources/img/image.png');background-position: center; width: 100vw; height: 100vh;">--%>
         <h2>${message}</h2>
+        <h2>${registerNewUser}</h2>
         <form method="post" action="login">
             <h2 class="text-center" style="font-size: 60px;margin: 0px 0px 10px;font-family: Allerta, sans-serif;"><strong>Welcome to RIPWEB!</strong></h2>
             <p class="text-center" style="margin: 0px 0px 50px;font-family: ABeeZee, sans-serif;font-size: 19px;"><strong>Sign in to your account</strong></p>
