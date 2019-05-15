@@ -15,12 +15,14 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 		config.enableSimpleBroker("/topic");
 //		config.enableSimpleBroker("/user");
 		config.setApplicationDestinationPrefixes("/app");
+		System.out.println("[WEBSOCKET] Message broker registry: " + config);
 	}
 
 	@Override
 	public void registerStompEndpoints(StompEndpointRegistry registry) {
 		registry.addEndpoint("/gs-guide-websocket").withSockJS().setInterceptors(new HttpHandshakeInterceptor());
 		registry.addEndpoint("/gs-guide-websocket").addInterceptors(new HttpHandshakeInterceptor());
+		System.out.println("[WEBSOCKET] Registerd STOMP enpoints: " + registry);
 	}
 
 }

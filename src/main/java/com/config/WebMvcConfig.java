@@ -20,7 +20,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
 		vr.setPrefix("/WEB-INF/jsp/");
 		// set the extension of views
 		vr.setSuffix(".jsp");
-		System.out.println("Loaded Web MVC Config");
+		System.out.println("[MVC] View resolver: " + vr);
 		return vr;
 	}
 
@@ -29,6 +29,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
 		registry
 				.addResourceHandler("/resources/**")
 				.addResourceLocations("/WEB-INF/resources/");
+		System.out.println("[MVC] Resource handler registry: " + registry);
 	}
 
 }
