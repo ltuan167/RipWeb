@@ -66,3 +66,4 @@ public class UserDAO {
 //		return users.size() > 0 ? users.get(0) : null;
 //	}
 }
+// Test slack icon
