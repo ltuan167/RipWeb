@@ -1,0 +1,23 @@
+package com.rest;
+
+import com.model.GameCommandMessage;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/1.0/game")
+public class GameAPIController {
+
+	@GetMapping
+	public String greetingToGameAPI() {
+		return "Welcome to GAME APIs!";
+	}
+
+	@PostMapping(value = "/join", produces = "application/json")
+	public GameCommandMessage getGame(@RequestParam int gamePIN) {
+		GameCommandMessage command = new GameCommandMessage();
+		command.setType(GameCommandMessage.GameCommandType.BEGIN_GAME);
+		command.setContent("Hello to game #"+gamePIN);
+		return command;
+	}
+
+}
