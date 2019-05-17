@@ -28,7 +28,6 @@
         <div
                 class="image-holder" style="background-image: url(&quot;resources/img/sign%20up.png&quot;);width: auto;height: auto;margin: 0;background-position: center;"></div>
     </div>
-<%--    khoa--%>
 </div>
 <script src="resources/js/jquery.min.js"></script>
 <script src="resources/bootstrap/js/bootstrap.min.js"></script>
