@@ -4,7 +4,7 @@ import com.model.GameCommandMessage;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("api/game")
+@RequestMapping("/1.0/game")
 public class GameAPIController {
 
 	@GetMapping
