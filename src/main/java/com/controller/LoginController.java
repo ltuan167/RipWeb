@@ -14,19 +14,11 @@ public class LoginController {
 //	UserServices userServices;
 
 	@PostMapping("/login")
-	public String login(@RequestParam String email , @RequestParam String password, ModelMap model) {
-		model.addAttribute("pass", password);
-		model.addAttribute("email", email);
-
-		if (email.equals(password))
-			return "homepage";
-		else {
-			model.addAttribute("message", "Wrong email or password!");
-			return "login";
+	public String login(@RequestParam(value = "error", required = false) final String error, final Model model) {
+		if (error != null) {
+			model.addAttribute("message", "Login Failed!");
 		}
-
-		// validate login session
-		//	model.addAttribute("checkValidEmail", userServices.findValidUser(email).get(0));
+		return "login";
 	}
 
 	@GetMapping(value = "/login")
