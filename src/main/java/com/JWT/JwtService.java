@@ -37,7 +37,7 @@ public class JwtService {
 
     public String generateTokenLogin (String username) {
         String token = null;
-        JWSSigner signer = null;
+        JWSSigner signer;
         try {
             signer = new MACSigner(generateShareSecret());
 
@@ -93,12 +93,10 @@ public class JwtService {
             return false;
         }
         String username = getUsernameFromToken(token);
-        if (username == null || username.isEmpty()) {
+        if (username == null || username.isEmpty())
             return false;
-        }
-        if (isTokenExpired(token)) {
+        if (isTokenExpired(token))
             return false;
-        }
         return true;
     }
 

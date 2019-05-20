@@ -39,7 +39,6 @@ public class User {
 	public String[] getRoles() {
 		return roles;
 	}
-
 	public void setRoles(String[] roles) {
 		this.roles = roles;
 	}
@@ -63,7 +62,7 @@ public class User {
 	public void setDob(Date dob) { this.dob = dob; }
 
 	public List<GrantedAuthority> getAuthorities() {
-		List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
+		List<GrantedAuthority> authorities = new ArrayList<>();
 		for (String role : roles) {
 			authorities.add(new SimpleGrantedAuthority(role));
 		}
