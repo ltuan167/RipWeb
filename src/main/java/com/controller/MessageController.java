@@ -16,8 +16,7 @@ public class MessageController {
 	public SimpMessageSendingOperations messagingTemplate;
 
 	@MessageMapping("/hello")
-//	@SendTo("/topic/greetings")
-	public Greeting greeting(HelloMessage message, SimpMessageHeaderAccessor headerAccessor) throws Exception {
+	public Greeting greeting(HelloMessage message, SimpMessageHeaderAccessor headerAccessor) {
 		String sessionId = headerAccessor.getSessionAttributes().get("sessionId").toString();
 		String echoMessage = message.getName();
 
@@ -28,14 +27,5 @@ public class MessageController {
 		messagingTemplate.convertAndSend("/topic/" + sessionId, greeting);
 		return greeting;
 	}
-
-//	@MessageMapping("/{sessionId}/{gamePIN}")
-//	public String roomMessage(HelloMessage message, SimpMessageHeaderAccessor headerAccessor)
-
-//	@MessageMapping("/message")
-//	public void processMessageFromClient(@Payload String message, SimpMessageHeaderAccessor  headerAccessor) throws Exception {
-//		headerAccessor.setSessionId(sessionId);
-//		messagingTemplate.convertAndSend("/topic/reply", new Gson().fromJson(message, Map.class).get("name"));
-//	}
 
 }

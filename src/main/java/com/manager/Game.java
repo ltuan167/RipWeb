@@ -1,15 +1,55 @@
 package com.manager;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.messaging.simp.SimpMessageSendingOperations;
+
 import java.util.ArrayList;
+import java.util.Collections;
 
-public class Game {
+public class Game implements Comparable<Game> {
 
-	private int PIN;
-	private ArrayList<Player> playerList = new ArrayList<>();
+	@Autowired
+	public SimpMessageSendingOperations msg;
 
-	public Game() {
-		this.PIN = GameManager.getPIN();
+	private static final String TOPIC_PREFIX = "/game/";
+	private String gameWsTopic;
+
+	private Integer PIN;
+	private boolean is_began = false;
+	private ArrayList<Player> players = new ArrayList<>();
+	private ArrayList<QuestionCollection> questions = new ArrayList<>();
+
+	public Game() { new Game(GameManager.getPIN()); }
+	public Game(Integer gamePIN) {
+		this.PIN = gamePIN;
+		gameWsTopic = TOPIC_PREFIX + gamePIN;
 	}
 
+	public boolean join(String sessionId) {
+		Collections.sort(players);
+		Player newPlayer = new Player(sessionId);
+		int foundPlayerIdx = Collections.binarySearch(players, newPlayer);
+		if (foundPlayerIdx == -1 && // player does not exist
+			is_began == false) {    // game was not began
+//			String topic = "/topic";
+//			msg.convertAndSend("/topic/");
+			return players.add(newPlayer);
+		}
+		return false;
+	}
+
+	private boolean broadcastMsg(Object msg2broadcast) {
+		try {
+			msg.convertAndSend(gameWsTopic, msg2broadcast);
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+
+	@Override
+	public int compareTo(Game o) {
+		return this.PIN.compareTo(o.PIN);
+	}
 
 }
