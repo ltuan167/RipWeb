@@ -44,12 +44,12 @@ public class UserServices {
         return userDao.registerNewUser(email, name, psw);
     }
 
-    public User loadpassword (String email) {
+    public String loadpassword (String email) {
         return userDao.loadpassword(email);
     }
 
     public List<User> loadUserByEmail(String email) {
-        return userDao.loaduserbyusername(email);
+        return userDao.loadUserByEmail(email);
     }
 
 //    public Boolean checkLogin() {

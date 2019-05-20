@@ -38,15 +38,16 @@ public class UserDAO {
 //		Session session = this.sessionFactory.getCurrentSession();
 //		session.remove(user);
 //	}
-	public User loadpassword(final String email) {
-		List<User> users = new ArrayList<>()	;
+	public String loadpassword(final String email) {
 		Session session = this.sessionFactory.getCurrentSession();
+		Transaction tx = session.beginTransaction();
 		String hql = "SELECT password FROM User WHERE email='"+email+"'";
-		users = session.createNativeQuery(hql).getResultList();
-		return users.size() > 0 ? users.get(0) : null ;
+		String userpass = (String) session.createSQLQuery(hql).getResultList().get(0);
+		tx.commit();
+		return userpass;
 	}
 
-	public List<User> loaduserbyusername (final String email) {
+	public List<User> loadUserByEmail(final String email) {
 		Session session = this.sessionFactory.getCurrentSession();
 		String hql = "SELECT * FROM User WHERE email='"+email+"'";
 		return session.createNativeQuery(hql).getResultList();
@@ -55,9 +56,8 @@ public class UserDAO {
 	public Integer registerNewUser (final String nickname,
 									final String email,
 									final String psw) {
-		Transaction tx = null;
 		Session session = this.sessionFactory.getCurrentSession();
-		tx = session.beginTransaction();
+		Transaction tx = session.beginTransaction();
 		String hql = "INSERT INTO User(nickname, email, password) VALUE (?,?,?)";
 		Integer i =  session.createSQLQuery(hql).
 					 setParameter(1, nickname).

@@ -1,4 +1,4 @@
-package com.controller;
+package com.rest;
 
 import com.JWT.JwtService;
 import com.dao.UserDAO;
@@ -8,14 +8,16 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCrypt;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @RestController
-@RequestMapping("/rest")
-public class UserRestController {
+@RequestMapping("/1.0/user")
+public class UserAPIController {
 
     @Autowired
     private JwtService jwtService;
@@ -56,15 +58,15 @@ public class UserRestController {
 //        return new ResponseEntity<String>("Deleted!", HttpStatus.OK);
 //    }
 
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    @PostMapping(value = "/login")
     public ResponseEntity<String> login(HttpServletRequest request,
                                         @RequestBody User user,
-                                        @RequestParam String email,
+                                        @RequestParam String mail,
                                         @RequestParam String pass) {
         String result = "";
         HttpStatus httpStatus = null;
         try {
-            if (userServices.loadpassword(email).equals(pass)) {                                                         // check valid user
+            if (new BCryptPasswordEncoder().matches(pass,userServices.loadpassword(mail))) {// check valid user
                 result = jwtService.generateTokenLogin(user.getUsername());
                 httpStatus = HttpStatus.OK;
             } else {
@@ -74,6 +76,7 @@ public class UserRestController {
         } catch (Exception ex) {
             result = "Server Error";
             httpStatus = HttpStatus.INTERNAL_SERVER_ERROR;
+            System.err.println(ex.getMessage());            // Debug
         }
         return new ResponseEntity<String>(result, httpStatus);
     }
