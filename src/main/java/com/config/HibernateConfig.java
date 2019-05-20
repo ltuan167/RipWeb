@@ -24,9 +24,6 @@ public class HibernateConfig {
 	@Autowired
 	private Environment env;
 
-//	@Autowired
-//	private ApplicationContext context;
-
 	@Bean
 	public LocalSessionFactoryBean sessionFactory() {
 		LocalSessionFactoryBean factoryBean = new LocalSessionFactoryBean();

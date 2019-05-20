@@ -12,13 +12,13 @@ public class AppInitializer extends AbstractAnnotationConfigDispatcherServletIni
 
 	@Override
 	protected Class<?>[] getServletConfigClasses() {
-		System.out.println("[INITIALIZER] Get getServletConfigClasses");
+		System.out.println("[INITIALIZER] Get Servlet Config Classes");
 		return new Class[] { WebMvcConfig.class };
 	}
 
 	@Override
 	protected String[] getServletMappings() {
-		System.out.println("[INITIALIZER] Get getServletMappings");
+		System.out.println("[INITIALIZER] Get Servlet Mappings");
 		return new String[] { "/" };
 	}
 }
