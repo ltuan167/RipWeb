@@ -2,16 +2,17 @@ package com.manager;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 
 public class GameManager {
 
-	private static ArrayList<Game> games = new ArrayList<>();
+	private static List<Game> games = Collections.synchronizedList(new ArrayList<Game>());
 
-	public static Game createNewGame(String questionCollectionId) {
+	public static Integer createNewGame(Integer questionCollectionId) {
 		Game newGame = new Game();
 		games.add(newGame);
-		return newGame;
+		return newGame.getPIN();
 	}
 
 	public static int getPIN() {
@@ -19,13 +20,15 @@ public class GameManager {
 	}
 
 	public static boolean joinGame(String sessionId, Integer gamePIN) {
-		Collections.sort(games);
-		int gameFoundIdx = Collections.binarySearch(games, new Game(gamePIN));
-		if (gameFoundIdx >= 0) {
-			Game game2join = games.get(gameFoundIdx);
-			return game2join.join(sessionId);
+		synchronized (games) {
+			Collections.sort(games);
+			int gameFoundIdx = Collections.binarySearch(games, new Game(gamePIN));
+			if (gameFoundIdx >= 0) {
+				Game game2join = games.get(gameFoundIdx);
+				return game2join.join(sessionId);
+			}
+			return false;
 		}
-		return false;
 	}
 
 }

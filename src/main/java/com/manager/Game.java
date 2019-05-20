@@ -47,6 +47,9 @@ public class Game implements Comparable<Game> {
 		}
 	}
 
+	public Integer getPIN() { return PIN; }
+	public void setPIN(Integer PIN) { this.PIN = PIN; }
+
 	@Override
 	public int compareTo(Game o) {
 		return this.PIN.compareTo(o.PIN);

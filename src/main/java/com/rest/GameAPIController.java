@@ -1,5 +1,6 @@
 package com.rest;
 
+import com.manager.GameManager;
 import com.model.GameCommandMessage;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,12 +13,21 @@ public class GameAPIController {
 		return "Welcome to GAME APIs!";
 	}
 
+	@PostMapping(value = "/create", produces = "application/json")
+	public GameCommandMessage createNewGame(@RequestParam int questionCollectionId) {
+		GameCommandMessage createResponse = new GameCommandMessage();
+		Integer createdGamePIN = GameManager.createNewGame(questionCollectionId);
+		createResponse.setType(GameCommandMessage.GameCommandType.GAME_CREATED);
+		createResponse.setContent(String.valueOf(createdGamePIN));
+		return createResponse;
+	}
+
 	@PostMapping(value = "/join", produces = "application/json")
-	public GameCommandMessage getGame(@RequestParam int gamePIN) {
-		GameCommandMessage command = new GameCommandMessage();
-		command.setType(GameCommandMessage.GameCommandType.BEGIN_GAME);
-		command.setContent("Hello to game #"+gamePIN);
-		return command;
+	public GameCommandMessage joinGame(@RequestParam int gamePIN) {
+		GameCommandMessage joinResponse = new GameCommandMessage();
+		joinResponse.setType(GameCommandMessage.GameCommandType.BEGIN_GAME);
+		joinResponse.setContent("Hello to game #"+gamePIN);
+		return joinResponse;
 	}
 
 }
