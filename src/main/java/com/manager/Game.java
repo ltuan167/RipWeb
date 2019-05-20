@@ -19,7 +19,7 @@ public class Game implements Comparable<Game> {
 	private ArrayList<Player> players = new ArrayList<>();
 	private ArrayList<QuestionCollection> questions = new ArrayList<>();
 
-	public Game() { new Game(GameManager.getPIN()); }
+	public Game() { this(GameManager.getPIN()); }
 	public Game(Integer gamePIN) {
 		this.PIN = gamePIN;
 		gameWsTopic = TOPIC_PREFIX + gamePIN;
@@ -33,6 +33,7 @@ public class Game implements Comparable<Game> {
 			is_began == false) {    // game was not began
 //			String topic = "/topic";
 //			msg.convertAndSend("/topic/");
+			System.out.println("[GAME #" + PIN + "] Player sessionId: " + sessionId + " joined!");
 			return players.add(newPlayer);
 		}
 		return false;

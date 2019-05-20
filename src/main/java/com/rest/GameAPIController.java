@@ -4,6 +4,8 @@ import com.manager.GameManager;
 import com.model.GameCommandMessage;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+
 @RestController
 @RequestMapping("/1.0/game")
 public class GameAPIController {
@@ -23,10 +25,15 @@ public class GameAPIController {
 	}
 
 	@PostMapping(value = "/join", produces = "application/json")
-	public GameCommandMessage joinGame(@RequestParam int gamePIN) {
+	public GameCommandMessage joinGame(@RequestParam int gamePIN, HttpServletRequest req) {
 		GameCommandMessage joinResponse = new GameCommandMessage();
-		joinResponse.setType(GameCommandMessage.GameCommandType.BEGIN_GAME);
-		joinResponse.setContent("Hello to game #"+gamePIN);
+//		if (req.getSession().getAttribute("isInGame") == null)
+		boolean joined = GameManager.joinGame(req.getSession().getId(), gamePIN);
+		if (joined) {
+			joinResponse.setType(GameCommandMessage.GameCommandType.JOIN_ACCEPTED);
+			joinResponse.setContent(String.valueOf(gamePIN));
+		} else
+			joinResponse.setType(GameCommandMessage.GameCommandType.JOIN_DENIED);
 		return joinResponse;
 	}
 

@@ -7,6 +7,7 @@ public class GameCommandMessage {
 	public enum GameCommandType {
 		GAME_CREATED,           // {type: "GAME_CREATED", content: "{GamePin}"}
 		JOIN_ACCEPTED,          // {type: "JOIN_ACCEPTED", content: "{playerList}"}
+		JOIN_DENIED,
 		BEGIN_GAME,             // {type: "BEGIN_GAME", content: ""}
 		SUBMIT_ACCEPTED,        // {type: "SUBMIT_ACCEPTED", content: ""} -> wait screen until NEXT_QUESTION command
 		NEXT_QUESTION,          // {type: "NEXT_QUESTION", content: "{#questions}"} -> show screen with button corresponding to number in content
