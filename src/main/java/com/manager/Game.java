@@ -11,6 +11,10 @@ public class Game implements Comparable<Game> {
 	@Autowired
 	public SimpMessageSendingOperations msg;
 
+	public static final String PLAYER_EXISTED = "Player is existed!";
+	public static final String GAME_STARTED = "Game is already started!";
+	public static final String OK = "OK";
+
 	private static final String TOPIC_PREFIX = "/game/";
 	private String gameWsTopic;
 
@@ -32,14 +36,28 @@ public class Game implements Comparable<Game> {
 		Player newPlayer = new Player(sessionId, nickname);
 		int foundPlayerIdx = Collections.binarySearch(players, newPlayer);
 		if (foundPlayerIdx != -1)
-			return "Player is existed!";
+			return PLAYER_EXISTED;
 		if (is_began)
-			return "Game is already started!";
+			return GAME_STARTED;
 
 		players.add(newPlayer);
 		System.out.println("[GAME #" + PIN + "] " + newPlayer +" joined!");
-		return "OK";
+		return OK;
+	}
 
+	public String begin() {
+		// Broadcast notice begin game
+		return OK;
+	}
+
+	public String nextQuestion() {
+		// Broadcast notice next question
+		return OK;
+	}
+
+	public String end() {
+		// Broadcast notice end game
+		return OK;
 	}
 
 	private boolean broadcastMsg(Object msg2broadcast) {

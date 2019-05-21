@@ -10,21 +10,21 @@ import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerCo
 @EnableWebSocketMessageBroker
 public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
-	private static final String WS_ENDPOINT = "/gs-guide-websocket";
+	private static final String WS_ENDPOINT = "/ws";
 
 	@Override
 	public void configureMessageBroker(MessageBrokerRegistry config) {
 		config.enableSimpleBroker("/topic");
 //		config.enableSimpleBroker("/user");
 		config.setApplicationDestinationPrefixes("/app");
-		System.out.println("[WEBSOCKET] MessageBrokerRegistry: " + config);
+		System.out.println("[WEBSOCKET] Message Broker Registry: " + config);
 	}
 
 	@Override
 	public void registerStompEndpoints(StompEndpointRegistry registry) {
 		registry.addEndpoint(WS_ENDPOINT).withSockJS().setInterceptors(new HttpHandshakeInterceptor());
 		registry.addEndpoint(WS_ENDPOINT).addInterceptors(new HttpHandshakeInterceptor());
-		System.out.println("[WEBSOCKET] StompEndpointRegistry: " + registry);
+		System.out.println("[WEBSOCKET] Stomp Endpoint Registry: " + registry);
 	}
 
 }

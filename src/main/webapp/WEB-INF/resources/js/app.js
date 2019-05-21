@@ -19,7 +19,7 @@ function setConnected(connected) {
 }
 
 function connect() {
-    var socket = new SockJS('/gs-guide-websocket');
+    var socket = new SockJS('/ws');
     stompClient = Stomp.over(socket);
     let sessionId = $.cookie('sessionId');
     if (sessionId) {
