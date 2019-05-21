@@ -25,15 +25,16 @@ public class GameAPIController {
 	}
 
 	@PostMapping(value = "/join", produces = "application/json")
-	public GameCommandMessage joinGame(@RequestParam int gamePIN, HttpServletRequest req) {
+	public GameCommandMessage joinGame(@RequestParam int gamePIN, @RequestParam String nickname, HttpServletRequest req) {
 		GameCommandMessage joinResponse = new GameCommandMessage();
-//		if (req.getSession().getAttribute("isInGame") == null)
-		boolean joined = GameManager.joinGame(req.getSession().getId(), gamePIN);
-		if (joined) {
+		String joined = GameManager.joinGame(req.getSession().getId(), gamePIN, nickname);
+		if (joined != null && joined.equals("OK")) {
 			joinResponse.setType(GameCommandMessage.GameCommandType.JOIN_ACCEPTED);
 			joinResponse.setContent(String.valueOf(gamePIN));
-		} else
+		} else {
 			joinResponse.setType(GameCommandMessage.GameCommandType.JOIN_DENIED);
+			joinResponse.setContent(joined);
+		}
 		return joinResponse;
 	}
 

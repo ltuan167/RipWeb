@@ -6,7 +6,7 @@ public class AppInitializer extends AbstractAnnotationConfigDispatcherServletIni
 
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
-		System.out.println("[INITIALIZER] Get Root Config classes");
+		System.out.println("[INITIALIZER] Get Root Config Classes");
 		return new Class[] { WebMvcConfig.class };
 	}
 

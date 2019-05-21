@@ -27,7 +27,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.inMemoryAuthentication()
 				.passwordEncoder(passwordEncoder);
-		System.out.println("[SECURITY] AuthenticationManagerBuilder: " + auth);
+		System.out.println("[SECURITY] Authentication Manager Builder: " + auth);
 	}
 
 	@Override

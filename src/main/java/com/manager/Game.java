@@ -16,27 +16,30 @@ public class Game implements Comparable<Game> {
 
 	private Integer PIN;
 	private boolean is_began = false;
+	private int questionCollectionId;
 	private ArrayList<Player> players = new ArrayList<>();
 	private ArrayList<QuestionCollection> questions = new ArrayList<>();
 
-	public Game() { this(GameManager.getPIN()); }
-	public Game(Integer gamePIN) {
+	public Game(Integer questionCollectionId) { this(GameManager.generatePIN(), questionCollectionId); }
+	public Game(Integer gamePIN, Integer questionCollectionId) {
 		this.PIN = gamePIN;
-		gameWsTopic = TOPIC_PREFIX + gamePIN;
+		this.questionCollectionId = questionCollectionId;
+		this.gameWsTopic = TOPIC_PREFIX + gamePIN;
 	}
 
-	public boolean join(String sessionId) {
+	public String join(String sessionId, String nickname) {
 		Collections.sort(players);
-		Player newPlayer = new Player(sessionId);
+		Player newPlayer = new Player(sessionId, nickname);
 		int foundPlayerIdx = Collections.binarySearch(players, newPlayer);
-		if (foundPlayerIdx == -1 && // player does not exist
-			is_began == false) {    // game was not began
-//			String topic = "/topic";
-//			msg.convertAndSend("/topic/");
-			System.out.println("[GAME #" + PIN + "] Player sessionId: " + sessionId + " joined!");
-			return players.add(newPlayer);
-		}
-		return false;
+		if (foundPlayerIdx != -1)
+			return "Player is existed!";
+		if (is_began)
+			return "Game is already started!";
+
+		players.add(newPlayer);
+		System.out.println("[GAME #" + PIN + "] " + newPlayer +" joined!");
+		return "OK";
+
 	}
 
 	private boolean broadcastMsg(Object msg2broadcast) {
@@ -54,6 +57,11 @@ public class Game implements Comparable<Game> {
 	@Override
 	public int compareTo(Game o) {
 		return this.PIN.compareTo(o.PIN);
+	}
+
+	@Override
+	public  String toString() {
+		return "Game: {gamePIN: " + PIN +", is_began: " + is_began + ", #players: " + players.size() + ", questionCollectionID: " + questionCollectionId + "}";
 	}
 
 }
