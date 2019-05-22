@@ -1,10 +1,13 @@
 package com.rest;
 
+import com.manager.Game;
 import com.manager.GameManager;
 import com.model.GameCommandMessage;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.awt.*;
 
 @RestController
 @RequestMapping("/1.0/game")
@@ -15,7 +18,7 @@ public class GameAPIController {
 		return "Welcome to GAME APIs!";
 	}
 
-	@PostMapping(value = "/create", produces = "application/json")
+	@PostMapping(value = "/create", produces = MediaType.APPLICATION_JSON_VALUE)
 	public GameCommandMessage createNewGame(@RequestParam int questionCollectionId) {
 		GameCommandMessage createResponse = new GameCommandMessage();
 		Integer createdGamePIN = GameManager.createNewGame(questionCollectionId);
@@ -24,11 +27,11 @@ public class GameAPIController {
 		return createResponse;
 	}
 
-	@PostMapping(value = "/join", produces = "application/json")
+	@PostMapping(value = "/join", produces = MediaType.APPLICATION_JSON_VALUE)
 	public GameCommandMessage joinGame(@RequestParam int gamePIN, @RequestParam String nickname, HttpServletRequest req) {
 		GameCommandMessage joinResponse = new GameCommandMessage();
 		String joined = GameManager.joinGame(req.getSession().getId(), gamePIN, nickname);
-		if (joined != null && joined.equals("OK")) {
+		if (joined != null && joined.equals(Game.OK)) {
 			joinResponse.setType(GameCommandMessage.GameCommandType.JOIN_ACCEPTED);
 			joinResponse.setContent(String.valueOf(gamePIN));
 		} else {

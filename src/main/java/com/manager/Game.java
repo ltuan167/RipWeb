@@ -1,5 +1,6 @@
 package com.manager;
 
+import com.model.GameCommandMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.simp.SimpMessageSendingOperations;
 
@@ -47,11 +48,17 @@ public class Game implements Comparable<Game> {
 
 	public String begin() {
 		// Broadcast notice begin game
+		GameCommandMessage beginGameCommand = new GameCommandMessage();
+		beginGameCommand.setType(GameCommandMessage.GameCommandType.BEGIN_GAME);
+		broadcastMsg(beginGameCommand);
 		return OK;
 	}
 
 	public String nextQuestion() {
 		// Broadcast notice next question
+		GameCommandMessage nextQuestionCommand = new GameCommandMessage();
+		nextQuestionCommand.setType(GameCommandMessage.GameCommandType.NEXT_QUESTION);
+		broadcastMsg(nextQuestionCommand);
 		return OK;
 	}
 

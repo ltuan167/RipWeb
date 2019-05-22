@@ -11,5 +11,10 @@ public class PlayzoneController {
     public String homepage() {
         return "playzone";
     }
+
+    @GetMapping("/rest")
+    public String testRest() {
+        return "testRest";
+    }
 }
 
