@@ -36,7 +36,7 @@ public class LoginController {
 				Cookie jwtCookie = new Cookie("jwt", jwtService.generateTokenLogin(email));
 				jwtCookie.setSecure(true);
 				res.addCookie(jwtCookie);
-				return "mainpage";
+				return "homepage";
 			} else {
 				model.addAttribute("msg","Wrong email or password");
 				return "login";

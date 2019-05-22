@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ABeeZee">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta">
     <link rel="stylesheet" href="resources/css/signup.css">
+    <link rel="icon" href="resources/icon/favicon.png">
 </head>
 
 <body>
