@@ -1,9 +1,6 @@
 package com.manager;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 /**
  * Singleton Games Manager
@@ -12,7 +9,9 @@ public class GameManager {
 
 	private static GameManager instance;
 
-	private List<Game> games = Collections.synchronizedList(new ArrayList<Game>());
+	private static List<Game> games = Collections.synchronizedList(new ArrayList<Game>());
+	private static Stack<Integer> availablePINs = new Stack<>();
+	private static int nextPIN = 1;
 
 	private GameManager() {}
 
@@ -27,20 +26,24 @@ public class GameManager {
 	 * @param questionCollectionId Question Collection ID
 	 * @return Created Game PIN
 	 */
-	public Integer createNewGame(Integer questionCollectionId) {
+	public synchronized Integer createNewGame(Integer questionCollectionId) {
 		Game newGame = new Game(questionCollectionId);
 		games.add(newGame);
-		synchronized (games) {
-			Collections.sort(games);
-		}
+		Collections.sort(games);
 		System.out.println("[GAME MANAGER] Created " + newGame);
 		return newGame.getPIN();
 	}
 
-	public boolean removeGame(Integer gamePIN) {
+	public synchronized boolean removeGame(Integer gamePIN) {
 		Game game2remove = new Game(gamePIN, -1);
+		int game2removeIdx = Collections.binarySearch(games, game2remove);
 		System.out.println("[GAME MANAGER] Removed " + game2remove);
-		return games.remove(game2remove);
+		Game removedGame = games.remove(game2removeIdx);
+		if (removedGame != null) {
+			availablePINs.push(removedGame.getPIN());
+			return true;
+		}
+		return false;
 	}
 
 	/**
@@ -48,14 +51,7 @@ public class GameManager {
 	 * @return Generated PIN
 	 */
 	public synchronized int generatePIN() {
-		if (games.size() > 1)
-			for (int i = 0; i < games.size()-1; i++) {
-				Game game1 = games.get(i);
-				Game game2 = games.get(i+1);
-				if (game2.getPIN()-game1.getPIN() > 1)
-					return game1.getPIN() + 1;
-			}
-		return games.size() + 1;
+		return availablePINs.isEmpty() ? nextPIN++ : availablePINs.pop();
 	}
 
 	/**
@@ -65,15 +61,13 @@ public class GameManager {
 	 * @param nickname Player nickname
 	 * @return GamePIN if successfully
 	 */
-	public String joinGame(String sessionId, Integer gamePIN, String nickname) {
-		synchronized (games) {
-			int gameFoundIdx = Collections.binarySearch(games, new Game(gamePIN, -1));
-			if (gameFoundIdx >= 0) {    // Found game
-				Game game2join = games.get(gameFoundIdx);
-				return game2join.join(sessionId, nickname);   // return true if joined to game
-			}
-			return "Does not found Game PIN!";
+	public synchronized String joinGame(String sessionId, Integer gamePIN, String nickname) {
+		int gameFoundIdx = Collections.binarySearch(games, new Game(gamePIN, -1));
+		if (gameFoundIdx >= 0) {    // Found game
+			Game game2join = games.get(gameFoundIdx);
+			return game2join.join(sessionId, nickname);   // return true if joined to game
 		}
+		return "Does not found Game PIN!";
 	}
 
 }
