@@ -1,7 +1,12 @@
 package com.entities;
 
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "User", catalog = "spring_security",
@@ -29,13 +34,22 @@ public class User {
 
 	public User() {}
 
+	private String[] roles;
+
+	public String[] getRoles() {
+		return roles;
+	}
+	public void setRoles(String[] roles) {
+		this.roles = roles;
+	}
+
 	public int getId() { return id;}
 	public void setId(int id) {this.id = id;}
 
 	public String getEmail() { return email; }
 	public void setEmail(String email) { this.email = email; }
 
-	public String getNickname() { return nickname; }
+	public String getUsername() { return nickname; }
 	public void setNickname(String username) { this.nickname = username; }
 
 	public String getPassword() { return password; }
@@ -46,5 +60,13 @@ public class User {
 
 	public Date getDob() { return dob; }
 	public void setDob(Date dob) { this.dob = dob; }
+
+	public List<GrantedAuthority> getAuthorities() {
+		List<GrantedAuthority> authorities = new ArrayList<>();
+		for (String role : roles) {
+			authorities.add(new SimpleGrantedAuthority(role));
+		}
+		return authorities;
+	}
 
 }

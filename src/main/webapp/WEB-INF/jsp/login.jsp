@@ -13,19 +13,30 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Sign in bootrap</title>
+    <title>RIPWEB! Login</title>
     <link rel="stylesheet" href="resources/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ABeeZee">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya+Sans">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta">
     <link rel="stylesheet" href="resources/css/login.css">
+    <link rel="icon" href="resources/icon/favicon.png">
 </head>
 <body style="background-color: rgb(255,255,255);">
 <div class="text-center d-block register-photo" style="margin: auto;padding: 40px 10px 10px;height: 1080px;width: auto;">
     <div class="form-container">
         <div class="image-holder" style="background-image: url(&quot;resources/img/login.png&quot;);background-position: center;"></div>
         <form method="post" action="login">
-            <h2 class="text-center" style="font-size: 60px;margin: 0px 0px 10px;font-family: Allerta, sans-serif;"><strong>Hello</strong></h2>
+            <h2 class="text-center" style="font-size: 60px;margin: 0px 0px 10px;font-family: Allerta, sans-serif;"><strong>
+<%--                <c:choose>--%>
+<%--                    <c:when test="${msg}">--%>
+<%--                        ${msg}--%>
+<%--                    </c:when>--%>
+<%--                    <c:otherwise>--%>
+<%--                        Hello--%>
+<%--                    </c:otherwise>--%>
+<%--                </c:choose>--%>
+                ${msg}
+            </strong></h2>
             <p class="text-center" style="margin: 0px 0px 40px;font-family: ABeeZee, sans-serif;font-size: 19px;"><strong>Login to your <em>RIPWEB!</em> account to get back your works</strong></p>
             <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email"></div>
             <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password"></div>

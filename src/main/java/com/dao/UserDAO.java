@@ -2,6 +2,7 @@ package com.dao;
 
 import com.config.WebSecurityConfig;
 import com.entities.User;
+import org.apache.commons.lang3.StringUtils;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -37,17 +38,26 @@ public class UserDAO {
 //		Session session = this.sessionFactory.getCurrentSession();
 //		session.remove(user);
 //	}
-	public List<User> findValidUser(final String email) {
+	public String loadpassword(final String email) {
 		Session session = this.sessionFactory.getCurrentSession();
+		Transaction tx = session.beginTransaction();
 		String hql = "SELECT password FROM User WHERE email='"+email+"'";
-		return  session.createNativeQuery(hql).getResultList();
+		String userpass = (String) session.createSQLQuery(hql).getResultList().get(0);
+		tx.commit();
+		return userpass;
 	}
+
+	public List<User> loadUserByEmail(final String email) {
+		Session session = this.sessionFactory.getCurrentSession();
+		String hql = "SELECT * FROM User WHERE email='"+email+"'";
+		return session.createNativeQuery(hql).getResultList();
+	}
+
 	public Integer registerNewUser (final String nickname,
 									final String email,
 									final String psw) {
-		Transaction tx = null;
 		Session session = this.sessionFactory.getCurrentSession();
-		tx = session.beginTransaction();
+		Transaction tx = session.beginTransaction();
 		String hql = "INSERT INTO User(nickname, email, password) VALUE (?,?,?)";
 		Integer i =  session.createSQLQuery(hql).
 					 setParameter(1, nickname).
