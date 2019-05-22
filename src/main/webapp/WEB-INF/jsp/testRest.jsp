@@ -44,6 +44,16 @@
                 });
             </script>
         </tr>
+        <tr>
+            <td>/1.0/game/remove</td>
+            <td>gamePIN<input type="number" id="gamePIN1" value="1"></td>
+            <td><button id="removeGame">Remove Game</button></td>
+            <script>
+                $("#removeGame").click(() => {
+                    postRest("http://localhost/1.0/game/remove?gamePIN="+$("#gamePIN1").val(), null);
+                });
+            </script>
+        </tr>
     </table>
 
     <script>

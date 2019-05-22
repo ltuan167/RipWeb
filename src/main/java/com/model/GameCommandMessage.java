@@ -11,7 +11,9 @@ public class GameCommandMessage {
 		BEGIN_GAME,             // {type: "BEGIN_GAME", content: ""}
 		SUBMIT_ACCEPTED,        // {type: "SUBMIT_ACCEPTED", content: ""} -> wait screen until NEXT_QUESTION command
 		NEXT_QUESTION,          // {type: "NEXT_QUESTION", content: "{#questions}"} -> show screen with button corresponding to number in content
-		END_GAME                // {type: "END_GAME", content: ""} -> Just notice for JS to end the game (not a name of the move)
+		END_GAME,               // {type: "END_GAME", content: ""} -> Just notice for JS to end the game (not a name of the move)
+		GAME_REMOVED,
+		REQUEST_ERROR
 	}
 
 	public GameCommandType getType() {

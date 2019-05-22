@@ -10,6 +10,8 @@ import java.util.List;
  */
 public class GameManager {
 
+	
+
 	private static List<Game> games = Collections.synchronizedList(new ArrayList<Game>());
 
 	/**
@@ -27,11 +29,25 @@ public class GameManager {
 		return newGame.getPIN();
 	}
 
+	public static boolean removeGame(Integer gamePIN) {
+		Game game2remove = new Game(gamePIN, -1);
+		System.out.println("[GAME MANAGER] Removed " + game2remove);
+		return games.remove(game2remove);
+	}
+
+	private static boolean is_generating = false;
 	/**
 	 * Generate PIN for new Game
 	 * @return Generated PIN
 	 */
 	public static int generatePIN() {
+		if (games.size() > 1)
+			for (int i = 0; i < games.size()-1; i++) {
+				Game game1 = games.get(i);
+				Game game2 = games.get(i+1);
+				if (game2.getPIN()-game1.getPIN() > 1)
+					return game1.getPIN() + 1;
+			}
 		return games.size() + 1;
 	}
 

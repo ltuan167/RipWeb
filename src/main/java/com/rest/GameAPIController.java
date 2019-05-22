@@ -7,6 +7,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.awt.*;
 
 @RestController
@@ -39,6 +40,20 @@ public class GameAPIController {
 			joinResponse.setContent(joined);
 		}
 		return joinResponse;
+	}
+
+	@PostMapping(value = "/remove", produces = MediaType.APPLICATION_JSON_VALUE)
+	public GameCommandMessage removeGame(@RequestParam int gamePIN, HttpServletRequest req, HttpServletResponse res) {
+		GameCommandMessage removeResponse = new GameCommandMessage();
+		boolean removed = GameManager.removeGame(gamePIN);
+		if (removed) {
+			removeResponse.setType(GameCommandMessage.GameCommandType.GAME_REMOVED);
+			removeResponse.setContent(Game.OK);
+		} else {
+			res.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+			removeResponse.setType(GameCommandMessage.GameCommandType.REQUEST_ERROR);
+		}
+		return removeResponse;
 	}
 
 }
