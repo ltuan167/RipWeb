@@ -10,16 +10,24 @@ import java.util.List;
  */
 public class GameManager {
 
-	
+	private static GameManager instance;
 
-	private static List<Game> games = Collections.synchronizedList(new ArrayList<Game>());
+	private List<Game> games = Collections.synchronizedList(new ArrayList<Game>());
+
+	private GameManager() {}
+
+	public static GameManager getInstance() {
+		if (instance == null)
+			instance = new GameManager();
+		return instance;
+	}
 
 	/**
 	 * Create new Game with question collection ID
 	 * @param questionCollectionId Question Collection ID
 	 * @return Created Game PIN
 	 */
-	public static Integer createNewGame(Integer questionCollectionId) {
+	public Integer createNewGame(Integer questionCollectionId) {
 		Game newGame = new Game(questionCollectionId);
 		games.add(newGame);
 		synchronized (games) {
@@ -29,18 +37,17 @@ public class GameManager {
 		return newGame.getPIN();
 	}
 
-	public static boolean removeGame(Integer gamePIN) {
+	public boolean removeGame(Integer gamePIN) {
 		Game game2remove = new Game(gamePIN, -1);
 		System.out.println("[GAME MANAGER] Removed " + game2remove);
 		return games.remove(game2remove);
 	}
 
-	private static boolean is_generating = false;
 	/**
 	 * Generate PIN for new Game
 	 * @return Generated PIN
 	 */
-	public static int generatePIN() {
+	public synchronized int generatePIN() {
 		if (games.size() > 1)
 			for (int i = 0; i < games.size()-1; i++) {
 				Game game1 = games.get(i);
@@ -58,7 +65,7 @@ public class GameManager {
 	 * @param nickname Player nickname
 	 * @return GamePIN if successfully
 	 */
-	public static String joinGame(String sessionId, Integer gamePIN, String nickname) {
+	public String joinGame(String sessionId, Integer gamePIN, String nickname) {
 		synchronized (games) {
 			int gameFoundIdx = Collections.binarySearch(games, new Game(gamePIN, -1));
 			if (gameFoundIdx >= 0) {    // Found game

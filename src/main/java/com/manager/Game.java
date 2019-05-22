@@ -25,7 +25,7 @@ public class Game implements Comparable<Game> {
 	private ArrayList<Player> players = new ArrayList<>();
 	private ArrayList<QuestionCollection> questions = new ArrayList<>();
 
-	public Game(Integer questionCollectionId) { this(GameManager.generatePIN(), questionCollectionId); }
+	public Game(Integer questionCollectionId) { this(GameManager.getInstance().generatePIN(), questionCollectionId); }
 	public Game(Integer gamePIN, Integer questionCollectionId) {
 		this.PIN = gamePIN;
 		this.questionCollectionId = questionCollectionId;

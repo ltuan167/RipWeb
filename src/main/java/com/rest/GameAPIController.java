@@ -22,7 +22,7 @@ public class GameAPIController {
 	@PostMapping(value = "/create", produces = MediaType.APPLICATION_JSON_VALUE)
 	public GameCommandMessage createNewGame(@RequestParam int questionCollectionId) {
 		GameCommandMessage createResponse = new GameCommandMessage();
-		Integer createdGamePIN = GameManager.createNewGame(questionCollectionId);
+		Integer createdGamePIN = GameManager.getInstance().createNewGame(questionCollectionId);
 		createResponse.setType(GameCommandMessage.GameCommandType.GAME_CREATED);
 		createResponse.setContent(String.valueOf(createdGamePIN));
 		return createResponse;
@@ -31,7 +31,7 @@ public class GameAPIController {
 	@PostMapping(value = "/join", produces = MediaType.APPLICATION_JSON_VALUE)
 	public GameCommandMessage joinGame(@RequestParam int gamePIN, @RequestParam String nickname, HttpServletRequest req) {
 		GameCommandMessage joinResponse = new GameCommandMessage();
-		String joined = GameManager.joinGame(req.getSession().getId(), gamePIN, nickname);
+		String joined = GameManager.getInstance().joinGame(req.getSession().getId(), gamePIN, nickname);
 		if (joined != null && joined.equals(Game.OK)) {
 			joinResponse.setType(GameCommandMessage.GameCommandType.JOIN_ACCEPTED);
 			joinResponse.setContent(String.valueOf(gamePIN));
@@ -45,7 +45,7 @@ public class GameAPIController {
 	@PostMapping(value = "/remove", produces = MediaType.APPLICATION_JSON_VALUE)
 	public GameCommandMessage removeGame(@RequestParam int gamePIN, HttpServletRequest req, HttpServletResponse res) {
 		GameCommandMessage removeResponse = new GameCommandMessage();
-		boolean removed = GameManager.removeGame(gamePIN);
+		boolean removed = GameManager.getInstance().removeGame(gamePIN);
 		if (removed) {
 			removeResponse.setType(GameCommandMessage.GameCommandType.GAME_REMOVED);
 			removeResponse.setContent(Game.OK);
