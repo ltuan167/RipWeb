@@ -25,7 +25,13 @@ public class Game implements Comparable<Game> {
 	private ArrayList<Player> players = new ArrayList<>();
 	private ArrayList<QuestionCollection> questions = new ArrayList<>();
 
-	public Game(Integer questionCollectionId) { this(GameManager.getInstance().generatePIN(), questionCollectionId); }
+	public Game(Integer questionCollectionId) {
+		this(-1, questionCollectionId);
+		int generatedPIN = GameManager.getInstance().generatePIN();
+		if (generatedPIN <= GameManager.MAX_GAME_COUNT)  // out of Game slot
+			this.PIN = generatedPIN;
+	}
+
 	public Game(Integer gamePIN, Integer questionCollectionId) {
 		this.PIN = gamePIN;
 		this.questionCollectionId = questionCollectionId;
@@ -64,6 +70,9 @@ public class Game implements Comparable<Game> {
 
 	public String end() {
 		// Broadcast notice end game
+		GameCommandMessage endCommand = new GameCommandMessage();
+		endCommand.setType(GameCommandMessage.GameCommandType.END_GAME);
+		broadcastMsg(endCommand);
 		return OK;
 	}
 

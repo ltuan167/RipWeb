@@ -12,6 +12,7 @@ public class GameManager {
 	private static List<Game> games = Collections.synchronizedList(new ArrayList<Game>());
 	private static Stack<Integer> availablePINs = new Stack<>();
 	private static int nextPIN = 1;
+	public static final int MAX_GAME_COUNT = 100000;
 
 	private GameManager() {}
 
@@ -28,10 +29,13 @@ public class GameManager {
 	 */
 	public synchronized Integer createNewGame(Integer questionCollectionId) {
 		Game newGame = new Game(questionCollectionId);
-		games.add(newGame);
-		Collections.sort(games);
-		System.out.println("[GAME MANAGER] Created " + newGame);
-		return newGame.getPIN();
+		int newGamePIN = newGame.getPIN();
+		if (newGamePIN > 0) {
+			games.add(newGame);
+			Collections.sort(games);
+			System.out.println("[GAME MANAGER] Created " + newGame);
+		}
+		return newGamePIN;
 	}
 
 	public synchronized boolean removeGame(Integer gamePIN) {
