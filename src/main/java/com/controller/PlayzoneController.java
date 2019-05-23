@@ -7,14 +7,21 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class PlayzoneController {
+
     @GetMapping("/playzone")
     public String homepage() {
         return "playzone";
+    }
+
+    @GetMapping("/play")
+    public String testPlay() {
+        return "play";
     }
 
     @GetMapping("/rest")
     public String testRest() {
         return "testRest";
     }
+
 }
 
