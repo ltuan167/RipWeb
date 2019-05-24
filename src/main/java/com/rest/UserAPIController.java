@@ -1,12 +1,20 @@
 package com.rest;
 
 import com.JWT.JwtService;
+import com.entities.User;
 import com.services.UserServices;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 @RestController
 @RequestMapping("/1.0/user")
+
 public class UserAPIController {
 
     @Autowired
@@ -47,5 +55,4 @@ public class UserAPIController {
 //        userServices.delete(id);
 //        return new ResponseEntity<String>("Deleted!", HttpStatus.OK);
 //    }
-
 }
