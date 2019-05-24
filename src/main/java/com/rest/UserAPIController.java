@@ -17,6 +17,10 @@ import javax.servlet.http.HttpServletResponse;
 
 public class UserAPIController {
 
+    @GetMapping()
+    public String greeting() {
+        return "Hello from API";
+    }
     @Autowired
     private JwtService jwtService;
 
