@@ -47,6 +47,15 @@ public class UserDAO {
 		return userpass;
 	}
 
+	public String loadnickname(final String email) {
+		Session session = this.sessionFactory.getCurrentSession();
+		Transaction tx = session.beginTransaction();
+		String hql = "SELECT nickname FROM User WHERE email='"+email+"'";
+		String nickname = (String) session.createSQLQuery(hql).getResultList().get(0);
+		tx.commit();
+		return nickname;
+	}
+
 	public List<User> loadUserByEmail(final String email) {
 		Session session = this.sessionFactory.getCurrentSession();
 		String hql = "SELECT * FROM User WHERE email='"+email+"'";

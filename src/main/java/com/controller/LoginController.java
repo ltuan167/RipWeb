@@ -1,15 +1,11 @@
 package com.controller;
 
 import com.JWT.JwtService;
-import com.entities.User;
 import com.services.UserServices;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.Cookie;
@@ -31,11 +27,12 @@ public class LoginController {
 	                    HttpServletResponse res,
 	                    final Model model) {
 		try {
-			//NEED REMOVE COOKIE FIRST
-			if (new BCryptPasswordEncoder().matches(password, userServices.loadpassword(email))) { // check valid user
-				Cookie jwtCookie = new Cookie("jwt", jwtService.generateTokenLogin(email));
-				jwtCookie.setSecure(true);
+			if (new BCryptPasswordEncoder().matches(password, userServices.loadPassword(email))) { // check valid user
+				String token = jwtService.generateTokenLogin(email);
+				Cookie jwtCookie = new Cookie("jwt", token);
+//				jwtCookie.setSecure(true);
 				res.addCookie(jwtCookie);
+				model.addAttribute("nickname",userServices.loadNickname(email));
 				return "homepage";
 			} else {
 				model.addAttribute("msg","Wrong email or password");
