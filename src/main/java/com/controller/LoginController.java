@@ -39,7 +39,7 @@ public class LoginController {
 				return "login";
 			}
 		} catch (Exception ex) {
-			model.addAttribute("msg","Wrong email or password");
+//			model.addAttribute("msg","Wrong email or password");
 			System.err.println(ex.getMessage());  // Debug
 			return "login";
 		}

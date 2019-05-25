@@ -13,7 +13,7 @@
     <title>RIPWEB!</title>
 </head>
 <body>
-    <h2>Welcome to ${nickname} RIPWEB!</h2>
+    <strong>Welcome to ${nickname} RIPWEB!</strong>
 </body>
 </html>
 
