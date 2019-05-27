@@ -5,9 +5,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class PlayzoneController {
-    @GetMapping("/playzone")
+    @GetMapping("/play")
     public String homepage() {
-        return "playzone";
+        return "play";
     }
 }
 

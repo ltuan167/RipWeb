@@ -8,6 +8,7 @@
     <title>Play RipWeb! - Enter game PIN here</title>
     <link rel="stylesheet" href="resources/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="resources/css/playzone.css">
+    <link rel="stylesheet" href="resources/css/button.css">
 </head>
 
 <body>
@@ -30,8 +31,41 @@
 
 <div class="loader" loader="" style="display: none;"></div>
 
-<iframe id="gameBlockIframe" style="display: block;" class="game-block-iframe" sandbox="allow-scripts allow-same-origin" scrolling="no" src="button">
-</iframe>
+<div id="gameBlockIframe" style="display: block;" class="game-block-iframe"scrolling="no">
+    <div id="app">
+        <main class="controller-layout grid full-height">
+            <div class="quiz-board">
+                <button style="max-width:100%;max-height:100%;" type="button" role="button" data-functional-selector="answer answer-0" class="card-button card-button--triangle" aria-label="Answer 1">
+                    <span class="icon card-button__card-icon">
+                        <svg class="icon__svg" data-functional-selector="icon" focusable="false">
+                        </svg>
+                    </span>
+                </button>
+                <button style="max-width:100%;max-height:100%;" type="button" role="button" data-functional-selector="answer answer-1" class="card-button card-button--diamond" aria-label="Answer 2">
+                    <span class="icon card-button__card-icon">
+                        <svg class="icon__svg" data-functional-selector="icon" focusable="false">
+
+                        </svg>
+                    </span>
+                </button>
+                <button style="max-width:100%;max-height:100%;" type="button" role="button" data-functional-selector="answer answer-2" class="card-button card-button--circle" aria-label="Answer 3">
+                    <span class="icon card-button__card-icon">
+                        <svg class="icon__svg" data-functional-selector="icon" focusable="false">
+
+                        </svg>
+                    </span>
+                </button>
+                <button style="max-width:100%;max-height:100%;" type="button" role="button" data-functional-selector="answer answer-3" class="card-button card-button--square" aria-label="Answer 4">
+                    <span class="icon card-button__card-icon">
+                        <svg class="icon__svg" data-functional-selector="icon" focusable="false">
+
+                        </svg>
+                    </span>
+                </button>
+            </div>
+        </main>
+    </div>
+</div>
 
 <!-- ngView: --><div id="mainView" ng-view="" class="ng-scope" style="height: auto;">
     <div class="status-bar status-bar--header game-block-status-bar--header ng-scope">
