@@ -1,9 +1,12 @@
 package com.manager;
 
+import java.util.ArrayList;
+
 public class QuestionCollection {
 
-	private String question;
-	private String img;
-	private String[] anwsers = new String[4];
+	private ArrayList<Question> questions = new ArrayList<>();
 
+	public QuestionCollection(int questionCollectionId) {
+
+	}
 }

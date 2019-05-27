@@ -23,7 +23,7 @@ public class Game implements Comparable<Game> {
 	private boolean is_began = false;
 	private int questionCollectionId;
 	private ArrayList<Player> players = new ArrayList<>();
-	private ArrayList<QuestionCollection> questions = new ArrayList<>();
+	private ArrayList<Question> questions = new ArrayList<>();
 
 	public Game(Integer questionCollectionId) {
 		this(-1, questionCollectionId);
