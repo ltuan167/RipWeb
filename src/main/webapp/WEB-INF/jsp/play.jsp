@@ -49,7 +49,34 @@
     <script type="text/javascript" src="Mainpage_files/bootstrap.js"></script>
 </div>
 <div id="waitScreen">
-    Yeahh! Let's wait other players :)
+    <div style="height: 0; width: 0; position: absolute; visibility: hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink"><defs><filter x="-2.2%" y="-2.3%" width="104.4%" height="104.8%" filterUnits="objectBoundingBox" id="a"><feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset><symbol id="logo-shapes" viewBox="0 0 24 24"><ellipse cx="5.506" cy="18.966" rx="4.953" ry="4.953"></ellipse><path d="M12.005 5.902L17.873.033l5.869 5.869-5.869 5.868zm1.443 8.899h8.849v8.849h-8.849zm-2.584-4.977H.146l5.36-8.555z"></path></symbol></filter></defs></svg>
+    </div>
+
+    <div id="debug-info" debug-info="dev,test" debug-timestamp=""></div>
+    <dev-mode></dev-mode>
+
+    <div class="loader" loader="" style="display: none;"></div>
+    <iframe id="gameBlockIframe" style="display:none;" class="game-block-iframe" sandbox="allow-scripts allow-same-origin" scrolling="no">
+    </iframe>
+    <div id="mainView" ng-view="" class="ng-scope">
+        <div class="screen instructions-screen ng-scope" ios7lazyfix="">
+            <div class="status-bar status-bar--header ng-scope" ng-if="!isTeamMode">
+                <div class="status-bar__item status-bar__game-pin ng-binding">      PIN:      817387    </div>
+                <div class="status-bar__item status-bar__username ng-binding">      dep    </div>
+            </div>
+            <div class="screen__main instructions" ng-class="{'screen__main--instructions-team-mode': isTeamMode}">
+                <h1 class="ng-binding">      You're in!    </h1>
+                <h2 class="instructions__subheader ng-binding">      See your nickname onscreen?    </h2>
+                <ul class="players__members-list ng-hide" ng-show="isTeamMode">
+                </ul>
+            </div>
+            <div class="status-bar status-bar--footer ng-scope" ng-if="!isTeamMode">
+                <div class="status-bar__item status-bar__username ng-binding" data-functional-selector="cleaned-username">      dep    </div>  </div>
+        </div>
+    </div>
+
+    <div alerts=""></div>
 </div>
 <div id="playScreen">
     <div style="height: 0; width: 0; position: absolute; visibility: hidden">
@@ -194,7 +221,7 @@
         // if (showDiv)
         //     showDiv.style.display = "flex";
     }
-    showScreen("waitNextScreen");
+    showScreen("waitScreen");
 </script>
 
 </body>
