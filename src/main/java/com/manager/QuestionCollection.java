@@ -9,4 +9,5 @@ public class QuestionCollection {
 	public QuestionCollection(int questionCollectionId) {
 
 	}
+
 }
