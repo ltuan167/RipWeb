@@ -34,7 +34,7 @@
                                 <span class="ng-binding">              Kahoot!            </span>          </div>        </div>
                         <form ng-submit="joinSession(gameId)" class="ng-pristine ng-valid">
                             <input id="inputSession" ios7fix="" class="username ng-pristine ng-untouched ng-valid ng-empty" ng-class="{invalid: !gamePinValid}" placeholder="Game PIN" ng-model="gameId" type="tel" shake="badGameId" data-functional-selector="game-pin-input" aria-label="Game pin" ng-change="gameIdChanged()" ng-focus="gameIdFocused()" ng-blur="gameIdUnfocused()">
-                            <button type="submit" class="btn btn-greyscale join ng-binding" blocking="" data-functional-selector="join-button-game-pin">            Enter          </button>
+                            <button type="submit" class="btn btn-greyscale join ng-binding" blocking="" data-functional-selector="join-button-game-pin" onclick="">            Enter          </button>
                         </form>
                     </div>
                 </div>
@@ -221,7 +221,24 @@
         // if (showDiv)
         //     showDiv.style.display = "flex";
     }
+
     showScreen("waitScreen");
+
+    function getGamePin() {
+        var xhttp = new XMLHttpRequest();
+        var param ='/join';
+        xhttp.open("POST", "1.0/game", true);
+        xhttp.setRequestHeader('Content-type','application/json');
+        xhttp.onreadystatechange = function() {
+            console.log(xhttp.responseText);
+            alert(xhttp.responseText);
+        };
+        xhttp.send(param);
+        xhttp.onerror = function (e) {
+            console.error(xhttp.statusText);
+        };
+    }
+    getGamePin();
 </script>
 
 </body>
