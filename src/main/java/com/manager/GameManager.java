@@ -13,6 +13,7 @@ public class GameManager {
 	private static Stack<Integer> availablePINs = new Stack<>();
 	private static int nextPIN = 1;
 	public static final int MAX_GAME_COUNT = 100000;
+	public static final String notFoundGamePin = "Does not found Game PIN!";
 
 	private GameManager() {}
 
@@ -71,7 +72,7 @@ public class GameManager {
 			Game game2join = games.get(gameFoundIdx);
 			return game2join.join(sessionId, nickname);   // return true if joined to game
 		}
-		return "Does not found Game PIN!";
+		return notFoundGamePin;
 	}
 
 }

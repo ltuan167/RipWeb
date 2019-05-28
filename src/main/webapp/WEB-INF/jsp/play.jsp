@@ -32,10 +32,10 @@
                         <div class="logo-container">
                             <div class="logo center-block">
                                 <span class="ng-binding">              Kahoot!            </span>          </div>        </div>
-                        <form ng-submit="joinSession(gameId)" class="ng-pristine ng-valid">
-                            <input id="inputSession" ios7fix="" class="username ng-pristine ng-untouched ng-valid ng-empty" ng-class="{invalid: !gamePinValid}" placeholder="Game PIN" ng-model="gameId" type="tel" shake="badGameId" data-functional-selector="game-pin-input" aria-label="Game pin" ng-change="gameIdChanged()" ng-focus="gameIdFocused()" ng-blur="gameIdUnfocused()">
-                            <button type="submit" class="btn btn-greyscale join ng-binding" blocking="" data-functional-selector="join-button-game-pin" onclick="">            Enter          </button>
-                        </form>
+<%--                        <form ng-submit="joinSession(gameId)" class="ng-pristine ng-valid"  >--%>
+                            <input name="inputGamePin" id="inputSession" ios7fix="" class="username ng-pristine ng-untouched ng-valid ng-empty" ng-class="{invalid: !gamePinValid}" placeholder="Game PIN" ng-model="gameId" type="tel" shake="badGameId" data-functional-selector="game-pin-input" aria-label="Game pin" ng-change="gameIdChanged()" ng-focus="gameIdFocused()" ng-blur="gameIdUnfocused()">
+                            <button onclick="changeStage()" type="button" class="btn btn-greyscale join ng-binding" blocking="" data-functional-selector="join-button-game-pin">            Enter          </button>
+<%--                        </form>--%>
                     </div>
                 </div>
                 <div class="vertical-alignment-wrapper__bottom">
@@ -222,23 +222,33 @@
         //     showDiv.style.display = "flex";
     }
 
-    showScreen("waitScreen");
-
-    function getGamePin() {
+    showScreen("homeScreen");
+    function changeStage() {
+        var inputGamePin = document.getElementById('inputSession').value;
         var xhttp = new XMLHttpRequest();
-        var param ='/join';
-        xhttp.open("POST", "1.0/game", true);
-        xhttp.setRequestHeader('Content-type','application/json');
+        // var param ="?gamePIN=10&nickname=test";
+        xhttp.open("POST", "1.0/game/join?gamePIN=" + inputGamePin + "&nickname=test", true);
+        xhttp.setRequestHeader('Content-type','application/x-www-form-urlencoded');
         xhttp.onreadystatechange = function() {
-            console.log(xhttp.responseText);
-            alert(xhttp.responseText);
+            if (xhttp.readyState == "4") {
+                var res = JSON.parse(xhttp.response);
+                console.log("Type: " + res.type);
+                if (res.content == "Does not found Game PIN!") {
+                    console.log("Does not found Game PIN!");
+                    console.log("Input game pin nef: " + inputGamePin); // Debug
+                    alert("Does not found GamePin!");
+                } else {
+                    console.log("Game PIN: " + res.content);
+                    showScreen("waitScreen");
+                }
+            }
         };
-        xhttp.send(param);
+        xhttp.send();
         xhttp.onerror = function (e) {
             console.error(xhttp.statusText);
         };
     }
-    getGamePin();
+    // changeStage();
 </script>
 
 </body>
