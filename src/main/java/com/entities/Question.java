@@ -1,11 +1,17 @@
 package com.entities;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.http.codec.json.Jackson2JsonEncoder;
+import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
+
 import javax.persistence.*;
-import java.io.Serializable;
 
 @Entity
 @Table(name = "Question")
 public class Question {
+
+	private static final int DEFAULT_TIME = 100; //s
 
 	@Id
 	@Column
@@ -36,5 +42,73 @@ public class Question {
 	private String answer3;
 	@Column(name = "answer4", nullable = true, length = 45)
 	private String answer4;
+
+	public Question() {}
+
+//	public Question(String question, int correctAnswer, String answer1, String answer2, String answer3, String answer4, int time) {
+//		this(question, null, correctAnswer, answer1, answer2, answer3, answer4, time);
+//	}
+//
+//	public Question(String question, String image, int correctAnswer, String answer1, String answer2, String answer3, String answer4) {
+//		this(question, image, correctAnswer, answer1, answer2, answer3, answer4, DEFAULT_TIME);
+//	}
+
+//	public Question(String question, String image, int correctAnswer, String answer1, String answer2, String answer3, String answer4, int time) {
+////		this.question = question;
+////		this.image = image;
+////		this.correctAnswer = correctAnswer;
+////		this.answer1 = answer1;
+////		this.answer2 = answer2;
+////		this.answer3 = answer3;
+////		this.answer4 = answer4;
+////		this.time = time;
+////	}
+
+	public int getId() {return id;}
+	public void setId(int id) {this.id = id;}
+
+	public QuestionCollection getQuestionCollection_ID() {return questionCollection_ID;}
+	public void setQuestionCollection_ID(QuestionCollection questionCollection_ID) {this.questionCollection_ID = questionCollection_ID;}
+
+	public String getQuestion() {return question;}
+	public void setQuestion(String question) {this.question = question;}
+
+	public String getImage() {return image;}
+	public void setImage(String image) {this.image = image;}
+
+	public int getCorrectAnswer() {return correctAnswer;}
+	public void setCorrectAnswer(int correctAnswer) {this.correctAnswer = correctAnswer;}
+
+	public int getTime() {return time;}
+	public void setTime(int time) {this.time = time;}
+
+	public String getAnswer1() {return answer1;}
+	public void setAnswer1(String answer1) {this.answer1 = answer1;}
+	public String getAnswer2() {return answer2;}
+	public void setAnswer2(String answer2) {this.answer2 = answer2;}
+	public String getAnswer3() {return answer3;}
+	public void setAnswer3(String answer3) {this.answer3 = answer3;}
+	public String getAnswer4() {return answer4;}
+	public void setAnswer4(String answer4) {this.answer4 = answer4;}
+
+	@Override
+	public String toString() {
+//		ObjectMapper mapper = new ObjectMapper();
+////		Question question = super.clone();
+//		try {
+//			return mapper.writerWithDefaultPrettyPrinter().writeValueAsString(super.clone());
+//		} catch (JsonProcessingException e) {
+//			e.printStackTrace();
+//			return "Cannot processing exception";
+//		}
+////		} catch (CloneNotSupportedException e) {
+////			e.printStackTrace();
+////			return "Cannot clone";
+////		}
+		return String.format("{question: \"%s\", correctAnswer: \"%d\", image: \"%s\"\n" +
+				"answer1: \"%s\"\nanswer2: \"%s\"\nanswer3: \"%s\"\nanswer4: \"%s\"\n", this.question, this.correctAnswer, this.image, this.answer1, this.answer2, this.answer3, this.answer4);
+//		return this.question;
+
+	}
 
 }
