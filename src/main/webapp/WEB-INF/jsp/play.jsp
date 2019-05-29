@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="resources/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="resources/css/playzone.css">
     <link rel="stylesheet" href="resources/css/button.css">
+    <link rel="icon" href="resources/icon/favicon.png">
 </head>
 <body>
 <div id="pinScreen">
@@ -32,15 +33,9 @@
                         <div class="logo-container">
                             <div class="logo center-block">
                                 <span class="ng-binding">              RipWeb!            </span>          </div>        </div>
-                        <form ng-submit="joinSession(gameId)" class="ng-pristine ng-valid">
-                            <input id="inputSession" ios7fix="" class="username ng-pristine ng-untouched ng-valid ng-empty" ng-class="{invalid: !gamePinValid}" placeholder="Game PIN" ng-model="gameId" type="tel" shake="badGameId" data-functional-selector="game-pin-input" aria-label="Game pin" ng-change="gameIdChanged()" ng-focus="gameIdFocused()" ng-blur="gameIdUnfocused()">
-                            <button type="submit" class="btn btn-greyscale join ng-binding" blocking="" data-functional-selector="join-button-game-pin">            Enter          </button>
-                        </form>
-                                <span class="ng-binding">              Kahoot!            </span>          </div>        </div>
-<%--                        <form ng-submit="joinSession(gameId)" class="ng-pristine ng-valid"  >--%>
-                            <input name="inputGamePin" id="inputSession" ios7fix="" class="username ng-pristine ng-untouched ng-valid ng-empty" ng-class="{invalid: !gamePinValid}" placeholder="Game PIN" ng-model="gameId" type="tel" shake="badGameId" data-functional-selector="game-pin-input" aria-label="Game pin" ng-change="gameIdChanged()" ng-focus="gameIdFocused()" ng-blur="gameIdUnfocused()">
-                            <button onclick="changeStage()" type="button" class="btn btn-greyscale join ng-binding" blocking="" data-functional-selector="join-button-game-pin">            Enter          </button>
-<%--                        </form>--%>
+                            <input id="inputGamePin" ios7fix="" class="username ng-pristine ng-untouched ng-valid ng-empty" ng-class="{invalid: !gamePinValid}" placeholder="Game PIN" ng-model="gameId" type="tel" shake="badGameId" data-functional-selector="game-pin-input" aria-label="Game pin" ng-change="gameIdChanged()" ng-focus="gameIdFocused()" ng-blur="gameIdUnfocused()">
+                            <input id="inputNickName" ios7fix="" class="username ng-pristine ng-untouched ng-valid ng-empty" ng-class="{invalid: !gamePinValid}" placeholder="Nick name" ng-model="gameId" type="tel" shake="badGameId" data-functional-selector="game-pin-input" aria-label="Game pin" ng-change="gameIdChanged()" ng-focus="gameIdFocused()" ng-blur="gameIdUnfocused()">
+                            <button onclick="changeStage()" type="submit" class="btn btn-greyscale join ng-binding" blocking="" data-functional-selector="join-button-game-pin">            Enter          </button>
                     </div>
                 </div>
                 <div class="vertical-alignment-wrapper__bottom">
@@ -234,12 +229,13 @@
     }
     showScreen("pinScreen");
 
-    showScreen("homeScreen");
+    // showScreen("homeScreen");
     function changeStage() {
-        var inputGamePin = document.getElementById('inputSession').value;
+        var inputGamePin = document.getElementById('inputGamePin').value;
+        var inputNickname = document.getElementById('inputNickName').value;
         var xhttp = new XMLHttpRequest();
         // var param ="?gamePIN=10&nickname=test";
-        xhttp.open("POST", "1.0/game/join?gamePIN=" + inputGamePin + "&nickname=test", true);
+        xhttp.open("POST", "1.0/game/join?gamePIN=" + inputGamePin + "&nickname=" + inputNickname, true);
         xhttp.setRequestHeader('Content-type','application/x-www-form-urlencoded');
         xhttp.onreadystatechange = function() {
             if (xhttp.readyState == "4") {
@@ -248,9 +244,10 @@
                 if (res.content == "Does not found Game PIN!") {
                     console.log("Does not found Game PIN!");
                     console.log("Input game pin nef: " + inputGamePin); // Debug
-                    alert("Does not found GamePin!");
+                    alert(res.content);
                 } else {
-                    console.log("Game PIN: " + res.content);
+                    console.log("Game PIN: " + res.content);            //Debug
+                    console.log("Input nick name: "+ inputNickname);
                     showScreen("waitScreen");
                 }
             }
