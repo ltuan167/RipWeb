@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="resources/css/button.css">
 </head>
 <body>
-<div id="homeScreen">
+<div id="pinScreen">
     <div style="height: 0; width: 0; position: absolute; visibility: hidden">
         <!-- <svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink"><defs><filter x="-2.2%" y="-2.3%" width="104.4%" height="104.8%" filterUnits="objectBoundingBox" id="a"><feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset><symbol id="logo-shapes" viewBox="0 0 24 24"><ellipse cx="5.506" cy="18.966" rx="4.953" ry="4.953"></ellipse><path d="M12.005 5.902L17.873.033l5.869 5.869-5.869 5.868zm1.443 8.899h8.849v8.849h-8.849zm-2.584-4.977H.146l5.36-8.555z"></path></symbol></filter></defs></svg> -->
     </div>
@@ -31,6 +31,11 @@
                     <div>
                         <div class="logo-container">
                             <div class="logo center-block">
+                                <span class="ng-binding">              RipWeb!            </span>          </div>        </div>
+                        <form ng-submit="joinSession(gameId)" class="ng-pristine ng-valid">
+                            <input id="inputSession" ios7fix="" class="username ng-pristine ng-untouched ng-valid ng-empty" ng-class="{invalid: !gamePinValid}" placeholder="Game PIN" ng-model="gameId" type="tel" shake="badGameId" data-functional-selector="game-pin-input" aria-label="Game pin" ng-change="gameIdChanged()" ng-focus="gameIdFocused()" ng-blur="gameIdUnfocused()">
+                            <button type="submit" class="btn btn-greyscale join ng-binding" blocking="" data-functional-selector="join-button-game-pin">            Enter          </button>
+                        </form>
                                 <span class="ng-binding">              Kahoot!            </span>          </div>        </div>
 <%--                        <form ng-submit="joinSession(gameId)" class="ng-pristine ng-valid"  >--%>
                             <input name="inputGamePin" id="inputSession" ios7fix="" class="username ng-pristine ng-untouched ng-valid ng-empty" ng-class="{invalid: !gamePinValid}" placeholder="Game PIN" ng-model="gameId" type="tel" shake="badGameId" data-functional-selector="game-pin-input" aria-label="Game pin" ng-change="gameIdChanged()" ng-focus="gameIdFocused()" ng-blur="gameIdUnfocused()">
@@ -41,13 +46,19 @@
                 <div class="vertical-alignment-wrapper__bottom">
                     <!-- ngIf: showStoreButton && isMobilePlatformSupported -->
                     <p class="info ng-binding" ng-show="!isMobileApp &amp;&amp; notStandalone()">        Create your own RipWeb for FREE at
-                        <a href="https://www.youtube.com/watch?v=630vLpgGtJ8" target="_system" class="ng-binding">          Ahihi :))          </a>      </p>
+                        <a href="/" target="_system" class="ng-binding">          Ahihi :))          </a>      </p>
                     <p class="legal-info" ng-show="!isMobileApp">
                         <a href="https://dictionary.cambridge.org/vi/dictionary/english/term" class="legal-info__link ng-binding" target="_system">          Terms        </a>        |        <a href="https://dictionary.cambridge.org/vi/dictionary/english/privacy?q=Privacy" class="legal-info__link ng-binding" target="_system">          Privacy        </a>      </p>    </div>  </div></div></div>
 
     <div alerts=""></div>
     <script type="text/javascript" src="Mainpage_files/bootstrap.js"></script>
 </div>
+
+<div id="homeScreen">
+</div>
+
+
+
 <div id="waitScreen">
     <div style="height: 0; width: 0; position: absolute; visibility: hidden">
         <svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink"><defs><filter x="-2.2%" y="-2.3%" width="104.4%" height="104.8%" filterUnits="objectBoundingBox" id="a"><feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset><symbol id="logo-shapes" viewBox="0 0 24 24"><ellipse cx="5.506" cy="18.966" rx="4.953" ry="4.953"></ellipse><path d="M12.005 5.902L17.873.033l5.869 5.869-5.869 5.868zm1.443 8.899h8.849v8.849h-8.849zm-2.584-4.977H.146l5.36-8.555z"></path></symbol></filter></defs></svg>
@@ -204,7 +215,7 @@
 
 <script>
     function showScreen(divId) {
-        var divID = ["homeScreen", "waitScreen", "playScreen","waitNextScreen","endScreen"];
+        var divID = ["homeScreen","pinScreen", "waitScreen", "playScreen","waitNextScreen","endScreen"];
         for (var i = 0 ; i < divID.length; i++){
             let showDiv = document.getElementById(divID[i]);
             if(divID[i] == divId){
@@ -221,6 +232,7 @@
         // if (showDiv)
         //     showDiv.style.display = "flex";
     }
+    showScreen("pinScreen");
 
     showScreen("homeScreen");
     function changeStage() {
