@@ -3,8 +3,8 @@ package com.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "QuestionEntity")
-public class QuestionEntity {
+@Table(name = "Question")
+public class Question {
 
 	private static final int DEFAULT_TIME = 100; //s
 
@@ -38,17 +38,17 @@ public class QuestionEntity {
 	@Column(name = "answer4", nullable = true, length = 45)
 	private String answer4;
 
-	public QuestionEntity() {}
+	public Question() {}
 
-//	public QuestionEntity(String question, int correctAnswer, String answer1, String answer2, String answer3, String answer4, int time) {
+//	public Question(String question, int correctAnswer, String answer1, String answer2, String answer3, String answer4, int time) {
 //		this(question, null, correctAnswer, answer1, answer2, answer3, answer4, time);
 //	}
 //
-//	public QuestionEntity(String question, String image, int correctAnswer, String answer1, String answer2, String answer3, String answer4) {
+//	public Question(String question, String image, int correctAnswer, String answer1, String answer2, String answer3, String answer4) {
 //		this(question, image, correctAnswer, answer1, answer2, answer3, answer4, DEFAULT_TIME);
 //	}
 
-//	public QuestionEntity(String question, String image, int correctAnswer, String answer1, String answer2, String answer3, String answer4, int time) {
+//	public Question(String question, String image, int correctAnswer, String answer1, String answer2, String answer3, String answer4, int time) {
 ////		this.question = question;
 ////		this.image = image;
 ////		this.correctAnswer = correctAnswer;
@@ -89,7 +89,7 @@ public class QuestionEntity {
 	@Override
 	public String toString() {
 //		ObjectMapper mapper = new ObjectMapper();
-////		QuestionEntity question = super.clone();
+////		Question question = super.clone();
 //		try {
 //			return mapper.writerWithDefaultPrettyPrinter().writeValueAsString(super.clone());
 //		} catch (JsonProcessingException e) {

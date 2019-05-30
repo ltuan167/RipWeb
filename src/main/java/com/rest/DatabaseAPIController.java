@@ -1,7 +1,7 @@
 package com.rest;
 
 import com.dao.QuestionCollectionDAO;
-import com.entities.QuestionEntity;
+import com.entities.Question;
 import com.entities.QuestionCollection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -20,20 +20,35 @@ import java.util.Set;
 @RequestMapping("/1.0/db")
 public class DatabaseAPIController {
 
-	@Autowired QuestionCollectionDAO questionCollectionDAO;
+	@Autowired
+	QuestionCollectionDAO questionCollectionDAO;
 
 	@PostMapping(value = "/collection/get", produces = MediaType.APPLICATION_JSON_VALUE)
 	public void getQuestionCollectionById(@RequestParam int questionCollectionId, HttpServletRequest req, HttpServletResponse res) {
-		QuestionCollection questionCollection = questionCollectionDAO.getQuestionCollectionById(questionCollectionId);
-		try {
-			Set<QuestionEntity> setOfQuestionEntities = questionCollection.getQuestions();
-			if (setOfQuestionEntities != null && setOfQuestionEntities.size() > 0)
-				res.getWriter().println(Arrays.toString(setOfQuestionEntities.toArray()));
-			else
+		com.manager.QuestionCollection questionCollection = new com.manager.QuestionCollection(questionCollectionId);
+		if (questionCollection != null) {
+			try {
+				res.getWriter().println(questionCollection);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		} else {
+			try {
 				res.getWriter().println("Hông có câu hỏi nào hết trơnnnn :(((");
-		} catch (IOException e) {
-			e.printStackTrace();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
+//		QuestionCollection questionCollection = questionCollectionDAO.getQuestionCollectionById(questionCollectionId);
+//		try {
+//			Set<Question> setOfQuestionEntities = questionCollection.getQuestions();
+//			if (setOfQuestionEntities != null && setOfQuestionEntities.size() > 0)
+//				res.getWriter().println(Arrays.toString(setOfQuestionEntities.toArray()));
+//			else
+//				res.getWriter().println("Hông có câu hỏi nào hết trơnnnn :(((");
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
 //		System.out.println((Arrays.toString(questionCollection.getQuestions().toArray())));
 	}
 

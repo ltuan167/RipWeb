@@ -26,11 +26,11 @@ public class QuestionCollectionDAO {
 		return  questionCollection;
 	}
 
-//	public ArrayList<QuestionEntity> getQuestionsByCollectionId(int questionCollectionID) {
+//	public ArrayList<Question> getQuestionsByCollectionId(int questionCollectionID) {
 //		Session session = sessionFactory.getCurrentSession();
 //		Transaction tx = session.beginTransaction();
 //		String sql = "SELECT * FROM QuestionCollection WHERE id="+questionCollectionID;
-//		ArrayList<QuestionEntity> result = (ArrayList<QuestionEntity>) session.createSQLQuery(sql).list();
+//		ArrayList<Question> result = (ArrayList<Question>) session.createSQLQuery(sql).list();
 //		tx.commit();
 //		return result;
 //	}
