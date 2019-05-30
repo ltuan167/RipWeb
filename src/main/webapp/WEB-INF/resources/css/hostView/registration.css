@@ -1,0 +1,1485 @@
+@import url(//fonts.googleapis.com/css?family=Open+Sans:100,300,400italic,400,600,700,800);
+
+@import url(//fonts.googleapis.com/css?family=Lato:100,300,400italic,400,600,700,800);
+.kahoot-registration {
+  background-color: #f1f1f1;
+  padding: 0;
+}
+.kahoot-registration .clearfix {
+  *zoom: 1;
+}
+.kahoot-registration .clearfix:before,
+.kahoot-registration .clearfix:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.kahoot-registration .clearfix:after {
+  clear: both;
+}
+.kahoot-registration .hide-text {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+.kahoot-registration .input-block-level {
+  display: block;
+  width: 100%;
+  min-height: 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.kahoot-registration .pull-right {
+  float: right;
+}
+.kahoot-registration .pull-left {
+  float: left;
+}
+.kahoot-registration .hide {
+  display: none;
+}
+.kahoot-registration .show {
+  display: block;
+}
+.kahoot-registration .invisible {
+  visibility: hidden;
+}
+.kahoot-registration .affix {
+  position: fixed;
+}
+.kahoot-registration .blue {
+  color: #41c4dd;
+}
+.kahoot-registration .no-transform {
+  text-transform: none;
+}
+.kahoot-registration .weight100 {
+  font-weight: 100;
+}
+.kahoot-registration .weight200 {
+  font-weight: 200;
+}
+.kahoot-registration .weight300 {
+  font-weight: 300;
+}
+.kahoot-registration .weight400 {
+  font-weight: 400;
+}
+.kahoot-registration .weight600 {
+  font-weight: 600;
+}
+.kahoot-registration .weight700 {
+  font-weight: 700;
+}
+.kahoot-registration .weight800 {
+  font-weight: 800;
+}
+.kahoot-registration .center-block {
+  margin-left: auto;
+  margin-right: auto;
+}
+.kahoot-registration .center-text {
+  text-align: center;
+}
+.kahoot-registration .relative {
+  position: relative;
+}
+.kahoot-registration .z11 {
+  z-index: 11;
+  position: relative;
+}
+.kahoot-registration .z10 {
+  z-index: 10;
+  position: relative;
+}
+.kahoot-registration .z9 {
+  z-index: 9;
+  position: relative;
+}
+.kahoot-registration .z8 {
+  z-index: 8;
+  position: relative;
+}
+.kahoot-registration .z7 {
+  z-index: 7;
+  position: relative;
+}
+.kahoot-registration .z6 {
+  z-index: 6;
+  position: relative;
+}
+.kahoot-registration .z5 {
+  z-index: 5;
+  position: relative;
+}
+.kahoot-registration .z4 {
+  z-index: 4;
+  position: relative;
+}
+.kahoot-registration .z3 {
+  z-index: 3;
+  position: relative;
+}
+.kahoot-registration .z2 {
+  z-index: 2;
+  position: relative;
+}
+.kahoot-registration .z1 {
+  z-index: 1;
+  position: relative;
+}
+.kahoot-registration body {
+  background-color: #fff;
+  padding: 0;
+  margin: 0;
+}
+.kahoot-registration a {
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: italic;
+  text-decoration: underline;
+  color: #41c4dd;
+}
+.kahoot-registration a:hover {
+  text-decoration: none;
+  color: #41c4dd;
+}
+.lt-ie9 .kahoot-registration a {
+  font-family: 'latolight_italic';
+}
+.kahoot-registration p,
+.kahoot-registration label {
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #565656;
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: 300;
+}
+.lt-ie9 .kahoot-registration p,
+.lt-ie9 .kahoot-registration label {
+  font-family: 'latoregular';
+}
+.kahoot-registration h1,
+.kahoot-registration h2,
+.kahoot-registration h3,
+.kahoot-registration h4,
+.kahoot-registration h5 {
+  font-family: "Open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #565656;
+}
+.lt-ie9 .kahoot-registration h1,
+.lt-ie9 .kahoot-registration h2,
+.lt-ie9 .kahoot-registration h3,
+.lt-ie9 .kahoot-registration h4,
+.lt-ie9 .kahoot-registration h5 {
+  font-family: 'open_sansextrabold';
+}
+.kahoot-registration h2 {
+  font-size: 49px;
+  color: #41c4dd;
+  line-height: 50px;
+}
+.kahoot-registration h3 {
+  margin-top: 7px;
+  margin-bottom: 20px;
+  line-height: 30px;
+  font-size: 25px;
+  color: #333;
+}
+.kahoot-registration h4 {
+  margin-top: 7px;
+  margin-bottom: 7px;
+  line-height: 30px;
+  font-size: 24px;
+  color: #333;
+}
+.kahoot-registration h5 {
+  margin-top: 7px;
+  margin-bottom: 7px;
+  line-height: 30px;
+  font-size: 21px;
+  color: #333;
+}
+.kahoot-registration h6 {
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin-top: 17px;
+  margin-bottom: 17px;
+  color: #fff;
+  font-weight: 400;
+  line-height: 26px;
+  font-size: 22px;
+}
+.lt-ie9 .kahoot-registration h6 {
+  font-family: 'latobold';
+}
+.kahoot-registration strong {
+  font-weight: 800;
+}
+.kahoot-registration .table {
+  display: table;
+  border-collapse: collapse;
+}
+.kahoot-registration .table-row {
+  display: table-row;
+}
+.kahoot-registration .v-bottom {
+  vertical-align: bottom;
+  display: table-cell;
+}
+.kahoot-registration .v-top {
+  vertical-align: top;
+  display: table-cell;
+}
+.kahoot-registration .v-middle {
+  vertical-align: middle;
+  display: table-cell;
+}
+.kahoot-registration .divider {
+  width: 100%;
+  height: 45px;
+  padding: 0;
+  margin: -10px 0 0 0;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.kahoot-registration .divider.dark-lgrey {
+  background-image: url('../img/divider-dark-lgrey.png');
+}
+.kahoot-registration .divider.white-lgrey {
+  background-image: url('../img/divider-white-lgrey.png');
+}
+.kahoot-registration .divider.lgrey-dgrey {
+  background-image: url('../img/divider-lgrey-dgrey.png');
+}
+.kahoot-registration .divider.dgrey-lgrey {
+  background-image: url('../img/divider-dgrey-lgrey.png');
+}
+.kahoot-registration .divider.dark-white {
+  background-image: url('../img/divider-dark-white.png');
+}
+.kahoot-registration .divider.white-dark {
+  background-image: url('../img/divider-white-dark.png');
+}
+.kahoot-registration .divider.lgrey-white {
+  background-image: url('../img/divider-lgrey-white.png');
+}
+.kahoot-registration .divider.dgrey2-lgrey {
+  background-image: url('../img/divider-dgrey2-lgrey.png');
+}
+.kahoot-registration .divider.navbar {
+  background-image: url('../img/divider-navbar.png');
+}
+.svg .kahoot-registration .divider.navbar {
+  background-image: url('../img/divider-navbar.svg');
+}
+.kahoot-registration .section-link {
+  text-align: center;
+  font-size: 19px;
+  margin-top: 63px;
+}
+.kahoot-registration .limit-width {
+  max-width: 1180px;
+}
+.kahoot-registration .banner {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 970px;
+  height: 170px;
+  background-color: #333;
+  -webkit-box-shadow: 4px 4px 0 4px #000000 inset;
+  -moz-box-shadow: 4px 4px 0 4px #000000 inset;
+  box-shadow: 4px 4px 0 4px #000000 inset;
+  padding: 4px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+}
+.kahoot-registration .banner .banner-text {
+  float: left;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5);
+}
+.kahoot-registration .banner.get-account .banner-text {
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: italic;
+  font-size: 32px;
+  font-weight: 100;
+  line-height: 37px;
+  margin: 42px 0 0 56px;
+  letter-spacing: 1px;
+  color: #fff;
+  width: 340px;
+}
+.lt-ie9 .kahoot-registration .banner.get-account .banner-text {
+  font-family: 'latohairline_italic';
+}
+.kahoot-registration .banner.get-account .btn.register {
+  margin-top: 44px;
+  z-index: 2;
+  position: relative;
+}
+.kahoot-registration .banner.get-account .kahoot-laptop {
+  position: absolute;
+  top: -65px;
+  right: 17px;
+  background-image: url('../img/kahoot-laptop.png');
+  background-repeat: no-repeat;
+  width: 225px;
+  height: 232px;
+  z-index: 1;
+}
+.kahoot-registration #navbar {
+  display: none;
+  position: absolute;
+  z-index: 100000;
+  background-color: #232323;
+  color: #fff;
+  width: 100%;
+  border-bottom: 7px solid #595959;
+  height: 68px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.kahoot-registration #navbar.pinned {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.kahoot-registration #navbar .logo {
+  background-image: url('../img/kahoot-logo.png');
+  background-repeat: no-repeat;
+  width: 125px;
+  height: 58px;
+  background-size: contain;
+  background-position: center;
+  display: block;
+  float: left;
+  margin-right: 60px;
+  cursor: pointer;
+}
+.lt-ie9 .kahoot-registration #navbar .logo {
+  background-image: none;
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/../img/kahoot-logo.png', sizingMethod='scale');
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/../img/kahoot-logo.png',sizingMethod='scale')";
+}
+.lt-ie9 .kahoot-registration #navbar .logo {
+  height: 45px;
+  margin: 10px 60px 10px 10px;
+}
+.kahoot-registration #navbar .navitem {
+  display: block;
+  float: left;
+  height: 48px;
+  padding: 20px 20px 0 0;
+}
+.kahoot-registration #navbar .navitem .section-number {
+  font-weight: 600;
+  font-family: "Open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  display: block;
+  float: left;
+  height: 19px;
+  background-image: url('../img/navigation-circle.png');
+  background-position: center 3px;
+  background-repeat: no-repeat;
+  width: 15px;
+  margin-right: 5px;
+  color: #fff;
+  font-size: 13px;
+  text-align: center;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+  margin-top: -4px;
+  margin-bottom: 25px;
+}
+.lt-ie9 .kahoot-registration #navbar .navitem .section-number {
+  background-image: none;
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/../img/navigation-circle.png', sizingMethod='scale');
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/../img/navigation-circle.png',sizingMethod='scale')";
+}
+.svg .kahoot-registration #navbar .navitem .section-number {
+  background-image: url('../img/navigation-circle.svg');
+}
+.lt-ie9 .kahoot-registration #navbar .navitem .section-number {
+  height: 15px;
+  line-height: 15px;
+  margin-top: 0;
+  font-family: 'open_sansbold';
+}
+.kahoot-registration #navbar .navitem .section-link {
+  font-weight: 600;
+  font-family: "Open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  display: block;
+  float: left;
+  font-size: 13px;
+  text-align: left;
+  margin: 0;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+  text-transform: uppercase;
+  line-height: 13px;
+  padding-bottom: 2px;
+}
+.kahoot-registration #navbar .navitem .section-link.selected {
+  border-bottom: 2px solid #41c4dd;
+}
+.kahoot-registration #navbar .navitem .section-link a {
+  color: #fff;
+  text-decoration: none;
+  font-style: normal;
+}
+.lt-ie9 .kahoot-registration #navbar .navitem .section-link a {
+  font-family: 'open_sansbold';
+}
+.kahoot-registration #navbar .btn {
+  font-size: 15px;
+  margin-top: 10px;
+  padding: 0.7em 1em;
+  float: right;
+}
+.kahoot-registration #navbar .btn.register {
+  margin-right: 10px;
+}
+.kahoot-registration #navbar .btn.signin {
+  display: none;
+}
+.kahoot-registration .btn {
+  font-family: "Open sans", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  display: inline-block;
+  padding: 0.6em 0.75em;
+  border: none;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  font-style: normal;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.65);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  cursor: pointer;
+  color: #fff;
+}
+.lt-ie9 .kahoot-registration .btn {
+  font-family: 'open_sansextrabold' !important;
+}
+.kahoot-registration .btn .locked-text {
+  display: none;
+}
+.kahoot-registration .btn.locked {
+  cursor: default;
+}
+.kahoot-registration .btn.locked .locked-text {
+  display: inline;
+}
+.kahoot-registration .btn.locked .text {
+  display: none;
+}
+.kahoot-registration .btn.locked .spin {
+  display: inline-block;
+}
+.kahoot-registration .btn .spin {
+  display: none;
+  height: 7px;
+  margin-left: 15px;
+}
+.kahoot-registration .btn .spin .spinner {
+  left: 0 !important;
+  top: 0 !important;
+}
+.kahoot-registration .btn.signin {
+  background: #fff;
+  color: #333;
+  font-size: 18px;
+}
+.kahoot-registration .btn.signin:hover {
+  color: #fff;
+}
+.kahoot-registration .btn.register {
+  background: #8a5cd7;
+  color: #fff;
+  font-size: 24px;
+  padding: 0.95em 1.2em;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5);
+}
+.kahoot-registration .btn.register:hover {
+  color: #fff;
+}
+.kahoot-registration .btn.register:hover.locked {
+  background: #8a5cd7;
+}
+.kahoot-registration .btn.facebook {
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5);
+  background: #37599a;
+}
+.kahoot-registration .btn.facebook .share-icon {
+  background-image: url('../img/facebook.png');
+  width: 10px;
+  height: 20px;
+}
+.svg .kahoot-registration .btn.facebook .share-icon {
+  background-image: url('../img/social-facebook.svg');
+}
+.kahoot-registration .btn.facebook:hover {
+  background: #2c477c;
+}
+.kahoot-registration .btn.twitter {
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5);
+  background: #00acf0;
+}
+.kahoot-registration .btn.twitter .share-icon {
+  background-image: url('../img/twitter.png');
+  width: 27px;
+  height: 20px;
+}
+.svg .kahoot-registration .btn.twitter .share-icon {
+  background-image: url('../img/social-twitter.svg');
+}
+.kahoot-registration .btn.twitter:hover {
+  background: #0091ca;
+}
+.kahoot-registration .btn.pinterest {
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5);
+  background: #ca2922;
+}
+.kahoot-registration .btn.pinterest .share-icon {
+  background-image: url('../img/pinterest.png');
+  width: 18px;
+  height: 22px;
+}
+.svg .kahoot-registration .btn.pinterest .share-icon {
+  background-image: url('../img/social-pinterest.svg');
+}
+.kahoot-registration .btn.pinterest:hover {
+  background: #a6211b;
+}
+.kahoot-registration .btn.tumblr {
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5);
+  background: #34506b;
+}
+.kahoot-registration .btn.tumblr .share-icon {
+  background-image: url('../img/tumblr.png');
+  width: 15px;
+  height: 22px;
+}
+.svg .kahoot-registration .btn.tumblr .share-icon {
+  background-image: url('../img/social-tumblr.svg');
+}
+.kahoot-registration .btn.tumblr:hover {
+  background: #24384b;
+}
+.kahoot-registration .btn.instagram {
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5);
+  background: #3f6f98;
+}
+.kahoot-registration .btn.instagram .share-icon {
+  background-image: url('../img/instagram.png');
+  width: 22px;
+  height: 22px;
+}
+.svg .kahoot-registration .btn.instagram .share-icon {
+  background-image: url('../img/social-instagram.svg');
+}
+.kahoot-registration .btn.instagram:hover {
+  background: #2f5372;
+}
+.kahoot-registration .btn.google {
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5);
+  background: #dc4e32;
+}
+.kahoot-registration .btn.google .share-icon {
+  background-image: url('../img/social-google.png');
+  width: 25px;
+  height: 23px;
+}
+.svg .kahoot-registration .btn.google .share-icon {
+  background-image: url('../img/social-google.svg');
+}
+.kahoot-registration .btn.google:hover {
+  background: #c1442b;
+}
+.kahoot-registration .btn:hover {
+  background: #f78e56;
+  color: #fff;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5);
+}
+.kahoot-registration .share-icon {
+  background-repeat: no-repeat;
+  background-position: center;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 10px;
+}
+.kahoot-registration .icon-play-custom {
+  background-image: url('../img/icon-play.png');
+  background-repeat: no-repeat;
+  background-position: left center;
+  width: 9px;
+  height: 21px;
+  display: inline-block;
+  vertical-align: top;
+}
+.svg .kahoot-registration .icon-play-custom {
+  background-image: url('../img/icon-play.svg');
+}
+.kahoot-registration ::-webkit-input-placeholder {
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #5d5d5d;
+  font-weight: 300;
+}
+.kahoot-registration ::-moz-placeholder {
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #5d5d5d;
+  font-weight: 300;
+}
+.kahoot-registration :-ms-input-placeholder {
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #5d5d5d;
+  font-weight: 300;
+}
+.lt-ie9 .kahoot-registration :-ms-input-placeholder {
+  font-family: 'latoregular';
+}
+.kahoot-registration input:-moz-placeholder {
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #5d5d5d;
+  font-weight: 300;
+}
+.kahoot-registration input:focus,
+.kahoot-registration select:focus {
+  outline: none;
+}
+.kahoot-registration input[type="text"]:focus,
+.kahoot-registration input[type="password"]:focus {
+  color: #41c4dd;
+}
+.kahoot-registration select {
+  background: transparent;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-box-shadow: 1px 1px 0 1px #bfbfbf inset;
+  -moz-box-shadow: 1px 1px 0 1px #bfbfbf inset;
+  box-shadow: 1px 1px 0 1px #bfbfbf inset;
+  border: none;
+  height: 50px;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  line-height: 24px;
+  background-image: url('../img/select-arrows.png');
+  background-position: center right;
+  background-repeat: no-repeat;
+  background-color: #fff;
+  background-size: contain;
+  padding: 10px 15px;
+  color: #5d5d5d;
+  font-weight: 300;
+}
+.svg .kahoot-registration select {
+  background-image: url('../img/select-arrows.svg');
+}
+.lt-ie9 .kahoot-registration select {
+  font-family: 'latoregular';
+}
+.kahoot-registration .moz-select {
+  background-image: url('../img/select-arrows.png');
+  background-position: center right;
+  background-repeat: no-repeat;
+  background-color: #fff;
+  background-size: contain;
+  height: 50px;
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.svg .kahoot-registration .moz-select {
+  background-image: url('../img/select-arrows.png');
+}
+.kahoot-registration .moz-select select {
+  -moz-appearance: none;
+  background: none !important;
+  margin: 0 !important;
+  border: none;
+}
+.kahoot-registration input[type="text"],
+.kahoot-registration input[type="password"] {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-box-shadow: 1px 1px 0 1px #bfbfbf inset;
+  -moz-box-shadow: 1px 1px 0 1px #bfbfbf inset;
+  box-shadow: 1px 1px 0 1px #bfbfbf inset;
+  height: 50px;
+  width: 100%;
+  border: none;
+  color: #5d5d5d;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 24px;
+  background-repeat: no-repeat;
+  background-position: 15px center;
+  padding-left: 40px;
+}
+.kahoot-registration input[type="text"]:focus,
+.kahoot-registration input[type="password"]:focus {
+  outline: none;
+  -webkit-box-shadow: 1px 1px 0 1px #bfbfbf inset;
+  -moz-box-shadow: 1px 1px 0 1px #bfbfbf inset;
+  box-shadow: 1px 1px 0 1px #bfbfbf inset;
+  border: none;
+}
+.lt-ie9 .kahoot-registration input[type="text"],
+.lt-ie9 .kahoot-registration input[type="password"] {
+  font-family: 'latoregular';
+  line-height: 40px;
+}
+.kahoot-registration input[type="text"].userid,
+.kahoot-registration input[type="text"].userid-or-email {
+  background-image: url(../img/signup-username.png);
+}
+.svg .kahoot-registration input[type="text"].userid,
+.svg .kahoot-registration input[type="text"].userid-or-email {
+  background-image: url('../img/signup-username.svg');
+}
+.kahoot-registration input[type="text"].userid:focus,
+.kahoot-registration input[type="text"].userid-or-email:focus {
+  background-image: url(../img/signup-username-active.png);
+}
+.svg .kahoot-registration input[type="text"].userid:focus,
+.svg .kahoot-registration input[type="text"].userid-or-email:focus {
+  background-image: url('../img/signup-username-active.svg');
+}
+.kahoot-registration input[type="text"].email {
+  background-image: url(../img/signup-email.png);
+}
+.svg .kahoot-registration input[type="text"].email {
+  background-image: url('../img/signup-email.svg');
+}
+.kahoot-registration input[type="text"].email:focus {
+  background-image: url(../img/signup-email-active.png);
+}
+.svg .kahoot-registration input[type="text"].email:focus {
+  background-image: url('../img/signup-email-active.svg');
+}
+.kahoot-registration input[type="text"].organisation {
+  background-image: url(../img/signup-organisation.png);
+}
+.svg .kahoot-registration input[type="text"].organisation {
+  background-image: url('../img/signup-organisation.svg');
+}
+.kahoot-registration input[type="text"].organisation:focus {
+  background-image: url(../img/signup-organisation-active.png);
+}
+.svg .kahoot-registration input[type="text"].organisation:focus {
+  background-image: url('../img/signup-organisation-active.svg');
+}
+.kahoot-registration input[type="password"],
+.kahoot-registration input[type="text"].password {
+  background-image: url(../img/signup-password.png);
+}
+.svg .kahoot-registration input[type="password"],
+.svg .kahoot-registration input[type="text"].password {
+  background-image: url('../img/signup-password.svg');
+}
+.kahoot-registration input[type="password"]:focus,
+.kahoot-registration input[type="text"].password:focus {
+  background-image: url(../img/signup-password-active.png);
+}
+.svg .kahoot-registration input[type="password"]:focus,
+.svg .kahoot-registration input[type="text"].password:focus {
+  background-image: url('../img/signup-password-active.svg');
+}
+.lt-ie9 .kahoot-registration input[type="password"],
+.lt-ie9 .kahoot-registration input[type="text"].password {
+  letter-spacing: 2px;
+}
+.kahoot-registration .policy-desc {
+  text-align: center;
+  color: #de1831;
+  margin: -5px 4px 20px 4px;
+  display: none;
+  line-height: 20px;
+}
+.kahoot-registration .policy-desc.form-error,
+.kahoot-registration .policy-desc.server-error {
+  margin: 0 4px 10px 0;
+}
+.kahoot-registration .policy-desc a {
+  color: #de1831;
+}
+.kahoot-registration .policy-desc.show {
+  display: block;
+}
+.kahoot-registration p.policy-desc {
+  font-size: 16px;
+}
+.kahoot-registration .unsupported-browser {
+  text-align: center;
+  margin: 10px;
+}
+.lt-ie9 .kahoot-registration .unsupported-browser {
+  display: block;
+}
+.kahoot-registration .field.error ::-webkit-input-placeholder {
+  color: #de1831;
+}
+.kahoot-registration .field.error ::-moz-placeholder {
+  color: #de1831;
+}
+.kahoot-registration .field.error :-ms-input-placeholder {
+  color: #de1831;
+}
+.kahoot-registration .field.error input:-moz-placeholder {
+  color: #de1831;
+}
+.kahoot-registration .field.error .moz-select {
+  -webkit-box-shadow: 0px 0px 0 2px #de1831 inset;
+  -moz-box-shadow: 0px 0px 0 2px #de1831 inset;
+  box-shadow: 0px 0px 0 2px #de1831 inset;
+}
+.kahoot-registration .field.error .moz-select select,
+.kahoot-registration .field.error .moz-select input {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.kahoot-registration .field.error select,
+.kahoot-registration .field.error input {
+  -webkit-box-shadow: 0px 0px 0 2px #de1831 inset;
+  -moz-box-shadow: 0px 0px 0 2px #de1831 inset;
+  box-shadow: 0px 0px 0 2px #de1831 inset;
+  color: #de1831;
+}
+.kahoot-registration .field.error input[type="password"],
+.kahoot-registration .field.error input[type="text"].password {
+  background-image: url(../img/signup-password-error.png);
+}
+.svg .kahoot-registration .field.error input[type="password"],
+.svg .kahoot-registration .field.error input[type="text"].password {
+  background-image: url('../img/signup-password-error.svg');
+}
+.kahoot-registration .field.error input[type="text"].userid,
+.kahoot-registration .field.error input[type="text"].userid-or-email {
+  background-image: url(../img/signup-username-error.png);
+}
+.svg .kahoot-registration .field.error input[type="text"].userid,
+.svg .kahoot-registration .field.error input[type="text"].userid-or-email {
+  background-image: url('../img/signup-username-error.svg');
+}
+.kahoot-registration .field.error input[type="text"].email {
+  background-image: url(../img/signup-email-error.png);
+}
+.svg .kahoot-registration .field.error input[type="text"].email {
+  background-image: url('../img/signup-email-error.svg');
+}
+.kahoot-registration .field.error input[type="text"].organisation {
+  background-image: url(../img/signup-organisation-error.png);
+}
+.svg .kahoot-registration .field.error input[type="text"].organisation {
+  background-image: url('../img/signup-organisation-error.svg');
+}
+.kahoot-registration .field.error .policy-desc {
+  display: block;
+}
+.kahoot-registration .field.error .policy-desc.duplicate,
+.kahoot-registration .field.error .policy-desc.profanity {
+  display: none;
+}
+.kahoot-registration .field.error.duplicate .policy-desc {
+  display: none;
+}
+.kahoot-registration .field.error.duplicate .policy-desc.duplicate {
+  display: block;
+}
+.kahoot-registration .field.error.profanity .policy-desc {
+  display: none;
+}
+.kahoot-registration .field.error.profanity .policy-desc.profanity {
+  display: block;
+}
+.kahoot-registration .icon-field-error {
+  background-image: url('../img/validation-alert-icon.png');
+  background-repeat: no-repeat;
+  background-position: left center;
+  width: 20px;
+  height: 18px;
+  display: inline-block;
+  vertical-align: top;
+}
+.svg .kahoot-registration .icon-field-error {
+  background-image: url('../img/validation-alert-icon.svg');
+}
+.kahoot-registration .svg #section-0 .logo {
+  background-image: url('../img/kahoot-logo.svg');
+}
+.kahoot-registration .svg #section-2 .pedagogy-diagram {
+  background-image: url('../img/kahoot-pedagogy.svg');
+}
+.kahoot-registration .svg #section-3 .expandable.collapsed .arrow {
+  background-image: url('../img/arrow-up.svg');
+}
+.kahoot-registration .svg #section-3 .expandable-header .arrow {
+  background-image: url('../img/arrow-down.svg');
+}
+.kahoot-registration .svg #section-3 .expandable-header .number {
+  background-image: url('../img/number-circle.svg');
+}
+.kahoot-registration .svg #section-3 .illustration-img.create {
+  background-image: url('../img/how-it-works-1.svg');
+}
+.kahoot-registration .svg #section-3 .illustration-img.launch {
+  background-image: url('../img/how-it-works-2.svg');
+}
+.kahoot-registration .svg #section-3 .illustration-img.play {
+  background-image: url('../img/how-it-works-3.svg');
+}
+.kahoot-registration .svg #section-4 .row-fluid .col1 .img {
+  background-image: url('../img/kahoot-devices.svg');
+}
+.kahoot-registration .svg #section-4 .row-fluid .col2 .img {
+  background-image: url('../img/kahoot-hands.svg');
+}
+.kahoot-registration .svg #section-4 .row-fluid .col3 .img {
+  background-image: url('../img/kahoot-social.svg');
+}
+.kahoot-registration .svg #section-4 .row-fluid .col4 .img {
+  background-image: url('../img/kahoot-data.svg');
+}
+.kahoot-registration .svg #section-5 .row-fluid .col1 .img {
+  background-image: url('../img/kahoot-for-school.svg');
+}
+.kahoot-registration .svg #section-5 .row-fluid .col2 .img {
+  background-image: url('../img/kahoot-for-university.svg');
+}
+.kahoot-registration .svg #section-5 .row-fluid .col3 .img {
+  background-image: url('../img/kahoot-for-business.svg');
+}
+.kahoot-registration .svg #section-6 .row-fluid .col1 .img {
+  background-image: url('../img/sxsw.svg');
+}
+.kahoot-registration .svg #section-6 .row-fluid .col3 .img {
+  background-image: url('../img/blog.svg');
+}
+.kahoot-registration .svg #section-6 .row-fluid .col4 .img {
+  background-image: url('../img/press.svg');
+}
+.kahoot-registration .svg .divider.dark-lgrey {
+  background-image: url('../img/divider-dark-lgrey.svg');
+}
+.kahoot-registration .svg .divider.white-lgrey {
+  background-image: url('../img/divider-white-lgrey.svg');
+}
+.kahoot-registration .svg .divider.lgrey-dgrey {
+  background-image: url('../img/divider-lgrey-dgrey.svg');
+}
+.kahoot-registration .svg .divider.dark-white {
+  background-image: url('../img/divider-dark-white.svg');
+}
+.kahoot-registration .svg .divider.white-dark {
+  background-image: url('../img/divider-white-dark.svg');
+}
+.kahoot-registration .svg .divider.dgrey-lgrey {
+  background-image: url('../img/divider-dgrey-lgrey.svg');
+}
+.kahoot-registration .svg .divider.lgrey-white {
+  background-image: url('../img/divider-lgrey-white.svg');
+}
+.kahoot-registration .svg .divider.dgrey2-lgrey {
+  background-image: url('../img/divider-dgrey2-lgrey.svg');
+}
+.kahoot-registration .svg .divider.navbar {
+  background-image: url('../img/divider-navbar.svg');
+}
+.kahoot-registration .svg .banner.get-account .kahoot-laptop {
+  background-image: url('../img/kahoot-laptop.svg');
+}
+.kahoot-registration .svg #footer .kahoot-laptop {
+  background-image: url('../img/kahoot-laptop.svg');
+}
+.kahoot-registration #navbar .navitem .section-number {
+  background-image: url('../img/navigation-circle.svg');
+}
+.kahoot-registration #navbar .logo {
+  background-image: url('../img/kahoot-logo.svg');
+}
+@media (-webkit-min-device-pixel-ratio: 1.5) {
+  .kahoot-registration #section-3 .how-it-works-img.bg1 {
+    background-image: url('../img/kahoot-bg-1@2x.png');
+  }
+  .kahoot-registration #section-3 .how-it-works-img.bg2 {
+    background-image: url('../img/kahoot-bg-2@2x.png');
+  }
+  .kahoot-registration #section-3 .how-it-works-img.bg3 {
+    background-image: url('../img/kahoot-bg-3@2x.png');
+  }
+  .kahoot-registration .btn.register,
+  .kahoot-registration .btn.facebook,
+  .kahoot-registration .btn.twitter,
+  .kahoot-registration .btn.pinterest,
+  .kahoot-registration .btn.tumblr,
+  .kahoot-registration .btn.instagram,
+  .kahoot-registration .btn.google {
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+  }
+  .kahoot-registration .btn.register:hover,
+  .kahoot-registration .btn.facebook:hover,
+  .kahoot-registration .btn.twitter:hover,
+  .kahoot-registration .btn.pinterest:hover,
+  .kahoot-registration .btn.tumblr:hover,
+  .kahoot-registration .btn.instagram:hover,
+  .kahoot-registration .btn.google:hover {
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+  }
+  .kahoot-registration .banner .banner-text {
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+  }
+  .kahoot-registration #section-0 {
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+  }
+  .kahoot-registration #section-0 h1 {
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5);
+  }
+  .kahoot-registration #section-0 .sign-in {
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+  }
+  .kahoot-registration #section-3,
+  .kahoot-registration #section-5 {
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+  }
+}
+.kahoot-registration #sign-in .right-col,
+.kahoot-registration #sign-up .right-col {
+  display: none;
+}
+.kahoot-registration #sign-in .left-col,
+.kahoot-registration #sign-up .left-col {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  float: none;
+}
+.kahoot-registration span.field {
+  display: block;
+}
+.kahoot-registration .general-form label {
+  text-align: left;
+}
+.kahoot-registration input,
+.kahoot-registration select,
+.kahoot-registration button {
+  width: 100%;
+  max-width: 370px;
+}
+.kahoot-registration .moz-select {
+  width: 100%;
+  max-width: 370px;
+}
+.kahoot-registration .moz-select select {
+  max-width: 130%;
+}
+.kahoot-registration .btn {
+  max-width: 370px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  letter-spacing: normal;
+}
+.kahoot-registration .secondary-action {
+  color: #5d5d5d;
+  font-weight: 200;
+  font-size: 15px;
+  font-style: italic;
+}
+.kahoot-registration .secondary-action a {
+  color: #5d5d5d;
+}
+.kahoot-registration #navbar {
+  display: block;
+  height: 75px;
+  z-index: 1;
+  position: relative;
+  border-bottom-color: #d8d8d8;
+}
+.kahoot-registration #navbar .logo {
+  height: 68px;
+  margin-right: 10px;
+}
+.lt-ie9 .kahoot-registration #navbar .logo {
+  width: 130px;
+  height: 48px;
+  margin: 10px;
+}
+.kahoot-registration #navbar .btn.register,
+.kahoot-registration #navbar .btn.signin {
+  display: block;
+  margin-left: 10px;
+  margin-right: 0;
+}
+.kahoot-registration #navbar p {
+  float: right;
+  color: #fff;
+  font-style: italic;
+  font-weight: 200;
+  font-size: 17px;
+  margin-top: 1em;
+}
+.kahoot-registration .divider.navbar {
+  position: absolute;
+  top: 0px;
+  z-index: 2;
+  position: relative;
+  margin-top: -7px;
+}
+.kahoot-registration h2 {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+.kahoot-registration h4 {
+  text-align: center;
+  margin: 5px 0;
+}
+.kahoot-registration h5 {
+  text-align: center;
+  margin-top: 0;
+}
+.kahoot-registration .row-fluid {
+  max-width: 770px;
+}
+.kahoot-registration .form-number {
+  text-align: center;
+  background-position: center;
+  background-size: contain;
+  font-weight: 400;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: italic;
+  background-image: url('../img/number-circle.png');
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 22px;
+  line-height: 30px;
+  height: 30px;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+}
+.lt-ie9 .kahoot-registration .form-number {
+  background-image: none;
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/../img/number-circle.png', sizingMethod='scale');
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/../img/number-circle.png',sizingMethod='scale')";
+}
+.svg .kahoot-registration .form-number {
+  background-image: url('../img/number-circle.svg');
+}
+.lt-ie9 .kahoot-registration .form-number {
+  width: 30px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'latoitalic';
+}
+.kahoot-registration #role {
+  text-align: center;
+  padding: 0 10px;
+}
+.kahoot-registration #role h5 {
+  margin: 0;
+  line-height: 21px;
+}
+.kahoot-registration #role select {
+  margin-top: 10px;
+}
+.kahoot-registration #role .moz-select {
+  margin-top: 10px;
+}
+.kahoot-registration #role .moz-select select {
+  margin-top: 0;
+  width: 130%;
+}
+.kahoot-registration #role .field.organisation {
+  display: none;
+  max-width: 370px;
+}
+.kahoot-registration #birthday {
+  display: none;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 370px;
+}
+.kahoot-registration #birthday select {
+  margin: 0;
+}
+.kahoot-registration #birthday #birthday-day {
+  width: 102px;
+}
+.kahoot-registration #birthday #birthday-month {
+  width: 124px;
+  margin: 0 16px;
+}
+.kahoot-registration #birthday #birthday-year {
+  width: 104px;
+}
+.kahoot-registration #birthday #moz-birthday-day {
+  width: 28%;
+}
+.kahoot-registration #birthday #moz-birthday-month {
+  width: 37%;
+  margin: 0 2%;
+}
+.kahoot-registration #birthday #moz-birthday-year {
+  width: 28%;
+}
+.kahoot-registration #birthday .moz-select select {
+  margin-top: 0px;
+}
+.kahoot-registration #birthday .moz-select #birthday-day {
+  max-width: 133%;
+  width: 133%;
+}
+.kahoot-registration #birthday .moz-select #birthday-month {
+  width: 130%;
+}
+.kahoot-registration #birthday .moz-select #birthday-year {
+  max-width: 133%;
+  width: 133%;
+}
+.kahoot-registration #birthday .policy-desc {
+  margin-top: 5px;
+  text-align: left;
+}
+.kahoot-registration #reset-password,
+.kahoot-registration #reset-password-success,
+.kahoot-registration .general-form {
+  text-align: center;
+  max-width: 370px;
+}
+.kahoot-registration #reset-password input,
+.kahoot-registration #reset-password-success input,
+.kahoot-registration .general-form input,
+.kahoot-registration #reset-password .btn,
+.kahoot-registration #reset-password-success .btn,
+.kahoot-registration .general-form .btn {
+  width: 100%;
+}
+.kahoot-registration #reset-password-success {
+  display: none;
+}
+.kahoot-registration #sign-up-with-email {
+  display: none;
+  text-align: center;
+  max-width: 370px;
+}
+.kahoot-registration #sign-up-with-email input,
+.kahoot-registration #sign-up-with-email .btn {
+  width: 100%;
+}
+.kahoot-registration #sign-up .field .policy-desc,
+.kahoot-registration #sign-in .field .policy-desc,
+.kahoot-registration #sign-up-with-email .field .policy-desc,
+.kahoot-registration #reset-password .field .policy-desc,
+.kahoot-registration #reset-password-success .field .policy-desc,
+.kahoot-registration .general-form .field .policy-desc {
+  text-align: left;
+}
+.kahoot-registration #sign-up .btn,
+.kahoot-registration #sign-in .btn,
+.kahoot-registration #sign-up-with-email .btn,
+.kahoot-registration #reset-password .btn,
+.kahoot-registration #reset-password-success .btn,
+.kahoot-registration .general-form .btn {
+  display: block;
+  margin-bottom: 10px;
+  height: 50px;
+}
+.kahoot-registration #sign-up .btn.register,
+.kahoot-registration #sign-in .btn.register,
+.kahoot-registration #sign-up-with-email .btn.register,
+.kahoot-registration #reset-password .btn.register,
+.kahoot-registration #reset-password-success .btn.register,
+.kahoot-registration .general-form .btn.register {
+  font-size: 20px;
+  padding: 0;
+  line-height: 51px;
+  margin-left: 0;
+}
+.kahoot-registration #sign-up .btn.register {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.kahoot-registration #sign-in,
+.kahoot-registration #sign-up {
+  margin-top: 30px;
+  padding: 0 20px;
+}
+.kahoot-registration #sign-in .right-col,
+.kahoot-registration #sign-up .right-col {
+  padding-left: 4px;
+}
+.kahoot-registration #sign-in .right-col .btn,
+.kahoot-registration #sign-up .right-col .btn {
+  width: 75%;
+  text-align: left;
+  padding-left: 20px;
+  font-weight: normal;
+  text-transform: none;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.kahoot-registration #sign-in .right-col .btn .share-icon,
+.kahoot-registration #sign-up .right-col .btn .share-icon {
+  width: 25px;
+  height: 27px;
+}
+.kahoot-registration #sign-in h5,
+.kahoot-registration #sign-up h5,
+.kahoot-registration #sign-in p,
+.kahoot-registration #sign-up p {
+  text-align: center;
+}
+.kahoot-registration #sign-in h5,
+.kahoot-registration #sign-up h5 {
+  margin-top: 0;
+  line-height: 21px;
+}
+.kahoot-registration #sign-up {
+  display: none;
+  margin-top: 0;
+  text-align: center;
+}
+@media (max-width: 767px) {
+  .kahoot-registration body {
+    padding: 0;
+  }
+  .kahoot-registration h2 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 40px;
+    line-height: 42px;
+  }
+  .kahoot-registration h4,
+  .kahoot-registration h5 {
+    font-size: 20px;
+  }
+  .kahoot-registration #birthday {
+    padding: 0 10px;
+  }
+  .kahoot-registration #birthday select {
+    margin-top: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .kahoot-registration #birthday #birthday-day {
+    width: 100%;
+  }
+  .kahoot-registration #birthday #birthday-month {
+    width: 100%;
+    margin: 10px 0 0 0;
+  }
+  .kahoot-registration #birthday #birthday-year {
+    width: 100%;
+  }
+  .kahoot-registration #birthday #moz-birthday-day,
+  .kahoot-registration #birthday #moz-birthday-month,
+  .kahoot-registration #birthday #moz-birthday-year {
+    width: 100%;
+    margin: 10px 0 0 0;
+  }
+  .kahoot-registration #birthday .moz-select {
+    width: 100%;
+    margin-top: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .kahoot-registration #birthday .moz-select select {
+    margin-top: 0px;
+  }
+  .kahoot-registration #birthday .moz-select #birthday-day {
+    width: 130%;
+  }
+  .kahoot-registration #birthday .moz-select #birthday-month {
+    width: 130%;
+  }
+  .kahoot-registration #birthday .moz-select #birthday-year {
+    width: 130%;
+  }
+  .kahoot-registration #sign-up-with-email,
+  .kahoot-registration #reset-password,
+  .kahoot-registration #reset-password-success,
+  .kahoot-registration .general-form {
+    padding: 0 10px;
+  }
+  .kahoot-registration #sign-in {
+    text-align: center;
+  }
+  .kahoot-registration #sign-in,
+  .kahoot-registration #sign-up {
+    padding: 0 10px;
+  }
+  .kahoot-registration #sign-in .right-col,
+  .kahoot-registration #sign-up .right-col {
+    padding-left: 0;
+  }
+  .kahoot-registration #sign-in .row-fluid h5,
+  .kahoot-registration #sign-up .row-fluid h5,
+  .kahoot-registration #sign-in .row-fluid input,
+  .kahoot-registration #sign-up .row-fluid input,
+  .kahoot-registration #sign-in .row-fluid .btn,
+  .kahoot-registration #sign-up .row-fluid .btn {
+    width: 100%;
+  }
+  .kahoot-registration #sign-in .row-fluid h5.register,
+  .kahoot-registration #sign-up .row-fluid h5.register,
+  .kahoot-registration #sign-in .row-fluid input.register,
+  .kahoot-registration #sign-up .row-fluid input.register,
+  .kahoot-registration #sign-in .row-fluid .btn.register,
+  .kahoot-registration #sign-up .row-fluid .btn.register {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media (max-width: 568px) {
+  .kahoot-registration #uvTab {
+    display: none !important;
+  }
+  .kahoot-registration h2 {
+    margin: 20px 5px 10px 5px;
+    font-size: 24px;
+    line-height: 26px;
+    padding: 0;
+  }
+  .kahoot-registration h4,
+  .kahoot-registration h5 {
+    font-size: 17px;
+    padding: 0;
+    line-height: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+}
