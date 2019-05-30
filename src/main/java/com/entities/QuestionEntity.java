@@ -1,15 +1,10 @@
 package com.entities;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import org.springframework.http.codec.json.Jackson2JsonEncoder;
-import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
-
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Question")
-public class Question {
+@Table(name = "QuestionEntity")
+public class QuestionEntity {
 
 	private static final int DEFAULT_TIME = 100; //s
 
@@ -43,17 +38,17 @@ public class Question {
 	@Column(name = "answer4", nullable = true, length = 45)
 	private String answer4;
 
-	public Question() {}
+	public QuestionEntity() {}
 
-//	public Question(String question, int correctAnswer, String answer1, String answer2, String answer3, String answer4, int time) {
+//	public QuestionEntity(String question, int correctAnswer, String answer1, String answer2, String answer3, String answer4, int time) {
 //		this(question, null, correctAnswer, answer1, answer2, answer3, answer4, time);
 //	}
 //
-//	public Question(String question, String image, int correctAnswer, String answer1, String answer2, String answer3, String answer4) {
+//	public QuestionEntity(String question, String image, int correctAnswer, String answer1, String answer2, String answer3, String answer4) {
 //		this(question, image, correctAnswer, answer1, answer2, answer3, answer4, DEFAULT_TIME);
 //	}
 
-//	public Question(String question, String image, int correctAnswer, String answer1, String answer2, String answer3, String answer4, int time) {
+//	public QuestionEntity(String question, String image, int correctAnswer, String answer1, String answer2, String answer3, String answer4, int time) {
 ////		this.question = question;
 ////		this.image = image;
 ////		this.correctAnswer = correctAnswer;
@@ -94,7 +89,7 @@ public class Question {
 	@Override
 	public String toString() {
 //		ObjectMapper mapper = new ObjectMapper();
-////		Question question = super.clone();
+////		QuestionEntity question = super.clone();
 //		try {
 //			return mapper.writerWithDefaultPrettyPrinter().writeValueAsString(super.clone());
 //		} catch (JsonProcessingException e) {

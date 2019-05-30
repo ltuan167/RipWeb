@@ -25,7 +25,7 @@ public class GameManager {
 
 	/**
 	 * Create new Game with question collection ID
-	 * @param questionCollectionId Question Collection ID
+	 * @param questionCollectionId QuestionEntity Collection ID
 	 * @return Created Game PIN
 	 */
 	public synchronized Integer createNewGame(Integer questionCollectionId) {

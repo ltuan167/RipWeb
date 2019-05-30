@@ -23,7 +23,7 @@ public class QuestionCollection {
 	private String description;
 
 	@OneToMany(mappedBy = "questionCollection_ID", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	private Set<Question> questions;
+	private Set<QuestionEntity> questions;
 
 	public QuestionCollection() {}
 
@@ -49,7 +49,7 @@ public class QuestionCollection {
 	public String getDescription() { return description; }
 	public void setDescription(String description) { this.description = description; }
 
-	public Set<Question> getQuestions() { return questions; }
-	public void setQuestions(Set<Question> questions) { this.questions = questions;}
+	public Set<QuestionEntity> getQuestions() { return questions; }
+	public void setQuestions(Set<QuestionEntity> questions) { this.questions = questions;}
 
 }
