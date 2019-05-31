@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="resources/css/playzone.css">
     <link rel="stylesheet" href="resources/css/button.css">
     <link rel="icon" href="resources/icon/favicon.png">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.3.0/sockjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
 </head>
 <body>
 <div id="pinScreen">
@@ -208,7 +211,8 @@
     End game!
 </div>
 
-<script src = "resources/js/playFuncs.js"></script>
+<script src = "resources/js/Play/playFuncs.js"></script>
+<script src = "resources/js/Play/playWs.js"></script>
 
 </body>
 </html>
