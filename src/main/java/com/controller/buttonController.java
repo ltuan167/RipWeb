@@ -5,9 +5,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class buttonController {
-    @GetMapping("/hostView")
+    @GetMapping("/displayQuestion")
     public String homepage() {
-        return "hostView";
+        return "displayQuestion";
     }
 }
 

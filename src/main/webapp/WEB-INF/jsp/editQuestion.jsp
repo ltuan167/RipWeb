@@ -15,9 +15,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta itemprop="version" content="1.729.0">
-    <title>Edit your kahoot | Question</title>
+    <title>Edit your ripweb | Question</title>
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
-    <link rel="shortcut icon" href="https://create.kahoot.it/assets/img/ico/favicon.ico">
+    <link rel="shortcut icon" href="resources/icon/favicon.png">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://create.kahoot.it/assets/img/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://create.kahoot.it/assets/img/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://create.kahoot.it/assets/img/ico/apple-touch-icon-72-precomposed.png">

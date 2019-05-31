@@ -1,19 +1,6 @@
 
 
 <!DOCTYPE html>
-<!--[if lt IE 7]>
-<html class="no-js lt-ie9 lt-ie8 lt-ie7 ie" lang="en">
-<![endif]-->
-<!--[if IE 7]>
-<html class="no-js lt-ie9 lt-ie8 ie" lang="en">
-<![endif]-->
-<!--[if IE 8]>
-<html class="no-js lt-ie9 ie" lang="en">
-<![endif]-->
-<!--[if gt IE 8]>
-<html class="no-js ie" lang="en">
-<![endif]-->
-<!--[if !IE]><!-->
 <html class="js flexbox canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths svg" lang="en">
 <link type="text/css" id="dark-mode" rel="stylesheet" href="">
 <style type="text/css" id="dark-mode-custom-style"></style>
@@ -34,13 +21,13 @@
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://play.kahoot.it/img/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://play.kahoot.it/img/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="https://play.kahoot.it/img/ico/apple-touch-icon-precomposed.png">
-    <link rel="stylesheet" type="text/css" href="resources/css/hostView/cloak.css">
-    <script type="text/javascript" id="www-widgetapi-script" src="resources/js/hostView/www-widgetapi.js" async=""></script><script async="" src="resources/js/hostView/iframe_api"></script><script async="" src="resources/js/hostView/analytics.js"></script><script type="text/javascript" async="" src="resources/js/hostView/amplitude-4.js"></script><script type="text/javascript">
+    <link rel="stylesheet" type="text/css" href="resources/css/displayQuestion/cloak.css">
+    <script type="text/javascript" id="www-widgetapi-script" src="resources/js/displayQuestion/www-widgetapi.js" async=""></script><script async="" src="resources/js/displayQuestion/iframe_api"></script><script async="" src="resources/js/displayQuestion/analytics.js"></script><script type="text/javascript" async="" src="resources/js/displayQuestion/amplitude-4.js"></script><script type="text/javascript">
     var _trackJs = {
         customer: '225f19cc34be4573b843ef421db55656'
     };
 </script>
-    <script src="resources/js/hostView/kahunaAPI_min.js"></script>
+    <script src="resources/js/displayQuestion/kahunaAPI_min.js"></script>
     <script type="text/javascript">
         (function(e,t){var n=e.amplitude||{_q:[],_iq:{}};var r=t.createElement("script")
         ;r.type="text/javascript";r.async=true
@@ -77,13 +64,83 @@
         document.write('src="'+'shared/theme/config.js');
         document.write("?"+new Date().getTime()+'">');
         document.write('</scri'+'pt>');
-    </script><script type="text/javascript" src="resources/js/hostView/config.js"></script>
-    <link rel="stylesheet" media="all" type="text/css" id="theme" href="resources/css/hostView/style.css">
-    <link rel="stylesheet" href="resources/css/hostView/registration.css">
-    <script async="" src="resources/js/hostView/player.js"></script>
+    </script><script type="text/javascript" src="resources/js/displayQuestion/config.js"></script>
+    <link rel="stylesheet" media="all" type="text/css" id="theme" href="resources/css/displayQuestion/style.css">
+    <link rel="stylesheet" href="resources/css/displayQuestion/registration.css">
+    <script async="" src="resources/js/displayQuestion/player.js"></script>
     <style type="text/css"></style>
+    <link rel="stylesheet" href="resources/css/displayQuestion/data/player.css">
+    <style type="text/css"></style>
+    <link rel="stylesheet" href="resources/css/displayQuestion/data/css.css" media="all">
+    <style type="text/css">.dgwErO {
+        background: #fff;
+    }.kgFIAt {
+         color: ;
+     }.fglrfT {
+          display: -webkit-box;
+          display: -moz-box;
+          display: -ms-flexbox;
+          display: -webkit-flex;
+          display: flex;
+          flex-direction: column;
+          -webkit-box-direction: normal;
+          -webkit-box-orient: vertical;
+          -ms-flex-direction: column;
+          -webkit-flex-direction: column;
+          align-items: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          -webkit-align-items: center;
+          overflow: hidden;
+          position: absolute;
+          top: .875rem;
+          right: .875rem;
+          margin: 0;
+          padding: 0;
+          background-color: transparent;
+          border: 0;
+          cursor: pointer;
+      }
+    .fglrfT .icon {
+        width: 2.8125rem;
+        height: 2.8125rem;
+    }.kLDGEP {
+         display: inline-block;
+         flex: 1;
+         -ms-flex: 1;
+         -webkit-flex: 1;
+         align-self: center;
+         -ms-flex-item-align: center;
+         -webkit-align-self: center;
+         background-color: #333;
+         border-radius: 50%;
+         text-align: center;
+     }
+    .kLDGEP svg {
+        width: 1.5rem;
+        height: 2.8rem;
+        fill: #fff;
+    }.bTUSaT {
+         flex: 1;
+         -ms-flex: 1;
+         -webkit-flex: 1;
+         margin-top: .25rem;
+         background-color: inherit;
+         font-family: montserrat, 'helvetica neue', helvetica, arial, sans-serif;
+         font-size: .75em;
+         color: #000;
+     }.gfwkXD {
+          background: #864cbf;
+          color: #fff;
+      }.dlFEfw {
+           background: transparent url('') no-repeat scroll center;
+           display: none;
+           height: 10vh;
+           width: 10vh;
+       }
+    </style>
 </head>
-<body keypress="" dynamic-background="" class="touchpadSwipeAnimationCore animate-background">
+<body keypress="" dynamic-background="" class="touchpadSwipeAnimationCore orange">
 <!--[if lt IE 9]>
 <div class="browser-warning alert center">Sorry but this browser is too old for Kahoot! <a href="http://browsehappy.com/">Upgrade to a better one</a> to play.</div>
 <![endif]-->
@@ -209,78 +266,160 @@
 <div id="debug-info" debug-info="" debug-timestamp=""></div>
 <dev-mode></dev-mode>
 <div class="loader" loader="" style="display: none;"></div>
-<iframe id="gameBlockIframe" style="display:none;" class="game-block-iframe" sandbox="allow-scripts allow-same-origin" scrolling="no">
-</iframe>
-<iframe id="scoreBoardIframe" style="display:none;" class="game-block-iframe" sandbox="allow-scripts allow-same-origin" scrolling="no">
-</iframe>
-<!-- ngView: -->
-<div id="mainView" class="background-color-animation ng-scope" ng-view="">
-    <div id="lobby-video-player" fill="" class="ng-scope" style="width: 2700.44px; height: 754px; left: -590.722px;"></div>
-    <div class="join-instructions ng-scope light expanded open fadein quiz" ng-class="instructionsClasses">
-        <div class="min-content center" style="display: none;">
-                           <span class="join-host">
-                              Join <!-- ngIf: showQuizType --> at <strong ng-bind="quizHost" class="ng-binding">kahoot.it</strong> with 
-                           </span>
-            <span class="join-pin">Game PIN: <strong ng-bind-html="gamePin" class="ng-binding">78328</strong></span>
-        </div>
-        <div class="max-content fadeIn">
-            <div class="details-browser-container">
-                <div class="details">
-                    <div class="details-top">
-                        <div class="join-host">
-                                       <span>
-                                          Join<!-- ngIf: showQuizType --> with the <strong>Kahoot! app</strong> or at <strong ng-bind="quizHost" class="ng-binding">kahoot.it</strong>
-                                       </span>
-                        </div>
-                        <div class="join-pin">            <span>with Game PIN: </span>          </div>
-                    </div>
-                    <div class="gameId">          <span><strong ng-bind-html="gamePin" data-functional-selector="game-pin" class="ng-binding">78328</strong></span>        </div>
+<div id="gameBlockIframe" style="display: block;" class="game-block-iframe" sandbox="allow-scripts allow-same-origin" scrolling="no">
+    <svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="position:absolute;width:0;height:0">
+        <defs>
+            <symbol viewBox="-580 795.9 22 22" id="expand" xlink="http://www.w3.org/1999/xlink">
+                <g>
+                    <polygon points="-576,807.9 -580,807.9 -580,817.9 -570,817.9 -570,813.9 -576,813.9  "></polygon>
+                    <polygon points="-568,795.9 -568,799.9 -562,799.9 -562,805.9 -558,805.9 -558,795.9  "></polygon>
+                </g>
+            </symbol>
+            <symbol viewBox="-580 795.9 22 22" id="retract" xlink="http://www.w3.org/1999/xlink">
+                <g>
+                    <polygon points="-564,801.9 -564,795.9 -568,795.9 -568,805.9 -558,805.9 -558,801.9  "></polygon>
+                    <polygon points="-580,811.9 -574,811.9 -574,817.9 -570,817.9 -570,807.9 -580,807.9  "></polygon>
+                </g>
+            </symbol>
+        </defs>
+    </svg>
+    <!-- SVG Sprite Injection -->
+    <div style="height: 0; width: 0; position: absolute; visibility: hidden">
+        <!-- inject:svg -->
+        <svg xmlns="http://www.w3.org/2000/svg">
+            <symbol id="logo-k" viewBox="-238 1024.8 130 138">
+                <path d="M-155.5 1049.4l-20.1-7.7-39.2 37.4v-46.7l-23.2 5.9V1148l23.2.8-.2-38.4 14.3-13.8 15.1 52.2h20.5l-18.9-68.1zM-132.8 1141l-5.7 13.4 12.2 8.4 12-7.1-5.1-14.7zM-108 1032.6l-41-7.8 25.2 108.5z"></path>
+            </symbol>
+            <symbol id="triangle" viewBox="-851 1190.8 32 32">
+                <path d="M-835 1190.8l-16 32h32z"></path>
+            </symbol>
+            <symbol id="circle" viewBox="0 0 48 48">
+                <circle cx="24" cy="24" r="24"></circle>
+            </symbol>
+            <symbol id="diamond" viewBox="-476 703.9 108 108">
+                <path d="M-367.987 757.886l-54.022 54.023-54.023-54.023 54.023-54.022z"></path>
+            </symbol>
+            <symbol id="square" viewBox="-466 713.9 88 88">
+                <path d="M-466 713.9h88v88h-88v-88z"></path>
+            </symbol>
+            <symbol id="tick" viewBox="-558 778.1 44 35.6">
+                <path d="M-541.9 813.7l-16.1-16.2 7.6-7.5 8.5 8.5 20.3-20.4 7.6 7.6z"></path>
+            </symbol>
+            <symbol id="close" viewBox="-555 776.9 38 38">
+                <path d="M-517 784.2l-7.3-7.3-11.7 11.7-11.7-11.7-7.3 7.3 11.7 11.7-11.7 11.7 7.3 7.3 11.7-11.7 11.7 11.7 7.3-7.3-11.7-11.7 11.7-11.7z"></path>
+            </symbol>
+            <symbol id="image" viewBox="-586 801.9 16 16">
+                <path d="M-586 801.9v16h.8l2.8-5.6 2.4 4.8 4.4-8.8 4.8 9.6h.8v-16h-16zm4 6c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"></path>
+            </symbol>
+        </svg>
+        <!-- endinject -->
+    </div>
+    <div id="app">
+        <main class="main-wrapper">
+            <section class="question-bar question-bar--has-fullscreen-button dgwErO">
+                <div class="question-bar__title-wrap">
+                    <h1 class="question-bar__title kgFIAt">550 / 2  = ?</h1>
                 </div>
-                <div class="two-factor-auth ng-hide" ng-show="isBrowserHidden">
-                    <div class="two-factor-auth__arrow">          <img src="resources/img/hostView/two-factor-auth__lobby-triangle.png">        </div>
-                    <div class="two-factor-auth__container">
-                        <div class="two-factor-auth__title">then <strong>Pattern:</strong></div>
-                        <div class="two-factor-auth__sequence-container">
-                            <div class="two-factor-auth__sequence">
-                                <!-- ngRepeat: n in sequence -->
+                <button fullscreen="" type="button" class="btn is-not-fullscreen"><img aria-hidden="true" src="resources/img/displayQuestion/expand_icn.svg" alt="expand"><span class="fullscreen-button__label">Full Screen</span></button>
+                </button>
+            </section>
+            <div class="content-wrapper">
+                <section class="question-details">
+                    <section class="question-details__left-panel">
+                        <div class="question-details__span">
+                            <div>
+                                <div class="countdown center-content gfwkXD" aria-role="timer" aria-live="polite">111</div>
                             </div>
-                            <div class="two-factor-auth__countdown ng-binding" ng-bind="countdown"></div>
+                        </div>
+                    </section>
+                    <section class="question-details__center-panel">
+                        <div data-functional-selector="media-container" class="question-details__media">
+                            <figure style="background-image: url(&quot;/resources/img/displayQuestion/you_can_do_it.gif&quot;);" class="question-details__figure"></figure>
+                        </div>
+                    </section>
+                    <section class="question-details__right-panel">
+                        <aside class="aside-button"><button type="button" role="button" data-functional-selector="skip-button" class="button question-details__skip-button button--blue">Skip</button></aside>
+                        <div class="question-details__answer-counter">
+                            <div class="answer-counter grid grid--column grid--align-center center-content"><span class="answer-counter__number" aria-live="polite" aria-role="status" aria-relevant="additions">0</span><span class="answer-counter__answer">Answers</span></div>
+                        </div>
+                        <div class="question-details__logo-wrapper">
+                            <div class="dlFEfw"></div>
+                        </div>
+                    </section>
+                </section>
+                <section class="question-choices">
+                    <div class="question-choices__wrapper">
+                        <div class="card question-choices__card question-choices__card--undefined card--triangle">
+                                       <span class="icon card__icon question-choices__icon">
+                                          <svg class="icon__svg" data-functional-selector="icon" focusable="false">
+                                             <use class="icon__use" xlink:href="about:srcdoc#triangle"></use>
+                                          </svg>
+                                       </span>
+                            <span class="question-choices__card-text">225</span>
+                        </div>
+                        <div class="card question-choices__card question-choices__card--undefined card--diamond">
+                                       <span class="icon card__icon question-choices__icon">
+                                          <svg class="icon__svg" data-functional-selector="icon" focusable="false">
+                                             <use class="icon__use" xlink:href="about:srcdoc#diamond"></use>
+                                          </svg>
+                                       </span>
+                            <span class="question-choices__card-text">250</span>
+                        </div>
+                        <div class="card question-choices__card question-choices__card--undefined card--circle">
+                                       <span class="icon card__icon question-choices__icon">
+                                          <svg class="icon__svg" data-functional-selector="icon" focusable="false">
+                                             <use class="icon__use" xlink:href="about:srcdoc#circle"></use>
+                                          </svg>
+                                       </span>
+                            <span class="question-choices__card-text">275</span>
+                        </div>
+                        <div class="card question-choices__card question-choices__card--undefined card--square">
+                                       <span class="icon card__icon question-choices__icon">
+                                          <svg class="icon__svg" data-functional-selector="icon" focusable="false">
+                                             <use class="icon__use" xlink:href="about:srcdoc#square"></use>
+                                          </svg>
+                                       </span>
+                            <span class="question-choices__card-text">300</span>
                         </div>
                     </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script src="resources/js/displayQuestion/data/player.js"></script><script>WebFont.load({      google: {        families: ['Droid Sans', 'Montserrat:400,600,700']      }    });</script>
+
+</div>
+
+
+
+
+<!-- <iframe id="scoreBoardIframe" style="display:none;" class="game-block-iframe" sandbox="allow-scripts allow-same-origin" scrolling="no" srcdoc="">
+
+</iframe> -->
+
+
+
+<!-- ngView: -->
+
+<div id="mainView" class="background-color-animation ng-scope" ng-view="" style="height: auto;">
+    <!-- ngInclude: 'bottom-bar.html' -->
+    <div ng-include="'bottom-bar.html'" class="ng-scope">
+        <div ng-controller="BottomBarCtrl" class="bottom-bar ng-scope ng-hide" ng-show="showBottomBar()">
+            <div class="left ng-hide" ng-show="showGamePin()">    <strong class="host ng-binding" ng-bind="quizHost">kahoot.it</strong> Game PIN: <strong class="pin ng-binding" ng-bind="gameId">752990</strong>  </div>
+            <div class="bottom-bar-two-factor-auth ng-hide" ng-show="twoFactorAuthEnabled">
+                <span class="bottom-bar-two-factor-auth__title">Pattern: </span>
+                <div class="bottom-bar-two-factor-auth__sequence-container">
+                    <div class="two-factor-auth__sequence bottom-bar-two-factor-auth__sequence">
+                        <!-- ngRepeat: n in sequence -->
+                    </div>
+                    <div class="two-factor-auth__countdown bottom-bar-two-factor-auth__countdown ng-binding" ng-bind="countdown"></div>
                 </div>
             </div>
         </div>
-        <button fullscreen="" type="button" class="btn is-not-fullscreen"><img aria-hidden="true" src="resources/img/hostView/expand_icn.svg" alt="expand"><span class="fullscreen-button__label">Full Screen</span></button>
-
-        <div class="toggle-max expand" toggle-instructions="" ng-class="expand">    <img src="resources/img/hostView/icn_arrow_light.svg" alt="▼" aria-label="toggle instructions">  </div>
     </div>
-    <div class="center lobby-contain ng-scope isNotOrg" ng-class="lobbyClasses">
-        <div class="autoplay" kiosk="" reveal-on-start="" style="display: none;">
-            <div class="countdown">
-                <div class="big ng-binding" ng-bind="autoplayTime"></div>
-                <div class="small">Get ready!</div>
-            </div>
-        </div>
-        <div class="statusbar lobby ">
-            <span class="visually-hidden">      Kahoot!    </span>    <!-- ngIf: brandLogoProps -->
-        </div>
-        <div class="numberBoard playerCount">    <i class="number ng-binding">3</i><br>    <i class="countLabel ng-binding">Players</i>  </div>
-        <playerlist>
-            <div class="playerListContain" style="height: 279.6px;">
-                <ul class="player-list">
-                    <li data-functional-selector="player" class="" data-player-id="1468176837"><span class="player-name">trai</span></li>
-                    <li data-functional-selector="player" class="" data-player-id="1839096056"><span class="player-name">dep</span></li>
-                    <li data-functional-selector="player" class="" data-player-id="810814842"><span class="player-name">khoa</span></li>
-                </ul>
-            </div>
-        </playerlist>
-        <button no-kiosk="" ng-class="playBtnState" blocking="Loading..." ng-click="play()" class="but-advance play" data-functional-selector="start-button">Start<span class="arrow"></span></button>
-        <div class="kahoot-logo"></div>
-    </div>
-    <!-- ngInclude: -->
 </div>
 <div alerts="" filter-for-mobile="true"></div>
-<script type="text/javascript" src="resources/js/hostView/bootstrap.js"></script>
+<script type="text/javascript" src="resources/js/displayQuestion/bootstrap.js"></script>
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -312,7 +451,7 @@
         $('html').addClass('ipad ios7');
     }
 </script>
-<script src="resources/js/hostView/platform.js" async="" defer="defer" gapi_processed="true">
+<script src="resources/js/displayQuestion/platform.js" async="" defer="defer" gapi_processed="true">
     {parsetags: 'explicit'}
 </script>
 <div id="cboxOverlay" style="display: none;"></div>
