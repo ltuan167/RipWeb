@@ -12,8 +12,8 @@ import java.util.List;
 @Service
 @Transactional
 public class UserServices {
-    @Autowired
-    private UserDAO userDao;
+//    @Autowired
+//    private UserDAO userDao;
 
     public static List<User> listUser = new ArrayList<User>();
 
@@ -40,19 +40,19 @@ public class UserServices {
 //        userDao.delete(userDao.findById(id));
 //    }
 //
-    public Integer registerNewUser(String email, String name, String psw ) {
-        return userDao.registerNewUser(email, name, psw);
-    }
-
-    public String loadPassword(String email) {
-        return userDao.loadpassword(email);
-    }
-
-    public String loadNickname(String email) {return userDao.loadnickname(email);}
-
-    public List<User> loadUserByEmail(String email) {
-        return userDao.loadUserByEmail(email);
-    }
+//    public Integer registerNewUser(String email, String name, String psw ) {
+//        return userDao.registerNewUser(email, name, psw);
+//    }
+//
+//    public String loadPassword(String email) {
+//        return userDao.loadpassword(email);
+//    }
+//
+//    public String loadNickname(String email) {return userDao.loadnickname(email);}
+//
+//    public List<User> loadUserByEmail(String email) {
+//        return userDao.loadUserByEmail(email);
+//    }
 
 //    public Boolean checkLogin() {
 //        return userDao.c

@@ -1,6 +1,6 @@
 package com.model;
 
-public class GameCommandMessage {
+public class GameApiResponse {
 	private GameCommandType type;
 	private String content;
 
@@ -13,7 +13,8 @@ public class GameCommandMessage {
 		NEXT_QUESTION,          // {type: "NEXT_QUESTION", content: "{#questions}"} -> show screen with button corresponding to number in content
 		END_GAME,               // {type: "END_GAME", content: ""} -> Just notice for JS to end the game (not a name of the move)
 		GAME_REMOVED,
-		REQUEST_ERROR
+		REQUEST_ERROR,
+		OK
 	}
 
 	public GameCommandType getType() {

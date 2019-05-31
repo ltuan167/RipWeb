@@ -1,6 +1,5 @@
 package com.controller;
 
-
 import com.services.UserServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,7 +21,7 @@ public class SignupController {
                          @RequestParam String repassword,
                          ModelMap model) {
 		// ADD USER TO DB HERE
-		model.addAttribute("registerNewUser", userServices.registerNewUser(nickname, email, password));
+//		model.addAttribute("registerNewUser", userServices.registerNewUser(nickname, email, password));
 		model.addAttribute("message", "Sign up successfully!");
 		return "login";
 	}

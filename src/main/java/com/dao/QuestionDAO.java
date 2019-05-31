@@ -13,5 +13,4 @@ public class QuestionDAO {
 	@Autowired
 	private SessionFactory sessionFactory;
 
-
 }

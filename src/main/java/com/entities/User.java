@@ -1,32 +1,28 @@
 package com.entities;
 
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 @Entity
-@Table(name = "User", catalog = "spring_security",
-		uniqueConstraints = @UniqueConstraint(columnNames = {"nickname", "email"}))
+@Table(name = "User", //catalog = "spring_security",
+        uniqueConstraints = @UniqueConstraint(columnNames = {"nickname", "email"}))
 public class User {
+
 	@Id
 	@Column(name = "id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
-	@Column(name = "nickname", unique = true)
+	@Column(name = "nickname", unique = true, length = 45)
 	private String nickname;
 
-	@Column(name = "email", unique = true)
+	@Column(name = "email", unique = true, length = 70)
 	private String email;
 
 	@Column(name = "password")
 	private String password;
 
-	@Column(name = "name")
+	@Column(name = "name", length = 50)
 	private String name;
 
 	@Column(name = "dob")
@@ -34,14 +30,14 @@ public class User {
 
 	public User() {}
 
-	private String[] roles;
+//	private String[] roles;
 
-	public String[] getRoles() {
-		return roles;
-	}
-	public void setRoles(String[] roles) {
-		this.roles = roles;
-	}
+//	public String[] getRoles() {
+//		return roles;
+//	}
+//	public void setRoles(String[] roles) {
+//		this.roles = roles;
+//	}
 
 	public int getId() { return id;}
 	public void setId(int id) {this.id = id;}
@@ -61,12 +57,12 @@ public class User {
 	public Date getDob() { return dob; }
 	public void setDob(Date dob) { this.dob = dob; }
 
-	public List<GrantedAuthority> getAuthorities() {
-		List<GrantedAuthority> authorities = new ArrayList<>();
-		for (String role : roles) {
-			authorities.add(new SimpleGrantedAuthority(role));
-		}
-		return authorities;
-	}
+//	public List<GrantedAuthority> getAuthorities() {
+//		List<GrantedAuthority> authorities = new ArrayList<>();
+//		for (String role : roles) {
+//			authorities.add(new SimpleGrantedAuthority(role));
+//		}
+//		return authorities;
+//	}
 
 }
