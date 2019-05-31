@@ -1177,23 +1177,23 @@
     <link rel="stylesheet" href="resources/css/homepage.css" as="style" onload="null" data-loadcss="true" media="all">
     <noscript><link rel="stylesheet" href="https://kahoot.com/wp-content/themes/kahoot2017/assets/cssv/screen-ac4ffd37aa.css"></noscript>
     <%--    <script async="" src="final_files/gtm_005.js"></script>--%>
-    <script type="text/javascript" id="www-widgetapi-script" src="resources/js/www-widgetapi_005.js" async=""></script>
-    <script src="resources/js/iframe_api_002.txt"></script>
+    <script type="text/javascript" id="www-widgetapi-script" src="resources/js/homepage/www-widgetapi_005.js" async=""></script>
+    <script src="resources/js/homepage/iframe_api_002.txt"></script>
 <%--    <script type="text/javascript" async="" src="final_files/amplitude-4_003.js"></script>--%>
 <%--    <script async="" src="final_files/gtm_004.js"></script>--%>
-    <script type="text/javascript" id="www-widgetapi-script" src="resources/js/www-widgetapi_004.js" async=""></script>
-    <script src="resources/js/iframe_api.txt"></script>
+    <script type="text/javascript" id="www-widgetapi-script" src="resources/js/homepage/www-widgetapi_004.js" async=""></script>
+    <script src="resources/js/homepage/iframe_api.txt"></script>
 <%--    <script type="text/javascript" async="" src="final_files/amplitude-4_002.js"></script>--%>
 <%--    <script async="" src="final_files/gtm_003.js"></script>--%>
-    <script type="text/javascript" id="www-widgetapi-script" src="resources/js/www-widgetapi_003.js" async=""></script>
+    <script type="text/javascript" id="www-widgetapi-script" src="resources/js/homepage/www-widgetapi_003.js" async=""></script>
 <%--    <script type="text/javascript" async="" src="final_files/analytics.js"></script>--%>
 <%--    <script type="text/javascript" async="" src="final_files/amplitude-4.js"></script>--%>
-    <script src="/wp-content/themes/kahoot2017/assets/js/a11y-dialog.min.js"></script><script src="resources/js/iframe_api_002_002.txt"></script>
+    <script src="/wp-content/themes/kahoot2017/assets/js/a11y-dialog.min.js"></script><script src="resources/js/homepage/iframe_api_002_002.txt"></script>
 <%--    <script async="" src="final_files/gtm_002.js"></script>--%>
-    <script type="text/javascript" id="www-widgetapi-script" src="resources/js/www-widgetapi_002.js" async=""></script>
-    <script type="text/javascript" id="www-widgetapi-script" src="resources/js/www-widgetapi.js" async=""></script>
-    <script src="resources/js/a11y-dialog.js"></script>
-    <script src="resources/js/iframe_api_003.txt"></script>
+    <script type="text/javascript" id="www-widgetapi-script" src="resources/js/homepage/www-widgetapi_002.js" async=""></script>
+    <script type="text/javascript" id="www-widgetapi-script" src="resources/js/homepage/www-widgetapi.js" async=""></script>
+    <script src="resources/js/homepage/a11y-dialog.js"></script>
+    <script src="resources/js/homepage/iframe_api_003.txt"></script>
 <%--    <script async="" src="final_files/gtm.js"></script>--%>
     <script>
         /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
@@ -1293,10 +1293,10 @@
             <nav class="header-menu" aria-label="Navigation" itemscope="" itemtype="https://schema.org/SiteNavigationElement">
                 <div class="menu-header-menu-container"><ul id="menu-header-menu" class="">
                     <li id="menu-item-102" class="mobile-hide menu-item menu-item-type-post_type menu-item-object-page menu-item-102"><a data-tracking-id="explore-games-top-bar" itemprop="url" href="#aboutUs">About Us</a></li>
-                    <li id="menu-item-34" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-34"><a target="_blank" data-tracking-id="play-top-bar" itemprop="url" href="play">Enter game PIN!</a></li>
-                    <li id="menu-item-35" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-35"><a target="_blank" data-tracking-id="sign-in-top-bar" itemprop="url" href="login">Log in</a></li>
-                    <li id="menu-item-36" class="btn-wrap menu-item menu-item-type-custom menu-item-object-custom menu-item-36"><a target="_blank" data-tracking-id="sign-up-top-bar" itemprop="url" href="signup">Sign up</a></li>
-                    <li id="menu-item-6515" class="mobile-hide nav-icon nav-icon--help menu-item menu-item-type-custom menu-item-object-custom menu-item-6515"><a target="_blank" href="https://support.kahoot.com/" itemprop="url"><span class="visually-hidden">Help</span></a></li>
+                    <li id="menu-item-34" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-34"><a target="_self" data-tracking-id="play-top-bar" itemprop="url" href="play">Enter game PIN!</a></li>
+                    <li id="menu-item-35" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-35"><a target="_self" data-tracking-id="sign-in-top-bar" itemprop="url" href="login">Log in</a></li>
+                    <li id="menu-item-36" class="btn-wrap menu-item menu-item-type-custom menu-item-object-custom menu-item-36"><a target="_self" data-tracking-id="sign-up-top-bar" itemprop="url" href="signup">Sign up</a></li>
+                    <li id="menu-item-6515" class="mobile-hide nav-icon nav-icon--help menu-item menu-item-type-custom menu-item-object-custom menu-item-6515"><a target="_self" href="https://support.kahoot.com/" itemprop="url"><span class="visually-hidden">Help</span></a></li>
                 </ul></div>			</nav>
 
         </div>
@@ -1344,7 +1344,7 @@
                     <img src="resources/img/device-image.svg" role="presentation" class="in-up" alt=" " style="opacity: 1; display: inline-block; transform: translateY(0px);">
                     <h1>Make learning awesome!</h1>
                     <p>RipWeb! makes it easy to create, share and play fun learning games or trivia quizzes in minutes.</p>
-                    <a data-tracking-id="hero-sign-up" class="btn btn--raised" href="signup">Sign up for free</a>
+                    <a target="_self" data-tracking-id="hero-sign-up" class="btn btn--raised" href="signup">Sign up for free</a>
                 </div>
             </div>
 
@@ -1683,7 +1683,7 @@
                         <h1></h1>
                         <p><strong>RipWeb!</strong>??</p>
                         <p>i dont know wtf to say </p>
-                        <p><a class="btn theme-opposite" data-tracking-id="free-trial-welcomeback" href="file:///C:/Users/Khoa%20Tran/Desktop/homepage.html??????">Sign up cmn di </a></p>
+                        <p><a class="btn theme-opposite" data-tracking-id="free-trial-welcomeback" target="_self" href="signup">Sign up cmn di </a></p>
                     </div>
                     <div class="text-image__image">
 
@@ -1759,7 +1759,7 @@
 
 
 
-<script src="resources/js/jquery-3.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="resources/js/homepage/jquery-3.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
 
 
@@ -1767,7 +1767,7 @@
 
 <!-- add these only when needed -->
 <div class="modal-overlay"></div>
-<script id="k-functions" src="resources/js/functions-64617a5349.js"></script>
+<script id="k-functions" src="resources/js/homepage/functions-64617a5349.js"></script>
 
 
 
