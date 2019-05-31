@@ -3,7 +3,10 @@ package com.rest;
 import com.manager.Game;
 import com.manager.GameManager;
 import com.model.GameApiResponse;
+import com.model.Greeting;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.messaging.simp.SimpMessageSendingOperations;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -71,6 +74,16 @@ public class GameAPIController {
 			res.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 		}
 		return removeResponse;
+	}
+
+
+	@Autowired
+	public SimpMessageSendingOperations messagingTemplate;
+
+	@PostMapping(value = "/testws")
+	public void test(@RequestParam int gamePIN, @RequestParam String msg){
+		Greeting greeting = new Greeting("next_question");
+		messagingTemplate.convertAndSend("/game/" + gamePIN, greeting);
 	}
 
 }

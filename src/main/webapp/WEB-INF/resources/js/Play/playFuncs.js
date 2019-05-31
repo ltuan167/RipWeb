@@ -33,6 +33,7 @@ function joinGame() {
                 console.log(res.content);
                 alert(res.content);
             } else {
+                connectAndSubscribeWs(inputGamePin);
                 console.log("Game PIN: " + res.content);            //OK
                 console.log("Input nick name: "+ inputNickname);
                 let pins = document.getElementsByName("pin");
