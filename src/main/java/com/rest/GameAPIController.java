@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.Random;
 
 @RestController
 @RequestMapping("/1.0/game")
@@ -53,7 +54,8 @@ public class GameAPIController {
 	@PostMapping(value = "/submit", produces = MediaType.APPLICATION_JSON_VALUE)
 	public GameApiResponse submitAnswer(@RequestParam int gamePIN, @RequestParam int questionId, @RequestParam int chooseAnsId, HttpServletRequest req, HttpServletResponse res) {
 		GameApiResponse submittedResponse = new GameApiResponse();
-
+		submittedResponse.setType(GameApiResponse.GameCommandType.SUBMIT_ACCEPTED);
+		submittedResponse.setContent(String.valueOf(new Random().nextInt(1000)));
 		return submittedResponse;
 	}
 

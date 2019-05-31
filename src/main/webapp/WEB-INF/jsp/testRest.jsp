@@ -27,7 +27,7 @@
             <td><button id="createGame">Create Game</button></td>
             <script>
                 $("#createGame").click(() => {
-                    for (var i=0; i<100; i++)
+                    for (var i=0; i<10; i++)
                     postRest("http://localhost/1.0/game/create?questionCollectionId="+$("#questionCollectionId").val(), null);
                 });
             </script>
