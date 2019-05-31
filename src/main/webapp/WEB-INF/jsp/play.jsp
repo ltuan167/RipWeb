@@ -33,9 +33,9 @@
                         <div class="logo-container">
                             <div class="logo center-block">
                                 <span class="ng-binding">              RipWeb!            </span>          </div>        </div>
-                            <input id="inputGamePin" ios7fix="" class="username ng-pristine ng-untouched ng-valid ng-empty" ng-class="{invalid: !gamePinValid}" placeholder="Game PIN" ng-model="gameId" type="tel" shake="badGameId" data-functional-selector="game-pin-input" aria-label="Game pin" ng-change="gameIdChanged()" ng-focus="gameIdFocused()" ng-blur="gameIdUnfocused()">
+                            <input type="text" id="inputGamePin" ios7fix="" class="username ng-pristine ng-untouched ng-valid ng-empty" ng-class="{invalid: !gamePinValid}" placeholder="Game PIN" ng-model="gameId" shake="badGameId" data-functional-selector="game-pin-input" aria-label="Game pin" ng-change="gameIdChanged()" ng-focus="gameIdFocused()" ng-blur="gameIdUnfocused()">
                             <input id="inputNickName" ios7fix="" class="username ng-pristine ng-untouched ng-valid ng-empty" ng-class="{invalid: !gamePinValid}" placeholder="Nick name" ng-model="gameId" type="tel" shake="badGameId" data-functional-selector="game-pin-input" aria-label="Game pin" ng-change="gameIdChanged()" ng-focus="gameIdFocused()" ng-blur="gameIdUnfocused()">
-                            <button onclick="changeStage()" type="submit" class="btn btn-greyscale join ng-binding" blocking="" data-functional-selector="join-button-game-pin">            Enter          </button>
+                            <button onclick="joinGame()" type="submit" class="btn btn-greyscale join ng-binding" blocking="" data-functional-selector="join-button-game-pin">            Enter          </button>
                     </div>
                 </div>
                 <div class="vertical-alignment-wrapper__bottom">
@@ -55,6 +55,7 @@
 
 
 <div id="waitScreen">
+    <script src="resources/js/wait2play.js"></script>
     <div style="height: 0; width: 0; position: absolute; visibility: hidden">
         <svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink"><defs><filter x="-2.2%" y="-2.3%" width="104.4%" height="104.8%" filterUnits="objectBoundingBox" id="a"><feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset><symbol id="logo-shapes" viewBox="0 0 24 24"><ellipse cx="5.506" cy="18.966" rx="4.953" ry="4.953"></ellipse><path d="M12.005 5.902L17.873.033l5.869 5.869-5.869 5.868zm1.443 8.899h8.849v8.849h-8.849zm-2.584-4.977H.146l5.36-8.555z"></path></symbol></filter></defs></svg>
     </div>
@@ -68,12 +69,13 @@
     <div id="mainView" ng-view="" class="ng-scope">
         <div class="screen instructions-screen ng-scope" ios7lazyfix="">
             <div class="status-bar status-bar--header ng-scope" ng-if="!isTeamMode">
-                <div class="status-bar__item status-bar__game-pin ng-binding">      PIN:      817387    </div>
-                <div class="status-bar__item status-bar__username ng-binding">      dep    </div>
+                <div class="status-bar__item status-bar__game-pin ng-binding">      PIN:    <a name="pin"></a>    </div>
+                <div class="status-bar__item status-bar__username ng-binding">      <a id="nickname"></a>    </div>
             </div>
             <div class="screen__main instructions" ng-class="{'screen__main--instructions-team-mode': isTeamMode}">
                 <h1 class="ng-binding">      You're in!    </h1>
                 <h2 class="instructions__subheader ng-binding">      See your nickname onscreen?    </h2>
+                <button onclick="nextQuestion()">Next Question</button>
                 <ul class="players__members-list ng-hide" ng-show="isTeamMode">
                 </ul>
             </div>
@@ -108,27 +110,30 @@
         <div id="app">
             <main class="controller-layout grid full-height">
                 <div class="quiz-board">
-                    <button style="max-width:100%;max-height:100%;" type="button" role="button" data-functional-selector="answer answer-0" class="card-button card-button--triangle" aria-label="Answer 1">
+                    <button onclick="submitAnswer(1)" style="max-width:100%;max-height:100%;" type="button" role="button" data-functional-selector="answer answer-0" class="card-button card-button--triangle" aria-label="Answer 1">
                     <span class="icon card-button__card-icon">
                         <svg class="icon__svg" data-functional-selector="icon" focusable="false">
                         </svg>
                     </span>
                     </button>
-                    <button style="max-width:100%;max-height:100%;" type="button" role="button" data-functional-selector="answer answer-1" class="card-button card-button--diamond" aria-label="Answer 2">
+
+                    <button onclick="submitAnswer(2)" style="max-width:100%;max-height:100%;" type="button" role="button" data-functional-selector="answer answer-1" class="card-button card-button--diamond" aria-label="Answer 2">
                     <span class="icon card-button__card-icon">
                         <svg class="icon__svg" data-functional-selector="icon" focusable="false">
 
                         </svg>
                     </span>
                     </button>
-                    <button style="max-width:100%;max-height:100%;" type="button" role="button" data-functional-selector="answer answer-2" class="card-button card-button--circle" aria-label="Answer 3">
+
+                    <button onclick="submitAnswer(3)" style="max-width:100%;max-height:100%;" type="button" role="button" data-functional-selector="answer answer-2" class="card-button card-button--circle" aria-label="Answer 3">
                     <span class="icon card-button__card-icon">
                         <svg class="icon__svg" data-functional-selector="icon" focusable="false">
 
                         </svg>
                     </span>
                     </button>
-                    <button style="max-width:100%;max-height:100%;" type="button" role="button" data-functional-selector="answer answer-3" class="card-button card-button--square" aria-label="Answer 4">
+
+                    <button onclick="submitAnswer(4)" style="max-width:100%;max-height:100%;" type="button" role="button" data-functional-selector="answer answer-3" class="card-button card-button--square" aria-label="Answer 4">
                     <span class="icon card-button__card-icon">
                         <svg class="icon__svg" data-functional-selector="icon" focusable="false">
 
@@ -142,18 +147,12 @@
 
     <!-- ngView: --><div id="scoreBar" ng-view="" class="ng-scope" style="height: auto;">
     <div class="status-bar status-bar--header game-block-status-bar--header ng-scope">
-        <div class="status-bar__item status-bar__game-pin ng-binding">    PIN:    193651  </div>
-        <div class="status-bar__item status-bar__question-number ng-binding" ng-bind-html="questionNumber()">1 of 1</div>
-        <div class="status-bar__item status-bar__username ng-binding">    Test  </div>
+        <div class="status-bar__item status-bar__game-pin ng-binding">    PIN:    <a name="pin"></a>  </div>
+        <div class="status-bar__item status-bar__username ng-binding">    Score:   </div>
         <!-- ngIf: showStatusBarScore -->
-        <div class="status-bar__item status-bar__score ng-binding ng-scope" ng-if="showStatusBarScore" data-functional-selector="player-total-score">    0  </div>
+        <div class="status-bar__item status-bar__score ng-binding ng-scope" ng-if="showStatusBarScore" data-functional-selector="player-total-score" id="score">   </div>
         <!-- end ngIf: showStatusBarScore -->
     </div><!-- Game block to be shown here -->
-    <div class="status-bar status-bar--footer game-block-status-bar--footer ng-scope">
-        <div class="status-bar__item status-bar__username ng-binding">    Test  </div>
-        <!-- ngIf: showStatusBarScore -->
-        <div class="status-bar__item status-bar__score ng-binding ng-scope" ng-if="showStatusBarScore" data-functional-selector="player-total-score">    0  </div>
-        <!-- end ngIf: showStatusBarScore --></div>
 </div>
 
     <div alerts=""></div>
@@ -179,13 +178,14 @@
     <div id="mainView" ng-view="" class="ng-scope">
         <div class="screen answer-screen ng-scope" ios7lazyfix="">
             <div class="status-bar status-bar--header">
-                <div class="status-bar__item status-bar__game-pin ng-binding">      PIN:      817387    </div>
-                <div class="status-bar__item status-bar__question-number ng-binding" ng-bind-html="questionNumber()">1 of 1</div>
-                <div class="status-bar__item status-bar__username ng-binding">      trai    </div>
+                <div class="status-bar__item status-bar__game-pin ng-binding">      PIN:      <a name="pin"></a>    </div>
+                <div class="status-bar__item status-bar__username ng-binding">      Score    </div>
                 <!-- ngIf: showStatusBarScore -->
-                <div class="status-bar__item status-bar__score ng-binding ng-scope" ng-if="showStatusBarScore" data-functional-selector="player-total-score">      0    </div>
+                <div class="status-bar__item status-bar__score ng-binding ng-scope" ng-if="showStatusBarScore" data-functional-selector="player-total-score" name="score">          </div>
                 <!-- end ngIf: showStatusBarScore -->
             </div>
+            <button onclick="endGame()">End Game</button>
+            <button onclick="nextQuestion()">Next Question</button>
             <div class="screen__main screen__main--gutter-none selectanswer">
                 <div class="answerFeedback animated-background animated-background--fast">
                     <div class="spinner">      </div>
@@ -193,9 +193,9 @@
                 </div>
             </div>
             <div class="status-bar status-bar--footer">
-                <div class="status-bar__item status-bar__username ng-binding">      trai    </div>
+                <div class="status-bar__item status-bar__username ng-binding">      Score    </div>
                 <!-- ngIf: showStatusBarScore -->
-                <div class="status-bar__item status-bar__score ng-binding ng-scope" ng-if="showStatusBarScore" data-functional-selector="player-total-score">      0    </div>
+                <div class="status-bar__item status-bar__score ng-binding ng-scope" ng-if="showStatusBarScore" data-functional-selector="player-total-score" name = "score">   </div>
                 <!-- end ngIf: showStatusBarScore -->
             </div>
         </div>
@@ -208,57 +208,7 @@
     End game!
 </div>
 
-<script>
-    function showScreen(divId) {
-        var divID = ["homeScreen","pinScreen", "waitScreen", "playScreen","waitNextScreen","endScreen"];
-        for (var i = 0 ; i < divID.length; i++){
-            let showDiv = document.getElementById(divID[i]);
-            if(divID[i] == divId){
-                showDiv.style.display = "block";
-            }
-            else{
-                showDiv.style.display = "none";
-            }
-        }
-        // let divs = document.getElementsByTagName("div");
-        // for (var i = 0; i < divs.length; i++)
-        //     divs[i].style.display = "none";
-        // let showDiv = document.getElementById(divId);
-        // if (showDiv)
-        //     showDiv.style.display = "flex";
-    }
-    showScreen("pinScreen");
-
-    // showScreen("homeScreen");
-    function changeStage() {
-        var inputGamePin = document.getElementById('inputGamePin').value;
-        var inputNickname = document.getElementById('inputNickName').value;
-        var xhttp = new XMLHttpRequest();
-        // var param ="?gamePIN=10&nickname=test";
-        xhttp.open("POST", "1.0/game/join?gamePIN=" + inputGamePin + "&nickname=" + inputNickname, true);
-        xhttp.setRequestHeader('Content-type','application/x-www-form-urlencoded');
-        xhttp.onreadystatechange = function() {
-            if (xhttp.readyState == "4") {
-                var res = JSON.parse(xhttp.response);
-                console.log("Type: " + res.type);
-                if (res.content == "Does not found Game PIN!") {
-                    console.log("Does not found Game PIN!");
-                    console.log("Input game pin nef: " + inputGamePin); // Debug
-                    alert(res.content);
-                } else {
-                    console.log("Game PIN: " + res.content);            //Debug
-                    console.log("Input nick name: "+ inputNickname);
-                    showScreen("waitScreen");
-                }
-            }
-        };
-        xhttp.send();
-        xhttp.onerror = function (e) {
-            console.error(xhttp.statusText);
-        };
-    }
-    // changeStage();
-</script>
+<script src = "resources/js/playFuncs.js"></script>
 
 </body>
 </html>
