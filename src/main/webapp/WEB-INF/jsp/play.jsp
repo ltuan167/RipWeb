@@ -33,7 +33,7 @@
                         <div class="logo-container">
                             <div class="logo center-block">
                                 <span class="ng-binding">              RipWeb!            </span>          </div>        </div>
-                            <input id="inputGamePin" ios7fix="" class="username ng-pristine ng-untouched ng-valid ng-empty" ng-class="{invalid: !gamePinValid}" placeholder="Game PIN" ng-model="gameId" type="tel" shake="badGameId" data-functional-selector="game-pin-input" aria-label="Game pin" ng-change="gameIdChanged()" ng-focus="gameIdFocused()" ng-blur="gameIdUnfocused()">
+                            <input type="text" id="inputGamePin" ios7fix="" class="username ng-pristine ng-untouched ng-valid ng-empty" ng-class="{invalid: !gamePinValid}" placeholder="Game PIN" ng-model="gameId" shake="badGameId" data-functional-selector="game-pin-input" aria-label="Game pin" ng-change="gameIdChanged()" ng-focus="gameIdFocused()" ng-blur="gameIdUnfocused()">
                             <input id="inputNickName" ios7fix="" class="username ng-pristine ng-untouched ng-valid ng-empty" ng-class="{invalid: !gamePinValid}" placeholder="Nick name" ng-model="gameId" type="tel" shake="badGameId" data-functional-selector="game-pin-input" aria-label="Game pin" ng-change="gameIdChanged()" ng-focus="gameIdFocused()" ng-blur="gameIdUnfocused()">
                             <button onclick="changeStage()" type="submit" class="btn btn-greyscale join ng-binding" blocking="" data-functional-selector="join-button-game-pin">            Enter          </button>
                     </div>
@@ -55,6 +55,7 @@
 
 
 <div id="waitScreen">
+    <script src="resources/js/wait2play.js"></script>
     <div style="height: 0; width: 0; position: absolute; visibility: hidden">
         <svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink"><defs><filter x="-2.2%" y="-2.3%" width="104.4%" height="104.8%" filterUnits="objectBoundingBox" id="a"><feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset><symbol id="logo-shapes" viewBox="0 0 24 24"><ellipse cx="5.506" cy="18.966" rx="4.953" ry="4.953"></ellipse><path d="M12.005 5.902L17.873.033l5.869 5.869-5.869 5.868zm1.443 8.899h8.849v8.849h-8.849zm-2.584-4.977H.146l5.36-8.555z"></path></symbol></filter></defs></svg>
     </div>
@@ -234,16 +235,14 @@
         var inputGamePin = document.getElementById('inputGamePin').value;
         var inputNickname = document.getElementById('inputNickName').value;
         var xhttp = new XMLHttpRequest();
-        // var param ="?gamePIN=10&nickname=test";
         xhttp.open("POST", "1.0/game/join?gamePIN=" + inputGamePin + "&nickname=" + inputNickname, true);
         xhttp.setRequestHeader('Content-type','application/x-www-form-urlencoded');
         xhttp.onreadystatechange = function() {
-            if (xhttp.readyState == "4") {
+            if ( xhttp.readyState == "4" ) {
                 var res = JSON.parse(xhttp.response);
                 console.log("Type: " + res.type);
-                if (res.content == "Does not found Game PIN!") {
-                    console.log("Does not found Game PIN!");
-                    console.log("Input game pin nef: " + inputGamePin); // Debug
+                if (res.type != "JOIN_ACCEPTED") {
+                    console.log(res.content);
                     alert(res.content);
                 } else {
                     console.log("Game PIN: " + res.content);            //Debug

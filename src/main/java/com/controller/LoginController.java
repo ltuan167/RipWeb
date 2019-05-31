@@ -33,7 +33,7 @@ public class LoginController {
 //				jwtCookie.setSecure(true);
 				res.addCookie(jwtCookie);
 				model.addAttribute("nickname",userServices.loadNickname(email));
-				return "homepage";
+				return "editOverview";
 			} else {
 				model.addAttribute("msg","Wrong email or password");
 				return "login";

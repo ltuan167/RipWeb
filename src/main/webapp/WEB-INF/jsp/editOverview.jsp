@@ -686,7 +686,7 @@
                                 </div>
                                 <div class="top-bar__right">
                                     <button type="button" role="button" data-functional-selector="overview-block-top-bar__success-button" class="button button--positive">
-                                        <!-- react-text: 621 -->Save<!-- /react-text -->
+                                        <a href="hostView"><!-- react-text: 621 -->Save<!-- /react-text --></a>
                                     </button>
                                 </div>
                             </header>
@@ -697,7 +697,7 @@
                                 <section class="content-block" data-functional-selector="description-content-block">
                                     <figure class="image content-block__figure" style="background-image: url(&quot;https://images-cdn.kahoot.it/7e22b324-f27d-469f-9c27-59974d578928?auto=webp&quot;); background-size: contain;"></figure>
                                     <div class="content-block__copy">
-                                        <h1 class="content-block__header" data-functional-selector="description-content-block__header">Test RipWeb</h1>
+                                        <h1 class="content-block__header" data-functional-selector="description-content-block__header">Welcome ${nickname}</h1>
                                         <p class="content-block__text" data-functional-selector="description-content-block__main">#ripweb</p>
                                         <span class="content-block__supplementary" data-functional-selector="description-content-block__supplementary">
                                           <div>
