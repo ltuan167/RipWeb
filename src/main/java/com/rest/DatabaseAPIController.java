@@ -25,7 +25,7 @@ public class DatabaseAPIController {
 
 	@PostMapping(value = "/collection/get", produces = MediaType.APPLICATION_JSON_VALUE)
 	public void getQuestionCollectionById(@RequestParam int questionCollectionId, HttpServletRequest req, HttpServletResponse res) {
-		com.manager.QuestionCollection questionCollection = new com.manager.QuestionCollection(questionCollectionId);
+		QuestionCollection questionCollection = questionCollectionDAO.getQuestionCollectionById(questionCollectionId);
 		if (questionCollection != null) {
 			try {
 				res.getWriter().println(questionCollection);

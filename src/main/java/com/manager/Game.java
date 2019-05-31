@@ -1,11 +1,14 @@
 package com.manager;
 
+import com.entities.Question;
 import com.model.GameCommandMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.simp.SimpMessageSendingOperations;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Game implements Comparable<Game> {
 
@@ -23,7 +26,7 @@ public class Game implements Comparable<Game> {
 	private boolean is_began = false;
 	private int questionCollectionId;
 	private ArrayList<Player> players = new ArrayList<>();
-	private ArrayList<Question> questions = new ArrayList<>();
+	private Set<Question> questions = new HashSet<>();
 
 	public Game(Integer questionCollectionId) {
 		this(-1, questionCollectionId);
