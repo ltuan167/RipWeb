@@ -52,7 +52,7 @@ public class GameAPIController {
 	}
 
 	@PostMapping(value = "/submit", produces = MediaType.APPLICATION_JSON_VALUE)
-	public GameApiResponse submitAnswer(@RequestParam int gamePIN, @RequestParam int questionId, @RequestParam int chooseAnsId, HttpServletRequest req, HttpServletResponse res) {
+	public GameApiResponse submitAnswer(@RequestParam int gamePIN, @RequestParam int questionId, @RequestParam int chooseAnswerId, HttpServletRequest req, HttpServletResponse res) {
 		GameApiResponse submittedResponse = new GameApiResponse();
 		submittedResponse.setType(GameApiResponse.GameCommandType.SUBMIT_ACCEPTED);
 		submittedResponse.setContent(String.valueOf(new Random().nextInt(1000)));

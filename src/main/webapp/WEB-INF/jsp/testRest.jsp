@@ -39,8 +39,20 @@
             <td><button id="joinGame">Join Game</button></td>
             <script>
                 $("#joinGame").click(() => {
-                    for (var i=0; i<2; i++)
+                    // for (var i=0; i<2; i++)
                         postRest("http://localhost/1.0/game/join?gamePIN="+$("#gamePIN").val()+"&nickname="+$("#nickname").val(), null);
+                });
+            </script>
+        </tr>
+        <tr>
+            <td>/1.0/game/submit</td>
+            <td>gamePIN<input type="number" id="gamePIN2" value="1"><br>
+                questionId<input type="number" id="questionId" value="1"><br>
+                chooseAnswerId<input type="number" id="chooseAnswerId" value="1"></td>
+            <td><button id="submit">Submit Answer</button></td>
+            <script>
+                $("#submit").click(() => {
+                    postRest("http://localhost/1.0/game/submit?gamePIN="+$("#gamePIN2").val()+"&questionId="+$("#questionId")+"&chooseAnswerId="+$("#chooseAnswerId").val(), null);
                 });
             </script>
         </tr>
