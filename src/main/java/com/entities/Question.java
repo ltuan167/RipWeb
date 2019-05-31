@@ -30,7 +30,7 @@ public class Question {
 	private int correctAnswer;
 
 	@Column(name = "time", nullable = false)
-	private int time; // in secondsW
+	private int time = DEFAULT_TIME; // in secondsW
 
 	@Column(name = "answer1", nullable = true, length = 45)
 	private String answer1;

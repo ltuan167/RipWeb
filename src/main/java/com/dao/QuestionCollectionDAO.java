@@ -23,7 +23,7 @@ public class QuestionCollectionDAO {
 		QuestionCollection questionCollection = (QuestionCollection) session.createSQLQuery(sql).addEntity(QuestionCollection.class).uniqueResult();
 //		QuestionCollection questionCollection = session.load(QuestionCollection.class, questionCollectionID);
 		tx.commit();
-		return  questionCollection;
+		return questionCollection;
 	}
 
 //	public ArrayList<Question> getQuestionsByCollectionId(int questionCollectionID) {

@@ -1,8 +1,5 @@
 package com.entities;
 
-import com.dao.QuestionCollectionDAO;
-import org.springframework.beans.factory.annotation.Autowired;
-
 import javax.persistence.*;
 import java.util.Arrays;
 import java.util.Set;
@@ -10,6 +7,8 @@ import java.util.Set;
 @Entity
 @Table(name = "QuestionCollection")
 public class QuestionCollection {
+
+//	private static final int SHUFFLE_COUNT = 10;
 
 	@Id
 	@Column(name = "id")

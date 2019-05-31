@@ -26,30 +26,14 @@ public class DatabaseAPIController {
 	@PostMapping(value = "/collection/get", produces = MediaType.APPLICATION_JSON_VALUE)
 	public void getQuestionCollectionById(@RequestParam int questionCollectionId, HttpServletRequest req, HttpServletResponse res) {
 		QuestionCollection questionCollection = questionCollectionDAO.getQuestionCollectionById(questionCollectionId);
-		if (questionCollection != null) {
-			try {
+		try {
+			if (questionCollection != null)
 				res.getWriter().println(questionCollection);
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		} else {
-			try {
+			else
 				res.getWriter().println("Hông có câu hỏi nào hết trơnnnn :(((");
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
-//		QuestionCollection questionCollection = questionCollectionDAO.getQuestionCollectionById(questionCollectionId);
-//		try {
-//			Set<Question> setOfQuestionEntities = questionCollection.getQuestions();
-//			if (setOfQuestionEntities != null && setOfQuestionEntities.size() > 0)
-//				res.getWriter().println(Arrays.toString(setOfQuestionEntities.toArray()));
-//			else
-//				res.getWriter().println("Hông có câu hỏi nào hết trơnnnn :(((");
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
-//		System.out.println((Arrays.toString(questionCollection.getQuestions().toArray())));
 	}
 
 }

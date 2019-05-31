@@ -7,7 +7,10 @@ import java.util.*;
  */
 public class GameManager {
 
-	private static GameManager instance;
+	private static final int NO_QUESTION_ERROR_CODE = -2;
+	private static final int NO_QUESTION_COLLECTION_ERROR_CODE = -3;
+
+	private static GameManager instance = new GameManager();
 
 	private static List<Game> games = Collections.synchronizedList(new ArrayList<Game>());
 	private static Stack<Integer> availablePINs = new Stack<>();
@@ -31,11 +34,14 @@ public class GameManager {
 	public synchronized Integer createNewGame(Integer questionCollectionId) {
 		Game newGame = new Game(questionCollectionId);
 		int newGamePIN = newGame.getPIN();
-		if (newGamePIN > 0) {
+		if (newGamePIN > 0 && newGame.getQuestionCollection() != null) {
+			if (newGame.getQuestionCollection().getQuestions().isEmpty())  // DO NOT HAVE ANY QUESTIONS
+				return NO_QUESTION_ERROR_CODE;
 			games.add(newGame);
 			Collections.sort(games);
 			System.out.println("[GAME MANAGER] Created " + newGame);
-		}
+		} else
+			return NO_QUESTION_COLLECTION_ERROR_CODE; // ERROR
 		return newGamePIN;
 	}
 
