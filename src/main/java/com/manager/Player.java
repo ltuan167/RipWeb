@@ -30,12 +30,14 @@ public class Player implements Comparable<Player> {
 		}
 		this.score = Math.round(this.baseAddScore + this.bonusAddScore + this.baseAddScore*bonusTimePercentage);
 		is_previous_correct = true;
+		System.out.println("[SUBMITTED CORRECT]" + this);
 		return this.score;
 	}
 
 	public int wrongThisQuestion() {
 		bonus_percentage = 0f;
 		is_previous_correct = false;
+		System.out.println("[SUBMITTED WRONG]" + this);
 		return this.score;
 	}
 

@@ -58,19 +58,6 @@ public class Game implements Comparable<Game> {
         }
     }
 
-//	public Game(Integer gamePIN, Integer questionCollectionId) {
-//		this.PIN = gamePIN;
-////		this.questionCollectionId = questionCollectionId;
-////		this.gameWsTopic = TOPIC_PREFIX + gamePIN;
-////		// Load Questions
-////		if (questionCollectionId >= 0) {
-////			QuestionCollection questionCollectionX = questionCollectionDAO.getQuestionCollectionById(questionCollectionId);
-////			if (questionCollectionX != null)
-////				this.questionCollection = questionCollectionX;
-////		}
-//	}
-
-
 	public String join(String sessionId, String nickname) {
 //		Collections.sort(players);
 		Player newPlayer = new Player(sessionId, nickname);
@@ -93,20 +80,19 @@ public class Game implements Comparable<Game> {
 		return nextQuestion();
 	}
 
-	private ObjectMapper objectMapper = new ObjectMapper();
+//	private ObjectMapper objectMapper = new ObjectMapper();
 	public String nextQuestion() {
 		// Broadcast notice next question
 		if (questionsIterator.hasNext()) {
 			GameApiResponse nextQuestionCommand = new GameApiResponse();
-			nextQuestionCommand.setType(GameApiResponse.GameCommandType.NEXT_QUESTION);
+			GameApiResponse questionDetailForHost = new GameApiResponse();
 			currentQuestion = questionsIterator.next();
-//			try {
-////				nextQuestionCommand.setContent(objectMapper.writeValueAsString(currentQuestion));
-////			} catch (JsonProcessingException e) {
-////				e.printStackTrace();
-////				return CANNOT_PARSE_JSON;
-////			}
+			nextQuestionCommand.setType(GameApiResponse.GameCommandType.NEXT_QUESTION);
+			nextQuestionCommand.setContent(String.valueOf(currentQuestion.getId()));
+			questionDetailForHost.setType(GameApiResponse.GameCommandType.NEXT_QUESTION);
+			questionDetailForHost.setContent(currentQuestion.toString());
 			broadcastMsg(nextQuestionCommand);
+			sendMsg2Host(questionDetailForHost);
 			began_question_time = System.currentTimeMillis();
 			return OK;
 		} else {    // NO MORE QUESTIONS
@@ -119,6 +105,7 @@ public class Game implements Comparable<Game> {
 		GameApiResponse endCommand = new GameApiResponse();
 		endCommand.setType(GameApiResponse.GameCommandType.END_GAME);
 		endCommand.setContent("[{nickname: \"player1\", score: \"69\"},{nickname: \"player2\", score: \"96\"}]");
+		sendMsg2Host(endCommand);
 		broadcastMsg(endCommand);
 		return GAME_END;
 	}
@@ -134,7 +121,7 @@ public class Game implements Comparable<Game> {
 		}
 	}
 
-	private int validateAnswerAndGetScore(String sessionId, int questionId, int chooseAnswerId) {
+	public int validateAnswerAndGetScore(String sessionId, int questionId, int chooseAnswerId) {
 		if (players.containsKey(sessionId)) {
 			if (questionId == currentQuestion.getId()) {
 				Player player = players.get(sessionId);
