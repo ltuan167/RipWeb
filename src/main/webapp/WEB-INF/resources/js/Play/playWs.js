@@ -6,8 +6,8 @@ function connectAndSubscribeWs(gamePIN) {
         console.log('Connected');
         stompClient.subscribe('/game/'+ gamePIN, (data) => {
             let msg = JSON.parse(data.body);
-            console.log(msg.content);
-            if (msg.content == "next_question")
+            console.log("Type: " + msg.type);
+            if (msg.type == "NEXT_QUESTION")
                 showScreen("playScreen");
         });
     });
