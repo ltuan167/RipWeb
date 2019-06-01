@@ -217,12 +217,12 @@
 <div id="mainView" class="background-color-animation ng-scope" ng-view="">
     <div id="lobby-video-player" fill="" class="ng-scope" style="width: 2700.44px; height: 754px; left: -590.722px;"></div>
     <div class="join-instructions ng-scope light expanded open fadein quiz" ng-class="instructionsClasses">
-        <div class="min-content center" style="display: none;">
-                           <span class="join-host">
-                              Join <!-- ngIf: showQuizType --> at <strong ng-bind="quizHost" class="ng-binding">kahoot.it</strong> with 
-                           </span>
-            <span class="join-pin">Game PIN: <strong ng-bind-html="gamePin" class="ng-binding">78328</strong></span>
-        </div>
+<%--        <div class="min-content center" style="display: none;">--%>
+<%--                           <span class="join-host">--%>
+<%--                              Join <!-- ngIf: showQuizType --> at <strong ng-bind="quizHost" class="ng-binding">kahoot.it</strong> with --%>
+<%--                           </span>--%>
+<%--            <span class="join-pin">Game PIN: <input type="number" id="hostpin" ng-bind-html="gamePin" class="ng-binding"></span>--%>
+<%--        </div>--%>
         <div class="max-content fadeIn">
             <div class="details-browser-container">
                 <div class="details">
@@ -234,7 +234,7 @@
                         </div>
                         <div class="join-pin">            <span>with Game PIN: </span>          </div>
                     </div>
-                    <div class="gameId">          <span><strong ng-bind-html="gamePin" data-functional-selector="game-pin" class="ng-binding">78328</strong></span>        </div>
+                    <div class="gameId">          <input type="number" id="hostpin"></input>        </div>
                 </div>
                 <div class="two-factor-auth ng-hide" ng-show="isBrowserHidden">
                     <div class="two-factor-auth__arrow">          <img src="resources/img/hostView/two-factor-auth__lobby-triangle.png">        </div>
@@ -273,7 +273,7 @@
                 </ul>
             </div>
         </playerlist>
-        <button no-kiosk="" ng-class="playBtnState" blocking="Loading..." ng-click="play()" class="but-advance play" data-functional-selector="start-button">Start<span class="arrow"></span></button>
+        <button onclick="hostStart()" no-kiosk="" ng-class="playBtnState" blocking="Loading..." ng-click="play()" class="but-advance play" data-functional-selector="start-button">Start<span class="arrow"></span></button>
         <div class="kahoot-logo"></div>
     </div>
     <!-- ngInclude: -->
@@ -342,5 +342,6 @@
     <div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;"></div>
 </div>
 </body>
+<script src = "resources/js/Host/host.js"></script>
 </html>
 

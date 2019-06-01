@@ -46,6 +46,10 @@ public class GameManager {
 		return newGamePIN;
 	}
 
+	public Game getGameByPIN(Integer gamePIN) {
+		return games.get(gamePIN);
+	}
+
 	public synchronized boolean removeGame(Integer gamePIN) {
 		if (games.containsKey(gamePIN)) {
 			Game removedGame = games.remove(games.get(gamePIN));
