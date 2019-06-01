@@ -28,11 +28,11 @@ public class GameAPIController {
 		Integer createdGamePIN = GameManager.getInstance().createNewGame(questionCollectionId);
 		if (createdGamePIN > 0) {
 			createResponse.setType(GameApiResponse.GameCommandType.GAME_CREATED);
-			createResponse.setContent(String.valueOf(createdGamePIN));
+			createResponse.setContent(createdGamePIN);
 			res.setStatus(HttpServletResponse.SC_CREATED);
 		} else {
 			createResponse.setType(GameApiResponse.GameCommandType.REQUEST_ERROR);
-			createResponse.setContent(String.valueOf(createdGamePIN));
+			createResponse.setContent(createdGamePIN);
 			res.setStatus(HttpServletResponse.SC_EXPECTATION_FAILED);
 		}
 		return createResponse;
@@ -44,7 +44,7 @@ public class GameAPIController {
 		String joined = GameManager.getInstance().joinGame(req.getSession().getId(), gamePIN, nickname);
 		if (joined != null && joined.equals(Game.OK)) {
 			joinResponse.setType(GameApiResponse.GameCommandType.JOIN_ACCEPTED);
-			joinResponse.setContent(String.valueOf(gamePIN));
+			joinResponse.setContent(gamePIN);
 			res.setStatus(HttpServletResponse.SC_ACCEPTED);
 		} else {
 			joinResponse.setType(GameApiResponse.GameCommandType.JOIN_DENIED);
@@ -57,9 +57,18 @@ public class GameAPIController {
 	@PostMapping(value = "/submit", produces = MediaType.APPLICATION_JSON_VALUE)
 	public GameApiResponse submitAnswer(@RequestParam int gamePIN, @RequestParam int questionId, @RequestParam int chooseAnswerId, HttpServletRequest req, HttpServletResponse res) {
 		GameApiResponse submittedResponse = new GameApiResponse();
-		submittedResponse.setType(GameApiResponse.GameCommandType.SUBMIT_ACCEPTED);
-		submittedResponse.setContent(String.valueOf(new Random().nextInt(1000)));
-		return submittedResponse;
+		Game game = GameManager.getInstance().getGameByPIN(gamePIN);
+		if (game != null) {
+			int score = game.validateAnswerAndGetScore(req.getSession().getId(), questionId, chooseAnswerId);
+			if (score >= 0) {
+				submittedResponse.setType(GameApiResponse.GameCommandType.SUBMIT_ACCEPTED);
+				submittedResponse.setContent(score);
+				res.setStatus(HttpServletResponse.SC_ACCEPTED);
+				return submittedResponse;
+			}
+		}
+		res.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+		return null;
 	}
 
 	@PostMapping(value = "/start", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -91,7 +100,9 @@ public class GameAPIController {
 			String nextQuestion = game.nextQuestion();
 			if (nextQuestion.equals(Game.OK)) {
 				nextQuestionResponse.setType(GameApiResponse.GameCommandType.OK);
-				nextQuestionResponse.setContent(game.getCurrentQuestion().toString());
+			} else if (nextQuestion.equals(Game.GAME_END)) {
+				nextQuestionResponse.setType(GameApiResponse.GameCommandType.OK);
+				nextQuestionResponse.setContent(Game.GAME_END);
 			} else {
 				nextQuestionResponse.setType(GameApiResponse.GameCommandType.REQUEST_ERROR);
 				nextQuestionResponse.setContent(nextQuestion);

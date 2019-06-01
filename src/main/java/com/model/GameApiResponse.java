@@ -2,7 +2,7 @@ package com.model;
 
 public class GameApiResponse {
 	private GameCommandType type;
-	private String content;
+	private Object content;
 
 	public enum GameCommandType {
 		GAME_CREATED,           // {type: "GAME_CREATED", content: "{GamePin}"}
@@ -24,10 +24,10 @@ public class GameApiResponse {
 		this.type = type;
 	}
 
-	public String getContent() {
+	public Object getContent() {
 		return content;
 	}
-	public void setContent(String content) {
+	public void setContent(Object content) {
 		this.content = content;
 	}
 }
