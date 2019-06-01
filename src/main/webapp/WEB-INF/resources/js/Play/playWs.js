@@ -8,9 +8,11 @@ function connectAndSubscribeWs(gamePIN) {
             let msg = JSON.parse(data.body);
             console.log("Type: " + msg.type);
             if (msg.type == "NEXT_QUESTION")
+                questionid = msg.content;
                 showScreen("playScreen");
             if (msg.type == "END_GAME")
-                showScreen("endScreen")
+                showScreen("endScreen");
+
         });
     });
     stompClient.onerror = () => {

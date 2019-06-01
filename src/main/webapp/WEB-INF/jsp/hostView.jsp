@@ -19,6 +19,10 @@
 <style type="text/css" id="dark-mode-custom-style"></style>
 <!--<![endif]-->
 <head>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.3.0/sockjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
     <meta charset="utf-8">
@@ -39,7 +43,7 @@
     var _trackJs = {
         customer: '225f19cc34be4573b843ef421db55656'
     };
-</script>
+    </script>
     <script src="resources/js/hostView/kahunaAPI_min.js"></script>
     <script type="text/javascript">
         (function(e,t){var n=e.amplitude||{_q:[],_iq:{}};var r=t.createElement("script")
@@ -234,7 +238,11 @@
                         </div>
                         <div class="join-pin">            <span>with Game PIN: </span>          </div>
                     </div>
-                    <div class="gameId">          <input type="number" id="hostpin"></input>        </div>
+                    <div class="gameId">
+<%--                        <input placeholder="Game Pin" type="text" id="hostpin">--%>
+                        <div >Game Pin created: <div id="gamePinCreated"></div> </div>
+                        <input placeholder="Question Id Pin" type="number" id="hostQuesId">
+                    </div>
                 </div>
                 <div class="two-factor-auth ng-hide" ng-show="isBrowserHidden">
                     <div class="two-factor-auth__arrow">          <img src="resources/img/hostView/two-factor-auth__lobby-triangle.png">        </div>
@@ -263,19 +271,23 @@
         <div class="statusbar lobby ">
             <span class="visually-hidden">      Kahoot!    </span>    <!-- ngIf: brandLogoProps -->
         </div>
-        <div class="numberBoard playerCount">    <i class="number ng-binding">3</i><br>    <i class="countLabel ng-binding">Players</i>  </div>
+        <div class="numberBoard playerCount">    <i class="number ng-binding" id="playersCount">0</i><br>    <i class="countLabel ng-binding">Players</i>  </div>
         <playerlist>
             <div class="playerListContain" style="height: 279.6px;">
-                <ul class="player-list">
-                    <li data-functional-selector="player" class="" data-player-id="1468176837"><span class="player-name">trai</span></li>
-                    <li data-functional-selector="player" class="" data-player-id="1839096056"><span class="player-name">dep</span></li>
-                    <li data-functional-selector="player" class="" data-player-id="810814842"><span class="player-name">khoa</span></li>
+                <ul class="player-list" id="playersList">
+<%--                    <li data-functional-selector="player" class="" data-player-id="1468176837"><span class="player-name">trai</span></li>--%>
+<%--                    <li data-functional-selector="player" class="" data-player-id="1839096056"><span class="player-name">dep</span></li>--%>
+<%--                    <li data-functional-selector="player" class="" data-player-id="810814842"><span class="player-name">khoa</span></li>--%>
                 </ul>
             </div>
         </playerlist>
-        <button onclick="hostStart()" no-kiosk="" ng-class="playBtnState" blocking="Loading..." ng-click="play()" class="but-advance play" data-functional-selector="start-button">Start<span class="arrow"></span></button>
+        <div>
+            <button onclick="hostStart(gamePIN)" no-kiosk="" ng-class="playBtnState" blocking="Loading..." ng-click="play()" class="but-advance play" data-functional-selector="start-button">Start<span class="arrow"></span></button>
+            <button onclick="hostCreatGame(document.getElementById('hostQuesId').value)" >Create New Game</button>
+        </div>
         <div class="kahoot-logo"></div>
     </div>
+
     <!-- ngInclude: -->
 </div>
 <div alerts="" filter-for-mobile="true"></div>
@@ -341,6 +353,21 @@
     </div>
     <div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;"></div>
 </div>
+<div id="questionScreen">
+    <h1 id="question"></h1>
+    <table>
+        <tr>
+            <td id="answer1"></td>
+            <td id="answer2"></td>
+        </tr>
+        <tr>
+            <td id="answer3"></td>
+            <td id="answer4"></td>
+        </tr>
+    </table>
+
+</div>
+
 </body>
 <script src = "resources/js/Host/host.js"></script>
 </html>

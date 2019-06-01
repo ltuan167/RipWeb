@@ -1,5 +1,9 @@
 package com.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.google.gson.Gson;
+
 import javax.persistence.*;
 import java.util.Random;
 
@@ -18,6 +22,7 @@ public class Question {
 
 	@ManyToOne
 	@JoinColumn(name = "questionCollection_ID", referencedColumnName = "id")
+	@JsonBackReference
 	private QuestionCollection questionCollection_ID;
 
 	@Column(name = "question", nullable = false, length = 150)
@@ -42,28 +47,10 @@ public class Question {
 	private String answer4;
 
 	@Transient
+	@JsonBackReference
 	private String[] answers = new String[4];
 
 	public Question() {}
-
-//	public Question(String question, int correctAnswer, String answer1, String answer2, String answer3, String answer4, int time) {
-//		this(question, null, correctAnswer, answer1, answer2, answer3, answer4, time);
-//	}
-//
-//	public Question(String question, String image, int correctAnswer, String answer1, String answer2, String answer3, String answer4) {
-//		this(question, image, correctAnswer, answer1, answer2, answer3, answer4, DEFAULT_TIME);
-//	}
-
-//	public Question(String question, String image, int correctAnswer, String answer1, String answer2, String answer3, String answer4, int time) {
-////		this.question = question;
-////		this.image = image;
-////		this.correctAnswer = correctAnswer;
-////		this.answer1 = answer1;
-////		this.answer2 = answer2;
-////		this.answer3 = answer3;
-////		this.answer4 = answer4;
-////		this.time = time;
-////	}
 
 	private String getAnswerById(int idx) {
 		if (idx >= 0 && idx < 4)
@@ -119,16 +106,16 @@ public class Question {
 	public int getTime() {return time;}
 	public void setTime(int time) {this.time = time;}
 
-//	public String getAnswer1() {return answer1;}
-//	public void setAnswer1(String answer1) {this.answer1 = answer1;}
-//	public String getAnswer2() {return answer2;}
-//	public void setAnswer2(String answer2) {this.answer2 = answer2;}
-//	public String getAnswer3() {return answer3;}
-//	public void setAnswer3(String answer3) {this.answer3 = answer3;}
-//	public String getAnswer4() {return answer4;}
-//	public void setAnswer4(String answer4) {this.answer4 = answer4;}
+	public String getAnswer1() {return answer1;}
+	public void setAnswer1(String answer1) {this.answer1 = answer1;}
+	public String getAnswer2() {return answer2;}
+	public void setAnswer2(String answer2) {this.answer2 = answer2;}
+	public String getAnswer3() {return answer3;}
+	public void setAnswer3(String answer3) {this.answer3 = answer3;}
+	public String getAnswer4() {return answer4;}
+	public void setAnswer4(String answer4) {this.answer4 = answer4;}
 
-	public String[] getAnwsers() { return this.answers; }
+//	public String[] getAnwsers() { return this.answers; }
 	public void setAnwsers(String[] anwsers) {
 		if (anwsers.length == ANSWER_COUNT) {
 			this.answers = anwsers;
@@ -156,10 +143,12 @@ public class Question {
 		}
 	}
 
-	@Override
-	public String toString() {
-		return String.format("{question: \"%s\", correctAnswer: \"%d\", image: \"%s\"\n" +
-				"answer1: \"%s\"\nanswer2: \"%s\"\nanswer3: \"%s\"\nanswer4: \"%s\"\n", this.question, this.correctAnswer, this.image, this.answer1, this.answer2, this.answer3, this.answer4);
-	}
+//	@Override
+//	public String toString() {
+//		return "blah";
+////		return new Gson().toJson(this);
+////		return String.format("{\"question\": \"%s\", \"correctAnswer\": \"%d\", \"image\": \"%s\"" +
+////				"\"answer1\": \"%s\"\"answer2\": \"%s\"\"answer3\": \"%s\"\"answer4\": \"%s\"", this.question, this.correctAnswer, this.image, this.answer1, this.answer2, this.answer3, this.answer4);
+//	}
 
 }

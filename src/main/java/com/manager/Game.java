@@ -7,9 +7,9 @@ import com.entities.QuestionCollection;
 import com.model.WsMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.simp.SimpMessageSendingOperations;
+import com.model.GameApiResponse;
 
-import java.util.HashMap;
-import java.util.Iterator;
+import java.util.*;
 
 public class Game implements Comparable<Game> {
 
@@ -63,11 +63,13 @@ public class Game implements Comparable<Game> {
 		if (is_began)
 			return GAME_STARTED;
 
+		List oldPlayersList = new ArrayList<>(Arrays.asList(players.values().toArray()));
 		players.put(newPlayer.getSessionId(), newPlayer);
 		System.out.println("[GAME #" + PIN + "] " + newPlayer +" joined!");
 		WsMessage playersList = new WsMessage();
 		playersList.setType(WsMessage.WsMessageType.NEW_PLAYER);
-		playersList.setContent(players.values().toArray());
+		oldPlayersList.add(newPlayer);
+		playersList.setContent(oldPlayersList.toArray());
 		sendMsg2Host(playersList);
 		return OK;
 	}
@@ -92,7 +94,7 @@ public class Game implements Comparable<Game> {
 			nextQuestionCommand.setType(WsMessage.WsMessageType.NEXT_QUESTION);
 			nextQuestionCommand.setContent(String.valueOf(currentQuestion.getId()));
 			questionDetailForHost.setType(WsMessage.WsMessageType.NEXT_QUESTION);
-			questionDetailForHost.setContent(currentQuestion.toString());
+			questionDetailForHost.setContent(currentQuestion);
 			broadcastMsg(nextQuestionCommand);
 			sendMsg2Host(questionDetailForHost);
 			began_question_time = System.currentTimeMillis();
@@ -131,7 +133,7 @@ public class Game implements Comparable<Game> {
 				submittedPlayerCount++;
 				if (chooseAnswerId == currentQuestion.getCorrectAnswer()) { // CORRECT ANSWER
 					long time2Answer = System.currentTimeMillis() - began_question_time;
-					float bonusTimePercentage = Math.min(1.0f - (float)time2Answer/(currentQuestion.getTime()*1000f), 1.0f);
+					float bonusTimePercentage = Math.min(Math.abs(1.0f - (float)time2Answer/(currentQuestion.getTime()*1000f)), 1.0f);
 					return player.correctThisQuestion(bonusTimePercentage); // get score
 				} else
 					return player.wrongThisQuestion();

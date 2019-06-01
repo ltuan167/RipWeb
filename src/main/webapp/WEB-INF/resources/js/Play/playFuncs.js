@@ -51,15 +51,17 @@ function joinGame() {
 function nextQuestion() {
     showScreen("playScreen");
 }
+
+var questionid ;
 function submitAnswer(chosenAnswerId) {
     var inputGamePin = document.getElementById('inputGamePin').value;
     var xhttp = new XMLHttpRequest();
-    xhttp.open("POST", "1.0/game/submit?gamePIN=" + inputGamePin + "&questionId=1&chooseAnswerId=" + chosenAnswerId, true);
+    xhttp.open("POST", "1.0/game/submit?gamePIN=" + inputGamePin + "&questionId="+questionid+"&chooseAnswerId=" + chosenAnswerId, true);
     xhttp.onreadystatechange = function() {
         if ( xhttp.readyState == "4" ) {
             var res = JSON.parse(xhttp.response);
             console.log("Type: " + res.type);
-            if (xhttp.status != 200) { // print error
+            if (xhttp.status != 202) { // print error
                 console.log(res.content);
                 alert(res.content);
             } else {
