@@ -18,7 +18,6 @@ function showScreen(divId) {
 }
 showScreen("pinScreen");
 
-// showScreen("homeScreen");
 function joinGame() {
     var inputGamePin = document.getElementById('inputGamePin').value;
     var inputNickname = document.getElementById('inputNickName').value;
@@ -74,7 +73,7 @@ function submitAnswer(chosenAnswerId) {
         }
     };
     xhttp.send();
-    xhttp.onerror = function (e) {
+    xhttp.onerror =  (e) => {
         console.error(xhttp.statusText);
     };
 }
