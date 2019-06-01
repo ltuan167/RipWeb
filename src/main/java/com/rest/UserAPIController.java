@@ -1,31 +1,21 @@
 package com.rest;
 
-import com.JWT.JwtService;
-import com.entities.User;
-import com.services.UserServices;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 @RestController
 @RequestMapping("/1.0/user")
 
 public class UserAPIController {
 
-    @GetMapping()
-    public String greeting() {
-        return "Hello from API";
-    }
-    @Autowired
-    private JwtService jwtService;
-
-    @Autowired
-    private UserServices userServices;
+//    @GetMapping()
+//    public String greeting() {
+//        return "Hello from API";
+//    }
+//    @Autowired
+//    private JwtService jwtService;
+//
+//    @Autowired
+//    private UserServices userServices;
 
     /* ---------------- GET ALL USER ------------------------ */
 //    @RequestMapping(value = "/users", method = RequestMethod.GET)
