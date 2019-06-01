@@ -90,7 +90,7 @@ public class Game implements Comparable<Game> {
 			nextQuestionCommand.setType(GameApiResponse.GameCommandType.NEXT_QUESTION);
 			nextQuestionCommand.setContent(String.valueOf(currentQuestion.getId()));
 			questionDetailForHost.setType(GameApiResponse.GameCommandType.NEXT_QUESTION);
-			questionDetailForHost.setContent(currentQuestion.toString());
+			questionDetailForHost.setContent(currentQuestion);
 			broadcastMsg(nextQuestionCommand);
 			sendMsg2Host(questionDetailForHost);
 			began_question_time = System.currentTimeMillis();

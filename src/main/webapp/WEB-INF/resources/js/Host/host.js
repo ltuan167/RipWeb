@@ -1,42 +1,75 @@
-function hostStart() {
-    var hostPin = document.getElementById('hostpin').value;
+function hostStart(gamePIN) {
     var xhttp = new XMLHttpRequest();
-    xhttp.open("POST","http://localhost/1.0/game/start?gamePIN=" + hostPin, true);
+    xhttp.open("POST","http://localhost/1.0/game/start?gamePIN=" + gamePIN, true);
     xhttp.onreadystatechange =  () => {
         console.log(xhttp.response);
     };
     xhttp.send();
     xhttp.onerror =  (e) => {
         console.error(xhttp.statusText);
+    };
+}
+
+var stompClient = null;
+function hostDisplayQuestion() {
+    var socket = new SockJS('/ws');
+    stompClient = Stomp.over(socket);
+    stompClient.connect({},  () =>  {
+        console.log('Connected');
+        stompClient.subscribe('/game/'+ gamePIN + "/host", (data) => {
+            let msg = JSON.parse(data.body);
+            console.log("Type: " + msg.type);
+            let question = msg.content;
+            if (msg.type == "NEXT_QUESTION") {
+                document.getElementById("answer1").innerText = question.answer1;
+                document.getElementById("answer2").innerText = question.answer2;
+                document.getElementById("answer3").innerText = question.answer3;
+                document.getElementById("answer4").innerText = question.answer4;
+                document.getElementById("question").innerText = question.question;
+                // showScreen("questionScreen");
+            }
+        });
+    });
+    stompClient.onerror = () => {
+        console.error(stompClient.statusText);
+    };
+}
+let gamePIN = null;
+function hostCreatGame(hostQuesId) {
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("POST","http://localhost/1.0/game/create?questionCollectionId=" + hostQuesId, true);
+    xhttp.onreadystatechange = () => {
+        if (xhttp.readyState == XMLHttpRequest.DONE) {
+            if (xhttp.status == 201) {
+                let msg = JSON.parse(xhttp.response);
+                console.log(msg);
+                gamePIN = msg.content;
+                document.getElementById("gamePinCreated").innerText = gamePIN;
+                hostDisplayQuestion();
+            }
+        }
+    };
+    xhttp.send();
+    xhttp.onerror =  (e) => {
+        console.error(xhttp.statusText);
+    };
+}
+
+function showScreen(divId) {
+    var divID = ["questionScreen","pinScreen", "waitScreen", "playScreen","waitNextScreen","endScreen"];
+    for (var i = 0 ; i < divID.length; i++){
+        let showDiv = document.getElementById(divID[i]);
+        if(divID[i] == divId){
+            showDiv.style.display = "block";
+        }
+        else{
+            showDiv.style.display = "none";
+        }
     }
 }
 
-function hostCreatGame() {
-    let hostQuesId = document.getElementById("hostQuesId").value;
-    for (var i=0; i<5; i++)
-        postRest("http://localhost/1.0/game/create?questionCollectionId="+hostQuesId, null);
-}
+// showScreen("questionScreen");
 
 
-function postRest(url, jsonData) {
-    var jqxhr = $.post(url ,jsonData, (data) => {
-        // alert("success: " + JSON.stringify(data));
-        console.log(JSON.stringify(data));
-    })
-        .done((data) => {
-            // alert("second success");
-        })
-        .fail(() => {
-            console.log("Error: " + url);
-            // alert("error");
-        })
-        .always(() => {
-            // alert("finished");
-        });
 
-    // Perform other work here ...
-    // Set another completion function for the request above
-    // jqxhr.always(function() {
-    //     alert( "second finished" );
-    // });
-}
+

@@ -19,6 +19,10 @@
 <style type="text/css" id="dark-mode-custom-style"></style>
 <!--<![endif]-->
 <head>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.3.0/sockjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
     <meta charset="utf-8">
@@ -39,7 +43,7 @@
     var _trackJs = {
         customer: '225f19cc34be4573b843ef421db55656'
     };
-</script>
+    </script>
     <script src="resources/js/hostView/kahunaAPI_min.js"></script>
     <script type="text/javascript">
         (function(e,t){var n=e.amplitude||{_q:[],_iq:{}};var r=t.createElement("script")
@@ -235,7 +239,8 @@
                         <div class="join-pin">            <span>with Game PIN: </span>          </div>
                     </div>
                     <div class="gameId">
-                        <input placeholder="Game Pin" type="number" id="hostpin">
+<%--                        <input placeholder="Game Pin" type="text" id="hostpin">--%>
+                        <div >Game Pin created: <div id="gamePinCreated"></div> </div>
                         <input placeholder="Question Id Pin" type="number" id="hostQuesId">
                     </div>
                 </div>
@@ -277,8 +282,8 @@
             </div>
         </playerlist>
         <div>
-            <button onclick="hostStart()" no-kiosk="" ng-class="playBtnState" blocking="Loading..." ng-click="play()" class="but-advance play" data-functional-selector="start-button">Start<span class="arrow"></span></button>
-            <button onclick="hostCreatGame()" >Create New Game</button>
+            <button onclick="hostStart(gamePIN)" no-kiosk="" ng-class="playBtnState" blocking="Loading..." ng-click="play()" class="but-advance play" data-functional-selector="start-button">Start<span class="arrow"></span></button>
+            <button onclick="hostCreatGame(document.getElementById('hostQuesId').value)" >Create New Game</button>
         </div>
         <div class="kahoot-logo"></div>
     </div>
@@ -348,6 +353,21 @@
     </div>
     <div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;"></div>
 </div>
+<div id="questionScreen">
+    <h1 id="question"></h1>
+    <table>
+        <tr>
+            <td id="answer1"></td>
+            <td id="answer2"></td>
+        </tr>
+        <tr>
+            <td id="answer3"></td>
+            <td id="answer4"></td>
+        </tr>
+    </table>
+
+</div>
+
 </body>
 <script src = "resources/js/Host/host.js"></script>
 </html>
