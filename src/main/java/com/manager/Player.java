@@ -28,7 +28,7 @@ public class Player implements Comparable<Player> {
 			bonus_percentage += 0.2f;
 			this.bonusAddScore = Math.round(baseAddScore * bonus_percentage);
 		}
-		this.score = Math.round(this.baseAddScore + this.bonusAddScore + this.baseAddScore*bonusTimePercentage);
+		this.score += Math.round(this.baseAddScore + this.bonusAddScore + this.baseAddScore*bonusTimePercentage);
 		is_previous_correct = true;
 		System.out.println("[SUBMITTED CORRECT]" + this);
 		return this.score;

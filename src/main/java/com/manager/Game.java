@@ -133,7 +133,7 @@ public class Game implements Comparable<Game> {
 				submittedPlayerCount++;
 				if (chooseAnswerId == currentQuestion.getCorrectAnswer()) { // CORRECT ANSWER
 					long time2Answer = System.currentTimeMillis() - began_question_time;
-					float bonusTimePercentage = Math.min(1.0f - (float)time2Answer/(currentQuestion.getTime()*1000f), 1.0f);
+					float bonusTimePercentage = Math.min(Math.abs(1.0f - (float)time2Answer/(currentQuestion.getTime()*1000f)), 1.0f);
 					return player.correctThisQuestion(bonusTimePercentage); // get score
 				} else
 					return player.wrongThisQuestion();
