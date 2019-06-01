@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <!--[if IE 9]>
 <html class="ie9" lang="en">
@@ -15,7 +13,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta itemprop="version" content="1.729.0">
-    <title>Edit your RipWeb | Overview</title>
+    <title>Edit your RIPWEB | Overview</title>
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
     <link rel="shortcut icon" href="https://create.kahoot.it/assets/img/ico/favicon.ico">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://create.kahoot.it/assets/img/ico/apple-touch-icon-144-precomposed.png">
@@ -26,9 +24,17 @@
     <link href="resources/css/editOverview/commons.css" rel="stylesheet">
     <link href="resources/css/editOverview/create_002.css" rel="stylesheet">
     <link href="resources/css/editOverview/create.css" rel="stylesheet">
-    <script async="" src="Edit%20your%20kahoot%20%20%20Overview_files/analytics.js"></script><script type="text/javascript" async="" src="Edit%20your%20kahoot%20%20%20Overview_files/amplitude-4.js"></script><script type="text/javascript" src="resources/js/editOverview/commons.js" defer="defer"></script><script type="text/javascript" src="resources/js/editOverview/vendorsbrand-pagecreatesettings.js" defer="defer"></script><script type="text/javascript" src="resources/js/editOverview/create.js" defer="defer"></script>
+    <script async="" src="Edit%20your%20kahoot%20%20%20Overview_files/analytics.js"></script>
+    <script type="text/javascript" async="" src="Edit%20your%20kahoot%20%20%20Overview_files/amplitude-4.js"></script>
+    <script type="text/javascript" src="resources/js/editOverview/commons.js" defer="defer"></script>
+    <script type="text/javascript" src="resources/js/editOverview/vendorsbrand-pagecreatesettings.js" defer="defer">
+    </script><script type="text/javascript" src="resources/js/editOverview/create.js" defer="defer"></script>
     <link rel="stylesheet" href="resources/css/editOverview/css.css" media="all">
-    <script type="text/javascript" src="resources/js/editOverview/vendorscreateplusprofile.js" defer="defer"></script><script async="" src="Edit%20your%20kahoot%20%20%20Overview_files/hotjar-554762.js"></script>
+    <script type="text/javascript" src="resources/js/editOverview/vendorscreateplusprofile.js" defer="defer"></script>
+    <script async="" src="Edit%20your%20kahoot%20%20%20Overview_files/hotjar-554762.js"></script>
+
+    <script src="resources/js/editOverview/editOverview.js"></script>
+
 </head>
 <body class="touchpadSwipeAnimationCore">
 <!-- SVG Sprite Injection -->
@@ -695,10 +701,10 @@
                             <section>
                                 <h1 class="heading heading--five heading--no-margin heading--secondary">Description</h1>
                                 <section class="content-block" data-functional-selector="description-content-block">
-                                    <figure class="image content-block__figure" style="background-image: url(&quot;https://images-cdn.kahoot.it/7e22b324-f27d-469f-9c27-59974d578928?auto=webp&quot;); background-size: contain;"></figure>
+                                    <figure class="image content-block__figure" style="background-image: url('https://images-cdn.kahoot.it/7e22b324-f27d-469f-9c27-59974d578928?auto=webp'); background-size: contain;"></figure>
                                     <div class="content-block__copy">
-                                        <h1 class="content-block__header" data-functional-selector="description-content-block__header">Welcome ${nickname}</h1>
-                                        <p class="content-block__text" data-functional-selector="description-content-block__main">#ripweb</p>
+                                        <h1 class="content-block__header" data-functional-selector="description-content-block__header" id="gameCollectionName">Welcome ${nickname}</h1>
+                                        <p class="content-block__text" data-functional-selector="description-content-block__main" id="questionCollectionDescription">#ripweb</p>
                                         <span class="content-block__supplementary" data-functional-selector="description-content-block__supplementary">
                                           <div>
                                              <div class="content-block-visibility-wrapper">
@@ -728,420 +734,9 @@
                                 </section>
                             </section>
                             <hr class="hr">
-                            <h1 class="heading heading--five heading--no-margin heading--secondary">Game creator</h1>
+                            <h1 class="heading heading--five heading--no-margin heading--secondary">Questions</h1>
                             <section>
-                                <div>
-                                    <div class="draggable" draggable="true">
-                                        <div class="draggable__handle">
-                                          <span class="icon">
-                                             <svg class="icon__svg" data-functional-selector="icon" focusable="false">
-                                                <use class="icon__use" xlink:href="#drag-handle"></use>
-                                             </svg>
-                                          </span>
-                                        </div>
-                                        <div class="draggable__container">
-                                            <section class="content-block content-block--bg question-content-block content-block--no-image" data-functional-selector="game-block-content-block">
-                                                <figure class="content-block__figure content-block__figure--overlay"><span class="content-block__info content-block__info--text" data-functional-selector="game-block-content-block__info">1</span></figure>
-                                                <div class="content-block__copy">
-                                                    <p class="content-block__text" data-functional-selector="game-block-content-block__main">550 / 2  = ?</p>
-                                                </div>
-                                                <div class="dropdown-list dropdown-list--secondary question-content-block__dropdown-list" data-functional-selector="game-block-content-block__time-limit-dropdown-list">
-                                                    <label class="label dropdown-list--secondary question-content-block__dropdown-list" for="question-content-block__time-limit-dropdown-list__select" data-functional-selector="game-block-content-block__time-limit-dropdown-list__label">
-                                                        <!-- react-text: 661 -->Time limit<!-- /react-text -->
-                                                    </label>
-                                                    <div class="dropdown-list__wrap">
-                                                        <select class="dropdown-list__select" role="listbox" id="question-content-block__time-limit-dropdown-list__select" data-functional-selector="game-block-content-block__time-limit-dropdown-list__select" aria-invalid="false">
-                                                            <option class="dropdown-list__option" role="option" value="5000">5s</option>
-                                                            <option class="dropdown-list__option" role="option" value="10000">10s</option>
-                                                            <option class="dropdown-list__option" role="option" value="20000">20s</option>
-                                                            <option class="dropdown-list__option" role="option" value="30000">30s</option>
-                                                            <option class="dropdown-list__option" role="option" value="60000">60s</option>
-                                                            <option class="dropdown-list__option" role="option" value="90000">90s</option>
-                                                            <option class="dropdown-list__option" role="option" value="120000" selected="selected">120s</option>
-                                                        </select>
-                                                        <span class="dropdown-list__border"></span>
-                                                        <span class="icon icon--rotate-180deg dropdown-list__icon">
-                                                      <svg class="icon__svg" data-functional-selector="icon" aria-hidden="true" focusable="false">
-                                                         <use class="icon__use" xlink:href="#stroke-arrow"></use>
-                                                      </svg>
-                                                   </span>
-                                                    </div>
-                                                    <div class="dropdown-list__error" data-functional-selector="game-block-content-block__time-limit-dropdown-list__error"><span class="dropdown-list__error-text"></span></div>
-                                                </div>
-                                                <aside class="content-block__actions">
-                                                    <div class="question-content-block__menu">
-                                                        <div class="" style="display: inline;" data-tooltipped="" aria-describedby="tippy-tooltip-23" data-original-title="Edit this question">
-                                                            <button type="button" role="button" data-functional-selector="edit-quiz-block-button game-block-content-block__edit-button" class="icon-button edit-question-button question-content-block__icon-button question-content-block__icon-button--edit-question" aria-label="Edit question">
-                                                         <span class="icon-button__wrap">
-                                                            <span class="icon icon-button__icon icon--solid">
-                                                               <svg class="icon__svg" data-functional-selector="icon" focusable="false">
-                                                                  <use class="icon__use" xlink:href="#edit"></use>
-                                                               </svg>
-                                                            </span>
-                                                         </span>
-                                                            </button>
-                                                        </div>
-                                                        <div class="" style="display: inline;" data-tooltipped="" aria-describedby="tippy-tooltip-24" data-original-title="Duplicate this question">
-                                                            <button type="button" role="button" data-functional-selector="duplicate-quiz-block-button game-block-content-block__duplicate-button" class="icon-button duplicate-question-button question-content-block__icon-button question-content-block__icon-button--duplicate-question" aria-label="Duplicate question">
-                                                         <span class="icon-button__wrap">
-                                                            <span class="icon icon-button__icon icon--solid">
-                                                               <svg class="icon__svg" data-functional-selector="icon" focusable="false">
-                                                                  <use class="icon__use" xlink:href="#duplicate"></use>
-                                                               </svg>
-                                                            </span>
-                                                         </span>
-                                                            </button>
-                                                        </div>
-                                                        <div class="" style="display: inline;" data-tooltipped="" aria-describedby="tippy-tooltip-25" data-original-title="Delete this question">
-                                                            <button type="button" role="button" data-functional-selector="delete-quiz-block-button game-block-content-block__delete-button" class="icon-button delete-question-button question-content-block__icon-button question-content-block__icon-button--delete-question" aria-label="Delete question">
-                                                         <span class="icon-button__wrap">
-                                                            <span class="icon icon-button__icon icon--solid">
-                                                               <svg class="icon__svg" data-functional-selector="icon" focusable="false">
-                                                                  <use class="icon__use" xlink:href="#delete"></use>
-                                                               </svg>
-                                                            </span>
-                                                         </span>
-                                                            </button>
-                                                        </div>
-                                                        <div class="" style="display: inline;" data-tooltipped="" aria-describedby="tippy-tooltip-26" data-original-title="Move this question down one">
-                                                            <button type="button" role="button" data-functional-selector="move-question-button game-block-content-block__move-down-button" class="icon-button move-question-button visibly-hidden question-content-block__icon-button question-content-block__move-down" aria-label="Move question down" aria-hidden="false" tabindex="-1">
-                                                         <span class="icon-button__wrap">
-                                                            <span class="icon icon-button__icon icon--solid icon--rotate-180deg">
-                                                               <svg class="icon__svg" data-functional-selector="icon" focusable="false">
-                                                                  <use class="icon__use" xlink:href="#triangle"></use>
-                                                               </svg>
-                                                            </span>
-                                                         </span>
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                    <button type="button" role="button" data-functional-selector="game-block-content-block__toggle-button" class="icon-button question-content-block__toggle-button" aria-label="More options">
-                                                   <span class="icon-button__wrap">
-                                                      <span class="icon icon-button__icon">
-                                                         <svg class="icon__svg" data-functional-selector="icon" focusable="false">
-                                                            <use class="icon__use" xlink:href="#more"></use>
-                                                         </svg>
-                                                      </span>
-                                                   </span>
-                                                    </button>
-                                                </aside>
-                                            </section>
-                                        </div>
-                                    </div>
-                                    <div class="draggable" draggable="true">
-                                        <div class="draggable__handle">
-                                          <span class="icon">
-                                             <svg class="icon__svg" data-functional-selector="icon" focusable="false">
-                                                <use class="icon__use" xlink:href="#drag-handle"></use>
-                                             </svg>
-                                          </span>
-                                        </div>
-                                        <div class="draggable__container">
-                                            <section class="content-block content-block--bg question-content-block content-block--no-image" data-functional-selector="game-block-content-block">
-                                                <figure class="content-block__figure content-block__figure--overlay"><span class="content-block__info content-block__info--text" data-functional-selector="game-block-content-block__info">2</span></figure>
-                                                <div class="content-block__copy">
-                                                    <p class="content-block__text" data-functional-selector="game-block-content-block__main">550/2</p>
-                                                </div>
-                                                <div class="dropdown-list dropdown-list--secondary question-content-block__dropdown-list" data-functional-selector="game-block-content-block__time-limit-dropdown-list">
-                                                    <label class="label dropdown-list--secondary question-content-block__dropdown-list" for="question-content-block__time-limit-dropdown-list__select" data-functional-selector="game-block-content-block__time-limit-dropdown-list__label">
-                                                        <!-- react-text: 721 -->Time limit<!-- /react-text -->
-                                                    </label>
-                                                    <div class="dropdown-list__wrap">
-                                                        <select class="dropdown-list__select" role="listbox" id="question-content-block__time-limit-dropdown-list__select" data-functional-selector="game-block-content-block__time-limit-dropdown-list__select" aria-invalid="false">
-                                                            <option class="dropdown-list__option" role="option" value="5000">5s</option>
-                                                            <option class="dropdown-list__option" role="option" value="10000">10s</option>
-                                                            <option class="dropdown-list__option" role="option" value="20000" selected="selected">20s</option>
-                                                            <option class="dropdown-list__option" role="option" value="30000">30s</option>
-                                                            <option class="dropdown-list__option" role="option" value="60000">60s</option>
-                                                            <option class="dropdown-list__option" role="option" value="90000">90s</option>
-                                                            <option class="dropdown-list__option" role="option" value="120000">120s</option>
-                                                        </select>
-                                                        <span class="dropdown-list__border"></span>
-                                                        <span class="icon icon--rotate-180deg dropdown-list__icon">
-                                                      <svg class="icon__svg" data-functional-selector="icon" aria-hidden="true" focusable="false">
-                                                         <use class="icon__use" xlink:href="#stroke-arrow"></use>
-                                                      </svg>
-                                                   </span>
-                                                    </div>
-                                                    <div class="dropdown-list__error" data-functional-selector="game-block-content-block__time-limit-dropdown-list__error"><span class="dropdown-list__error-text"></span></div>
-                                                </div>
-                                                <aside class="content-block__actions">
-                                                    <div class="question-content-block__menu">
-                                                        <div class="" style="display: inline;" data-tooltipped="" aria-describedby="tippy-tooltip-27" data-original-title="Edit this question">
-                                                            <button type="button" role="button" data-functional-selector="edit-quiz-block-button game-block-content-block__edit-button" class="icon-button edit-question-button question-content-block__icon-button question-content-block__icon-button--edit-question" aria-label="Edit question">
-                                                         <span class="icon-button__wrap">
-                                                            <span class="icon icon-button__icon icon--solid">
-                                                               <svg class="icon__svg" data-functional-selector="icon" focusable="false">
-                                                                  <use class="icon__use" xlink:href="#edit"></use>
-                                                               </svg>
-                                                            </span>
-                                                         </span>
-                                                            </button>
-                                                        </div>
-                                                        <div class="" style="display: inline;" data-tooltipped="" aria-describedby="tippy-tooltip-28" data-original-title="Duplicate this question">
-                                                            <button type="button" role="button" data-functional-selector="duplicate-quiz-block-button game-block-content-block__duplicate-button" class="icon-button duplicate-question-button question-content-block__icon-button question-content-block__icon-button--duplicate-question" aria-label="Duplicate question">
-                                                         <span class="icon-button__wrap">
-                                                            <span class="icon icon-button__icon icon--solid">
-                                                               <svg class="icon__svg" data-functional-selector="icon" focusable="false">
-                                                                  <use class="icon__use" xlink:href="#duplicate"></use>
-                                                               </svg>
-                                                            </span>
-                                                         </span>
-                                                            </button>
-                                                        </div>
-                                                        <div class="" style="display: inline;" data-tooltipped="" aria-describedby="tippy-tooltip-29" data-original-title="Delete this question">
-                                                            <button type="button" role="button" data-functional-selector="delete-quiz-block-button game-block-content-block__delete-button" class="icon-button delete-question-button question-content-block__icon-button question-content-block__icon-button--delete-question" aria-label="Delete question">
-                                                         <span class="icon-button__wrap">
-                                                            <span class="icon icon-button__icon icon--solid">
-                                                               <svg class="icon__svg" data-functional-selector="icon" focusable="false">
-                                                                  <use class="icon__use" xlink:href="#delete"></use>
-                                                               </svg>
-                                                            </span>
-                                                         </span>
-                                                            </button>
-                                                        </div>
-                                                        <div class="" style="display: inline;" data-tooltipped="" aria-describedby="tippy-tooltip-30" data-original-title="Move this question up one">
-                                                            <button type="button" role="button" data-functional-selector="move-question-button game-block-content-block__move-up-button" class="icon-button move-question-button visibly-hidden question-content-block__icon-button question-content-block__move-up" aria-label="Move question up" aria-hidden="false" tabindex="-1">
-                                                         <span class="icon-button__wrap">
-                                                            <span class="icon icon-button__icon icon--solid">
-                                                               <svg class="icon__svg" data-functional-selector="icon" focusable="false">
-                                                                  <use class="icon__use" xlink:href="#triangle"></use>
-                                                               </svg>
-                                                            </span>
-                                                         </span>
-                                                            </button>
-                                                        </div>
-                                                        <div class="" style="display: inline;" data-tooltipped="" aria-describedby="tippy-tooltip-31" data-original-title="Move this question down one">
-                                                            <button type="button" role="button" data-functional-selector="move-question-button game-block-content-block__move-down-button" class="icon-button move-question-button visibly-hidden question-content-block__icon-button question-content-block__move-down" aria-label="Move question down" aria-hidden="false" tabindex="-1">
-                                                         <span class="icon-button__wrap">
-                                                            <span class="icon icon-button__icon icon--solid icon--rotate-180deg">
-                                                               <svg class="icon__svg" data-functional-selector="icon" focusable="false">
-                                                                  <use class="icon__use" xlink:href="#triangle"></use>
-                                                               </svg>
-                                                            </span>
-                                                         </span>
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                    <button type="button" role="button" data-functional-selector="game-block-content-block__toggle-button" class="icon-button question-content-block__toggle-button" aria-label="More options">
-                                                   <span class="icon-button__wrap">
-                                                      <span class="icon icon-button__icon">
-                                                         <svg class="icon__svg" data-functional-selector="icon" focusable="false">
-                                                            <use class="icon__use" xlink:href="#more"></use>
-                                                         </svg>
-                                                      </span>
-                                                   </span>
-                                                    </button>
-                                                </aside>
-                                            </section>
-                                        </div>
-                                    </div>
-                                    <div class="draggable" draggable="true">
-                                        <div class="draggable__handle">
-                                          <span class="icon">
-                                             <svg class="icon__svg" data-functional-selector="icon" focusable="false">
-                                                <use class="icon__use" xlink:href="#drag-handle"></use>
-                                             </svg>
-                                          </span>
-                                        </div>
-                                        <div class="draggable__container">
-                                            <section class="content-block content-block--bg question-content-block content-block--no-image" data-functional-selector="game-block-content-block">
-                                                <figure class="content-block__figure content-block__figure--overlay"><span class="content-block__info content-block__info--text" data-functional-selector="game-block-content-block__info">3</span></figure>
-                                                <div class="content-block__copy">
-                                                    <p class="content-block__text" data-functional-selector="game-block-content-block__main">1+1 = ?</p>
-                                                </div>
-                                                <div class="dropdown-list dropdown-list--secondary question-content-block__dropdown-list" data-functional-selector="game-block-content-block__time-limit-dropdown-list">
-                                                    <label class="label dropdown-list--secondary question-content-block__dropdown-list" for="question-content-block__time-limit-dropdown-list__select" data-functional-selector="game-block-content-block__time-limit-dropdown-list__label">
-                                                        <!-- react-text: 787 -->Time limit<!-- /react-text -->
-                                                    </label>
-                                                    <div class="dropdown-list__wrap">
-                                                        <select class="dropdown-list__select" role="listbox" id="question-content-block__time-limit-dropdown-list__select" data-functional-selector="game-block-content-block__time-limit-dropdown-list__select" aria-invalid="false">
-                                                            <option class="dropdown-list__option" role="option" value="5000">5s</option>
-                                                            <option class="dropdown-list__option" role="option" value="10000">10s</option>
-                                                            <option class="dropdown-list__option" role="option" value="20000" selected="selected">20s</option>
-                                                            <option class="dropdown-list__option" role="option" value="30000">30s</option>
-                                                            <option class="dropdown-list__option" role="option" value="60000">60s</option>
-                                                            <option class="dropdown-list__option" role="option" value="90000">90s</option>
-                                                            <option class="dropdown-list__option" role="option" value="120000">120s</option>
-                                                        </select>
-                                                        <span class="dropdown-list__border"></span>
-                                                        <span class="icon icon--rotate-180deg dropdown-list__icon">
-                                                      <svg class="icon__svg" data-functional-selector="icon" aria-hidden="true" focusable="false">
-                                                         <use class="icon__use" xlink:href="#stroke-arrow"></use>
-                                                      </svg>
-                                                   </span>
-                                                    </div>
-                                                    <div class="dropdown-list__error" data-functional-selector="game-block-content-block__time-limit-dropdown-list__error"><span class="dropdown-list__error-text"></span></div>
-                                                </div>
-                                                <aside class="content-block__actions">
-                                                    <div class="question-content-block__menu">
-                                                        <div class="" style="display: inline;" data-tooltipped="" aria-describedby="tippy-tooltip-32" data-original-title="Edit this question">
-                                                            <button type="button" role="button" data-functional-selector="edit-quiz-block-button game-block-content-block__edit-button" class="icon-button edit-question-button question-content-block__icon-button question-content-block__icon-button--edit-question" aria-label="Edit question">
-                                                         <span class="icon-button__wrap">
-                                                            <span class="icon icon-button__icon icon--solid">
-                                                               <svg class="icon__svg" data-functional-selector="icon" focusable="false">
-                                                                  <use class="icon__use" xlink:href="#edit"></use>
-                                                               </svg>
-                                                            </span>
-                                                         </span>
-                                                            </button>
-                                                        </div>
-                                                        <div class="" style="display: inline;" data-tooltipped="" aria-describedby="tippy-tooltip-33" data-original-title="Duplicate this question">
-                                                            <button type="button" role="button" data-functional-selector="duplicate-quiz-block-button game-block-content-block__duplicate-button" class="icon-button duplicate-question-button question-content-block__icon-button question-content-block__icon-button--duplicate-question" aria-label="Duplicate question">
-                                                         <span class="icon-button__wrap">
-                                                            <span class="icon icon-button__icon icon--solid">
-                                                               <svg class="icon__svg" data-functional-selector="icon" focusable="false">
-                                                                  <use class="icon__use" xlink:href="#duplicate"></use>
-                                                               </svg>
-                                                            </span>
-                                                         </span>
-                                                            </button>
-                                                        </div>
-                                                        <div class="" style="display: inline;" data-tooltipped="" aria-describedby="tippy-tooltip-34" data-original-title="Delete this question">
-                                                            <button type="button" role="button" data-functional-selector="delete-quiz-block-button game-block-content-block__delete-button" class="icon-button delete-question-button question-content-block__icon-button question-content-block__icon-button--delete-question" aria-label="Delete question">
-                                                         <span class="icon-button__wrap">
-                                                            <span class="icon icon-button__icon icon--solid">
-                                                               <svg class="icon__svg" data-functional-selector="icon" focusable="false">
-                                                                  <use class="icon__use" xlink:href="#delete"></use>
-                                                               </svg>
-                                                            </span>
-                                                         </span>
-                                                            </button>
-                                                        </div>
-                                                        <div class="" style="display: inline;" data-tooltipped="" aria-describedby="tippy-tooltip-35" data-original-title="Move this question up one">
-                                                            <button type="button" role="button" data-functional-selector="move-question-button game-block-content-block__move-up-button" class="icon-button move-question-button visibly-hidden question-content-block__icon-button question-content-block__move-up" aria-label="Move question up" aria-hidden="false" tabindex="-1">
-                                                         <span class="icon-button__wrap">
-                                                            <span class="icon icon-button__icon icon--solid">
-                                                               <svg class="icon__svg" data-functional-selector="icon" focusable="false">
-                                                                  <use class="icon__use" xlink:href="#triangle"></use>
-                                                               </svg>
-                                                            </span>
-                                                         </span>
-                                                            </button>
-                                                        </div>
-                                                        <div class="" style="display: inline;" data-tooltipped="" aria-describedby="tippy-tooltip-36" data-original-title="Move this question down one">
-                                                            <button type="button" role="button" data-functional-selector="move-question-button game-block-content-block__move-down-button" class="icon-button move-question-button visibly-hidden question-content-block__icon-button question-content-block__move-down" aria-label="Move question down" aria-hidden="false" tabindex="-1">
-                                                         <span class="icon-button__wrap">
-                                                            <span class="icon icon-button__icon icon--solid icon--rotate-180deg">
-                                                               <svg class="icon__svg" data-functional-selector="icon" focusable="false">
-                                                                  <use class="icon__use" xlink:href="#triangle"></use>
-                                                               </svg>
-                                                            </span>
-                                                         </span>
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                    <button type="button" role="button" data-functional-selector="game-block-content-block__toggle-button" class="icon-button question-content-block__toggle-button" aria-label="More options">
-                                                   <span class="icon-button__wrap">
-                                                      <span class="icon icon-button__icon">
-                                                         <svg class="icon__svg" data-functional-selector="icon" focusable="false">
-                                                            <use class="icon__use" xlink:href="#more"></use>
-                                                         </svg>
-                                                      </span>
-                                                   </span>
-                                                    </button>
-                                                </aside>
-                                            </section>
-                                        </div>
-                                    </div>
-                                    <div class="draggable" draggable="true">
-                                        <div class="draggable__handle">
-                                          <span class="icon">
-                                             <svg class="icon__svg" data-functional-selector="icon" focusable="false">
-                                                <use class="icon__use" xlink:href="#drag-handle"></use>
-                                             </svg>
-                                          </span>
-                                        </div>
-                                        <div class="draggable__container">
-                                            <section class="content-block content-block--bg question-content-block content-block--no-image" data-functional-selector="game-block-content-block">
-                                                <figure class="content-block__figure content-block__figure--overlay"><span class="content-block__info content-block__info--text" data-functional-selector="game-block-content-block__info">4</span></figure>
-                                                <div class="content-block__copy">
-                                                    <p class="content-block__text" data-functional-selector="game-block-content-block__main">2+2 = ?</p>
-                                                </div>
-                                                <div class="dropdown-list dropdown-list--secondary question-content-block__dropdown-list" data-functional-selector="game-block-content-block__time-limit-dropdown-list">
-                                                    <label class="label dropdown-list--secondary question-content-block__dropdown-list" for="question-content-block__time-limit-dropdown-list__select" data-functional-selector="game-block-content-block__time-limit-dropdown-list__label">
-                                                        <!-- react-text: 853 -->Time limit<!-- /react-text -->
-                                                    </label>
-                                                    <div class="dropdown-list__wrap">
-                                                        <select class="dropdown-list__select" role="listbox" id="question-content-block__time-limit-dropdown-list__select" data-functional-selector="game-block-content-block__time-limit-dropdown-list__select" aria-invalid="false">
-                                                            <option class="dropdown-list__option" role="option" value="5000">5s</option>
-                                                            <option class="dropdown-list__option" role="option" value="10000">10s</option>
-                                                            <option class="dropdown-list__option" role="option" value="20000" selected="selected">20s</option>
-                                                            <option class="dropdown-list__option" role="option" value="30000">30s</option>
-                                                            <option class="dropdown-list__option" role="option" value="60000">60s</option>
-                                                            <option class="dropdown-list__option" role="option" value="90000">90s</option>
-                                                            <option class="dropdown-list__option" role="option" value="120000">120s</option>
-                                                        </select>
-                                                        <span class="dropdown-list__border"></span>
-                                                        <span class="icon icon--rotate-180deg dropdown-list__icon">
-                                                      <svg class="icon__svg" data-functional-selector="icon" aria-hidden="true" focusable="false">
-                                                         <use class="icon__use" xlink:href="#stroke-arrow"></use>
-                                                      </svg>
-                                                   </span>
-                                                    </div>
-                                                    <div class="dropdown-list__error" data-functional-selector="game-block-content-block__time-limit-dropdown-list__error"><span class="dropdown-list__error-text"></span></div>
-                                                </div>
-                                                <aside class="content-block__actions">
-                                                    <div class="question-content-block__menu">
-                                                        <div class="" style="display: inline;" data-tooltipped="" aria-describedby="tippy-tooltip-37" data-original-title="Edit this question">
-                                                            <button type="button" role="button" data-functional-selector="edit-quiz-block-button game-block-content-block__edit-button" class="icon-button edit-question-button question-content-block__icon-button question-content-block__icon-button--edit-question" aria-label="Edit question">
-                                                         <span class="icon-button__wrap">
-                                                            <span class="icon icon-button__icon icon--solid">
-                                                               <svg class="icon__svg" data-functional-selector="icon" focusable="false">
-                                                                  <use class="icon__use" xlink:href="#edit"></use>
-                                                               </svg>
-                                                            </span>
-                                                         </span>
-                                                            </button>
-                                                        </div>
-                                                        <div class="" style="display: inline;" data-tooltipped="" aria-describedby="tippy-tooltip-38" data-original-title="Duplicate this question">
-                                                            <button type="button" role="button" data-functional-selector="duplicate-quiz-block-button game-block-content-block__duplicate-button" class="icon-button duplicate-question-button question-content-block__icon-button question-content-block__icon-button--duplicate-question" aria-label="Duplicate question">
-                                                         <span class="icon-button__wrap">
-                                                            <span class="icon icon-button__icon icon--solid">
-                                                               <svg class="icon__svg" data-functional-selector="icon" focusable="false">
-                                                                  <use class="icon__use" xlink:href="#duplicate"></use>
-                                                               </svg>
-                                                            </span>
-                                                         </span>
-                                                            </button>
-                                                        </div>
-                                                        <div class="" style="display: inline;" data-tooltipped="" aria-describedby="tippy-tooltip-39" data-original-title="Delete this question">
-                                                            <button type="button" role="button" data-functional-selector="delete-quiz-block-button game-block-content-block__delete-button" class="icon-button delete-question-button question-content-block__icon-button question-content-block__icon-button--delete-question" aria-label="Delete question">
-                                                         <span class="icon-button__wrap">
-                                                            <span class="icon icon-button__icon icon--solid">
-                                                               <svg class="icon__svg" data-functional-selector="icon" focusable="false">
-                                                                  <use class="icon__use" xlink:href="#delete"></use>
-                                                               </svg>
-                                                            </span>
-                                                         </span>
-                                                            </button>
-                                                        </div>
-                                                        <div class="" style="display: inline;" data-tooltipped="" aria-describedby="tippy-tooltip-40" data-original-title="Move this question up one">
-                                                            <button type="button" role="button" data-functional-selector="move-question-button game-block-content-block__move-up-button" class="icon-button move-question-button visibly-hidden question-content-block__icon-button question-content-block__move-up" aria-label="Move question up" aria-hidden="false" tabindex="-1">
-                                                         <span class="icon-button__wrap">
-                                                            <span class="icon icon-button__icon icon--solid">
-                                                               <svg class="icon__svg" data-functional-selector="icon" focusable="false">
-                                                                  <use class="icon__use" xlink:href="#triangle"></use>
-                                                               </svg>
-                                                            </span>
-                                                         </span>
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                    <button type="button" role="button" data-functional-selector="game-block-content-block__toggle-button" class="icon-button question-content-block__toggle-button" aria-label="More options">
-                                                   <span class="icon-button__wrap">
-                                                      <span class="icon icon-button__icon">
-                                                         <svg class="icon__svg" data-functional-selector="icon" focusable="false">
-                                                            <use class="icon__use" xlink:href="#more"></use>
-                                                         </svg>
-                                                      </span>
-                                                   </span>
-                                                    </button>
-                                                </aside>
-                                            </section>
-                                        </div>
-                                    </div>
-                                </div>
+                                <div id="questionsArea"></div>
                                 <div>
                                     <div class="content-block content-actions">
                                         <div class="placeholder content-actions__action content-actions--flex2 placeholder--no-padding placeholder--border-radius">
@@ -1158,11 +753,11 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="content-block">
-                                    <button type="button" role="button" data-functional-selector="upload-csv-link" class="text-button content-actions__import button--full-width button--link">
-                                        <!-- react-text: 911 -->Import from spreadsheet<!-- /react-text -->
-                                    </button>
-                                </div>
+<%--                                <div class="content-block">--%>
+<%--                                    <button type="button" role="button" data-functional-selector="upload-csv-link" class="text-button content-actions__import button--full-width button--link">--%>
+<%--                                        <!-- react-text: 911 -->Import from spreadsheet<!-- /react-text -->--%>
+<%--                                    </button>--%>
+<%--                                </div>--%>
                             </section>
                             <!-- react-empty: 912 --><!-- react-empty: 914 -->
                         </main>
@@ -1172,6 +767,7 @@
         </div>
     </div>
 </div>
+
 <script type="text/javascript">
     (function(e,t){var n=e.amplitude||{_q:[],_iq:{}};var r=t.createElement("script")
     ;r.type="text/javascript";r.async=true
@@ -1231,6 +827,11 @@
         a.appendChild(r);
     })(window, document, '//static.hotjar.com/c/hotjar-', '.js?sv=');
 </script>
+
+<script>
+    loadQuestions();
+</script>
+
 </body>
 </html>
 

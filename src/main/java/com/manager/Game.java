@@ -36,6 +36,7 @@ public class Game implements Comparable<Game> {
 	private Integer PIN;
 	private boolean is_began = false;
 	private long began_question_time = 0;
+	private int submittedPlayerCount = 0;
 	private HashMap<String, Player> players = new HashMap<>();
 
 	public Game(Integer questionCollectionId) {
@@ -84,6 +85,7 @@ public class Game implements Comparable<Game> {
 	public String nextQuestion() {
 		// Broadcast notice next question
 		if (questionsIterator.hasNext()) {
+			submittedPlayerCount = 0;
 			WsMessage nextQuestionCommand = new WsMessage();
 			WsMessage questionDetailForHost = new WsMessage();
 			currentQuestion = questionsIterator.next();
@@ -104,7 +106,8 @@ public class Game implements Comparable<Game> {
 		// Broadcast notice end game
 		WsMessage endCommand = new WsMessage();
 		endCommand.setType(WsMessage.WsMessageType.END_GAME);
-		endCommand.setContent("[{nickname: \"player1\", score: \"69\"},{nickname: \"player2\", score: \"96\"}]");
+		endCommand.setContent(players.values().toArray());
+//		endCommand.setContent("[{nickname: \"player1\", score: \"69\"},{nickname: \"player2\", score: \"96\"}]");
 		sendMsg2Host(endCommand);
 		broadcastMsg(endCommand);
 		return GAME_END;
@@ -125,9 +128,10 @@ public class Game implements Comparable<Game> {
 		if (players.containsKey(sessionId)) {
 			if (questionId == currentQuestion.getId()) {
 				Player player = players.get(sessionId);
+				submittedPlayerCount++;
 				if (chooseAnswerId == currentQuestion.getCorrectAnswer()) { // CORRECT ANSWER
 					long time2Answer = System.currentTimeMillis() - began_question_time;
-					float bonusTimePercentage = 1.0f - (float)time2Answer/(currentQuestion.getTime()*1000f);
+					float bonusTimePercentage = Math.min(1.0f - (float)time2Answer/(currentQuestion.getTime()*1000f), 1.0f);
 					return player.correctThisQuestion(bonusTimePercentage); // get score
 				} else
 					return player.wrongThisQuestion();
