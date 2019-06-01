@@ -28,6 +28,17 @@ function hostDisplayQuestion() {
                 document.getElementById("question").innerText = question.question;
                 // showScreen("questionScreen");
             }
+            if (msg.type == "NEW_PLAYER") {
+                var playersList = document.getElementById("playersList");
+                var playersListHTML = "";
+                let players = msg.content;
+                players.reverse();
+                players.forEach((player) => {
+                    playersListHTML += "<li data-functional-selector=\"player\" class=\"\" data-player-id=\"1468176837\"><span class=\"player-name\">"+ player.nickname +"</span></li>"
+                });
+                playersList.innerHTML = playersListHTML;
+                document.getElementById("playersCount").innerText = players.length;
+            }
         });
     });
     stompClient.onerror = () => {

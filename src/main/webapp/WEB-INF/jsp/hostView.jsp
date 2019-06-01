@@ -271,13 +271,13 @@
         <div class="statusbar lobby ">
             <span class="visually-hidden">      Kahoot!    </span>    <!-- ngIf: brandLogoProps -->
         </div>
-        <div class="numberBoard playerCount">    <i class="number ng-binding">3</i><br>    <i class="countLabel ng-binding">Players</i>  </div>
+        <div class="numberBoard playerCount">    <i class="number ng-binding" id="playersCount">0</i><br>    <i class="countLabel ng-binding">Players</i>  </div>
         <playerlist>
             <div class="playerListContain" style="height: 279.6px;">
-                <ul class="player-list">
-                    <li data-functional-selector="player" class="" data-player-id="1468176837"><span class="player-name">trai</span></li>
-                    <li data-functional-selector="player" class="" data-player-id="1839096056"><span class="player-name">dep</span></li>
-                    <li data-functional-selector="player" class="" data-player-id="810814842"><span class="player-name">khoa</span></li>
+                <ul class="player-list" id="playersList">
+<%--                    <li data-functional-selector="player" class="" data-player-id="1468176837"><span class="player-name">trai</span></li>--%>
+<%--                    <li data-functional-selector="player" class="" data-player-id="1839096056"><span class="player-name">dep</span></li>--%>
+<%--                    <li data-functional-selector="player" class="" data-player-id="810814842"><span class="player-name">khoa</span></li>--%>
                 </ul>
             </div>
         </playerlist>
