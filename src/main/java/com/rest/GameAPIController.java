@@ -63,16 +63,17 @@ public class GameAPIController {
 	}
 
 	@PostMapping(value = "/start", produces = MediaType.APPLICATION_JSON_VALUE)
-	public GameApiResponse startGame(@RequestParam int gamePIN, HttpServletResponse res) {
+	public GameApiResponse startGame(@RequestParam int gamePIN, HttpServletRequest req, HttpServletResponse res) {
 		GameApiResponse startGameResponse = new GameApiResponse();
 		Game game = GameManager.getInstance().getGameByPIN(gamePIN);
 		if (game == null) {
 			startGameResponse.setType(GameApiResponse.GameCommandType.REQUEST_ERROR);
 			startGameResponse.setContent("DOES NOT FOUND GAME!");
 			res.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+			return startGameResponse;
 		}
 		String startGameStatus = game.startGame();
-		if (startGameResponse.equals(Game.OK)) {
+		if (startGameStatus.equals(Game.OK)) {
 			startGameResponse.setType(GameApiResponse.GameCommandType.GAME_STARTED);
 		} else {
 			startGameResponse.setType(GameApiResponse.GameCommandType.REQUEST_ERROR);

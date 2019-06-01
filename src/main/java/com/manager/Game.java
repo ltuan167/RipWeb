@@ -25,7 +25,6 @@ public class Game implements Comparable<Game> {
 
 	private QuestionCollection questionCollection;
 	private Iterator<Question> questionsIterator;
-
 	private Question currentQuestion;
 
 	public static final String PLAYER_EXISTED = "Player is existed!";
@@ -45,30 +44,32 @@ public class Game implements Comparable<Game> {
 
 	public Game(Integer questionCollectionId) {
 //		this(-1, questionCollectionId);
-		int generatedPIN = GameManager.getInstance().generatePIN();
-		if (generatedPIN <= GameManager.MAX_GAME_COUNT) { // out of Game slot
-			this.PIN = generatedPIN;
-			this.gameWsTopic = TOPIC_PREFIX + this.PIN;
-			// Load Questions
-			if (questionCollectionId >= 0) {
-				QuestionCollection questionCollectionX = questionCollectionDAO.getQuestionCollectionById(questionCollectionId);
-				if (questionCollectionX != null)
-					this.questionCollection = questionCollectionX;
-			}
-		}
-	}
+        int generatedPIN = GameManager.getInstance().generatePIN();
+        if (generatedPIN <= GameManager.MAX_GAME_COUNT) { // out of Game slot
+            this.PIN = generatedPIN;
+            this.gameWsTopic = TOPIC_PREFIX + this.PIN;
+            // Load Questions
+            if (questionCollectionId >= 0) {
+                QuestionCollection questionCollectionX = questionCollectionDAO.getQuestionCollectionById(questionCollectionId);
+                if (questionCollectionX != null)
+                    this.questionCollection = questionCollectionX;
+                this.gameWsTopic = TOPIC_PREFIX + this.PIN;
+            }
+        }
+    }
 
 //	public Game(Integer gamePIN, Integer questionCollectionId) {
-//			this.PIN = gamePIN;
+//		this.PIN = gamePIN;
 ////		this.questionCollectionId = questionCollectionId;
-//			this.gameWsTopic = TOPIC_PREFIX + gamePIN;
-//			// Load Questions
-//			if (questionCollectionId >= 0) {
-//				QuestionCollection questionCollectionX = questionCollectionDAO.getQuestionCollectionById(questionCollectionId);
-//				if (questionCollectionX != null)
-//					this.questionCollection = questionCollectionX;
-//			}
+////		this.gameWsTopic = TOPIC_PREFIX + gamePIN;
+////		// Load Questions
+////		if (questionCollectionId >= 0) {
+////			QuestionCollection questionCollectionX = questionCollectionDAO.getQuestionCollectionById(questionCollectionId);
+////			if (questionCollectionX != null)
+////				this.questionCollection = questionCollectionX;
+////		}
 //	}
+
 
 	public String join(String sessionId, String nickname) {
 //		Collections.sort(players);
@@ -99,12 +100,12 @@ public class Game implements Comparable<Game> {
 			GameApiResponse nextQuestionCommand = new GameApiResponse();
 			nextQuestionCommand.setType(GameApiResponse.GameCommandType.NEXT_QUESTION);
 			currentQuestion = questionsIterator.next();
-			try {
-				nextQuestionCommand.setContent(objectMapper.writeValueAsString(currentQuestion));
-			} catch (JsonProcessingException e) {
-				e.printStackTrace();
-				return CANNOT_PARSE_JSON;
-			}
+//			try {
+////				nextQuestionCommand.setContent(objectMapper.writeValueAsString(currentQuestion));
+////			} catch (JsonProcessingException e) {
+////				e.printStackTrace();
+////				return CANNOT_PARSE_JSON;
+////			}
 			broadcastMsg(nextQuestionCommand);
 			began_question_time = System.currentTimeMillis();
 			return OK;
@@ -124,6 +125,7 @@ public class Game implements Comparable<Game> {
 
 	private boolean broadcastMsg(Object msg2broadcast) {
 		try {
+			System.out.println("Game WS Topic: " + gameWsTopic);
 			msg.convertAndSend(gameWsTopic, msg2broadcast);
 			return true;
 		} catch (Exception e) {
