@@ -43,48 +43,32 @@ public class Game implements Comparable<Game> {
 
 	public Game(Integer questionCollectionId) {
 //		this(-1, questionCollectionId);
-		int generatedPIN = GameManager.getInstance().generatePIN();
-		if (generatedPIN <= GameManager.MAX_GAME_COUNT) { // out of Game slot
-			this.PIN = generatedPIN;
-			this.gameWsTopic = TOPIC_PREFIX + this.PIN;
-				// Load Questions
-		if (questionCollectionId >= 0) {
-			QuestionCollection questionCollectionX = questionCollectionDAO.getQuestionCollectionById(questionCollectionId);
-			if (questionCollectionX != null)
-				this.questionCollection = questionCollectionX;
-			this.gameWsTopic = TOPIC_PREFIX + this.PIN;
-			// Load Questions
-			if (questionCollectionId >= 0) {
-				QuestionCollection questionCollectionX = questionCollectionDAO.getQuestionCollectionById(questionCollectionId);
-				if (questionCollectionX != null)
-					this.questionCollection = questionCollectionX;
-			}
-		}
-	}
-
-	public Game(Integer gamePIN, Integer questionCollectionId) {
-		this.PIN = gamePIN;
-//		this.questionCollectionId = questionCollectionId;
-//		this.gameWsTopic = TOPIC_PREFIX + gamePIN;
-//		// Load Questions
-//		if (questionCollectionId >= 0) {
-//			QuestionCollection questionCollectionX = questionCollectionDAO.getQuestionCollectionById(questionCollectionId);
-//			if (questionCollectionX != null)
-//				this.questionCollection = questionCollectionX;
-//		}
-	}
+        int generatedPIN = GameManager.getInstance().generatePIN();
+        if (generatedPIN <= GameManager.MAX_GAME_COUNT) { // out of Game slot
+            this.PIN = generatedPIN;
+            this.gameWsTopic = TOPIC_PREFIX + this.PIN;
+            // Load Questions
+            if (questionCollectionId >= 0) {
+                QuestionCollection questionCollectionX = questionCollectionDAO.getQuestionCollectionById(questionCollectionId);
+                if (questionCollectionX != null)
+                    this.questionCollection = questionCollectionX;
+                this.gameWsTopic = TOPIC_PREFIX + this.PIN;
+            }
+        }
+    }
 
 //	public Game(Integer gamePIN, Integer questionCollectionId) {
-//			this.PIN = gamePIN;
+//		this.PIN = gamePIN;
 ////		this.questionCollectionId = questionCollectionId;
-//			this.gameWsTopic = TOPIC_PREFIX + gamePIN;
-//			// Load Questions
-//			if (questionCollectionId >= 0) {
-//				QuestionCollection questionCollectionX = questionCollectionDAO.getQuestionCollectionById(questionCollectionId);
-//				if (questionCollectionX != null)
-//					this.questionCollection = questionCollectionX;
-//			}
+////		this.gameWsTopic = TOPIC_PREFIX + gamePIN;
+////		// Load Questions
+////		if (questionCollectionId >= 0) {
+////			QuestionCollection questionCollectionX = questionCollectionDAO.getQuestionCollectionById(questionCollectionId);
+////			if (questionCollectionX != null)
+////				this.questionCollection = questionCollectionX;
+////		}
 //	}
+
 
 	public String join(String sessionId, String nickname) {
 //		Collections.sort(players);

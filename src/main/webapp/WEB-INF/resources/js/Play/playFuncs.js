@@ -78,5 +78,6 @@ function submitAnswer(chosenAnswerId) {
     };
 }
 function endGame() {
+
     showScreen("endScreen");
 }

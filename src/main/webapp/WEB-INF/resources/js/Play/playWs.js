@@ -9,6 +9,8 @@ function connectAndSubscribeWs(gamePIN) {
             console.log("Type: " + msg.type);
             if (msg.type == "NEXT_QUESTION")
                 showScreen("playScreen");
+            if (msg.type == "END_GAME")
+                showScreen("endScreen")
         });
     });
     stompClient.onerror = () => {
