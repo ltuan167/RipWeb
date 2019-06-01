@@ -32,6 +32,7 @@ public class Game implements Comparable<Game> {
 	public static final String GAME_STARTED = "Game is already started!";
 	public static final String CANNOT_PARSE_JSON = "Can not parse JSON!";
 	public static final String OK = "OK";
+	public static final String GAME_END = "GAME_END";
 
 	private static final String TOPIC_PREFIX = "/game/";
 	private static final String HOST_TOPIC_POSTFIX = "/host";
@@ -118,7 +119,7 @@ public class Game implements Comparable<Game> {
 		endCommand.setType(GameApiResponse.GameCommandType.END_GAME);
 		endCommand.setContent("[{nickname: \"player1\", score: \"69\"},{nickname: \"player2\", score: \"96\"}]");
 		broadcastMsg(endCommand);
-		return OK;
+		return GAME_END;
 	}
 
 	private boolean broadcastMsg(Object msg2broadcast) {

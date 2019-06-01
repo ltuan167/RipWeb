@@ -90,7 +90,10 @@ public class GameAPIController {
 			String nextQuestion = game.nextQuestion();
 			if (nextQuestion.equals(Game.OK)) {
 				nextQuestionResponse.setType(GameApiResponse.GameCommandType.OK);
-				nextQuestionResponse.setContent(game.getCurrentQuestion().toString());
+//				nextQuestionResponse.setContent(game.getCurrentQuestion().toString());
+			} else if (nextQuestion.equals(Game.GAME_END)) {
+				nextQuestionResponse.setType(GameApiResponse.GameCommandType.OK);
+				nextQuestionResponse.setContent(Game.GAME_END);
 			} else {
 				nextQuestionResponse.setType(GameApiResponse.GameCommandType.REQUEST_ERROR);
 				nextQuestionResponse.setContent(nextQuestion);
