@@ -221,26 +221,18 @@
 <div id="mainView" class="background-color-animation ng-scope" ng-view="">
     <div id="lobby-video-player" fill="" class="ng-scope" style="width: 2700.44px; height: 754px; left: -590.722px;"></div>
     <div class="join-instructions ng-scope light expanded open fadein quiz" ng-class="instructionsClasses">
-<%--        <div class="min-content center" style="display: none;">--%>
-<%--                           <span class="join-host">--%>
-<%--                              Join <!-- ngIf: showQuizType --> at <strong ng-bind="quizHost" class="ng-binding">kahoot.it</strong> with --%>
-<%--                           </span>--%>
-<%--            <span class="join-pin">Game PIN: <input type="number" id="hostpin" ng-bind-html="gamePin" class="ng-binding"></span>--%>
-<%--        </div>--%>
         <div class="max-content fadeIn">
             <div class="details-browser-container">
                 <div class="details">
                     <div class="details-top">
                         <div class="join-host">
                                        <span>
-                                          Join<!-- ngIf: showQuizType --> with the <strong>Kahoot! app</strong> or at <strong ng-bind="quizHost" class="ng-binding">kahoot.it</strong>
+                                          Join<!-- ngIf: showQuizType --> with the <strong>RipWeb! app</strong> or at <strong ng-bind="quizHost" class="ng-binding">localhost/play ( lol =))) )</strong>
                                        </span>
                         </div>
-                        <div class="join-pin">            <span>with Game PIN: </span>          </div>
+                        <div class="join-pin">            <span>with Game PIN: <b id="gamePinCreated"><strong></strong></b> </span>          </div>
                     </div>
                     <div class="gameId">
-<%--                        <input placeholder="Game Pin" type="text" id="hostpin">--%>
-                        <div >Game Pin created: <div id="gamePinCreated"></div> </div>
                         <input placeholder="Question Id Pin" type="number" id="hostQuesId">
                     </div>
                 </div>
@@ -275,15 +267,14 @@
         <playerlist>
             <div class="playerListContain" style="height: 279.6px;">
                 <ul class="player-list" id="playersList">
-<%--                    <li data-functional-selector="player" class="" data-player-id="1468176837"><span class="player-name">trai</span></li>--%>
-<%--                    <li data-functional-selector="player" class="" data-player-id="1839096056"><span class="player-name">dep</span></li>--%>
-<%--                    <li data-functional-selector="player" class="" data-player-id="810814842"><span class="player-name">khoa</span></li>--%>
+
                 </ul>
             </div>
         </playerlist>
         <div>
             <button onclick="hostStart(gamePIN)" no-kiosk="" ng-class="playBtnState" blocking="Loading..." ng-click="play()" class="but-advance play" data-functional-selector="start-button">Start<span class="arrow"></span></button>
             <button onclick="hostCreatGame(document.getElementById('hostQuesId').value)" >Create New Game</button>
+            <button onclick="nextQuestion()">Next Question</button>
         </div>
         <div class="kahoot-logo"></div>
     </div>
@@ -353,18 +344,22 @@
     </div>
     <div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;"></div>
 </div>
+
 <div id="questionScreen">
     <h1 id="question"></h1>
     <table>
         <tr>
-            <td id="answer1"></td>
-            <td id="answer2"></td>
+            <td colspan="4" id="answer1"></td>
+            <td colspan="4" id="answer2"></td>
         </tr>
         <tr>
-            <td id="answer3"></td>
-            <td id="answer4"></td>
+            <td colspan="4" id="answer3"></td>
+            <td colspan="4" id="answer4"></td>
         </tr>
     </table>
+</div>
+
+<div id="result">
 
 </div>
 
