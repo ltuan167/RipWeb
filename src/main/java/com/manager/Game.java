@@ -7,6 +7,7 @@ import com.entities.QuestionCollection;
 import com.model.WsMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.simp.SimpMessageSendingOperations;
+import com.model.GameApiResponse;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -91,7 +92,7 @@ public class Game implements Comparable<Game> {
 			currentQuestion = questionsIterator.next();
 			nextQuestionCommand.setType(WsMessage.WsMessageType.NEXT_QUESTION);
 			nextQuestionCommand.setContent(String.valueOf(currentQuestion.getId()));
-			questionDetailForHost.setType(GameApiResponse.GameCommandType.NEXT_QUESTION);
+			questionDetailForHost.setType(WsMessage.WsMessageType.NEXT_QUESTION);
 			questionDetailForHost.setContent(currentQuestion);
 			broadcastMsg(nextQuestionCommand);
 			sendMsg2Host(questionDetailForHost);
