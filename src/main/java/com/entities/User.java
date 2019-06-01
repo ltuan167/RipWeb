@@ -2,6 +2,7 @@ package com.entities;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.Set;
 
 @Entity
 @Table(name = "User", //catalog = "spring_security",
@@ -27,6 +28,9 @@ public class User {
 
 	@Column(name = "dob")
 	private Date dob;
+
+	@OneToMany(mappedBy = "owner_id", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	private Set<QuestionCollection> questionCollections;
 
 	public User() {}
 
@@ -56,6 +60,8 @@ public class User {
 
 	public Date getDob() { return dob; }
 	public void setDob(Date dob) { this.dob = dob; }
+
+	public Set<QuestionCollection> getQuestionCollections() { return questionCollections; }
 
 //	public List<GrantedAuthority> getAuthorities() {
 //		List<GrantedAuthority> authorities = new ArrayList<>();

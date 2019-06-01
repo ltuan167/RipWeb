@@ -26,13 +26,4 @@ public class QuestionCollectionDAO {
 		return questionCollection;
 	}
 
-//	public ArrayList<Question> getQuestionsByCollectionId(int questionCollectionID) {
-//		Session session = sessionFactory.getCurrentSession();
-//		Transaction tx = session.beginTransaction();
-//		String sql = "SELECT * FROM QuestionCollection WHERE id="+questionCollectionID;
-//		ArrayList<Question> result = (ArrayList<Question>) session.createSQLQuery(sql).list();
-//		tx.commit();
-//		return result;
-//	}
-
 }
