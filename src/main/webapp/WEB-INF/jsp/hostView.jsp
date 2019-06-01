@@ -234,7 +234,10 @@
                         </div>
                         <div class="join-pin">            <span>with Game PIN: </span>          </div>
                     </div>
-                    <div class="gameId">          <input type="number" id="hostpin"></input>        </div>
+                    <div class="gameId">
+                        <input placeholder="Game Pin" type="number" id="hostpin">
+                        <input placeholder="Question Id Pin" type="number" id="hostQuesId">
+                    </div>
                 </div>
                 <div class="two-factor-auth ng-hide" ng-show="isBrowserHidden">
                     <div class="two-factor-auth__arrow">          <img src="resources/img/hostView/two-factor-auth__lobby-triangle.png">        </div>
@@ -273,9 +276,13 @@
                 </ul>
             </div>
         </playerlist>
-        <button onclick="hostStart()" no-kiosk="" ng-class="playBtnState" blocking="Loading..." ng-click="play()" class="but-advance play" data-functional-selector="start-button">Start<span class="arrow"></span></button>
+        <div>
+            <button onclick="hostStart()" no-kiosk="" ng-class="playBtnState" blocking="Loading..." ng-click="play()" class="but-advance play" data-functional-selector="start-button">Start<span class="arrow"></span></button>
+            <button onclick="hostCreatGame()" >Create New Game</button>
+        </div>
         <div class="kahoot-logo"></div>
     </div>
+
     <!-- ngInclude: -->
 </div>
 <div alerts="" filter-for-mobile="true"></div>
