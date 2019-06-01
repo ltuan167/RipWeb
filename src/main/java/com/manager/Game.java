@@ -4,14 +4,10 @@ import com.config.BeanUtil;
 import com.dao.QuestionCollectionDAO;
 import com.entities.Question;
 import com.entities.QuestionCollection;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.model.GameApiResponse;
+import com.model.WsMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.simp.SimpMessageSendingOperations;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 
@@ -29,7 +25,7 @@ public class Game implements Comparable<Game> {
 
 	public static final String PLAYER_EXISTED = "Player is existed!";
 	public static final String GAME_STARTED = "Game is already started!";
-	public static final String CANNOT_PARSE_JSON = "Can not parse JSON!";
+//	public static final String CANNOT_PARSE_JSON = "Can not parse JSON!";
 	public static final String OK = "OK";
 	public static final String GAME_END = "GAME_END";
 
@@ -40,6 +36,7 @@ public class Game implements Comparable<Game> {
 	private Integer PIN;
 	private boolean is_began = false;
 	private long began_question_time = 0;
+	private int submittedPlayerCount = 0;
 	private HashMap<String, Player> players = new HashMap<>();
 
 	public Game(Integer questionCollectionId) {
@@ -68,6 +65,10 @@ public class Game implements Comparable<Game> {
 
 		players.put(newPlayer.getSessionId(), newPlayer);
 		System.out.println("[GAME #" + PIN + "] " + newPlayer +" joined!");
+		WsMessage playersList = new WsMessage();
+		playersList.setType(WsMessage.WsMessageType.NEW_PLAYER);
+		playersList.setContent(players.values().toArray());
+		sendMsg2Host(playersList);
 		return OK;
 	}
 
@@ -84,10 +85,11 @@ public class Game implements Comparable<Game> {
 	public String nextQuestion() {
 		// Broadcast notice next question
 		if (questionsIterator.hasNext()) {
-			GameApiResponse nextQuestionCommand = new GameApiResponse();
-			GameApiResponse questionDetailForHost = new GameApiResponse();
+			submittedPlayerCount = 0;
+			WsMessage nextQuestionCommand = new WsMessage();
+			WsMessage questionDetailForHost = new WsMessage();
 			currentQuestion = questionsIterator.next();
-			nextQuestionCommand.setType(GameApiResponse.GameCommandType.NEXT_QUESTION);
+			nextQuestionCommand.setType(WsMessage.WsMessageType.NEXT_QUESTION);
 			nextQuestionCommand.setContent(String.valueOf(currentQuestion.getId()));
 			questionDetailForHost.setType(GameApiResponse.GameCommandType.NEXT_QUESTION);
 			questionDetailForHost.setContent(currentQuestion);
@@ -102,9 +104,10 @@ public class Game implements Comparable<Game> {
 
 	public String endGame() {
 		// Broadcast notice end game
-		GameApiResponse endCommand = new GameApiResponse();
-		endCommand.setType(GameApiResponse.GameCommandType.END_GAME);
-		endCommand.setContent("[{nickname: \"player1\", score: \"69\"},{nickname: \"player2\", score: \"96\"}]");
+		WsMessage endCommand = new WsMessage();
+		endCommand.setType(WsMessage.WsMessageType.END_GAME);
+		endCommand.setContent(players.values().toArray());
+//		endCommand.setContent("[{nickname: \"player1\", score: \"69\"},{nickname: \"player2\", score: \"96\"}]");
 		sendMsg2Host(endCommand);
 		broadcastMsg(endCommand);
 		return GAME_END;
@@ -125,9 +128,10 @@ public class Game implements Comparable<Game> {
 		if (players.containsKey(sessionId)) {
 			if (questionId == currentQuestion.getId()) {
 				Player player = players.get(sessionId);
+				submittedPlayerCount++;
 				if (chooseAnswerId == currentQuestion.getCorrectAnswer()) { // CORRECT ANSWER
 					long time2Answer = System.currentTimeMillis() - began_question_time;
-					float bonusTimePercentage = 1.0f - (float)time2Answer/(currentQuestion.getTime()*1000f);
+					float bonusTimePercentage = Math.min(1.0f - (float)time2Answer/(currentQuestion.getTime()*1000f), 1.0f);
 					return player.correctThisQuestion(bonusTimePercentage); // get score
 				} else
 					return player.wrongThisQuestion();

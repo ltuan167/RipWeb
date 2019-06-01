@@ -3,7 +3,6 @@ package com.rest;
 import com.manager.Game;
 import com.manager.GameManager;
 import com.model.GameApiResponse;
-import com.model.Greeting;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.messaging.simp.SimpMessageSendingOperations;
@@ -11,7 +10,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.Random;
 
 @RestController
 @RequestMapping("/1.0/game")
@@ -131,12 +129,5 @@ public class GameAPIController {
 
 	@Autowired
 	public SimpMessageSendingOperations messagingTemplate;
-
-	@Deprecated
-	@PostMapping(value = "/testws")
-	public void test(@RequestParam int gamePIN, @RequestParam String msg){
-		Greeting greeting = new Greeting("next_question");
-		messagingTemplate.convertAndSend("/game/" + gamePIN, greeting);
-	}
 
 }

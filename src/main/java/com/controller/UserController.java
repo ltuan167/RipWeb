@@ -11,11 +11,11 @@ public class UserController {
 //	@Autowired
 //	private UserServices userServices;
 
-	@RequestMapping(value = "/userlist")
-	public String listUser(Model model) {
-//		model.addAttribute("listUser",userServices.findValidUser(""));
-		return "userlist";
-	}
+//	@RequestMapping(value = "/userlist")
+//	public String listUser(Model model) {
+////		model.addAttribute("listUser",userServices.findValidUser(""));
+//		return "userlist";
+//	}
 
 //	@RequestMapping(value = "/signupdemo")
 //	public String signupdemo(Model model) {

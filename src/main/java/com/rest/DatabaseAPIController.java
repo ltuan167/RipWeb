@@ -1,7 +1,6 @@
 package com.rest;
 
 import com.dao.QuestionCollectionDAO;
-import com.entities.Question;
 import com.entities.QuestionCollection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -13,8 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.Set;
 
 @RestController
 @RequestMapping("/1.0/db")

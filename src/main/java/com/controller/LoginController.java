@@ -1,20 +1,16 @@
 package com.controller;
 
-import com.JWT.JwtService;
-import com.services.UserServices;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 
-@Controller
+//@Controller
 public class LoginController {
-	@Autowired
-	UserServices userServices;
-
-	@Autowired
-	private JwtService jwtService;
+//	@Autowired
+//	UserServices userServices;
+//
+//	@Autowired
+//	private JwtService jwtService;
 //
 //	@PostMapping("/login")
 //	public String login(@RequestParam String email,

@@ -50,6 +50,7 @@ public class User {
 	public void setEmail(String email) { this.email = email; }
 
 	public String getUsername() { return nickname; }
+	public String getNickname() { return nickname; }
 	public void setNickname(String username) { this.nickname = username; }
 
 	public String getPassword() { return password; }
