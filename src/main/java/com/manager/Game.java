@@ -24,7 +24,8 @@ public class Game implements Comparable<Game> {
 	public QuestionCollectionDAO questionCollectionDAO = BeanUtil.getBean(QuestionCollectionDAO.class);
 
 	private QuestionCollection questionCollection;
-	private Iterator<Question> questionsIterator = questionCollection.getQuestions().iterator();
+	private Iterator<Question> questionsIterator;
+
 	private Question currentQuestion;
 
 	public static final String PLAYER_EXISTED = "Player is existed!";
@@ -42,23 +43,31 @@ public class Game implements Comparable<Game> {
 	private HashMap<String, Player> players = new HashMap<>();
 
 	public Game(Integer questionCollectionId) {
-		this(-1, questionCollectionId);
+//		this(-1, questionCollectionId);
 		int generatedPIN = GameManager.getInstance().generatePIN();
-		if (generatedPIN <= GameManager.MAX_GAME_COUNT)  // out of Game slot
+		if (generatedPIN <= GameManager.MAX_GAME_COUNT) { // out of Game slot
 			this.PIN = generatedPIN;
-	}
-
-	public Game(Integer gamePIN, Integer questionCollectionId) {
-		this.PIN = gamePIN;
-//		this.questionCollectionId = questionCollectionId;
-		this.gameWsTopic = TOPIC_PREFIX + gamePIN;
-		// Load Questions
-		if (questionCollectionId >= 0) {
-			QuestionCollection questionCollectionX = questionCollectionDAO.getQuestionCollectionById(questionCollectionId);
-			if (questionCollectionX != null)
-				this.questionCollection = questionCollectionX;
+			this.gameWsTopic = TOPIC_PREFIX + this.PIN;
+			// Load Questions
+			if (questionCollectionId >= 0) {
+				QuestionCollection questionCollectionX = questionCollectionDAO.getQuestionCollectionById(questionCollectionId);
+				if (questionCollectionX != null)
+					this.questionCollection = questionCollectionX;
+			}
 		}
 	}
+
+//	public Game(Integer gamePIN, Integer questionCollectionId) {
+//			this.PIN = gamePIN;
+////		this.questionCollectionId = questionCollectionId;
+//			this.gameWsTopic = TOPIC_PREFIX + gamePIN;
+//			// Load Questions
+//			if (questionCollectionId >= 0) {
+//				QuestionCollection questionCollectionX = questionCollectionDAO.getQuestionCollectionById(questionCollectionId);
+//				if (questionCollectionX != null)
+//					this.questionCollection = questionCollectionX;
+//			}
+//	}
 
 	public String join(String sessionId, String nickname) {
 //		Collections.sort(players);
@@ -75,8 +84,10 @@ public class Game implements Comparable<Game> {
 
 	public String startGame() {
 		// Broadcast notice begin game
-		is_began = true;
-		questionsIterator = getQuestionCollection().getQuestions().iterator();
+		if (is_began == false) {
+			is_began = true;
+			questionsIterator = getQuestionCollection().getQuestions().iterator();
+		}
 		return nextQuestion();
 	}
 
@@ -147,6 +158,8 @@ public class Game implements Comparable<Game> {
 
 	public Integer getPIN() { return PIN; }
 	public void setPIN(Integer PIN) { this.PIN = PIN; }
+
+	public Question getCurrentQuestion() { return currentQuestion; }
 
 	public QuestionCollection getQuestionCollection() { return questionCollection; }
 //	public void setQuestionCollection(QuestionCollection questionCollection) { this.questionCollection = questionCollection; }

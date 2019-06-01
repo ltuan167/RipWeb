@@ -82,9 +82,24 @@ public class GameAPIController {
 		return startGameResponse;
 	}
 
-	@PostMapping(value = "/next")
-	public void nextQuestion(@RequestParam int gamePIN, HttpServletRequest req, HttpServletResponse res) {
+	@PostMapping(value = "/next", produces = MediaType.APPLICATION_JSON_VALUE)
+	public GameApiResponse nextQuestion(@RequestParam int gamePIN, HttpServletRequest req, HttpServletResponse res) {
+		GameApiResponse nextQuestionResponse = new GameApiResponse();
 		Game game = GameManager.getInstance().getGameByPIN(gamePIN);
+		if (game != null) {
+			String nextQuestion = game.nextQuestion();
+			if (nextQuestion.equals(Game.OK)) {
+				nextQuestionResponse.setType(GameApiResponse.GameCommandType.OK);
+				nextQuestionResponse.setContent(game.getCurrentQuestion().toString());
+			} else {
+				nextQuestionResponse.setType(GameApiResponse.GameCommandType.REQUEST_ERROR);
+				nextQuestionResponse.setContent(nextQuestion);
+				res.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+			}
+			return nextQuestionResponse;
+		}
+		res.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+		return null;
 	}
 
 	@PostMapping(value = "/remove", produces = MediaType.APPLICATION_JSON_VALUE)
