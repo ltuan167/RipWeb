@@ -62,6 +62,31 @@ public class GameAPIController {
 		return submittedResponse;
 	}
 
+	@PostMapping(value = "/start", produces = MediaType.APPLICATION_JSON_VALUE)
+	public GameApiResponse startGame(@RequestParam int gamePIN, HttpServletResponse res) {
+		GameApiResponse startGameResponse = new GameApiResponse();
+		Game game = GameManager.getInstance().getGameByPIN(gamePIN);
+		if (game == null) {
+			startGameResponse.setType(GameApiResponse.GameCommandType.REQUEST_ERROR);
+			startGameResponse.setContent("DOES NOT FOUND GAME!");
+			res.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+		}
+		String startGameStatus = game.startGame();
+		if (startGameResponse.equals(Game.OK)) {
+			startGameResponse.setType(GameApiResponse.GameCommandType.GAME_STARTED);
+		} else {
+			startGameResponse.setType(GameApiResponse.GameCommandType.REQUEST_ERROR);
+			startGameResponse.setContent(startGameStatus);
+			res.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+		}
+		return startGameResponse;
+	}
+
+	@PostMapping(value = "/next")
+	public void nextQuestion(@RequestParam int gamePIN, HttpServletRequest req, HttpServletResponse res) {
+		Game game = GameManager.getInstance().getGameByPIN(gamePIN);
+	}
+
 	@PostMapping(value = "/remove", produces = MediaType.APPLICATION_JSON_VALUE)
 	public GameApiResponse removeGame(@RequestParam int gamePIN, HttpServletRequest req, HttpServletResponse res) {
 		GameApiResponse removeResponse = new GameApiResponse();
@@ -80,6 +105,7 @@ public class GameAPIController {
 	@Autowired
 	public SimpMessageSendingOperations messagingTemplate;
 
+	@Deprecated
 	@PostMapping(value = "/testws")
 	public void test(@RequestParam int gamePIN, @RequestParam String msg){
 		Greeting greeting = new Greeting("next_question");
