@@ -123,6 +123,7 @@ public class GameAPIController {
 				endQuestionResponse.setType(ApiResponse.ApiResponseType.OK);
 //				endQuestionResponse.setContent(submittedCount);
 				res.setStatus(HttpServletResponse.SC_OK);
+				return endQuestionResponse;
 			}
 		}
 		res.setStatus(HttpServletResponse.SC_BAD_REQUEST);
