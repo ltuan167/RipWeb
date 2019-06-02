@@ -111,6 +111,7 @@ public class Game implements Comparable<Game> {
 		broadcastMsg(endCommand);
 		endCommand.setContent(players.values().toArray());
 		sendMsg2Host(endCommand);
+		GameManager.getInstance().removeGame(this.getPIN());
 		return GAME_END;
 	}
 
