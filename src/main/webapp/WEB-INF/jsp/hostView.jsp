@@ -17,7 +17,6 @@
 <style type="text/css" id="dark-mode-custom-style"></style>
 <!--<![endif]-->
 <head>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.3.0/sockjs.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
 
@@ -38,56 +37,18 @@
     <link rel="apple-touch-icon-precomposed" href="https://play.kahoot.it/img/ico/apple-touch-icon-precomposed.png">
     <link rel="stylesheet" type="text/css" href="resources/css/hostView/cloak.css">
     <script type="text/javascript" id="www-widgetapi-script" src="resources/js/hostView/www-widgetapi.js" async=""></script><script async="" src="resources/js/hostView/iframe_api"></script>
-<%--    <script async="" src="resources/js/hostView/analytics.js"></script>--%>
-<%--    <script type="text/javascript" async="" src="resources/js/hostView/amplitude-4.js"></script>--%>
-<%--    <script type="text/javascript">--%>
-<%--    var _trackJs = {--%>
-<%--        customer: '225f19cc34be4573b843ef421db55656'--%>
-<%--    };--%>
-<%--    </script>--%>
-<%--    <script src="resources/js/hostView/kahunaAPI_min.js"></script>--%>
-<%--    <script type="text/javascript">--%>
-<%--        (function(e,t){var n=e.amplitude||{_q:[],_iq:{}};var r=t.createElement("script")--%>
-<%--        ;r.type="text/javascript";r.async=true--%>
-<%--        ;r.src="https://cdn.amplitude.com/libs/amplitude-4.2.1-min.gz.js"--%>
-<%--        ;r.onload=function(){if(e.amplitude.runQueuedFunctions){--%>
-<%--            e.amplitude.runQueuedFunctions()}else{--%>
-<%--            console.log("[Amplitude] Error: could not load SDK")}}--%>
-<%--        ;var i=t.getElementsByTagName("script")[0];i.parentNode.insertBefore(r,i)--%>
-<%--        ;function s(e,t){e.prototype[t]=function(){--%>
-<%--            this._q.push([t].concat(Array.prototype.slice.call(arguments,0)));return this}}--%>
-<%--            var o=function(){this._q=[];return this}--%>
-<%--            ;var a=["add","append","clearAll","prepend","set","setOnce","unset"]--%>
-<%--            ;for(var u=0;u<a.length;u++){s(o,a[u])}n.Identify=o;var c=function(){this._q=[]--%>
-<%--                ;return this}--%>
-<%--            ;var l=["setProductId","setQuantity","setPrice","setRevenueType","setEventProperties"]--%>
-<%--            ;for(var p=0;p<l.length;p++){s(c,l[p])}n.Revenue=c--%>
-<%--            ;var d=["init","logEvent","logRevenue","setUserId","setUserProperties","setOptOut","setVersionName","setDomain","setDeviceId","setGlobalUserProperties","identify","clearUserProperties","setGroup","logRevenueV2","regenerateDeviceId","logEventWithTimestamp","logEventWithGroups","setSessionId","resetSessionId"]--%>
-<%--            ;function v(e){function t(t){e[t]=function(){--%>
-<%--                e._q.push([t].concat(Array.prototype.slice.call(arguments,0)))}}--%>
-<%--                for(var n=0;n<d.length;n++){t(d[n])}}v(n);n.getInstance=function(e){--%>
-<%--                e=(!e||e.length===0?"$default_instance":e).toLowerCase()--%>
-<%--                ;if(!n._iq.hasOwnProperty(e)){n._iq[e]={_q:[]};v(n._iq[e])}return n._iq[e]}--%>
-<%--            ;e.amplitude=n})(window,document);--%>
-<%--    </script>--%>
-<%--    <script type="text/javascript">--%>
-<%--        // Make the background orange if this isn't the lobby page--%>
-<%--        var docEle = document.documentElement;--%>
-<%--        docEle.className = docEle.className || "";--%>
-<%--        if (!document.location.href.match(/lobby/i))--%>
-<%--            docEle.className += " orange";--%>
-
-<%--        document.write('<scri'+'pt ');--%>
-<%--        document.write('type="text/javascript" ');--%>
-<%--        document.write('src="'+'shared/theme/config.js');--%>
-<%--        document.write("?"+new Date().getTime()+'">');--%>
-<%--        document.write('</scri'+'pt>');--%>
-<%--    </script>--%>
-<%--    <script type="text/javascript" src="resources/js/hostView/config.js"></script>--%>
     <link rel="stylesheet" media="all" type="text/css" id="theme" href="resources/css/hostView/style.css">
     <link rel="stylesheet" href="resources/css/hostView/registration.css">
-<%--    <script async="" src="resources/js/hostView/player.js"></script>--%>
-    <style type="text/css"></style>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>RipWeb</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Luckiest+Guy">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Permanent+Marker">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
 </head>
 <body keypress="" dynamic-background="" class="touchpadSwipeAnimationCore animate-background">
 <!--[if lt IE 9]>
@@ -351,24 +312,58 @@
     <div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;"></div>
 </div>
 
-<div id="questionScreen">
-    <h1 id="question" style="color: ghostwhite"></h1>
-    <button onclick="hostEndQuestion()" ng-class="playBtnState">End Question</button>
-    <table style="color: ghostwhite; alignment: center; width: 100vw; height: 100%;">
-        <tr>
-            <td colspan="2">
-                <img id="questionImg" src="" style="alignment: center">
-            </td>
-        </tr>
-        <tr>
-            <td><a class="btn btn-danger btn-large" id="answer1" style="width: 80%"></a></td>
-            <td><a class="btn btn-info btn-large" id="answer2" style="width: 80%"></a></td>
-        </tr>
-        <tr>
-            <td><a class="btn btn-primary btn-large" id="answer3" style="width: 80%"></a></td>
-            <td><a class="btn btn-primary btn-large" id="answer4" style="width: 80%"></a></td>
-        </tr>
-    </table>
+<%--<div id="questionScreen">--%>
+<%--    <h1 id="question" style="color: ghostwhite"></h1>--%>
+<%--    <button onclick="hostEndQuestion()" ng-class="playBtnState">End Question</button>--%>
+<%--    <table style="color: ghostwhite; alignment: center; width: 100vw; height: 100%;">--%>
+<%--        <tr>--%>
+<%--            <td colspan="2">--%>
+<%--                <img id="questionImg" src="" style="alignment: center">--%>
+<%--            </td>--%>
+<%--        </tr>--%>
+<%--        <tr>--%>
+<%--            <td><a class="btn btn-danger btn-large" id="answer1" style="width: 80%"></a></td>--%>
+<%--            <td><a class="btn btn-info btn-large" id="answer2" style="width: 80%"></a></td>--%>
+<%--        </tr>--%>
+<%--        <tr>--%>
+<%--            <td><a class="btn btn-primary btn-large" id="answer3" style="width: 80%"></a></td>--%>
+<%--            <td><a class="btn btn-primary btn-large" id="answer4" style="width: 80%"></a></td>--%>
+<%--        </tr>--%>
+<%--    </table>--%>
+<%--</div>--%>
+
+<div id="questionScreen" class="container-fluid text-left d-flex float-none flex-fill jello animated" style="background-color: rgba(0,0,0,0);filter: blur(0px);width: 100vw;margin: 0 0 0 0;padding: 20px;height: 100vh;">
+    <div class="col" style="width: 100%;padding: 0px;height: 100%;">
+        <div class="row" style="width: 100%;height: 50%;margin: 0 0;">
+            <div class="col" style="width: 100%;height: 100%;">
+                <div class="row" style="width: 100%;height: 100%;margin-right: 0;margin-left: 0;">
+                    <div class="col-xl-2" style="width: 10%;height: 100%;padding-right: 1em;padding-left: 0;"><button class="btn btn-primary" type="button" style="width: 100%;height: 100%;font-family: Comfortaa, cursive;font-weight: bold;font-style: oblique;font-size: 31px;letter-spacing: 1px;padding-top: 0;padding-right: 0;padding-bottom: 0;padding-left: 0;background-color: rgb(113,148,186);">RIPWEB!</button></div>
+                    <div
+                            class="col-xl-8" style="width: 80%;height: 100%;padding-right: 0;padding-left: 0;"><img class="img-thumbnail" src="assets/img/26459860773_4322348f67_o.jpg" style="width: 100%;height: 100%;padding: 0;margin-left: 0;"></div>
+                    <div class="col-xl-2" style="width: 10%;height: 100%;padding-right: 0;padding-left: 1em;"><button class="btn btn-primary" type="button" style="width: 100%;height: 100%;font-family: Comfortaa, cursive;font-weight: bold;font-style: oblique;font-size: 31px;letter-spacing: 1px;padding-top: 0;padding-right: 0;padding-bottom: 0;padding-left: 0;background-color: rgb(138,76,187);">End now</button></div>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="width: 100%;height: 20%;margin: 0;margin-top: 5px;">
+            <div class="col" style="width: 100%;height: 100%;">
+                <p class="d-lg-flex align-items-lg-center" style="width: 100%;height: 100%;font-size: 2.5em;font-family: Comfortaa, cursive;font-weight: bold;color: rgb(61,113,164);">This is a long long long long long long long long long long long long question?</p>
+            </div>
+        </div>
+        <div class="row" style="width: 100%;height: 30%;margin: 0;margin-top: 5px;">
+            <div class="col-auto" style="width: 100%;height: 100%;padding-right: 0;padding-left: 0;">
+                <div class="row" style="width: 100%;height: 48%;margin-left: 0;margin-right: 0;">
+                    <div class="col" style="width: 100%;height: 100%;padding-right: 0.05em;padding-left: 0.05em;margin-right: 0.05em;margin-left: 0.05em;"><button class="btn btn-primary btn-lg text-center border-white shadow-lg visible" type="button" style="width: 100%;height: 100%;background-color: #c01733;padding: 0 0;padding-right: 0.05em;padding-left: 0.05em;font-family: Comfortaa, cursive;font-weight: bold;font-size: 2.3em;filter: brightness(100%);">Answer 1</button></div>
+                    <div
+                            class="col" style="width: 100%;height: 100%;padding-right: 0.05em;padding-left: 0.05em;margin-right: 0.05em;margin-left: 0.05em;"><button class="btn btn-primary btn-lg border-white" type="button" style="width: 100%;height: 100%;padding: 0;padding-right: 0.05em;background-color: #1368ce;padding-left: 0.05em;font-family: Comfortaa, cursive;font-weight: bold;font-size: 2.3em;">Answer 2</button></div>
+                </div>
+                <div class="row" style="width: 100%;height: 45%;margin-top: 0.1em;margin-right: 0;margin-left: 0;">
+                    <div class="col" style="width: 100%;height: 100%;padding-right: 0;padding-left: 0;margin-right: 0.05em;margin-left: 0.05em;"><button class="btn btn-primary btn-lg border-white" type="button" style="width: 100%;height: 100%;background-color: #d89e00;padding: 0;padding-left: 0.05em;padding-right: 0.05em;font-family: Comfortaa, cursive;font-weight: bold;font-size: 2.3em;">Answer 3</button></div>
+                    <div
+                            class="col" style="width: 100%;height: 100%;padding-right: 0.05em;padding-left: 0.05em;margin-left: 0.05em;"><button class="btn btn-primary btn-lg border-white" type="button" style="width: 100%;height: 100%;padding: 0;background-color: #298f0d;padding-left: 0.05em;padding-right: 0.05em;font-family: Comfortaa, cursive;font-weight: bold;font-size: 2.3em;">Answer 4</button></div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div id="questionResultScreen">
@@ -377,8 +372,10 @@
 </div>
 
 <div id="resultScreen">
-
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.bundle.min.js"></script>
 
 </body>
 <script src = "resources/js/hostView/host.js"></script>

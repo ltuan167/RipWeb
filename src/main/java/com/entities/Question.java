@@ -28,7 +28,7 @@ public class Question {
 	@Column(name = "question", nullable = false, length = 150)
 	private String question;
 
-	@Column(name = "image", nullable = true, length = 100)
+	@Column(name = "image", nullable = true, length = 500)
 	private String image;
 
 	@Column(name = "correctAnswer", nullable = false)
