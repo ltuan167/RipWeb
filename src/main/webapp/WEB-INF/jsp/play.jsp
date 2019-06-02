@@ -186,7 +186,6 @@
                 <div class="status-bar__item status-bar__score ng-binding ng-scope" ng-if="showStatusBarScore" data-functional-selector="player-total-score" name="score">          </div>
                 <!-- end ngIf: showStatusBarScore -->
             </div>
-            <button onclick="endGame()">End Game</button>
             <div class="screen__main screen__main--gutter-none selectanswer">
                 <div class="answerFeedback animated-background animated-background--fast">
                     <div class="spinner">      </div>
