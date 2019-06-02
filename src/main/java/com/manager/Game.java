@@ -130,7 +130,7 @@ public class Game implements Comparable<Game> {
 				if (submittedPlayers.contains(player))
 					return SUBMITTED_ERROR_CODE;
 				submittedPlayers.add(player);
-				submittedCount[chooseAnswerId]++;
+				submittedCount[chooseAnswerId-1]++;
 				if (chooseAnswerId == currentQuestion.getCorrectAnswer()) { // CORRECT ANSWER
 					long time2Answer = System.currentTimeMillis() - began_question_time;
 					float bonusTimePercentage = Math.min(Math.abs(1.0f - (float)time2Answer/(currentQuestion.getTime()*1000f)), 1.0f);
