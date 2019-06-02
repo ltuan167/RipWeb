@@ -67,7 +67,7 @@ function hostDisplayQuestion() {
                 let playersListHTML = "";
                 let players = msg.content;
                 for (let i = players.length-1; i >= 0; i--) {
-                    if (i != 0)
+                    if (i != 0 || players.length == 1)
                         playersListHTML += "<li class=\"list-inline-item tada animated\" style=\"width: auto;color: rgb(255,255,255);height: auto;margin-top: 40px;margin-right: 40px;margin-bottom: 40px;margin-left: 40px;font-family: Comfortaa, cursive;\">"+players[i].nickname+"</li>";
                     else
                         playersListHTML += "<li class=\"list-inline-item\" style=\"width: auto;color: rgb(255,255,255);height: auto;margin-top: 40px;margin-right: 40px;margin-bottom: 40px;margin-left: 40px;font-family: Comfortaa, cursive;\">"+players[i].nickname+"</li>";
