@@ -54,7 +54,7 @@
                         <p class="text-left d-xl-flex justify-content-xl-start align-items-xl-center" style="font-family: Comfortaa, cursive;font-size: 39px;width: 100%;height: 100%;margin-bottom: 0;color: rgb(120,120,120);">Join NOW&nbsp;with&nbsp;<strong><em> ripweb/play </em></strong></p>
                     </div>
                     <div class="col-xl-5" style="height: 100%;padding-right: 30px;">
-                        <h1 class="text-center d-xl-flex justify-content-xl-end align-items-xl-center" style="font-family: Comfortaa, cursive;font-size: 44px;width: 100%;height: 100%;line-height: 59px;color: rgb(102,105,109);font-style: normal;"><strong>Game PIN:</strong>&nbsp;<span id="gamePinCreated" style="font-weight: bold;font-size: 54px;color: rgb(51,51,51);font-style: normal;">12903</span></h1>
+                        <h1 class="text-center d-xl-flex justify-content-xl-end align-items-xl-center" style="font-family: Comfortaa, cursive;font-size: 44px;width: 100%;height: 100%;line-height: 59px;color: rgb(102,105,109);font-style: normal;"><strong>Game PIN:</strong>&nbsp;<span id="gamePinCreated" style="font-weight: bold;font-size: 54px;color: rgb(51,51,51);font-style: normal;"></span></h1>
                     </div>
                 </div>
             </div>
@@ -67,8 +67,6 @@
                         class="d-xl-flex justify-content-xl-center align-items-xl-center" style="color: rgb(255,255,255);font-size: 22px;font-family: Comfortaa, cursive;font-style: italic;font-weight: bold;">Players</strong>
             </div>
             <ul id="playersList" class="list-inline d-xl-flex" style="width: 70%;height: 60%;padding-bottom: 0;margin-bottom: 0;margin-right: 10%;margin-left: 15%;font-size: 30px;">
-                <li class="list-inline-item tada animated" style="width: auto;color: rgb(255,255,255);height: auto;margin-top: 40px;margin-right: 40px;margin-bottom: 40px;margin-left: 40px;font-family: Comfortaa, cursive;">Player1</li>
-                <li class="list-inline-item tada animated" style="width: auto;color: rgb(255,255,255);height: auto;margin-top: 40px;margin-right: 40px;margin-bottom: 40px;margin-left: 40px;font-family: Comfortaa, cursive;">Player 2</li>
             </ul>
         </div>
     </div>
