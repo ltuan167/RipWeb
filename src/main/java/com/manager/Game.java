@@ -7,7 +7,6 @@ import com.entities.QuestionCollection;
 import com.model.WsMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.simp.SimpMessageSendingOperations;
-import com.model.GameApiResponse;
 
 import java.util.*;
 
@@ -23,12 +22,11 @@ public class Game implements Comparable<Game> {
 	private Iterator<Question> questionsIterator;
 	private Question currentQuestion;
 
+	public static final Integer SUBMITTED_ERROR_CODE = -2;
 	public static final String PLAYER_EXISTED = "Player is existed!";
 	public static final String GAME_STARTED = "Game is already started!";
-//	public static final String CANNOT_PARSE_JSON = "Can not parse JSON!";
 	public static final String OK = "OK";
 	public static final String GAME_END = "GAME_END";
-
 	private static final String TOPIC_PREFIX = "/game/";
 	private static final String HOST_TOPIC_POSTFIX = "/host";
 	private String gameWsTopic;
@@ -36,11 +34,11 @@ public class Game implements Comparable<Game> {
 	private Integer PIN;
 	private boolean is_began = false;
 	private long began_question_time = 0;
-	private int submittedPlayerCount = 0;
+	private ArrayList<Player> submittedPlayers = new ArrayList<>();
+	private Integer[] submittedCount = new Integer[4];
 	private HashMap<String, Player> players = new HashMap<>();
 
 	public Game(Integer questionCollectionId) {
-//		this(-1, questionCollectionId);
         int generatedPIN = GameManager.getInstance().generatePIN();
         if (generatedPIN <= GameManager.MAX_GAME_COUNT) { // out of Game slot
             this.PIN = generatedPIN;
@@ -87,7 +85,9 @@ public class Game implements Comparable<Game> {
 	public String nextQuestion() {
 		// Broadcast notice next question
 		if (questionsIterator.hasNext()) {
-			submittedPlayerCount = 0;
+			submittedPlayers.clear();
+			for (int i = 0; i < 4; i++)
+				submittedCount[i] = 0;
 			WsMessage nextQuestionCommand = new WsMessage();
 			WsMessage questionDetailForHost = new WsMessage();
 			currentQuestion = questionsIterator.next();
@@ -108,20 +108,17 @@ public class Game implements Comparable<Game> {
 		// Broadcast notice end game
 		WsMessage endCommand = new WsMessage();
 		endCommand.setType(WsMessage.WsMessageType.END_GAME);
-		endCommand.setContent(players.values().toArray());
-//		endCommand.setContent("[{nickname: \"player1\", score: \"69\"},{nickname: \"player2\", score: \"96\"}]");
-		sendMsg2Host(endCommand);
 		broadcastMsg(endCommand);
+		endCommand.setContent(players.values().toArray());
+		sendMsg2Host(endCommand);
 		return GAME_END;
 	}
 
 	private boolean broadcastMsg(Object msg2broadcast) {
 		try {
-//			System.out.println("Game WS Topic: " + gameWsTopic);
 			msg.convertAndSend(gameWsTopic, msg2broadcast);
 			return true;
 		} catch (Exception e) {
-//			System.err.println("[broadcastMsg]" + e.getMessage());
 			return false;
 		}
 	}
@@ -130,7 +127,10 @@ public class Game implements Comparable<Game> {
 		if (players.containsKey(sessionId)) {
 			if (questionId == currentQuestion.getId()) {
 				Player player = players.get(sessionId);
-				submittedPlayerCount++;
+				if (submittedPlayers.contains(player))
+					return SUBMITTED_ERROR_CODE;
+				submittedPlayers.add(player);
+				submittedCount[chooseAnswerId]++;
 				if (chooseAnswerId == currentQuestion.getCorrectAnswer()) { // CORRECT ANSWER
 					long time2Answer = System.currentTimeMillis() - began_question_time;
 					float bonusTimePercentage = Math.min(Math.abs(1.0f - (float)time2Answer/(currentQuestion.getTime()*1000f)), 1.0f);
@@ -140,6 +140,22 @@ public class Game implements Comparable<Game> {
 			}
 		}
 		return -1;
+	}
+
+	public boolean endQuestion() {
+		WsMessage endQuestionMsg = new WsMessage();
+		endQuestionMsg.setType(WsMessage.WsMessageType.END_QUESTION);
+		endQuestionMsg.setContent(submittedCount);
+		return sendMsg2Host(endQuestionMsg);
+	}
+
+	public boolean checkAllPlayerSubmitted() {
+		int submittedPlayersCount = submittedPlayers.size();
+		if (submittedPlayersCount == players.size()) { // All player submitted
+			endQuestion();
+			return true;
+		}
+		return false;
 	}
 
 	private boolean sendMsg2Host(Object msg2host) {
