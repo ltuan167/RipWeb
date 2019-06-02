@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <!--[if lt IE 7]>
 <html class="no-js lt-ie9 lt-ie8 lt-ie7 ie" lang="en">
@@ -24,22 +22,25 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
 
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+    <style type="text/css">[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Kahoot! | Play this quiz now!</title>
+    <title>Ripweb! | Play this quiz now!</title>
     <meta name="keywords" content="Blended Learning, Classroom Response System, Student Response System, Student Engagement, Game Based Learning, Formative Assessment, Adaptive Learning, Mobile Learning, e-learning, Free Education Apps, iPads in the Classroom, Pedagogy, Pedagogy and Technology Learning Space, Student Centric, Business Apps, Interactive Classroom, Audience Response System, Survey Tool">
-    <meta name="description" content="Play a game of Kahoot! here. Kahoot! is a free game-based learning platform that makes it fun to learn – any subject, in any language, on any device, for all ages!">
+    <meta name="description" content="Play a game of Ripweb! here. Ripweb! is a free game-based learning platform that makes it fun to learn – any subject, in any language, on any device, for all ages!">
     <meta name="viewport" dynamic-viewport="" content="">
-    <meta property="og:title" content="Kahoot! | Play this quiz now!">
+    <meta property="og:title" content="Ripweb! | Play this quiz now!">
     <meta property="og:image" content="https://kahoot-static-assets.s3.amazonaws.com/social/kahoot_meta_og_image.jpg">
-    <link rel="shortcut icon" href="https://play.kahoot.it/shared/theme/kahoot/img/icons/favicon.ico">
+<%--    <link rel="shortcut icon" href="https://play.kahoot.it/shared/theme/kahoot/img/icons/favicon.ico">--%>
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://play.kahoot.it/img/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://play.kahoot.it/img/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://play.kahoot.it/img/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="https://play.kahoot.it/img/ico/apple-touch-icon-precomposed.png">
     <link rel="stylesheet" type="text/css" href="resources/css/hostView/cloak.css">
-    <script type="text/javascript" id="www-widgetapi-script" src="resources/js/hostView/www-widgetapi.js" async=""></script><script async="" src="resources/js/hostView/iframe_api"></script><script async="" src="resources/js/hostView/analytics.js"></script><script type="text/javascript" async="" src="resources/js/hostView/amplitude-4.js"></script><script type="text/javascript">
+    <script type="text/javascript" id="www-widgetapi-script" src="resources/js/hostView/www-widgetapi.js" async=""></script><script async="" src="resources/js/hostView/iframe_api"></script>
+<%--    <script async="" src="resources/js/hostView/analytics.js"></script>--%>
+<%--    <script type="text/javascript" async="" src="resources/js/hostView/amplitude-4.js"></script>--%>
+    <script type="text/javascript">
     var _trackJs = {
         customer: '225f19cc34be4573b843ef421db55656'
     };
@@ -69,40 +70,41 @@
                 ;if(!n._iq.hasOwnProperty(e)){n._iq[e]={_q:[]};v(n._iq[e])}return n._iq[e]}
             ;e.amplitude=n})(window,document);
     </script>
-    <script type="text/javascript">
-        // Make the background orange if this isn't the lobby page
-        var docEle = document.documentElement;
-        docEle.className = docEle.className || "";
-        if (!document.location.href.match(/lobby/i))
-            docEle.className += " orange";
+<%--    <script type="text/javascript">--%>
+<%--        // Make the background orange if this isn't the lobby page--%>
+<%--        var docEle = document.documentElement;--%>
+<%--        docEle.className = docEle.className || "";--%>
+<%--        if (!document.location.href.match(/lobby/i))--%>
+<%--            docEle.className += " orange";--%>
 
-        document.write('<scri'+'pt ');
-        document.write('type="text/javascript" ');
-        document.write('src="'+'shared/theme/config.js');
-        document.write("?"+new Date().getTime()+'">');
-        document.write('</scri'+'pt>');
-    </script><script type="text/javascript" src="resources/js/hostView/config.js"></script>
+<%--        document.write('<scri'+'pt ');--%>
+<%--        document.write('type="text/javascript" ');--%>
+<%--        document.write('src="'+'shared/theme/config.js');--%>
+<%--        document.write("?"+new Date().getTime()+'">');--%>
+<%--        document.write('</scri'+'pt>');--%>
+<%--    </script>--%>
+<%--    <script type="text/javascript" src="resources/js/hostView/config.js"></script>--%>
     <link rel="stylesheet" media="all" type="text/css" id="theme" href="resources/css/hostView/style.css">
     <link rel="stylesheet" href="resources/css/hostView/registration.css">
-    <script async="" src="resources/js/hostView/player.js"></script>
+<%--    <script async="" src="resources/js/hostView/player.js"></script>--%>
     <style type="text/css"></style>
 </head>
 <body keypress="" dynamic-background="" class="touchpadSwipeAnimationCore animate-background">
 <!--[if lt IE 9]>
-<div class="browser-warning alert center">Sorry but this browser is too old for Kahoot! <a href="http://browsehappy.com/">Upgrade to a better one</a> to play.</div>
+<div class="browser-warning alert center">Sorry but this browser is too old for Ripweb! <a href="http://browsehappy.com/">Upgrade to a better one</a> to play.</div>
 <![endif]-->
 <noscript>
-    <h1>Kahoot! needs JavaScript to work</h1>
+    <h1>Ripweb! needs JavaScript to work</h1>
     <p>
-        To use Kahoot!, you need to have JavaScript enabled in your browser. To enable JavaScript, please do the following:
+        To use Ripweb!, you need to have JavaScript enabled in your browser. To enable JavaScript, please do the following:
     </p>
     <ul>
         <li><a href="http://enable-javascript.com/">Follow these instructions</a>.</li>
         <li>Make sure you have the <a href="https://www.mozilla.org/en-US/firefox/new/">latest browser</a>.</li>
         <li>Turn off or disable the NoScript extension, if you have it.</li>
-        <li>Contact your IT administrator to allow access to Kahoot! in your security preferences.</li>
+        <li>Contact your IT administrator to allow access to Ripweb! in your security preferences.</li>
     </ul>
-    <p>If you continue to have problems, please let us know by <a href="http://kahoot.uservoice.com/">contacting Kahoot! support</a>.</p>
+    <p>If you continue to have problems, please let us know by <a href="http://ripweb.uservoice.com/">contacting Ripweb! support</a>.</p>
 </noscript>
 <div style="height: 0; width: 0; position: absolute; visibility: hidden">
     <!-- inject:svg -->
@@ -261,7 +263,7 @@
             </div>
         </div>
         <div class="statusbar lobby ">
-            <span class="visually-hidden">      Kahoot!    </span>    <!-- ngIf: brandLogoProps -->
+            <span class="visually-hidden">      Ripweb!    </span>    <!-- ngIf: brandLogoProps -->
         </div>
         <div class="numberBoard playerCount">    <i class="number ng-binding" id="playersCount">0</i><br>    <i class="countLabel ng-binding">Players</i>  </div>
         <playerlist>
@@ -282,7 +284,7 @@
     <!-- ngInclude: -->
 </div>
 <div alerts="" filter-for-mobile="true"></div>
-<script type="text/javascript" src="resources/js/hostView/bootstrap.js"></script>
+<%--<script type="text/javascript" src="resources/js/hostView/bootstrap.js"></script>--%>
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

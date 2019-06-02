@@ -24,14 +24,14 @@
     <link href="resources/css/editOverview/commons.css" rel="stylesheet">
     <link href="resources/css/editOverview/create_002.css" rel="stylesheet">
     <link href="resources/css/editOverview/create.css" rel="stylesheet">
-    <script async="" src="Edit%20your%20kahoot%20%20%20Overview_files/analytics.js"></script>
-    <script type="text/javascript" async="" src="Edit%20your%20kahoot%20%20%20Overview_files/amplitude-4.js"></script>
-    <script type="text/javascript" src="resources/js/editOverview/commons.js" defer="defer"></script>
+<%--    <script async="" src="Edit%20your%20kahoot%20%20%20Overview_files/analytics.js"></script>--%>
+<%--    <script type="text/javascript" async="" src="Edit%20your%20kahoot%20%20%20Overview_files/amplitude-4.js"></script>--%>
+<%--    <script type="text/javascript" src="resources/js/editOverview/commons.js" defer="defer"></script>--%>
     <script type="text/javascript" src="resources/js/editOverview/vendorsbrand-pagecreatesettings.js" defer="defer">
     </script><script type="text/javascript" src="resources/js/editOverview/create.js" defer="defer"></script>
     <link rel="stylesheet" href="resources/css/editOverview/css.css" media="all">
     <script type="text/javascript" src="resources/js/editOverview/vendorscreateplusprofile.js" defer="defer"></script>
-    <script async="" src="Edit%20your%20kahoot%20%20%20Overview_files/hotjar-554762.js"></script>
+<%--    <script async="" src="Edit%20your%20kahoot%20%20%20Overview_files/hotjar-554762.js"></script>--%>
 
     <script src="resources/js/editOverview/editOverview.js"></script>
 

@@ -1,7 +1,13 @@
 package com.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -29,6 +35,7 @@ public class User {
 	@Column(name = "dob")
 	private Date dob;
 
+	@JsonBackReference
 	@OneToMany(mappedBy = "owner_id", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private Set<QuestionCollection> questionCollections;
 
@@ -64,12 +71,13 @@ public class User {
 
 	public Set<QuestionCollection> getQuestionCollections() { return questionCollections; }
 
-//	public List<GrantedAuthority> getAuthorities() {
-//		List<GrantedAuthority> authorities = new ArrayList<>();
+	public List<GrantedAuthority> getAuthorities() {
+		List<GrantedAuthority> authorities = new ArrayList<>();
+		authorities.add(new SimpleGrantedAuthority("ROLE_USER"));
 //		for (String role : roles) {
 //			authorities.add(new SimpleGrantedAuthority(role));
 //		}
-//		return authorities;
-//	}
+		return authorities;
+	}
 
 }

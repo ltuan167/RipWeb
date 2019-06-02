@@ -2,14 +2,16 @@ package com.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-//@Configuration
-//@EnableWebSecurity
+@Configuration
+@EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
@@ -29,31 +31,32 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests()
-				.anyRequest().authenticated()
-					.and()
-				.formLogin()
-					.and()
-				.httpBasic();
-		http.authorizeRequests()
-				.antMatchers("/login")
-					.permitAll()
-				.antMatchers("/**")
-					.hasAnyRole("ROLE_USER", "ROLE_GUEST")
-				.and()
-					.formLogin()
-					.loginPage("/login")
-					.defaultSuccessUrl("/home")
-					.failureUrl("/login?error=true")
-					.permitAll()
-				.and()
-					.logout()
-					.logoutSuccessUrl("/login?logout=true")
-					.invalidateHttpSession(true)
-					.permitAll()
-				.and()
-					.csrf()
-					.disable();
+		http.httpBasic();
+//		http.authorizeRequests()
+//				.anyRequest().authenticated()
+//					.and()
+//				.formLogin()
+//					.and()
+//				.httpBasic();
+//		http.authorizeRequests()
+//				.antMatchers("/login")
+//					.permitAll()
+//				.antMatchers("/**")
+//					.hasAnyRole("ROLE_USER", "ROLE_GUEST")
+//				.and()
+//					.formLogin()
+//					.loginPage("/login")
+//					.defaultSuccessUrl("/home")
+//					.failureUrl("/login?error=true")
+//					.permitAll()
+//				.and()
+//					.logout()
+//					.logoutSuccessUrl("/login?logout=true")
+//					.invalidateHttpSession(true)
+//					.permitAll()
+//				.and()
+//					.csrf()
+//					.disable();
 		System.out.println("[SECURITY] HttpSecurity: " + http);
 		System.out.println("[SECURITY][TEST][BCRYPT] " + passwordEncoder().encode("RIPWEB!"));
 	}
