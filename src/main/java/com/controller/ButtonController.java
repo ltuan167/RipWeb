@@ -14,6 +14,8 @@ public class ButtonController {
     public String editview() {return "editOverview";}
     @GetMapping("/editQuestion")
     public String editquestion() {return "editQuestion";}
+    @GetMapping("/displayQuestion")
+    public String displayQuestion() {return "displayQuestion";}
 
 }
 
