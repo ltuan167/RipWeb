@@ -38,8 +38,13 @@
                             <input type="number" id="inputGamePin" ios7fix="" class="username ng-pristine ng-untouched ng-valid ng-empty" ng-class="{invalid: !gamePinValid}" placeholder="Game PIN" ng-model="gameId" shake="badGameId" data-functional-selector="game-pin-input" aria-label="Game pin" ng-change="gameIdChanged()" ng-focus="gameIdFocused()" ng-blur="gameIdUnfocused()">
                             <input id="inputNickName" ios7fix="" class="username ng-pristine ng-untouched ng-valid ng-empty" ng-class="{invalid: !gamePinValid}" placeholder="Nick name" ng-model="gameId" type="type" shake="badGameId" data-functional-selector="game-pin-input" aria-label="Game pin" ng-change="gameIdChanged()" ng-focus="gameIdFocused()" ng-blur="gameIdUnfocused()" required>
                             <script>
-                                document.getElementById('inputNickName').onkeypress = function(e) {
-                                    joinGame();
+                                document.getElementById('inputNickName').onkeypress = function(e){
+                                    if (!e) e = window.event;
+                                    var keyCode = e.keyCode || e.which;
+                                    if (keyCode == '13'){
+                                        joinGame();
+                                        return false;
+                                    }
                                 }
                             </script>
 
