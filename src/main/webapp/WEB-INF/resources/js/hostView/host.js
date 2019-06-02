@@ -1,6 +1,6 @@
 function hostStart(gamePIN) {
     var xhttp = new XMLHttpRequest();
-    xhttp.open("POST","http://localhost/1.0/game/start?gamePIN=" + gamePIN, true);
+    xhttp.open("POST","1.0/game/start?gamePIN=" + gamePIN, true);
     xhttp.onreadystatechange =  () => {
         if (xhttp.readyState == 4)
             console.log(xhttp.response);
@@ -67,13 +67,17 @@ function hostDisplayQuestion() {
                 let playersListHTML = "";
                 let players = msg.content;
                 for (let i = players.length-1; i >= 0; i--) {
-                    playersListHTML += "<li class=\"list-inline-item tada animated\" style=\"width: auto;color: rgb(255,255,255);height: auto;margin-top: 40px;margin-right: 40px;margin-bottom: 40px;margin-left: 40px;font-family: Comfortaa, cursive;\">"+players[i].nickname+"</li>"
+                    if (i != 0)
+                        playersListHTML += "<li class=\"list-inline-item tada animated\" style=\"width: auto;color: rgb(255,255,255);height: auto;margin-top: 40px;margin-right: 40px;margin-bottom: 40px;margin-left: 40px;font-family: Comfortaa, cursive;\">"+players[i].nickname+"</li>";
+                    else
+                        playersListHTML += "<li class=\"list-inline-item\" style=\"width: auto;color: rgb(255,255,255);height: auto;margin-top: 40px;margin-right: 40px;margin-bottom: 40px;margin-left: 40px;font-family: Comfortaa, cursive;\">"+players[i].nickname+"</li>";
                 }
                 playersList.innerHTML = playersListHTML;
                 document.getElementById("playersCount").innerText = players.length;
             }
             if (msg.type == "END_GAME") {
                 // show result
+                stopTimer();
                 game_ended = true;
                 document.getElementById("nextQuestionBtn").innerHTML = "SHOW RESULT!";
                 endplayers = msg.content;
@@ -87,6 +91,7 @@ function hostDisplayQuestion() {
                 showScreen("resultScreen");
             }
             if (msg.type == "END_QUESTION") {
+                stopTimer();
                 chartDataset = msg.content;
                 plotBetweenChart();
                 showScreen("questionResultScreen");
@@ -100,7 +105,7 @@ function hostDisplayQuestion() {
 let gamePIN = null;
 function hostCreatGame(hostQuesId) {
     var xhttp = new XMLHttpRequest();
-    xhttp.open("POST","http://localhost/1.0/game/create?questionCollectionId=" + hostQuesId, true);
+    xhttp.open("POST","1.0/game/create?questionCollectionId=" + hostQuesId, true);
     xhttp.onreadystatechange = () => {
         if (xhttp.readyState == XMLHttpRequest.DONE) {
             if (xhttp.status == 201) {
