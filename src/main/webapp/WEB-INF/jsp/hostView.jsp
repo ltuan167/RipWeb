@@ -20,6 +20,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.3.0/sockjs.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
 
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <style type="text/css">[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
@@ -89,7 +90,7 @@
 <%--    <script async="" src="resources/js/hostView/player.js"></script>--%>
     <style type="text/css"></style>
 </head>
-<body keypress="" dynamic-background="" class="touchpadSwipeAnimationCore animate-background">
+<body >
 <!--[if lt IE 9]>
 <div class="browser-warning alert center">Sorry but this browser is too old for Ripweb!<a href="http://browsehappy.com/">Upgrade to a better one</a> to play.</div>
 <![endif]-->
@@ -371,10 +372,11 @@
     </table>
 </div>
 
-<div id="questionResultScreen">
-    <button onclick="nextQuestion()" ng-class="playBtnState">Next Question</button>
+<center><div id="questionResultScreen">
 <%--    PLOT CHART HERE --%>
-</div>
+    <canvas id="myChart" width="500" height="500"></canvas>
+    <button onclick="nextQuestion()" ng-class="playBtnState">Next Question</button>
+</div></center>
 
 <div id="resultScreen">
 
