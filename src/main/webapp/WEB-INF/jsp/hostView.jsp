@@ -277,6 +277,7 @@
             <button onclick="hostStart(gamePIN)" no-kiosk="" ng-class="playBtnState" blocking="Loading..." ng-click="play()" class="but-advance play" data-functional-selector="start-button">Start<span class="arrow"></span></button>
             <button onclick="hostCreatGame(document.getElementById('hostQuesId').value)" >Create New Game</button>
             <button onclick="nextQuestion()">Next Question</button>
+            <button onclick="hostEndQuestion()">End Question</button>
         </div>
         <div class="kahoot-logo"></div>
     </div>

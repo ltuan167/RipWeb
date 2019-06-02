@@ -11,6 +11,7 @@ function hostStart(gamePIN) {
 }
 
 var stompClient = null;
+var questionId;
 function hostDisplayQuestion() {
     var socket = new SockJS('/ws');
     stompClient = Stomp.over(socket);
@@ -21,6 +22,7 @@ function hostDisplayQuestion() {
             console.log("Type: " + msg.type);
             let question = msg.content;
             if (msg.type == "NEXT_QUESTION") {
+                questionId = question.id;
                 document.getElementById("answer1").innerText = question.answer1;
                 document.getElementById("answer2").innerText = question.answer2;
                 document.getElementById("answer3").innerText = question.answer3;
@@ -95,4 +97,14 @@ function nextQuestion() {
     };
 }
 
-
+function hostEndQuestion() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("POST","1.0/game/endquestion?gamePIN="+ gamePIN + "&questionId=" + questionId, true);
+    xhttp.onreadystatechange = () => {
+        console.log(xhttp.response);
+    };
+    xhttp.send();
+    xhttp.onerror = () => {
+        console.error(xhttp.statusText);
+    };
+}

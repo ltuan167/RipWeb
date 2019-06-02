@@ -12,6 +12,8 @@ function connectAndSubscribeWs(gamePIN) {
                 showScreen("playScreen");
             if (msg.type == "END_GAME")
                 showScreen("endScreen");
+            if (msg.type == "END_QUESTION")
+                showScreen("waitNextScreen")
         });
     });
     stompClient.onerror = () => {
