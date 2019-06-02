@@ -109,8 +109,8 @@
 <div id="questionResultScreen" class="container-fluid">
 <%--    PLOT CHART HERE --%>
     <canvas id="chartBetweenQuestions" style="width: 70%; height: 50%;"></canvas>
-    <b style="font-size: large"><strong>Correct Answer: </strong> <a id="correctAnswer"></a> </b>
-    <button id="nextQuestionBtn" onclick="nextQuestion()">Next Question</button>
+    <b style="font-size: 33px; width: 100%; text-align: center"><strong>Correct Answer: </strong> <a id="correctAnswer"></a> </b>
+    <button id="nextQuestionBtn" class="btn btn-info" onclick="nextQuestion()">Next Question</button>
 </div>
 
 <div id="resultScreen" class="container-fluid">

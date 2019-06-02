@@ -114,6 +114,9 @@ function hostCreatGame(hostQuesId) {
                 gamePIN = msg.content;
                 document.getElementById("gamePinCreated").innerText = gamePIN;
                 hostDisplayQuestion();
+            } else {
+                if (xhttp.status == 417)
+                    alert("This collection does not have any questions!");
             }
         }
     };
