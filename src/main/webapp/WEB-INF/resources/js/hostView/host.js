@@ -12,6 +12,7 @@ function hostStart(gamePIN) {
 }
 
 let correctAnswer, chartDataset, questionId, stompClient = null;
+let game_ended = false;
 let answer1, answer2, answer3, answer4;
 function hostDisplayQuestion() {
     var socket = new SockJS('/ws');
@@ -53,7 +54,8 @@ function hostDisplayQuestion() {
                     let seconds = remainsSecond % 60;
                     document.getElementById("endQuestionBtn").innerHTML = minutes + ":" + seconds;
                 }, () => {
-                    hostEndQuestion();
+                    if (document.getElementById("questionResultScreen").style.display != "block")
+                        hostEndQuestion();
                 });
 
 
@@ -71,7 +73,9 @@ function hostDisplayQuestion() {
             }
             if (msg.type == "END_GAME") {
                 // show result
-                showScreen("resultScreen");
+                game_ended = true;
+                document.getElementById("nextQuestionBtn").innerHTML = "SHOW RESULT!";
+                // showScreen("resultScreen");
             }
             if (msg.type == "END_QUESTION") {
                 chartDataset = msg.content;
@@ -117,6 +121,11 @@ function showScreen(divId) {
 }
 
 function nextQuestion() {
+    if (game_ended) {
+        showScreen("resultScreen");
+        return;
+    }
+
     var xhttp = new XMLHttpRequest();
     xhttp.open("POST","1.0/game/next?gamePIN="+ gamePIN,true);
     xhttp.onreadystatechange = () => {

@@ -107,7 +107,7 @@
 <%--    PLOT CHART HERE --%>
     <canvas id="myChart" style="width: 80%; height: 80%;"></canvas>
     <b><strong>Correct Answer: </strong> <a id="correctAnswer"></a> </b>
-    <button onclick="nextQuestion()">Next Question</button>
+    <button id="nextQuestionBtn" onclick="nextQuestion()">Next Question</button>
 </div>
 
 <div id="resultScreen">
