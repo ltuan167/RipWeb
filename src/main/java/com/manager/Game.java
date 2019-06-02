@@ -142,17 +142,19 @@ public class Game implements Comparable<Game> {
 		return -1;
 	}
 
-	public boolean endQuestion() {
+	public Integer[] endQuestion(Integer currentQuestionId) {
+		if (currentQuestionId != currentQuestion.getId())
+			return null;
 		WsMessage endQuestionMsg = new WsMessage();
 		endQuestionMsg.setType(WsMessage.WsMessageType.END_QUESTION);
-		endQuestionMsg.setContent(submittedCount);
-		return sendMsg2Host(endQuestionMsg);
+		broadcastMsg(endQuestionMsg);
+		return submittedCount;
 	}
 
-	public boolean checkAllPlayerSubmitted() {
+	public boolean checkAllPlayerSubmitted(Integer currentQuestionId) {
 		int submittedPlayersCount = submittedPlayers.size();
 		if (submittedPlayersCount == players.size()) { // All player submitted
-			endQuestion();
+			endQuestion(currentQuestionId);
 			return true;
 		}
 		return false;

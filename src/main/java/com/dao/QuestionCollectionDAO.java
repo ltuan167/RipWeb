@@ -21,7 +21,6 @@ public class QuestionCollectionDAO {
 		Transaction tx = session.beginTransaction();
 		String sql = "SELECT * FROM QuestionCollection WHERE id="+questionCollectionID;
 		QuestionCollection questionCollection = (QuestionCollection) session.createSQLQuery(sql).addEntity(QuestionCollection.class).uniqueResult();
-//		QuestionCollection questionCollection = session.load(QuestionCollection.class, questionCollectionID);
 		tx.commit();
 		return questionCollection;
 	}
