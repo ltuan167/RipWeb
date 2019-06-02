@@ -54,7 +54,7 @@ public class GameManager {
 		if (games.containsKey(gamePIN)) {
 			Game removedGame = games.remove(games.get(gamePIN));
 			if (removedGame != null) {
-				availablePINs.push(removedGame.getPIN());
+				availablePINs.push(gamePIN);
 				return true;
 			}
 		}

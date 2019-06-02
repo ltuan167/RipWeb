@@ -12,6 +12,7 @@ function hostStart(gamePIN) {
 }
 
 let correctAnswer, chartDataset, questionId, stompClient = null;
+let game_ended = false;
 let answer1, answer2, answer3, answer4;
 function hostDisplayQuestion() {
     var socket = new SockJS('/ws');
@@ -53,7 +54,8 @@ function hostDisplayQuestion() {
                     let seconds = remainsSecond % 60;
                     document.getElementById("endQuestionBtn").innerHTML = minutes + ":" + seconds;
                 }, () => {
-                    hostEndQuestion();
+                    if (document.getElementById("questionResultScreen").style.display != "block")
+                        hostEndQuestion();
                 });
 
 
@@ -64,14 +66,19 @@ function hostDisplayQuestion() {
                 let playersListHTML = "";
                 let players = msg.content;
                 for (let i = players.length-1; i >= 0; i--) {
-                    playersListHTML += "<li class=\"list-inline-item tada animated\" style=\"width: auto;color: rgb(255,255,255);height: auto;margin-top: 40px;margin-right: 40px;margin-bottom: 40px;margin-left: 40px;font-family: Comfortaa, cursive;\">"+players[i].nickname+"</li>"
+                    if (i != 0)
+                        playersListHTML += "<li class=\"list-inline-item tada animated\" style=\"width: auto;color: rgb(255,255,255);height: auto;margin-top: 40px;margin-right: 40px;margin-bottom: 40px;margin-left: 40px;font-family: Comfortaa, cursive;\">"+players[i].nickname+"</li>";
+                    else
+                        playersListHTML += "<li class=\"list-inline-item\" style=\"width: auto;color: rgb(255,255,255);height: auto;margin-top: 40px;margin-right: 40px;margin-bottom: 40px;margin-left: 40px;font-family: Comfortaa, cursive;\">"+players[i].nickname+"</li>";
                 }
                 playersList.innerHTML = playersListHTML;
                 document.getElementById("playersCount").innerText = players.length;
             }
             if (msg.type == "END_GAME") {
                 // show result
-                showScreen("resultScreen");
+                game_ended = true;
+                document.getElementById("nextQuestionBtn").innerHTML = "SHOW RESULT!";
+                // showScreen("resultScreen");
             }
             if (msg.type == "END_QUESTION") {
                 chartDataset = msg.content;
@@ -117,6 +124,11 @@ function showScreen(divId) {
 }
 
 function nextQuestion() {
+    if (game_ended) {
+        showScreen("resultScreen");
+        return;
+    }
+
     var xhttp = new XMLHttpRequest();
     xhttp.open("POST","1.0/game/next?gamePIN="+ gamePIN,true);
     xhttp.onreadystatechange = () => {

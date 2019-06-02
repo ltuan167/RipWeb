@@ -39,17 +39,17 @@ public class JWTAuthenticationTokenFilter extends UsernamePasswordAuthentication
                     String username = jwtService.getUsernameFromToken(authToken);
                     com.entities.User user = userDAO.getUserByEmail(username);
                     if (user != null) {
-                        boolean enabled = true;
-                        boolean accountNonExpired = true;
-                        boolean credentialsNonExpired = true;
-                        boolean accountNonLocked = true;
-                        UserDetails userDetail = new User(username, user.getPassword(), enabled, accountNonExpired,
-                                                            credentialsNonExpired, accountNonLocked, user.getAuthorities());
-
-                        UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetail,
-                                null, userDetail.getAuthorities());
+//                        boolean enabled = true;
+//                        boolean accountNonExpired = true;
+//                        boolean credentialsNonExpired = true;
+//                        boolean accountNonLocked = true;
+                        UserDetails userDetail = new User(username, user.getPassword(), user.getAuthorities());
+//                        UserDetails userDetail = new User(username, user.getPassword(), enabled, accountNonExpired,
+//                                                            credentialsNonExpired, accountNonLocked, user.getAuthorities());
+                        UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetail, null, userDetail.getAuthorities());
                         authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(httpRequest));
                         SecurityContextHolder.getContext().setAuthentication(authentication);
+                        chain.doFilter(httpRequest, response);
                     }
                 }
             }
