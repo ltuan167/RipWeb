@@ -48,7 +48,7 @@ function hostDisplayQuestion() {
                     correctAnswer = question.answer3;
                 if (numbercorrectAnswer == 4)
                     correctAnswer = question.answer4;
-
+                document.getElementById("correctAnswer").innerText = correctAnswer;
                 setTimer(question.time);
                 countDown((remainsSecond) => {
                     let minutes = Math.floor(remainsSecond/60);
