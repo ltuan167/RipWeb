@@ -1,6 +1,6 @@
 function hostStart(gamePIN) {
     var xhttp = new XMLHttpRequest();
-    xhttp.open("POST","http://localhost/1.0/game/start?gamePIN=" + gamePIN, true);
+    xhttp.open("POST","1.0/game/start?gamePIN=" + gamePIN, true);
     xhttp.onreadystatechange =  () => {
         if (xhttp.readyState == 4)
             console.log(xhttp.response);
@@ -14,6 +14,7 @@ function hostStart(gamePIN) {
 let correctAnswer, chartDataset, questionId, stompClient = null;
 let game_ended = false;
 let answer1, answer2, answer3, answer4;
+let endscores =[], endNickName = [];
 function hostDisplayQuestion() {
     var socket = new SockJS('/ws');
     stompClient = Stomp.over(socket);
@@ -22,8 +23,8 @@ function hostDisplayQuestion() {
         stompClient.subscribe('/game/'+ gamePIN + "/host", (data) => {
             let msg = JSON.parse(data.body);
             console.log("Type: " + msg.type);
-            let question = msg.content;
             if (msg.type == "NEXT_QUESTION") {
+                let question = msg.content;
                 questionId = question.id;
                 if (question.image)
                     document.getElementById("questionImg").setAttribute("src", question.image);
@@ -76,13 +77,23 @@ function hostDisplayQuestion() {
             }
             if (msg.type == "END_GAME") {
                 // show result
+                stopTimer();
                 game_ended = true;
                 document.getElementById("nextQuestionBtn").innerHTML = "SHOW RESULT!";
-                // showScreen("resultScreen");
+                endplayers = msg.content;
+                endplayers.forEach((endplayer) => {
+                    endscores += endplayer.score + ' ';
+                    endNickName += endplayer.nickname + ' ';
+                });
+                console.log("endplayers: " + endscores);
+                console.log("endnickname: " + endNickName);
+                plotEndGameChart();
+                showScreen("resultScreen");
             }
             if (msg.type == "END_QUESTION") {
+                stopTimer();
                 chartDataset = msg.content;
-                plotChart();
+                plotBetweenChart();
                 showScreen("questionResultScreen");
             }
         });
@@ -94,7 +105,7 @@ function hostDisplayQuestion() {
 let gamePIN = null;
 function hostCreatGame(hostQuesId) {
     var xhttp = new XMLHttpRequest();
-    xhttp.open("POST","http://localhost/1.0/game/create?questionCollectionId=" + hostQuesId, true);
+    xhttp.open("POST","1.0/game/create?questionCollectionId=" + hostQuesId, true);
     xhttp.onreadystatechange = () => {
         if (xhttp.readyState == XMLHttpRequest.DONE) {
             if (xhttp.status == 201) {
@@ -154,20 +165,79 @@ function hostEndQuestion() {
     };
 }
 
-var myChart;
-function plotChart() {
-    if (myChart){
-        myChart.destroy();
+var chartBetweenQuestions;
+function plotBetweenChart() {
+    if (chartBetweenQuestions){
+        chartBetweenQuestions.destroy();
     }
     document.getElementById("correctAnswer").innerText = correctAnswer;
-    var ctx = document.getElementById("myChart");
-    myChart = new Chart(ctx, {
+    var ctx = document.getElementById("chartBetweenQuestions");
+    chartBetweenQuestions = new Chart(ctx, {
         type: 'bar',
         data: {
             labels: [answer1, answer2, answer3, answer4],
             datasets: [{
                 label: '#Number of answers',
                 data: chartDataset,
+                backgroundColor: [
+                    'rgba(192,23,51,0.65)',
+                    'rgba(19,104,206,0.65)',
+                    'rgba(216,158,0,0.65)',
+                    'rgba(41,143,13,0.65)',
+                ],
+                borderColor: [
+                    'rgb(192,23,51)',
+                    'rgb(19,104,206)',
+                    'rgb(216,158,0)',
+                    'rgba(41,143,13,0.99)',
+                ],
+                borderWidth: 2
+            }]
+        },
+        options: {
+            legend: {
+                labels: {
+                    fontColor: "#000000",
+                    fontSize: 15,
+                }
+            },
+            responsive: true,
+            scales: {
+                xAxes: [{
+                    ticks: {
+                        maxRotation:  0,
+                        minRotation:  0,
+                        fontFamily: "Helvetica",
+                        fontSize:"15",
+                        fontColor:"#000000"
+                    }
+                }],
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                        fontFamily: "Helvetica",
+                        fontSize: "15",
+                        fontColor:"#000000"
+                    }
+                }]
+            }
+        }
+    });
+}
+
+var endGameChart;
+function plotEndGameChart() {
+    if (endGameChart){
+        endGameChart.destroy();
+    }
+    var ctx = document.getElementById("endGameChart");
+    endGameChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: endNickName.split(' '),
+            datasets: [{
+                label: '#Number of players',
+                data: endscores.split(' '),
                 backgroundColor: [
                     'rgba(192,23,51,0.65)',
                     'rgba(19,104,206,0.65)',

@@ -31,7 +31,7 @@
     <p>If you continue to have problems, please let us know by <a href="http://ripweb.uservoice.com/">contacting Ripweb! support</a>.</p>
 </noscript>
 
-<div id="playersScreen" class="container-fluid" style="width: 100vw;height: 100vh;padding-left: 0px;padding-right: 0px;background-color: #e28c05;">
+<div id="playersScreen" class="container-fluid jello animated" style="width: 100vw;height: 100vh;padding-left: 0px;padding-right: 0px;background-color: #e28c05;">
     <select placeholder="Question collection name" id="hostQuesId">--%>
         <script>
             $.get("http://localhost/1.0/db/collection/list", (data) => {
@@ -103,15 +103,16 @@
     </div>
 </div>
 
-<<div id="questionResultScreen" class="container-fluid">
+<div id="questionResultScreen" class="container-fluid">
 <%--    PLOT CHART HERE --%>
-    <canvas id="myChart" style="width: 80%; height: 80%;"></canvas>
-    <b><strong>Correct Answer: </strong> <a id="correctAnswer"></a> </b>
+    <canvas id="chartBetweenQuestions" style="width: 70%; height: 50%;"></canvas>
+    <b style="font-size: large"><strong>Correct Answer: </strong> <a id="correctAnswer"></a> </b>
     <button id="nextQuestionBtn" onclick="nextQuestion()">Next Question</button>
 </div>
 
-<div id="resultScreen">
-
+<div id="resultScreen" class="container-fluid">
+    <canvas id="endGameChart" style="width: 70%; height: 50%;"></canvas>
+    <b style="font-size: large"><strong>We are in resultScreen now</strong></b>
 </div>
 
 <script src="resources/js/hostView/timer.js"></script>
