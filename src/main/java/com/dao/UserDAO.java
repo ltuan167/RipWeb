@@ -1,6 +1,5 @@
 package com.dao;
 
-import com.config.WebSecurityConfig;
 import com.entities.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -10,9 +9,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Repository;
 
 import javax.transaction.Transactional;
-import javax.transaction.UserTransaction;
-import java.util.ArrayList;
-import java.util.List;
 
 @Repository(value = "userDAO")
 @Transactional(rollbackOn = Exception.class)
@@ -37,17 +33,27 @@ public class UserDAO {
 //		Session session = this.sessionFactory.getCurrentSession();
 //		session.remove(user);
 //	}
-	public List<User> findValidUser(final String email) {
+
+	public User getUserByEmail(String email) {
 		Session session = this.sessionFactory.getCurrentSession();
-		String hql = "SELECT password FROM User WHERE email='"+email+"'";
-		return  session.createNativeQuery(hql).getResultList();
+		session.beginTransaction();
+		String hql = "SELECT * FROM User WHERE email='"+email+"'";
+		return (User) session.createSQLQuery(hql).addEntity(User.class).getResultList().get(0);
 	}
+
+	public String loadPassword(String email) {
+		return getUserByEmail(email).getPassword();
+	}
+
+	public String loadNickname(String email) {
+		return getUserByEmail(email).getNickname();
+	}
+
 	public Integer registerNewUser (final String nickname,
 									final String email,
 									final String psw) {
-		Transaction tx = null;
 		Session session = this.sessionFactory.getCurrentSession();
-		tx = session.beginTransaction();
+		Transaction tx = session.beginTransaction();
 		String hql = "INSERT INTO User(nickname, email, password) VALUE (?,?,?)";
 		Integer i =  session.createSQLQuery(hql).
 					 setParameter(1, nickname).
@@ -57,12 +63,4 @@ public class UserDAO {
 		return i;
 	}
 
-//
-//	public User loadUserbyEmail (final String email) {
-//		List<User> users = new ArrayList<>()	;
-//		Session session = this.sessionFactory.getCurrentSession();
-//		users = session.createQuery("from User where email=?", User.class)
-//									.setParameter(0, email).list();
-//		return users.size() > 0 ? users.get(0) : null;
-//	}
 }

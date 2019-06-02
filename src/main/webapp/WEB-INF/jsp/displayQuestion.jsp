@@ -22,7 +22,19 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://play.kahoot.it/img/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="https://play.kahoot.it/img/ico/apple-touch-icon-precomposed.png">
     <link rel="stylesheet" type="text/css" href="resources/css/displayQuestion/cloak.css">
-    <script type="text/javascript" id="www-widgetapi-script" src="resources/js/displayQuestion/www-widgetapi.js" async=""></script><script async="" src="resources/js/displayQuestion/iframe_api"></script><script async="" src="resources/js/displayQuestion/analytics.js"></script><script type="text/javascript" async="" src="resources/js/displayQuestion/amplitude-4.js"></script><script type="text/javascript">
+<%--    <script type="text/javascript" id="www-widgetapi-script" src="resources/js/displayQuestion/www-widgetapi.js" async="">--%>
+<%--        --%>
+<%--    </script>--%>
+<%--    <script async="" src="resources/js/displayQuestion/iframe_api">--%>
+<%--        --%>
+<%--    </script>--%>
+<%--    <script async="" src="resources/js/displayQuestion/analytics.js">--%>
+<%--        --%>
+<%--    </script>--%>
+<%--    <script type="text/javascript" async="" src="resources/js/displayQuestion/amplitude-4.js">--%>
+<%--        --%>
+<%--    </script>--%>
+    <script type="text/javascript">
     var _trackJs = {
         customer: '225f19cc34be4573b843ef421db55656'
     };
@@ -31,7 +43,7 @@
     <script type="text/javascript">
         (function(e,t){var n=e.amplitude||{_q:[],_iq:{}};var r=t.createElement("script")
         ;r.type="text/javascript";r.async=true
-        ;r.src="https://cdn.amplitude.com/libs/amplitude-4.2.1-min.gz.js"
+        ;r.src="resources/js/homepage/amplitude-4.2.1-min.gz.js"
         ;r.onload=function(){if(e.amplitude.runQueuedFunctions){
             e.amplitude.runQueuedFunctions()}else{
             console.log("[Amplitude] Error: could not load SDK")}}
@@ -61,13 +73,13 @@
 
         document.write('<scri'+'pt ');
         document.write('type="text/javascript" ');
-        document.write('src="'+'shared/theme/config.js');
+        // document.write('src="'+'shared/theme/config.js');
         document.write("?"+new Date().getTime()+'">');
         document.write('</scri'+'pt>');
     </script><script type="text/javascript" src="resources/js/displayQuestion/config.js"></script>
     <link rel="stylesheet" media="all" type="text/css" id="theme" href="resources/css/displayQuestion/style.css">
     <link rel="stylesheet" href="resources/css/displayQuestion/registration.css">
-    <script async="" src="resources/js/displayQuestion/player.js"></script>
+<%--    <script async="" src="resources/js/displayQuestion/player.js"></script>--%>
     <style type="text/css"></style>
     <link rel="stylesheet" href="resources/css/displayQuestion/data/player.css">
     <style type="text/css"></style>
@@ -318,7 +330,7 @@
         <main class="main-wrapper">
             <section class="question-bar question-bar--has-fullscreen-button dgwErO">
                 <div class="question-bar__title-wrap">
-                    <h1 class="question-bar__title kgFIAt">550 / 2  = ?</h1>
+                    <h1 class="question-bar__title kgFIAt">Question ??</h1>
                 </div>
                 <button fullscreen="" type="button" class="btn is-not-fullscreen"><img aria-hidden="true" src="resources/img/displayQuestion/expand_icn.svg" alt="expand"><span class="fullscreen-button__label">Full Screen</span></button>
                 </button>
@@ -351,35 +363,27 @@
                     <div class="question-choices__wrapper">
                         <div class="card question-choices__card question-choices__card--undefined card--triangle">
                                        <span class="icon card__icon question-choices__icon">
-                                          <svg class="icon__svg" data-functional-selector="icon" focusable="false">
-                                             <use class="icon__use" xlink:href="about:srcdoc#triangle"></use>
-                                          </svg>
+                                           <img aria-hidden="true" src="resources/img/displayQuestion/car.png" alt="expand">
                                        </span>
-                            <span class="question-choices__card-text">225</span>
+                            <span class="question-choices__card-text">Answer 1</span>
                         </div>
                         <div class="card question-choices__card question-choices__card--undefined card--diamond">
                                        <span class="icon card__icon question-choices__icon">
-                                          <svg class="icon__svg" data-functional-selector="icon" focusable="false">
-                                             <use class="icon__use" xlink:href="about:srcdoc#diamond"></use>
-                                          </svg>
+                                          <img aria-hidden="true" src="resources/img/displayQuestion/truck.png" alt="expand">
                                        </span>
-                            <span class="question-choices__card-text">250</span>
+                            <span class="question-choices__card-text">Answer 2</span>
                         </div>
                         <div class="card question-choices__card question-choices__card--undefined card--circle">
                                        <span class="icon card__icon question-choices__icon">
-                                          <svg class="icon__svg" data-functional-selector="icon" focusable="false">
-                                             <use class="icon__use" xlink:href="about:srcdoc#circle"></use>
-                                          </svg>
+                                          <img aria-hidden="true" src="resources/img/displayQuestion/airplane.png" alt="expand">
                                        </span>
-                            <span class="question-choices__card-text">275</span>
+                            <span class="question-choices__card-text">Answer 3</span>
                         </div>
                         <div class="card question-choices__card question-choices__card--undefined card--square">
                                        <span class="icon card__icon question-choices__icon">
-                                          <svg class="icon__svg" data-functional-selector="icon" focusable="false">
-                                             <use class="icon__use" xlink:href="about:srcdoc#square"></use>
-                                          </svg>
+                                          <img aria-hidden="true" src="resources/img/displayQuestion/rocket.png" alt="expand">
                                        </span>
-                            <span class="question-choices__card-text">300</span>
+                            <span class="question-choices__card-text">Answer 4</span>
                         </div>
                     </div>
                 </section>

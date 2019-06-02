@@ -11,7 +11,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = { "com" })
+@ComponentScan(basePackages = { "com", "com.manager" })
 public class WebMvcConfig implements WebMvcConfigurer {
 
 	@Bean
@@ -21,14 +21,14 @@ public class WebMvcConfig implements WebMvcConfigurer {
 		vr.setPrefix("/WEB-INF/jsp/");
 		// set the extension of views
 		vr.setSuffix(".jsp");
-		System.out.println("[MVC] InternalResourceViewResolver: " + vr);
+		System.out.println("[MVC] Internal Resource View Resolver: " + vr);
 		return vr;
 	}
 
 	@Override
 	public void addCorsMappings(CorsRegistry registry) {
-		registry.addMapping("/**")
-				.allowedMethods("HEAD", "GET", "PUT", "POST", "DELETE", "PATCH");
+//		registry.addMapping("/**")
+//				.allowedMethods("HEAD", "GET", "PUT", "POST", "DELETE", "PATCH");
 	}
 
 	@Override
@@ -36,7 +36,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
 		registry
 				.addResourceHandler("/resources/**")
 				.addResourceLocations("/WEB-INF/resources/");
-		System.out.println("[MVC] ResourceHandlerRegistry: " + registry);
+		System.out.println("[MVC] Resource Handler Registry: " + registry);
 	}
 
 }
