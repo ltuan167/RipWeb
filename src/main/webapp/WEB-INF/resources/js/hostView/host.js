@@ -170,14 +170,16 @@ function plotBetweenChart() {
     if (chartBetweenQuestions){
         chartBetweenQuestions.destroy();
     }
-    document.getElementById("correctAnswer").innerText = correctAnswer;
     var ctx = document.getElementById("chartBetweenQuestions");
-    chartBetweenQuestions = new Chart(ctx, {
+
+        chartBetweenQuestions = new Chart (ctx, {
         type: 'bar',
         data: {
+
             labels: [answer1, answer2, answer3, answer4],
             datasets: [{
-                label: '#Number of answers',
+
+                // label: '#Scores',
                 data: chartDataset,
                 backgroundColor: [
                     'rgba(192,23,51,0.65)',
@@ -195,35 +197,45 @@ function plotBetweenChart() {
             }]
         },
         options: {
-            legend: {
-                labels: {
-                    fontColor: "#000000",
-                    fontSize: 15,
-                }
-            },
-            responsive: true,
-            scales: {
-                xAxes: [{
-                    ticks: {
-                        maxRotation:  0,
-                        minRotation:  0,
-                        fontFamily: "Helvetica",
-                        fontSize:"15",
-                        fontColor:"#000000"
-                    }
-                }],
+            scales:{
                 yAxes: [{
                     ticks: {
                         beginAtZero: true,
                         fontFamily: "Helvetica",
-                        fontSize: "15",
+                        fontSize: "25",
+                        fontColor:"#000000"
+                    }
+                }],
+                xAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                        fontFamily: "Helvetica",
+                        fontSize: "25",
                         fontColor:"#000000"
                     }
                 }]
+            },
+            legend: false,
+            tooltip: false,
+            plugins: {
+                datalabels: {
+                    align: function(context) {
+                        var index = context.dataIndex;
+                        var value = context.dataset.data[index];
+                        var invert = Math.abs(value) <= 1;
+                        return value < 1 ? 'end' : 'start'
+                    },
+                    font: {
+                        size: 25,
+                        weight: 600
+                    },
+                }
             }
         }
     });
+
 }
+
 
 var endGameChart;
 function plotEndGameChart() {
@@ -231,12 +243,15 @@ function plotEndGameChart() {
         endGameChart.destroy();
     }
     var ctx = document.getElementById("endGameChart");
+
     endGameChart = new Chart(ctx, {
         type: 'bar',
         data: {
+
             labels: endNickName,
             datasets: [{
-                label: '#Score',
+
+                // label: '#Scores',
                 data: endscores,
                 backgroundColor: [
                     'rgba(192,23,51,0.65)',
@@ -254,38 +269,52 @@ function plotEndGameChart() {
             }]
         },
         options: {
-            legend: {
-                labels: {
-                    fontColor: "#000000",
-                    fontSize: 15,
-                }
-            },
-            responsive: true,
-            scales: {
-                xAxes: [{
-                    ticks: {
-                        maxRotation:  0,
-                        minRotation:  0,
-                        fontFamily: "Helvetica",
-                        fontSize:"15",
-                        fontColor:"#000000"
-                    }
-                }],
+            scales:{
                 yAxes: [{
                     ticks: {
                         beginAtZero: true,
                         fontFamily: "Helvetica",
-                        fontSize: "15",
+                        fontSize: "25",
+                        fontColor:"#000000"
+                    }
+                }],
+                xAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                        fontFamily: "Helvetica",
+                        fontSize: "25",
                         fontColor:"#000000"
                     }
                 }]
-            }
-        },
-        plugins: {
-            datalabels: {
-                display: true,
-                color: "#000000",
+            },
+            legend: false,
+            tooltip: false,
+            plugins: {
+                datalabels: {
+                    align: function(context) {
+                        var index = context.dataIndex;
+                        var value = context.dataset.data[index];
+                        var invert = Math.abs(value) <= 1;
+                        return value < 1 ? 'end' : 'start'
+                    },
+                    // anchor: 'end',
+                    // backgroundColor: null,
+                    // borderColor: null,
+                    // borderRadius: 2,
+                    // borderWidth: 1,
+                    // color: '#223388',
+                    font: {
+                        size: 25,
+                        weight: 600
+                    },
+                    // offset: 1,
+                    // padding: 0,
+                    // formatter: function(value) {
+                    //     return Math.round(value * 10) / 10
+                    // }
+                }
             }
         }
     });
+
 }
