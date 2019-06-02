@@ -1,6 +1,6 @@
 function hostStart(gamePIN) {
     var xhttp = new XMLHttpRequest();
-    xhttp.open("POST","http://localhost/1.0/game/start?gamePIN=" + gamePIN, true);
+    xhttp.open("POST","1.0/game/start?gamePIN=" + gamePIN, true);
     xhttp.onreadystatechange =  () => {
         if (xhttp.readyState == 4)
             console.log(xhttp.response);
@@ -76,11 +76,13 @@ function hostDisplayQuestion() {
             }
             if (msg.type == "END_GAME") {
                 // show result
+                stopTimer();
                 game_ended = true;
                 document.getElementById("nextQuestionBtn").innerHTML = "SHOW RESULT!";
                 // showScreen("resultScreen");
             }
             if (msg.type == "END_QUESTION") {
+                stopTimer();
                 chartDataset = msg.content;
                 plotChart();
                 showScreen("questionResultScreen");
@@ -94,7 +96,7 @@ function hostDisplayQuestion() {
 let gamePIN = null;
 function hostCreatGame(hostQuesId) {
     var xhttp = new XMLHttpRequest();
-    xhttp.open("POST","http://localhost/1.0/game/create?questionCollectionId=" + hostQuesId, true);
+    xhttp.open("POST","1.0/game/create?questionCollectionId=" + hostQuesId, true);
     xhttp.onreadystatechange = () => {
         if (xhttp.readyState == XMLHttpRequest.DONE) {
             if (xhttp.status == 201) {

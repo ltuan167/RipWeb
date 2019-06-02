@@ -31,7 +31,7 @@
     <p>If you continue to have problems, please let us know by <a href="http://ripweb.uservoice.com/">contacting Ripweb! support</a>.</p>
 </noscript>
 
-<div id="playersScreen" class="container-fluid" style="width: 100vw;height: 100vh;padding-left: 0px;padding-right: 0px;background-color: #e28c05;">
+<div id="playersScreen" class="container-fluid jello animated" style="width: 100vw;height: 100vh;padding-left: 0px;padding-right: 0px;background-color: #e28c05;">
     <select placeholder="Question collection name" id="hostQuesId">--%>
         <script>
             $.get("http://localhost/1.0/db/collection/list", (data) => {
@@ -103,7 +103,7 @@
     </div>
 </div>
 
-<<div id="questionResultScreen" class="container-fluid">
+<div id="questionResultScreen" class="container-fluid">
 <%--    PLOT CHART HERE --%>
     <canvas id="myChart" style="width: 80%; height: 80%;"></canvas>
     <b><strong>Correct Answer: </strong> <a id="correctAnswer"></a> </b>
