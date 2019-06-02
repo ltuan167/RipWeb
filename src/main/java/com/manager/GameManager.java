@@ -7,13 +7,16 @@ import java.util.*;
  */
 public class GameManager {
 
-	private static GameManager instance;
+	private static final int NO_QUESTION_ERROR_CODE = -2;
+	private static final int NO_QUESTION_COLLECTION_ERROR_CODE = -3;
 
-	private static List<Game> games = Collections.synchronizedList(new ArrayList<Game>());
+	private static GameManager instance = new GameManager();
+
+	private static Map<Integer, Game> games = Collections.synchronizedMap(new HashMap<Integer, Game>());
 	private static Stack<Integer> availablePINs = new Stack<>();
 	private static int nextPIN = 1;
 	public static final int MAX_GAME_COUNT = 100000;
-	public static final String notFoundGamePin = "Does not found Game PIN!";
+	public static final String NOT_FOUND_GAME = "Does not found Game PIN!";
 
 	private GameManager() {}
 
@@ -31,22 +34,29 @@ public class GameManager {
 	public synchronized Integer createNewGame(Integer questionCollectionId) {
 		Game newGame = new Game(questionCollectionId);
 		int newGamePIN = newGame.getPIN();
-		if (newGamePIN > 0) {
-			games.add(newGame);
-			Collections.sort(games);
+		if (newGamePIN > 0 && newGame.getQuestionCollection() != null) {
+			if (newGame.getQuestionCollection().getQuestions().isEmpty())  // DO NOT HAVE ANY QUESTIONS
+				return NO_QUESTION_ERROR_CODE;
+			games.put(newGame.getPIN(), newGame);
+//			games.add(newGame);
+//			Collections.sort(games);
 			System.out.println("[GAME MANAGER] Created " + newGame);
-		}
+		} else
+			return NO_QUESTION_COLLECTION_ERROR_CODE; // ERROR
 		return newGamePIN;
 	}
 
+	public Game getGameByPIN(Integer gamePIN) {
+		return games.get(gamePIN);
+	}
+
 	public synchronized boolean removeGame(Integer gamePIN) {
-		Game game2remove = new Game(gamePIN, -1);
-		int game2removeIdx = Collections.binarySearch(games, game2remove);
-		System.out.println("[GAME MANAGER] Removed " + game2remove);
-		Game removedGame = games.remove(game2removeIdx);
-		if (removedGame != null) {
-			availablePINs.push(removedGame.getPIN());
-			return true;
+		if (games.containsKey(gamePIN)) {
+			Game removedGame = games.remove(games.get(gamePIN));
+			if (removedGame != null) {
+				availablePINs.push(removedGame.getPIN());
+				return true;
+			}
 		}
 		return false;
 	}
@@ -67,12 +77,11 @@ public class GameManager {
 	 * @return GamePIN if successfully
 	 */
 	public synchronized String joinGame(String sessionId, Integer gamePIN, String nickname) {
-		int gameFoundIdx = Collections.binarySearch(games, new Game(gamePIN, -1));
-		if (gameFoundIdx >= 0) {    // Found game
-			Game game2join = games.get(gameFoundIdx);
-			return game2join.join(sessionId, nickname);   // return true if joined to game
+		if (games.containsKey(gamePIN)) {
+			Game game2join = games.get(gamePIN);
+			return game2join.join(sessionId, nickname);
 		}
-		return notFoundGamePin;
+		return NOT_FOUND_GAME;
 	}
 
 }

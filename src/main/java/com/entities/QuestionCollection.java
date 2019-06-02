@@ -1,11 +1,14 @@
 package com.entities;
 
 import javax.persistence.*;
+import java.util.Arrays;
 import java.util.Set;
 
 @Entity
 @Table(name = "QuestionCollection")
 public class QuestionCollection {
+
+//	private static final int SHUFFLE_COUNT = 10;
 
 	@Id
 	@Column(name = "id")
@@ -26,6 +29,27 @@ public class QuestionCollection {
 	private Set<Question> questions;
 
 	public QuestionCollection() {}
+
+//	public QuestionCollection(int questionCollectionId) {
+//		if (questionCollectionDAO == null) {
+//			System.err.println("AUTOWIRED NULL");
+//			return;
+//		}
+//		System.out.println("Create new question collection id: " + questionCollectionId);
+//		QuestionCollection questionCollection = questionCollectionDAO.getQuestionCollectionById(questionCollectionId);
+//		if (questionCollection != null) {
+//			System.out.println(questionCollection);
+//			Set<Question> setOfQuestions = questionCollection.getQuestions();
+//			if (setOfQuestions != null) {
+//				this.questions = setOfQuestions;
+//			}
+//		}
+//	}
+
+	@Override
+	public String toString() {
+		return Arrays.toString(this.questions.toArray());
+	}
 
 //	public QuestionCollection(User owner, String name) {
 //		this(owner, name, null);

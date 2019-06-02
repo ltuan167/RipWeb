@@ -25,7 +25,7 @@
             <div class="form-group">
                 <div class="form-check" style="font-family: ABeeZee, sans-serif;"><label class="form-check-label"><input class="form-check-input" type="checkbox" required>I agree to the license terms.</label></div>
             </div>
-            <div class="form-group"><button class="btn btn-primary btn-block" type="submit" style="background-image: linear-gradient(to right top, #08aeea, #00bdea, #00cae2, #00d6d3, #00e0be);margin: 25px 0px 0px;">Sign Up</button></div><a href="#" class="already" style="font-family: ABeeZee, sans-serif;">You already have an account? <span style="text-decoration: underline;">Login here</span></a></form>
+            <div class="form-group"><button class="btn btn-primary btn-block" type="submit" style="background-image: linear-gradient(to right top, #08aeea, #00bdea, #00cae2, #00d6d3, #00e0be);margin: 25px 0px 0px;">Sign Up</button></div><a href="login" class="already" style="font-family: ABeeZee, sans-serif;">You already have an account? <span style="text-decoration: underline;">Login here</span></a></form>
         <div
                 class="image-holder" style="background-image: url(&quot;resources/img/sign%20up.png&quot;);width: auto;height: auto;margin: 0;background-position: center;"></div>
     </div>

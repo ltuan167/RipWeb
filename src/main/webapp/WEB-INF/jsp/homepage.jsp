@@ -1177,23 +1177,23 @@
     <link rel="stylesheet" href="resources/css/homepage.css" as="style" onload="null" data-loadcss="true" media="all">
     <noscript><link rel="stylesheet" href="https://kahoot.com/wp-content/themes/kahoot2017/assets/cssv/screen-ac4ffd37aa.css"></noscript>
     <%--    <script async="" src="final_files/gtm_005.js"></script>--%>
-    <script type="text/javascript" id="www-widgetapi-script" src="resources/js/www-widgetapi_005.js" async=""></script>
-    <script src="resources/js/iframe_api_002.txt"></script>
+    <script type="text/javascript" id="www-widgetapi-script" src="resources/js/homepage/www-widgetapi_005.js" async=""></script>
+    <script src="resources/js/homepage/iframe_api_002.txt"></script>
 <%--    <script type="text/javascript" async="" src="final_files/amplitude-4_003.js"></script>--%>
 <%--    <script async="" src="final_files/gtm_004.js"></script>--%>
-    <script type="text/javascript" id="www-widgetapi-script" src="resources/js/www-widgetapi_004.js" async=""></script>
-    <script src="resources/js/iframe_api.txt"></script>
+    <script type="text/javascript" id="www-widgetapi-script" src="resources/js/homepage/www-widgetapi_004.js" async=""></script>
+    <script src="resources/js/homepage/iframe_api.txt"></script>
 <%--    <script type="text/javascript" async="" src="final_files/amplitude-4_002.js"></script>--%>
 <%--    <script async="" src="final_files/gtm_003.js"></script>--%>
-    <script type="text/javascript" id="www-widgetapi-script" src="resources/js/www-widgetapi_003.js" async=""></script>
+    <script type="text/javascript" id="www-widgetapi-script" src="resources/js/homepage/www-widgetapi_003.js" async=""></script>
 <%--    <script type="text/javascript" async="" src="final_files/analytics.js"></script>--%>
 <%--    <script type="text/javascript" async="" src="final_files/amplitude-4.js"></script>--%>
-    <script src="/wp-content/themes/kahoot2017/assets/js/a11y-dialog.min.js"></script><script src="resources/js/iframe_api_002_002.txt"></script>
+    <script src="/wp-content/themes/kahoot2017/assets/js/a11y-dialog.min.js"></script><script src="resources/js/homepage/iframe_api_002_002.txt"></script>
 <%--    <script async="" src="final_files/gtm_002.js"></script>--%>
-    <script type="text/javascript" id="www-widgetapi-script" src="resources/js/www-widgetapi_002.js" async=""></script>
-    <script type="text/javascript" id="www-widgetapi-script" src="resources/js/www-widgetapi.js" async=""></script>
-    <script src="resources/js/a11y-dialog.js"></script>
-    <script src="resources/js/iframe_api_003.txt"></script>
+    <script type="text/javascript" id="www-widgetapi-script" src="resources/js/homepage/www-widgetapi_002.js" async=""></script>
+    <script type="text/javascript" id="www-widgetapi-script" src="resources/js/homepage/www-widgetapi.js" async=""></script>
+    <script src="resources/js/homepage/a11y-dialog.js"></script>
+    <script src="resources/js/homepage/iframe_api_003.txt"></script>
 <%--    <script async="" src="final_files/gtm.js"></script>--%>
     <script>
         /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
@@ -1208,12 +1208,12 @@
     <title>RipWeb! | Learning Games | Make Learning Awesome!</title>
 
     <meta name="description" content="Ripweb! is a game-based platform that makes learning awesome for millions of people all over the world. Sign up to create and play fun quiz games!">
-    <link rel="canonical" href="https://kahoot.com/">
+<%--    <link rel="canonical" href="https://kahoot.com/">--%>
     <meta property="og:locale" content="en_US">
     <meta property="og:type" content="website">
     <meta property="og:title" content="RipWeb! | Learning Games | Make Learning Awesome!">
     <meta property="og:description" content="RipWeb! is a game-based platform that makes learning awesome for millions of people all over the world. Sign up to create and play fun quiz games!">
-    <meta property="og:url" content="https://kahoot.com/">
+<%--    <meta property="og:url" content="https://kahoot.com/">--%>
     <meta property="og:site_name" content="RipWeb!">
     <meta property="og:image" content="https://kahoot.com/files/2017/06/img-social-default.jpg">
     <meta property="og:image:secure_url" content="https://kahoot.com/files/2017/06/img-social-default.jpg">
@@ -1225,7 +1225,7 @@
     <meta name="twitter:image" content="https://kahoot.com/files/2017/06/img-social-default.jpg">
 
     <link rel="dns-prefetch" href="https://s.w.org/">
-    <link rel="shortlink" href="https://kahoot.com/">
+<%--    <link rel="shortlink" href="https://kahoot.com/">--%>
     <style type="text/css" id="wp-custom-css">
         .plan-card .btn--white {
             color:#333333;
@@ -1270,7 +1270,7 @@
 
     <header class="page-header" role="banner" itemscope="" itemtype="http://schema.org/WPHeader">
         <div class="page-header__inner">
-            <a title="Link to kahoot.com homepage" aria-label="Link to kahoot.com homepage" class="logo-link" href="file:///C:/Users/Khoa%20Tran/Desktop/homepage.html?????">
+            <a title="Link to ripweb.com homepage" aria-label="Link to ripweb.com homepage" class="logo-link" href="#">
                 <svg width="38" height="40" viewBox="0 0 30 32" class="k-logo">
                     <title>K!</title>
                     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -1293,10 +1293,10 @@
             <nav class="header-menu" aria-label="Navigation" itemscope="" itemtype="https://schema.org/SiteNavigationElement">
                 <div class="menu-header-menu-container"><ul id="menu-header-menu" class="">
                     <li id="menu-item-102" class="mobile-hide menu-item menu-item-type-post_type menu-item-object-page menu-item-102"><a data-tracking-id="explore-games-top-bar" itemprop="url" href="#aboutUs">About Us</a></li>
-                    <li id="menu-item-34" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-34"><a target="_blank" data-tracking-id="play-top-bar" itemprop="url" href="play">Enter game PIN!</a></li>
-                    <li id="menu-item-35" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-35"><a target="_blank" data-tracking-id="sign-in-top-bar" itemprop="url" href="login">Log in</a></li>
-                    <li id="menu-item-36" class="btn-wrap menu-item menu-item-type-custom menu-item-object-custom menu-item-36"><a target="_blank" data-tracking-id="sign-up-top-bar" itemprop="url" href="signup">Sign up</a></li>
-                    <li id="menu-item-6515" class="mobile-hide nav-icon nav-icon--help menu-item menu-item-type-custom menu-item-object-custom menu-item-6515"><a target="_blank" href="https://support.kahoot.com/" itemprop="url"><span class="visually-hidden">Help</span></a></li>
+                    <li id="menu-item-34" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-34"><a target="_self" data-tracking-id="play-top-bar" itemprop="url" href="play">Enter game PIN!</a></li>
+                    <li id="menu-item-35" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-35"><a target="_self" data-tracking-id="sign-in-top-bar" itemprop="url" href="login">Log in</a></li>
+                    <li id="menu-item-36" class="btn-wrap menu-item menu-item-type-custom menu-item-object-custom menu-item-36"><a target="_self" data-tracking-id="sign-up-top-bar" itemprop="url" href="signup">Sign up</a></li>
+                    <li id="menu-item-6515" class="mobile-hide nav-icon nav-icon--help menu-item menu-item-type-custom menu-item-object-custom menu-item-6515"><a target="_self" href="https://support.ripweb.com/" itemprop="url"><span class="visually-hidden">Help</span></a></li>
                 </ul></div>			</nav>
 
         </div>
@@ -1344,7 +1344,7 @@
                     <img src="resources/img/device-image.svg" role="presentation" class="in-up" alt=" " style="opacity: 1; display: inline-block; transform: translateY(0px);">
                     <h1>Make learning awesome!</h1>
                     <p>RipWeb! makes it easy to create, share and play fun learning games or trivia quizzes in minutes.</p>
-                    <a data-tracking-id="hero-sign-up" class="btn btn--raised" href="signup">Sign up for free</a>
+                    <a target="_self" data-tracking-id="hero-sign-up" class="btn btn--raised" href="signup">Sign up for free</a>
                 </div>
             </div>
 
@@ -1371,7 +1371,7 @@
                         </button>
                     </div>
                     <div>
-                        <h1 id="kahootvideo" class="visually-hidden">RipWeb Played around the world</h1>
+                        <h1 id="kahootvideo" class="visually-hidden">Ripweb played around the world</h1>
                         <iframe id="fs-video" src="" data-src="https://www.youtube.com/embed/yZvikyjgA1U?version=3&amp;autoplay=1&amp;loop=1&amp;mute=0&amp;disablekb=1&amp;modestbranding=1&amp;showinfo=0&amp;controls=1&amp;rel=0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="560" height="315" frameborder="0"></iframe>
                     </div>
                 </div>
@@ -1417,7 +1417,7 @@
                                             <a href="https://github.com/tranduckhoatcu" class="skew" aria-labelledby="post-id-7707">
                                                 <div class="skew__inner">
 
-                                                    <img src="resources/img/Poio-blog-570x320.jpg" class="attachment-blog-component size-blog-component wp-post-image lzy-loaded" alt="Kahoot! and Poio join forces" itemprop="url" srcset="https://kahoot.com/files/2019/05/Poio-blog-570x320.jpg 570w, https://kahoot.com/files/2019/05/Poio-blog-300x169.jpg 300w, https://kahoot.com/files/2019/05/Poio-blog-768x432.jpg 768w, https://kahoot.com/files/2019/05/Poio-blog.jpg 1024w, https://kahoot.com/files/2019/05/Poio-blog-600x338.jpg 600w, https://kahoot.com/files/2019/05/Poio-blog-57x32.jpg 57w, https://kahoot.com/files/2019/05/Poio-blog-375x211.jpg 375w, https://kahoot.com/files/2019/05/Poio-blog-285x160.jpg 285w, https://kahoot.com/files/2019/05/Poio-blog-725x408.jpg 725w, https://kahoot.com/files/2019/05/Poio-blog-702x395.jpg 702w, https://kahoot.com/files/2019/05/Poio-blog-160x90.jpg 160w" sizes="(max-width: 570px) 100vw, 570px" data-lzy-src="https://kahoot.com/files/2019/05/Poio-blog-570x320.jpg" data-lzy-srcset="https://kahoot.com/files/2019/05/Poio-blog-570x320.jpg 570w, https://kahoot.com/files/2019/05/Poio-blog-300x169.jpg 300w, https://kahoot.com/files/2019/05/Poio-blog-768x432.jpg 768w, https://kahoot.com/files/2019/05/Poio-blog.jpg 1024w, https://kahoot.com/files/2019/05/Poio-blog-600x338.jpg 600w, https://kahoot.com/files/2019/05/Poio-blog-57x32.jpg 57w, https://kahoot.com/files/2019/05/Poio-blog-375x211.jpg 375w, https://kahoot.com/files/2019/05/Poio-blog-285x160.jpg 285w, https://kahoot.com/files/2019/05/Poio-blog-725x408.jpg 725w, https://kahoot.com/files/2019/05/Poio-blog-702x395.jpg 702w, https://kahoot.com/files/2019/05/Poio-blog-160x90.jpg 160w" width="570" height="320">
+                                                    <img src="resources/img/Poio-blog-570x320.jpg" class="attachment-blog-component size-blog-component wp-post-image lzy-loaded" alt="Ripweb! and Poio join forces" itemprop="url" srcset="https://kahoot.com/files/2019/05/Poio-blog-570x320.jpg 570w, https://kahoot.com/files/2019/05/Poio-blog-300x169.jpg 300w, https://kahoot.com/files/2019/05/Poio-blog-768x432.jpg 768w, https://kahoot.com/files/2019/05/Poio-blog.jpg 1024w, https://kahoot.com/files/2019/05/Poio-blog-600x338.jpg 600w, https://kahoot.com/files/2019/05/Poio-blog-57x32.jpg 57w, https://kahoot.com/files/2019/05/Poio-blog-375x211.jpg 375w, https://kahoot.com/files/2019/05/Poio-blog-285x160.jpg 285w, https://kahoot.com/files/2019/05/Poio-blog-725x408.jpg 725w, https://kahoot.com/files/2019/05/Poio-blog-702x395.jpg 702w, https://kahoot.com/files/2019/05/Poio-blog-160x90.jpg 160w" sizes="(max-width: 570px) 100vw, 570px" data-lzy-src="https://kahoot.com/files/2019/05/Poio-blog-570x320.jpg" data-lzy-srcset="https://kahoot.com/files/2019/05/Poio-blog-570x320.jpg 570w, https://kahoot.com/files/2019/05/Poio-blog-300x169.jpg 300w, https://kahoot.com/files/2019/05/Poio-blog-768x432.jpg 768w, https://kahoot.com/files/2019/05/Poio-blog.jpg 1024w, https://kahoot.com/files/2019/05/Poio-blog-600x338.jpg 600w, https://kahoot.com/files/2019/05/Poio-blog-57x32.jpg 57w, https://kahoot.com/files/2019/05/Poio-blog-375x211.jpg 375w, https://kahoot.com/files/2019/05/Poio-blog-285x160.jpg 285w, https://kahoot.com/files/2019/05/Poio-blog-725x408.jpg 725w, https://kahoot.com/files/2019/05/Poio-blog-702x395.jpg 702w, https://kahoot.com/files/2019/05/Poio-blog-160x90.jpg 160w" width="570" height="320">
                                                     <meta itemprop="url" content="https://kahoot.com/files/2019/05/Poio-blog-725x408.jpg">
                                                     <meta itemprop="height" content="570">
                                                     <meta itemprop="width" content="320">
@@ -1430,8 +1430,6 @@
                                                 <figure class="author-meta__avatar" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
                                                     <a href="https://kahoot.com/blog/author/danielsenn/" rel="author" itemprop="url" aria-labelledby="author-post-id-7707">
                                                         <img alt="Daniel Senn, Poio avatar" class="lzy-loaded" data-lzy-src="https://kahoot.com/files/2017/05/daria_trans-64x64.png" src="resources/img/daria_trans-64x64.png" width="64" height="64">
-
-
                                                     </a>
                                                     <meta itemprop="name" content="Daniel Senn, Poio">
                                                 </figure>
@@ -1494,7 +1492,7 @@
                                         <a href="https://github.com/lttony98" class="skew" aria-labelledby="post-id-7649">
                                             <div class="skew__inner">
 
-                                                <img src="resources/img/make-learning-math-awesome-blog-cover-570x320.jpg" class="attachment-blog-component size-blog-component wp-post-image lzy-loaded" alt="Kahoot! and DragonBox join forces to make learning math awesome" itemprop="url" srcset="https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-570x320.jpg 570w, https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-300x169.jpg 300w, https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-768x432.jpg 768w, https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover.jpg 1024w, https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-600x338.jpg 600w, https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-57x32.jpg 57w, https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-375x211.jpg 375w, https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-285x160.jpg 285w, https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-725x408.jpg 725w, https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-702x395.jpg 702w, https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-160x90.jpg 160w" sizes="(max-width: 570px) 100vw, 570px" data-lzy-src="https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-570x320.jpg" data-lzy-srcset="https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-570x320.jpg 570w, https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-300x169.jpg 300w, https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-768x432.jpg 768w, https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover.jpg 1024w, https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-600x338.jpg 600w, https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-57x32.jpg 57w, https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-375x211.jpg 375w, https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-285x160.jpg 285w, https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-725x408.jpg 725w, https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-702x395.jpg 702w, https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-160x90.jpg 160w" width="570" height="320">
+                                                <img src="resources/img/make-learning-math-awesome-blog-cover-570x320.jpg" class="attachment-blog-component size-blog-component wp-post-image lzy-loaded" alt="Ripweb! and DragonBox join forces to make learning math awesome" itemprop="url" srcset="https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-570x320.jpg 570w, https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-300x169.jpg 300w, https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-768x432.jpg 768w, https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover.jpg 1024w, https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-600x338.jpg 600w, https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-57x32.jpg 57w, https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-375x211.jpg 375w, https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-285x160.jpg 285w, https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-725x408.jpg 725w, https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-702x395.jpg 702w, https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-160x90.jpg 160w" sizes="(max-width: 570px) 100vw, 570px" data-lzy-src="https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-570x320.jpg" data-lzy-srcset="https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-570x320.jpg 570w, https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-300x169.jpg 300w, https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-768x432.jpg 768w, https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover.jpg 1024w, https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-600x338.jpg 600w, https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-57x32.jpg 57w, https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-375x211.jpg 375w, https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-285x160.jpg 285w, https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-725x408.jpg 725w, https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-702x395.jpg 702w, https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-160x90.jpg 160w" width="570" height="320">
                                                 <meta itemprop="url" content="https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-725x408.jpg">
                                                 <meta itemprop="height" content="570">
                                                 <meta itemprop="width" content="320">
@@ -1507,8 +1505,6 @@
                                             <figure class="author-meta__avatar" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
                                                 <a href="https://kahoot.com/blog/author/jb-huynh/" rel="author" itemprop="url" aria-labelledby="author-post-id-7649">
                                                     <img alt="Jean-Baptiste Huynh, DragonBox avatar" class="lzy-loaded" data-lzy-src="https://kahoot.com/files/2017/05/daria_trans-64x64.png" src="resources/img/daria_trans-64x64.png" width="64" height="64">
-
-
                                                 </a>
                                                 <meta itemprop="name" content="Jean-Baptiste Huynh, DragonBox">
                                             </figure>
@@ -1683,7 +1679,7 @@
                         <h1></h1>
                         <p><strong>RipWeb!</strong>??</p>
                         <p>i dont know wtf to say </p>
-                        <p><a class="btn theme-opposite" data-tracking-id="free-trial-welcomeback" href="file:///C:/Users/Khoa%20Tran/Desktop/homepage.html??????">Sign up cmn di </a></p>
+                        <p><a class="btn theme-opposite" data-tracking-id="free-trial-welcomeback" target="_self" href="signup">Sign up cmn di </a></p>
                     </div>
                     <div class="text-image__image">
 
@@ -1759,7 +1755,7 @@
 
 
 
-<script src="resources/js/jquery-3.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="resources/js/homepage/jquery-3.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
 
 
@@ -1767,7 +1763,7 @@
 
 <!-- add these only when needed -->
 <div class="modal-overlay"></div>
-<script id="k-functions" src="resources/js/functions-64617a5349.js"></script>
+<script id="k-functions" src="resources/js/homepage/functions-64617a5349.js"></script>
 
 
 
