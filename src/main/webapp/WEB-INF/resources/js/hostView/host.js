@@ -23,12 +23,16 @@ function hostDisplayQuestion() {
             let question = msg.content;
             if (msg.type == "NEXT_QUESTION") {
                 questionId = question.id;
+                if (question.image)
+                    document.getElementById("questionImg").setAttribute("src", question.image);
+                else
+                    document.getElementById("questionImg").setAttribute("src", "");
                 document.getElementById("answer1").innerText = question.answer1;
                 document.getElementById("answer2").innerText = question.answer2;
                 document.getElementById("answer3").innerText = question.answer3;
                 document.getElementById("answer4").innerText = question.answer4;
                 document.getElementById("question").innerText = question.question;
-                // showScreen("questionScreen");
+                showScreen("questionScreen");
             }
             if (msg.type == "NEW_PLAYER") {
                 let playersList = document.getElementById("playersList");
@@ -40,8 +44,12 @@ function hostDisplayQuestion() {
                 playersList.innerHTML = playersListHTML;
                 document.getElementById("playersCount").innerText = players.length;
             }
-            if ((msg.type == "END_GAME")) {
+            if (msg.type == "END_GAME") {
                 // show result
+                showScreen("resultScreen");
+            }
+            if (msg.type == "END_QUESTION") {
+                showScreen("questionResultScreen");
             }
         });
     });
@@ -71,7 +79,7 @@ function hostCreatGame(hostQuesId) {
 }
 
 function showScreen(divId) {
-    var divID = ["questionScreen","pinScreen", "waitScreen", "playScreen","waitNextScreen","endScreen"];
+    var divID = ["questionScreen", "resultScreen", "questionResultScreen","playersScreen"];
     for (var i = 0 ; i < divID.length; i++){
         let showDiv = document.getElementById(divID[i]);
         if(divID[i] == divId){
@@ -108,3 +116,5 @@ function hostEndQuestion() {
         console.error(xhttp.statusText);
     };
 }
+
+showScreen("playersScreen");
