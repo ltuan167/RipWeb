@@ -228,6 +228,7 @@
 </div>
 <script src = "resources/js/Play/playFuncs.js"></script>
 <script src = "resources/js/Play/playWs.js"></script>
+
 </body>
 </html>
 
