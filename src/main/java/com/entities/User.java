@@ -1,5 +1,7 @@
 package com.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.Set;
@@ -29,6 +31,7 @@ public class User {
 	@Column(name = "dob")
 	private Date dob;
 
+	@JsonBackReference
 	@OneToMany(mappedBy = "owner_id", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private Set<QuestionCollection> questionCollections;
 
