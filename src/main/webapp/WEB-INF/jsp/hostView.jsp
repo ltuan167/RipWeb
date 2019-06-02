@@ -79,7 +79,7 @@
                 <div class="row" style="width: 100%;height: 100%;margin-right: 0;margin-left: 0;">
                     <div class="col-xl-2" style="width: 10%;height: 100%;padding-right: 1em;padding-left: 0;"><button class="btn btn-primary" type="button" style="width: 100%;height: 100%;font-family: Comfortaa, cursive;font-weight: bold;font-style: oblique;font-size: 31px;letter-spacing: 1px;padding-top: 0;padding-right: 0;padding-bottom: 0;padding-left: 0;background-color: rgb(113,148,186);">RIPWEB!</button></div>
                     <div class="col-xl-8" style="width: 80%;height: 100%;padding-right: 0;padding-left: 0;"><img id="questionImg" class="img-thumbnail" src="" style="width: 100%;height: 100%;padding: 0;margin-left: 0;"></div>
-                    <div class="col-xl-2" style="width: 10%;height: 100%;padding-right: 0;padding-left: 1em;"><button class="btn btn-primary" type="button" onclick="hostEndQuestion()" style="width: 100%;height: 100%;font-family: Comfortaa, cursive;font-weight: bold;font-style: oblique;font-size: 31px;letter-spacing: 1px;padding-top: 0;padding-right: 0;padding-bottom: 0;padding-left: 0;background-color: rgb(138,76,187);">End now</button></div>
+                    <div class="col-xl-2" style="width: 10%;height: 100%;padding-right: 0;padding-left: 1em;"><button id="endQuestionBtn" class="btn btn-primary" type="button" onclick="hostEndQuestion()" style="width: 100%;height: 100%;font-family: Comfortaa, cursive;font-weight: bold;font-style: oblique;font-size: 31px;letter-spacing: 1px;padding-top: 0;padding-right: 0;padding-bottom: 0;padding-left: 0;background-color: rgb(138,76,187);">End now</button></div>
                 </div>
             </div>
         </div>
@@ -113,6 +113,7 @@
 
 </div>
 
+<script src="resources/js/hostView/timer.js"></script>
 <script src="resources/js/hostView/host.js"></script>
 
 <script>

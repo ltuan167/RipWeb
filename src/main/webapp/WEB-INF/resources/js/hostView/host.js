@@ -46,6 +46,17 @@ function hostDisplayQuestion() {
                     correctAnswer = question.answer3;
                 if (numbercorrectAnswer == 4)
                     correctAnswer = question.answer4;
+
+                setTimer(question.time);
+                countDown((remainsSecond) => {
+                    let minutes = Math.floor(remainsSecond/60);
+                    let seconds = remainsSecond % 60;
+                    document.getElementById("endQuestionBtn").innerHTML = minutes + ":" + seconds;
+                }, () => {
+                    hostEndQuestion();
+                });
+
+
                 showScreen("questionScreen");
             }
             if (msg.type == "NEW_PLAYER") {
