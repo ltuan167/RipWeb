@@ -26,9 +26,12 @@
     <link href="resources/css/editQuestion/commons.css" rel="stylesheet">
     <link href="resources/css/editQuestion/create_002.css" rel="stylesheet">
     <link href="resources/css/editQuestion/create.css" rel="stylesheet">
-    <script async="" src="resources/js/edit/Question/analytics.js"></script><script type="text/javascript" async="" src="resources/js/edit/Question/amplitude-4.js"></script><script type="text/javascript" src="resources/js/edit/Question/commons.js" defer="defer"></script><script type="text/javascript" src="resources/js/edit/Question/vendorsbrand-pagecreatesettings.js" defer="defer"></script><script type="text/javascript" src="resources/js/edit/Question/create.js" defer="defer"></script>
+<%--    <script async="" src="resources/js/editQuestion/analytics.js"></script>--%>
+<%--    <script type="text/javascript" async="" src="resources/js/editQuestion/amplitude-4.js"></script>--%>
+    <script type="text/javascript" src="resources/js/editQuestion/commons.js" defer="defer"></script><script type="text/javascript" src="resources/js/editQuestion/vendorsbrand-pagecreatesettings.js" defer="defer"></script><script type="text/javascript" src="resources/js/editQuestion/create.js" defer="defer"></script>
     <link rel="stylesheet" href="resources/css/editQuestion/css.css" media="all">
-    <script type="text/javascript" src="resources/js/edit/Question/vendorscreateplusprofile.js" defer="defer"></script><script async="" src="resources/js/edit/Question/hotjar-554762.js"></script>
+    <script type="text/javascript" src="resources/js/editQuestion/vendorscreateplusprofile.js" defer="defer"></script>
+<%--    <script async="" src="resources/js/editQuestion/hotjar-554762.js"></script>--%>
 </head>
 <body class="touchpadSwipeAnimationCore">
 <!-- SVG Sprite Injection -->
@@ -1042,7 +1045,7 @@
     ga('set', 'anonymizeIp', true);
     ga('send', 'pageview');
 </script>
-<script src="resources/js/edit/Question/webfont.js"></script>
+<%--<script src="resources/js/editQuestion/webfont.js"></script>--%>
 <script>
     WebFont.load({
         google: {
@@ -1052,7 +1055,7 @@
         }
     });
 </script>
-<script async="" src="resources/js/edit/Question/kahunaAPI_min.js"></script>
+<script async="" src="resources/js/editQuestion/kahunaAPI_min.js"></script>
 <!-- Hotjar Tracking Code for https://create.kahoot.it/ -->
 <script async="">
     (function(h, o, t, j, a, r) {
