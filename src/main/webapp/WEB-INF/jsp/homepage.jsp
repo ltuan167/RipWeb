@@ -1188,7 +1188,8 @@
     <script type="text/javascript" id="www-widgetapi-script" src="resources/js/homepage/www-widgetapi_003.js" async=""></script>
 <%--    <script type="text/javascript" async="" src="final_files/analytics.js"></script>--%>
 <%--    <script type="text/javascript" async="" src="final_files/amplitude-4.js"></script>--%>
-    <script src="/wp-content/themes/kahoot2017/assets/js/a11y-dialog.min.js"></script><script src="resources/js/homepage/iframe_api_002_002.txt"></script>
+<%--    <script src="/wp-content/themes/kahoot2017/assets/js/a11y-dialog.min.js"></script>--%>
+    <script src="resources/js/homepage/iframe_api_002_002.txt"></script>
 <%--    <script async="" src="final_files/gtm_002.js"></script>--%>
     <script type="text/javascript" id="www-widgetapi-script" src="resources/js/homepage/www-widgetapi_002.js" async=""></script>
     <script type="text/javascript" id="www-widgetapi-script" src="resources/js/homepage/www-widgetapi.js" async=""></script>
@@ -1270,12 +1271,13 @@
 
     <header class="page-header" role="banner" itemscope="" itemtype="http://schema.org/WPHeader">
         <div class="page-header__inner">
+            <img aria-hidden="true" src="resources/icon/favicon.png" alt="expand" width="38" height="40">
             <a title="Link to ripweb.com homepage" aria-label="Link to ripweb.com homepage" class="logo-link" href="#">
                 <svg width="38" height="40" viewBox="0 0 30 32" class="k-logo">
-                    <title>K!</title>
-                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                        <path d="M0,3.12411067 L5.3201581,1.75968379 L5.30711462,12.5774704 L14.2901186,3.91304348 L18.9106719,5.68853755 L12.3814229,12.9316206 L16.7118577,28.7075099 L12.013834,28.7075099 L8.5486166,16.6209486 L5.27588933,19.8256917 L5.3201581,28.7075099 L0,28.5173913 L0,3.12411067 Z M22.8873518,29.9964427 L24.2067194,26.8901186 L27.2715415,26.8901186 L28.4312253,30.2988142 L25.6794466,31.944664 L22.8873518,29.9964427 Z M29.8806324,1.81146245 L26.2513834,25.1272727 L20.4770751,-1.77635684e-15 L29.8806324,1.81146245 Z" fill="#46178F"></path>
-                    </g>
+                    <title>R!</title>
+<%--                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">--%>
+<%--                        <path d="M0,3.12411067 L5.3201581,1.75968379 L5.30711462,12.5774704 L14.2901186,3.91304348 L18.9106719,5.68853755 L12.3814229,12.9316206 L16.7118577,28.7075099 L12.013834,28.7075099 L8.5486166,16.6209486 L5.27588933,19.8256917 L5.3201581,28.7075099 L0,28.5173913 L0,3.12411067 Z M22.8873518,29.9964427 L24.2067194,26.8901186 L27.2715415,26.8901186 L28.4312253,30.2988142 L25.6794466,31.944664 L22.8873518,29.9964427 Z M29.8806324,1.81146245 L26.2513834,25.1272727 L20.4770751,-1.77635684e-15 L29.8806324,1.81146245 Z" fill="#46178F"></path>--%>
+<%--                    </g>--%>
                 </svg>
 
                 <svg width="146" height="50" viewBox="0 0 88 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" class="kahoot-logo">
@@ -1341,7 +1343,7 @@
 
             <div class="clipped-hero__content outer">
                 <div class="clipped-hero__content-inner">
-                    <img src="resources/img/device-image.svg" role="presentation" class="in-up" alt=" " style="opacity: 1; display: inline-block; transform: translateY(0px);">
+                    <img src="resources/img/homepage/device-image.svg" role="presentation" class="in-up" alt=" " style="opacity: 1; display: inline-block; transform: translateY(0px);">
                     <h1>Make learning awesome!</h1>
                     <p>RipWeb! makes it easy to create, share and play fun learning games or trivia quizzes in minutes.</p>
                     <a target="_self" data-tracking-id="hero-sign-up" class="btn btn--raised" href="signup">Sign up for free</a>
@@ -1417,7 +1419,7 @@
                                             <a href="https://github.com/tranduckhoatcu" class="skew" aria-labelledby="post-id-7707">
                                                 <div class="skew__inner">
 
-                                                    <img src="resources/img/Poio-blog-570x320.jpg" class="attachment-blog-component size-blog-component wp-post-image lzy-loaded" alt="Ripweb! and Poio join forces" itemprop="url" srcset="https://kahoot.com/files/2019/05/Poio-blog-570x320.jpg 570w, https://kahoot.com/files/2019/05/Poio-blog-300x169.jpg 300w, https://kahoot.com/files/2019/05/Poio-blog-768x432.jpg 768w, https://kahoot.com/files/2019/05/Poio-blog.jpg 1024w, https://kahoot.com/files/2019/05/Poio-blog-600x338.jpg 600w, https://kahoot.com/files/2019/05/Poio-blog-57x32.jpg 57w, https://kahoot.com/files/2019/05/Poio-blog-375x211.jpg 375w, https://kahoot.com/files/2019/05/Poio-blog-285x160.jpg 285w, https://kahoot.com/files/2019/05/Poio-blog-725x408.jpg 725w, https://kahoot.com/files/2019/05/Poio-blog-702x395.jpg 702w, https://kahoot.com/files/2019/05/Poio-blog-160x90.jpg 160w" sizes="(max-width: 570px) 100vw, 570px" data-lzy-src="https://kahoot.com/files/2019/05/Poio-blog-570x320.jpg" data-lzy-srcset="https://kahoot.com/files/2019/05/Poio-blog-570x320.jpg 570w, https://kahoot.com/files/2019/05/Poio-blog-300x169.jpg 300w, https://kahoot.com/files/2019/05/Poio-blog-768x432.jpg 768w, https://kahoot.com/files/2019/05/Poio-blog.jpg 1024w, https://kahoot.com/files/2019/05/Poio-blog-600x338.jpg 600w, https://kahoot.com/files/2019/05/Poio-blog-57x32.jpg 57w, https://kahoot.com/files/2019/05/Poio-blog-375x211.jpg 375w, https://kahoot.com/files/2019/05/Poio-blog-285x160.jpg 285w, https://kahoot.com/files/2019/05/Poio-blog-725x408.jpg 725w, https://kahoot.com/files/2019/05/Poio-blog-702x395.jpg 702w, https://kahoot.com/files/2019/05/Poio-blog-160x90.jpg 160w" width="570" height="320">
+                                                    <img src="resources/img/homepage/khoa2.jpg" class="attachment-blog-component size-blog-component wp-post-image lzy-loaded" alt="Ripweb! and Poio join forces" width="570" height="320">
                                                     <meta itemprop="url" content="https://kahoot.com/files/2019/05/Poio-blog-725x408.jpg">
                                                     <meta itemprop="height" content="570">
                                                     <meta itemprop="width" content="320">
@@ -1428,8 +1430,8 @@
                                         <div class="card-component__body card-component__body--tag">
                                             <div class="author-meta">
                                                 <figure class="author-meta__avatar" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
-                                                    <a href="https://kahoot.com/blog/author/danielsenn/" rel="author" itemprop="url" aria-labelledby="author-post-id-7707">
-                                                        <img alt="Daniel Senn, Poio avatar" class="lzy-loaded" data-lzy-src="https://kahoot.com/files/2017/05/daria_trans-64x64.png" src="resources/img/daria_trans-64x64.png" width="64" height="64">
+                                                    <a href=" https://www.facebook.com/tranduckhoatcu" rel="author" itemprop="url" aria-labelledby="author-post-id-7707">
+                                                        <img alt="Daniel Senn, Poio avatar" class="lzy-loaded" data-lzy-src="https://kahoot.com/files/2017/05/daria_trans-64x64.png" src="resources/img/homepage/khoa1.jpg" width="64" height="64">
                                                     </a>
                                                     <meta itemprop="name" content="Daniel Senn, Poio">
                                                 </figure>
@@ -1456,7 +1458,7 @@
                                             <div class="card-component__snippet">
                                                 <h1 itemprop="headline" id="post-id-7707"><a title="Front-end Developer">Front-end Developer</a></h1>
 
-                                                <p itemprop="description">your quote ???</p>
+                                                <p itemprop="description">Have a good day <3</p>
 
 
 
@@ -1492,7 +1494,7 @@
                                         <a href="https://github.com/lttony98" class="skew" aria-labelledby="post-id-7649">
                                             <div class="skew__inner">
 
-                                                <img src="resources/img/make-learning-math-awesome-blog-cover-570x320.jpg" class="attachment-blog-component size-blog-component wp-post-image lzy-loaded" alt="Ripweb! and DragonBox join forces to make learning math awesome" itemprop="url" srcset="https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-570x320.jpg 570w, https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-300x169.jpg 300w, https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-768x432.jpg 768w, https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover.jpg 1024w, https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-600x338.jpg 600w, https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-57x32.jpg 57w, https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-375x211.jpg 375w, https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-285x160.jpg 285w, https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-725x408.jpg 725w, https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-702x395.jpg 702w, https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-160x90.jpg 160w" sizes="(max-width: 570px) 100vw, 570px" data-lzy-src="https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-570x320.jpg" data-lzy-srcset="https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-570x320.jpg 570w, https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-300x169.jpg 300w, https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-768x432.jpg 768w, https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover.jpg 1024w, https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-600x338.jpg 600w, https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-57x32.jpg 57w, https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-375x211.jpg 375w, https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-285x160.jpg 285w, https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-725x408.jpg 725w, https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-702x395.jpg 702w, https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-160x90.jpg 160w" width="570" height="320">
+                                                <img src="resources/img/homepage/tuan2.jpg" class="attachment-blog-component size-blog-component wp-post-image lzy-loaded" alt="Ripweb! and DragonBox join forces to make learning math awesome" itemprop="url"  width="570" height="320">
                                                 <meta itemprop="url" content="https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-725x408.jpg">
                                                 <meta itemprop="height" content="570">
                                                 <meta itemprop="width" content="320">
@@ -1503,8 +1505,8 @@
                                     <div class="card-component__body card-component__body--tag">
                                         <div class="author-meta">
                                             <figure class="author-meta__avatar" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
-                                                <a href="https://kahoot.com/blog/author/jb-huynh/" rel="author" itemprop="url" aria-labelledby="author-post-id-7649">
-                                                    <img alt="Jean-Baptiste Huynh, DragonBox avatar" class="lzy-loaded" data-lzy-src="https://kahoot.com/files/2017/05/daria_trans-64x64.png" src="resources/img/daria_trans-64x64.png" width="64" height="64">
+                                                <a href="https://www.facebook.com/l.etu.an20320" rel="author" itemprop="url" aria-labelledby="author-post-id-7649">
+                                                    <img alt="Jean-Baptiste Huynh, DragonBox avatar" class="lzy-loaded" data-lzy-src="https://kahoot.com/files/2017/05/daria_trans-64x64.png" src="resources/img/homepage/tuan1.png" width="64" height="64">
                                                 </a>
                                                 <meta itemprop="name" content="Jean-Baptiste Huynh, DragonBox">
                                             </figure>
@@ -1567,7 +1569,7 @@
                                         <a href="https://github.com/hungthuanmk" class="skew" aria-labelledby="post-id-7637">
                                             <div class="skew__inner">
 
-                                                <img src="resources/img/teacher_appreciation_week_2019-570x320.png" class="attachment-blog-component size-blog-component wp-post-image lzy-loaded" alt="Happy Teacher Appreciation Week!" itemprop="url" srcset="https://kahoot.com/files/2019/05/teacher_appreciation_week_2019-570x320.png 570w, https://kahoot.com/files/2019/05/teacher_appreciation_week_2019-300x169.png 300w, https://kahoot.com/files/2019/05/teacher_appreciation_week_2019-768x432.png 768w, https://kahoot.com/files/2019/05/teacher_appreciation_week_2019-1024x576.png 1024w, https://kahoot.com/files/2019/05/teacher_appreciation_week_2019-600x338.png 600w, https://kahoot.com/files/2019/05/teacher_appreciation_week_2019-57x32.png 57w, https://kahoot.com/files/2019/05/teacher_appreciation_week_2019-375x211.png 375w, https://kahoot.com/files/2019/05/teacher_appreciation_week_2019-285x160.png 285w, https://kahoot.com/files/2019/05/teacher_appreciation_week_2019-725x408.png 725w, https://kahoot.com/files/2019/05/teacher_appreciation_week_2019-702x395.png 702w, https://kahoot.com/files/2019/05/teacher_appreciation_week_2019-1130x636.png 1130w, https://kahoot.com/files/2019/05/teacher_appreciation_week_2019-160x90.png 160w, https://kahoot.com/files/2019/05/teacher_appreciation_week_2019.png 1200w" sizes="(max-width: 570px) 100vw, 570px" data-lzy-src="https://kahoot.com/files/2019/05/teacher_appreciation_week_2019-570x320.png" data-lzy-srcset="https://kahoot.com/files/2019/05/teacher_appreciation_week_2019-570x320.png 570w, https://kahoot.com/files/2019/05/teacher_appreciation_week_2019-300x169.png 300w, https://kahoot.com/files/2019/05/teacher_appreciation_week_2019-768x432.png 768w, https://kahoot.com/files/2019/05/teacher_appreciation_week_2019-1024x576.png 1024w, https://kahoot.com/files/2019/05/teacher_appreciation_week_2019-600x338.png 600w, https://kahoot.com/files/2019/05/teacher_appreciation_week_2019-57x32.png 57w, https://kahoot.com/files/2019/05/teacher_appreciation_week_2019-375x211.png 375w, https://kahoot.com/files/2019/05/teacher_appreciation_week_2019-285x160.png 285w, https://kahoot.com/files/2019/05/teacher_appreciation_week_2019-725x408.png 725w, https://kahoot.com/files/2019/05/teacher_appreciation_week_2019-702x395.png 702w, https://kahoot.com/files/2019/05/teacher_appreciation_week_2019-1130x636.png 1130w, https://kahoot.com/files/2019/05/teacher_appreciation_week_2019-160x90.png 160w, https://kahoot.com/files/2019/05/teacher_appreciation_week_2019.png 1200w" width="570" height="320">
+                                                <img src="resources/img/homepage/thuan2.jpg" class="attachment-blog-component size-blog-component wp-post-image lzy-loaded" alt="Happy Teacher Appreciation Week!" itemprop="url" width="570" height="320">
                                                 <meta itemprop="url" content="https://kahoot.com/files/2019/05/teacher_appreciation_week_2019-725x408.png">
                                                 <meta itemprop="height" content="570">
                                                 <meta itemprop="width" content="320">
@@ -1578,8 +1580,8 @@
                                     <div class="card-component__body card-component__body--tag">
                                         <div class="author-meta">
                                             <figure class="author-meta__avatar" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
-                                                <a href="https://kahoot.com/blog/author/daria/" rel="author" itemprop="url" aria-labelledby="author-post-id-7637">
-                                                    <img alt=" avatar" class="lzy-loaded" data-lzy-src="https://kahoot.com/files/2017/05/daria_trans-64x64.png" src="resources/img/daria_trans-64x64.png" width="64" height="64">
+                                                <a href="https://www.facebook.com/hungthuanmk" rel="author" itemprop="url" aria-labelledby="author-post-id-7637">
+                                                    <img alt=" avatar" class="lzy-loaded" data-lzy-src="https://kahoot.com/files/2017/05/daria_trans-64x64.png" src="resources/img/homepage/thuan1.jpg" width="64" height="64">
 
 
                                                 </a>
@@ -1608,7 +1610,7 @@
                                         <div class="card-component__snippet">
                                             <h1 itemprop="headline" id="post-id-7637"><a title="Back-end Developer">Back-end Developer</a></h1>
 
-                                            <p itemprop="description">your quote ???</p>
+                                            <p itemprop="description">Technology fan having a big dream <3 </p>
 
 
 
@@ -1683,7 +1685,7 @@
                     </div>
                     <div class="text-image__image">
 
-                        <img data-lzy-src="https://kahoot.com/files/2018/09/icon_enterprise_premium-1.png" src="${pageContext.request.contextPath}resources/img/icon_enterprise_premium-1.png" alt="" class="lzy-loaded" width="" height="">
+                        <img data-lzy-src="https://kahoot.com/files/2018/09/icon_enterprise_premium-1.png" src="${pageContext.request.contextPath}resources/img/homepage/icon_enterprise_premium-1.png" alt="" class="lzy-loaded" width="" height="">
 
                     </div>
                 </div>
@@ -1717,50 +1719,33 @@
     <!-- /close section -->
 </main>
 
-
-
-
-
-
-
-
 <footer class="page-footer">
     <div class="inner">
         <!-- page-footer__links -->
-
         <div class="page-footer__links">
-
             <nav class="footer-nav footer-nav--inline" role="navigation" aria-label="Follow us Navigation" itemscope="" itemtype="https://schema.org/SiteNavigationElement">
                 <div class="footer-nav__title">Follow us</div>
                 <div class="footer-nav__menu">
-                    <ul id="menu-follow-us" class=""><li id="menu-item-83" class="social-twitter menu-item menu-item-type-custom menu-item-object-custom menu-item-83"><a target="_blank" href="https://twitter.com/getkahoot" itemprop="url">Twitter</a></li>
-                        <li id="menu-item-86" class="social-facebook menu-item menu-item-type-custom menu-item-object-custom menu-item-86"><a target="_blank" href="https://www.facebook.com/getkahoot" itemprop="url">Facebook</a></li>
-                        <li id="menu-item-85" class="social-linkedin menu-item menu-item-type-custom menu-item-object-custom menu-item-85"><a target="_blank" href="https://www.linkedin.com/company/kahoot" itemprop="url">LinkedIn</a></li>
-                        <li id="menu-item-84" class="social-instagram menu-item menu-item-type-custom menu-item-object-custom menu-item-84"><a target="_blank" href="https://www.instagram.com/getkahoot/" itemprop="url">Instagram</a></li>
+                    <ul id="menu-follow-us" class="">
+                        <li id="menu-item-86" class="social-facebook menu-item menu-item-type-custom menu-item-object-custom menu-item-86"><a target="_blank" href="https://www.facebook.com/hcmiuiot/?__tn__=kCH-R&eid=ARCLgKWuaUNNh0ov6-tdLCCJdUtJLUO31Q6z39mMbe9iSG9J_u6R2hUHF1YFGGLgXG0RjiFwpYDmFOhN&hc_ref=ARRKAm8j-Mxxat-GAKIJDMWeTjRvjZH3o-9mpVwZ3EMS0H0KRpLk3cEA04SeMC129r8&fref=nf&__xts__[0]=68.ARDhw4nciP7kSuwZR3WqhlNmxs7KSZlnzoQ2V2krAoc72wQacm887LjosfjGgQbw1Nm6eaWSM-lYHWOby0jRMdaxIhb4WASJ4ydfa_aXs4IKGvrdCTdatN16jh3jtpkW_ITICzHyVcK1NIO-y2KG0nPQblI0SNeNP8U4ZLFzA4YALiEY6NsJ5KyhoqNcXctHdGCQW8JsUjS6WTtv0Isk-n4LJasPykWkOWmz5MStVd3gjowYSnxC7BmUofQhtF2799_Wb9dLCJgZTYmeSitbmJ4tr5yPnpRIrWi6DRmyt78IzQalDmz4Gmkrpy6N0eOB6Qafj-x5wyl12E6WDgCJaawd4tza" itemprop="url">Facebook</a></li>
+                        <li id="menu-item-85" class="social-linkedin menu-item menu-item-type-custom menu-item-object-custom menu-item-85"><a target="_blank" href="https://github.com/hcmiuiot" itemprop="url">Github</a></li>
+                        <li id="menu-item-85" class="social-linkedin menu-item menu-item-type-custom menu-item-object-custom menu-item-85"><a target="_blank" href="https://hcmiuiotclub.slack.com/" itemprop="url">Slack</a></li>
+
                     </ul>							</div>
             </nav>
         </div>
-
         <div class="page-footer__base">
 					<span class="copyright">
 					Copyright © 2019, RipWeb! All Rights Reserved.
 					</span>
             <a href="#top" id="to-top" title="back to top">
-                <!-- <img data-lzy-src="https://kahoot.com/wp-content/themes/kahoot2017/assets/img/kahoot-white.svg" src="resources/img/ripweb-white.svg" alt="Kahoot!" class="lzy-loaded">
+                <!-- <img data-lzy-src="https://kahoot.com/wp-content/themes/kahoot2017/assets/img/kahoot-white.svg" src="resources/img/homepage/ripweb-white.svg" alt="Kahoot!" class="lzy-loaded">
              -->
             </a>
         </div>
     </div>
 </footer>
-
-
-
 <script src="resources/js/homepage/jquery-3.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-
-
-
-
-
 <!-- add these only when needed -->
 <div class="modal-overlay"></div>
 <script id="k-functions" src="resources/js/homepage/functions-64617a5349.js"></script>
@@ -1771,15 +1756,7 @@
 
 
 
-
-
-
-
-
-
-
-
-<script type="text/javascript" id="">(function(a,d){function c(a,b){a.prototype[b]=function(){this._q.push([b].concat(Array.prototype.slice.call(arguments,0)));return this}}function h(a){function b(b){a[b]=function(){a._q.push([b].concat(Array.prototype.slice.call(arguments,0)))}}for(var c=0;c<k.length;c++)b(k[c])}var b=a.amplitude||{_q:[],_iq:{}},e=d.createElement("script");e.type="text/javascript";e.async=!0;e.src="https://cdn.amplitude.com/libs/amplitude-4.2.1-min.gz.js";e.onload=function(){a.amplitude.runQueuedFunctions?a.amplitude.runQueuedFunctions():
+<script type="text/javascript" id="">(function(a,d){function c(a,b){a.prototype[b]=function(){this._q.push([b].concat(Array.prototype.slice.call(arguments,0)));return this}}function h(a){function b(b){a[b]=function(){a._q.push([b].concat(Array.prototype.slice.call(arguments,0)))}}for(var c=0;c<k.length;c++)b(k[c])}var b=a.amplitude||{_q:[],_iq:{}},e=d.createElement("script");e.type="text/javascript";e.async=!0;e.src="resources/js/homepage/amplitude-4.2.1-min.gz.js";e.onload=function(){a.amplitude.runQueuedFunctions?a.amplitude.runQueuedFunctions():
     console.log("[Amplitude] Error: could not load SDK")};var f=d.getElementsByTagName("script")[0];f.parentNode.insertBefore(e,f);e=function(){this._q=[];return this};f="add append clearAll prepend set setOnce unset".split(" ");for(var g=0;g<f.length;g++)c(e,f[g]);b.Identify=e;e=function(){this._q=[];return this};f=["setProductId","setQuantity","setPrice","setRevenueType","setEventProperties"];for(g=0;g<f.length;g++)c(e,f[g]);b.Revenue=e;var k="init logEvent logRevenue setUserId setUserProperties setOptOut setVersionName setDomain setDeviceId setGlobalUserProperties identify clearUserProperties setGroup logRevenueV2 regenerateDeviceId logEventWithTimestamp logEventWithGroups setSessionId resetSessionId".split(" ");
     h(b);b.getInstance=function(a){a=(a&&0!==a.length?a:"$default_instance").toLowerCase();b._iq.hasOwnProperty(a)||(b._iq[a]={_q:[]},h(b._iq[a]));return b._iq[a]};a.amplitude=b})(window,document);function getParameterByName(a){a=a.replace(/[\[]/,"\\[").replace(/[\]]/,"\\]");a=new RegExp("[\\?\x26]"+a+"\x3d([^\x26#]*)");a=a.exec(location.search);return null===a?"":decodeURIComponent(a[1].replace(/\+/g," "))}
 function decorateUrl(a,d,c){var h=a.split("#");a=h[0];d="deviceId\x3d"+d;c=c?"\x26sessionId\x3d"+c:"";var b="";var e=-1!=a.indexOf("?")?"\x26":"?";1<h.length&&(b="#"+h[1]);return a.replace(/&+/,"\x26")+e+d+c+b}function addParametersToUrl(a,d,c){a=$(d);a.click(function(a){a.preventDefault();var b=decorateUrl($(this).attr("href"),c.options.deviceId,c.getSessionId());setTimeout(function(){$(this).attr("target")?window.open(b,$(this).attr("target")):location.href=b},google_tag_manager["GTM-WFBWSXS"].macro(1))})}

@@ -9466,7 +9466,6 @@ button.but-on-off:disabled {
 }
 
 .status-bar--header .status-bar__username {
-    display: none;
     -webkit-flex: 1 0 auto;
     -ms-flex: 1 0 auto;
     flex: 1 0 auto;

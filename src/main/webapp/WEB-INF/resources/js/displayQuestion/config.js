@@ -219,7 +219,8 @@ kahoot.theme = {
   },*/
 
   blockingload: function(name) {
-    document.write('<link rel="stylesheet" media="all" type="text/css" id="theme" href="/theme/' + name + '/css/style.css?v' + kahoot.version + '">');
+    // document.write('<link rel="stylesheet" media="all" type="text/css" id="theme" href="/theme/' + name + '/css/style.css?v' + kahoot.version + '">');
+
   },
 
   current: null // theme in use
