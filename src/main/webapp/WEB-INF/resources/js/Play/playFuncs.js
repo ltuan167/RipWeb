@@ -16,7 +16,7 @@ function showScreen(divId) {
     // if (showDiv)
     //     showDiv.style.display = "flex";
 }
-showScreen("pinScreen");
+showScreen("playScreen");
 
 function joinGame() {
     var inputGamePin = document.getElementById('inputGamePin').value;

@@ -2,7 +2,8 @@ function hostStart(gamePIN) {
     var xhttp = new XMLHttpRequest();
     xhttp.open("POST","http://localhost/1.0/game/start?gamePIN=" + gamePIN, true);
     xhttp.onreadystatechange =  () => {
-        console.log(xhttp.response);
+        if (xhttp.readyState == 4)
+            console.log(xhttp.response);
     };
     xhttp.send();
     xhttp.onerror =  (e) => {
@@ -52,7 +53,7 @@ function hostDisplayQuestion() {
                 let playersListHTML = "";
                 let players = msg.content;
                 for (let i = players.length-1; i >= 0; i--) {
-                    playersListHTML += "<li data-functional-selector=\"player\" class=\"\" data-player-id=\"1468176837\"><span class=\"player-name\">"+ players[i].nickname +"</span></li>"
+                    playersListHTML += "<li class=\"list-inline-item tada animated\" style=\"width: auto;color: rgb(255,255,255);height: auto;margin-top: 40px;margin-right: 40px;margin-bottom: 40px;margin-left: 40px;font-family: Comfortaa, cursive;\">"+players[i].nickname+"</li>"
                 }
                 playersList.innerHTML = playersListHTML;
                 document.getElementById("playersCount").innerText = players.length;
@@ -62,9 +63,9 @@ function hostDisplayQuestion() {
                 showScreen("resultScreen");
             }
             if (msg.type == "END_QUESTION") {
-                showScreen("questionResultScreen");
                 chartDataset = msg.content;
                 plotChart();
+                showScreen("questionResultScreen");
             }
         });
     });
@@ -94,25 +95,22 @@ function hostCreatGame(hostQuesId) {
 }
 
 function showScreen(divId) {
-    var divID = ["questionScreen", "resultScreen", "questionResultScreen","playersScreen"];
-    for (var i = 0 ; i < divID.length; i++){
-        let showDiv = document.getElementById(divID[i]);
-        if(divID[i] == divId){
+    let divIDs = ["playersScreen", "questionScreen", "questionResultScreen","resultScreen"];
+    divIDs.forEach((eachDivID) => {
+        let showDiv = document.getElementById(eachDivID);
+        if (divId == eachDivID)
             showDiv.style.display = "block";
-        }
-        else{
+        else
             showDiv.style.display = "none";
-        }
-    }
+    });
 }
-
-// showScreen("questionScreen");
 
 function nextQuestion() {
     var xhttp = new XMLHttpRequest();
     xhttp.open("POST","1.0/game/next?gamePIN="+ gamePIN,true);
-    xhttp.onreadystatechange =() => {
-        console.log(xhttp.response);
+    xhttp.onreadystatechange = () => {
+        if (xhttp.readyState == 4)
+            console.log(xhttp.response);
     };
     xhttp.send();
     xhttp.onerror = () => {
@@ -124,7 +122,8 @@ function hostEndQuestion() {
     var xhttp = new XMLHttpRequest();
     xhttp.open("POST","1.0/game/endquestion?gamePIN="+ gamePIN + "&questionId=" + questionId, true);
     xhttp.onreadystatechange = () => {
-        console.log(xhttp.response);
+        if (xhttp.readyState == 4)
+            console.log(xhttp.response);
     };
     xhttp.send();
     xhttp.onerror = () => {
@@ -191,4 +190,3 @@ function plotChart() {
         }
     });
 }
-showScreen("playersScreen");

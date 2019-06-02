@@ -10,7 +10,7 @@ function generateQuestionBox(image, question, questionId) {
     "    <div class=\"draggable__container\">\n" +
     "    <section class=\"content-block content-block--bg question-content-block content-block--no-image\" data-functional-selector=\"game-block-content-block\">\n" +
     "    <figure class=\"content-block__figure content-block__figure--overlay\"><span class=\"content-block__info content-block__info--text\" data-functional-selector=\"game-block-content-block__info\">"+
-        "<img src='"     +    ((image) ? image : "")   +        "'>" +
+        "<img src='"     +    ((image) ? image : "")   +        "' style='width: 100%;'>" +
         "</span></figure>\n" +
     "<div class=\"content-block__copy\">\n" +
     "    <p class=\"content-block__text\" data-functional-selector=\"game-block-content-block__main\">"+question+"</p>\n" +
@@ -127,7 +127,7 @@ function loadQuestions() {
                 document.getElementById("questionCollectionDescription").innerText = collection.description;
             }
             collection.questions.forEach((question) => {
-                questionsArea.innerHTML += generateQuestionBox(question.imag, question.question, question.id);
+                questionsArea.innerHTML += generateQuestionBox(question.image, question.question, question.id);
             })
         });
     }

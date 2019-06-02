@@ -36,8 +36,8 @@
                         <div class="logo-container">
                             <div class="logo center-block">
                                 <span class="ng-binding">              RipWeb!            </span>          </div>        </div>
-                            <input type="text" id="inputGamePin" ios7fix="" class="username ng-pristine ng-untouched ng-valid ng-empty" ng-class="{invalid: !gamePinValid}" placeholder="Game PIN" ng-model="gameId" shake="badGameId" data-functional-selector="game-pin-input" aria-label="Game pin" ng-change="gameIdChanged()" ng-focus="gameIdFocused()" ng-blur="gameIdUnfocused()">
-                            <input id="inputNickName" ios7fix="" class="username ng-pristine ng-untouched ng-valid ng-empty" ng-class="{invalid: !gamePinValid}" placeholder="Nick name" ng-model="gameId" type="tel" shake="badGameId" data-functional-selector="game-pin-input" aria-label="Game pin" ng-change="gameIdChanged()" ng-focus="gameIdFocused()" ng-blur="gameIdUnfocused()">
+                            <input type="number" id="inputGamePin" ios7fix="" class="username ng-pristine ng-untouched ng-valid ng-empty" ng-class="{invalid: !gamePinValid}" placeholder="Game PIN" ng-model="gameId" shake="badGameId" data-functional-selector="game-pin-input" aria-label="Game pin" ng-change="gameIdChanged()" ng-focus="gameIdFocused()" ng-blur="gameIdUnfocused()">
+                            <input id="inputNickName" ios7fix="" class="username ng-pristine ng-untouched ng-valid ng-empty" ng-class="{invalid: !gamePinValid}" placeholder="Nick name" ng-model="gameId" type="type" shake="badGameId" data-functional-selector="game-pin-input" aria-label="Game pin" ng-change="gameIdChanged()" ng-focus="gameIdFocused()" ng-blur="gameIdUnfocused()">
                             <button onclick="joinGame()" type="submit" class="btn btn-greyscale join ng-binding" blocking="" data-functional-selector="join-button-game-pin">            Enter          </button>
                     </div>
                 </div>
@@ -82,7 +82,7 @@
                 </ul>
             </div>
             <div class="status-bar status-bar--footer ng-scope" ng-if="!isTeamMode">
-                <div class="status-bar__item status-bar__username ng-binding" data-functional-selector="cleaned-username">      dep    </div>  </div>
+                <div class="status-bar__item status-bar__username ng-binding" data-functional-selector="cleaned-username">          </div>  </div>
         </div>
     </div>
 
@@ -115,6 +115,7 @@
                     <button onclick="submitAnswer(1)" style="max-width:100%;max-height:100%;" type="button" role="button" data-functional-selector="answer answer-0" class="card-button card-button--triangle" aria-label="Answer 1">
                     <span class="icon card-button__card-icon">
                         <svg class="icon__svg" data-functional-selector="icon" focusable="false">
+                            <img aria-hidden="true" src="resources/img/displayQuestion/car.png" alt="expand">
                         </svg>
                     </span>
                     </button>
@@ -122,7 +123,7 @@
                     <button onclick="submitAnswer(2)" style="max-width:100%;max-height:100%;" type="button" role="button" data-functional-selector="answer answer-1" class="card-button card-button--diamond" aria-label="Answer 2">
                     <span class="icon card-button__card-icon">
                         <svg class="icon__svg" data-functional-selector="icon" focusable="false">
-
+                            <img aria-hidden="true" src="resources/img/displayQuestion/truck.png" alt="expand">
                         </svg>
                     </span>
                     </button>
@@ -130,7 +131,7 @@
                     <button onclick="submitAnswer(3)" style="max-width:100%;max-height:100%;" type="button" role="button" data-functional-selector="answer answer-2" class="card-button card-button--circle" aria-label="Answer 3">
                     <span class="icon card-button__card-icon">
                         <svg class="icon__svg" data-functional-selector="icon" focusable="false">
-
+                            <img aria-hidden="true" src="resources/img/displayQuestion/airplane.png" alt="expand">
                         </svg>
                     </span>
                     </button>
@@ -138,7 +139,7 @@
                     <button onclick="submitAnswer(4)" style="max-width:100%;max-height:100%;" type="button" role="button" data-functional-selector="answer answer-3" class="card-button card-button--square" aria-label="Answer 4">
                     <span class="icon card-button__card-icon">
                         <svg class="icon__svg" data-functional-selector="icon" focusable="false">
-
+                             <img aria-hidden="true" src="resources/img/displayQuestion/rocket.png" alt="expand">
                         </svg>
                     </span>
                     </button>

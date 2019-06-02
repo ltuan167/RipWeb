@@ -9,15 +9,9 @@
 <!DOCTYPE html>
 <html class="home page-template page-template-page--component-template page-template-page--component-template-php page page-id-3889 background-type--pattern canvas canvastext csscalc svgclippaths flexbox flexboxlegacy no-flexboxtweener fixedsticky-withoutfixedfixed velocity no-touch kahooter has-cookie-msg canvas canvastext csscalc svgclippaths flexbox flexboxlegacy no-flexboxtweener canvas canvastext csscalc svgclippaths flexbox flexboxlegacy no-flexboxtweener canvas canvastext csscalc svgclippaths flexbox flexboxlegacy no-flexboxtweener nav-fixed" data-theme="purple" lang="en"><link type="text/css" id="dark-mode" rel="stylesheet" href=""><style type="text/css" id="dark-mode-custom-style"></style><head><link type="text/css" id="dark-mode" rel="stylesheet" href=""><style type="text/css" id="dark-mode-custom-style"></style><link type="text/css" id="dark-mode" rel="stylesheet" href=""><style type="text/css" id="dark-mode-custom-style"></style><link type="text/css" id="dark-mode" rel="stylesheet" href=""><style type="text/css" id="dark-mode-custom-style"></style><link type="text/css" id="dark-mode" rel="stylesheet" href=""><style type="text/css" id="dark-mode-custom-style"></style>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="98uiE1NNtDmzt6ze17O0naCIZm99GcgkMqvsifyn_fQ">
-
-
-<%--    <link rel="shortcut icon" id="favicon" data-directory="https://kahoot.com/wp-content/themes/kahoot2017/assets/img/" href="resources/icon/favicon.png">--%>
     <link rel="icon" href="resources/icon/favicon.png">
 
     <style>
