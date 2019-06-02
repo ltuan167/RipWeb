@@ -12,6 +12,7 @@ function hostStart(gamePIN) {
 
 var stompClient = null;
 var questionId;
+var chartDataset;
 function hostDisplayQuestion() {
     var socket = new SockJS('/ws');
     stompClient = Stomp.over(socket);
@@ -50,6 +51,8 @@ function hostDisplayQuestion() {
             }
             if (msg.type == "END_QUESTION") {
                 showScreen("questionResultScreen");
+                chartDataset = msg.content;
+                plotChart();
             }
         });
     });
@@ -116,5 +119,58 @@ function hostEndQuestion() {
         console.error(xhttp.statusText);
     };
 }
+
+let numberOfAnswer1;
+let numberOfAnswer2;
+let numberOfAnswer3;
+let numberOfAnswer4;
+
+function plotChart() {
+    numberOfAnswer1 = chartDataset[0];
+    numberOfAnswer2 = chartDataset[1];
+    numberOfAnswer3 = chartDataset[2];
+    numberOfAnswer4 = chartDataset[3];
+    var ctx = document.getElementById("myChart");
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ["Question 1", "Question 2", "Question 3", "Question 4"],
+            datasets: [{
+                label: '#Number of answers',
+                data: chartDataset,
+                backgroundColor: [
+                    'rgb(192,23,51)',
+                    'rgb(19,104,206)',
+                    'rgb(216,158,0)',
+                    'rgba(41,143,13,0.99)',
+                ],
+                borderColor: [
+                    'rgb(192,23,51)',
+                    'rgb(19,104,206)',
+                    'rgb(216,158,0)',
+                    'rgba(41,143,13,0.99)',
+                ],
+                borderWidth: 2
+            }]
+        },
+        options: {
+            responsive: false,
+            scales: {
+                xAxes: [{
+                    ticks: {
+                        maxRotation: 0,
+                        minRotation: 0
+                    }
+                }],
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+}
+
 
 showScreen("playersScreen");
