@@ -16,7 +16,7 @@ function showScreen(divId) {
     // if (showDiv)
     //     showDiv.style.display = "flex";
 }
-showScreen("endScreen");
+showScreen("pinScreen");
 
 function joinGame() {
     var inputGamePin = document.getElementById('inputGamePin').value;
@@ -77,6 +77,5 @@ function submitAnswer(chosenAnswerId) {
     };
 }
 function endGame() {
-
     showScreen("endScreen");
 }

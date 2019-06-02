@@ -2,7 +2,8 @@ function hostStart(gamePIN) {
     var xhttp = new XMLHttpRequest();
     xhttp.open("POST","http://localhost/1.0/game/start?gamePIN=" + gamePIN, true);
     xhttp.onreadystatechange =  () => {
-        console.log(xhttp.response);
+        if (xhttp.readyState == 4)
+            console.log(xhttp.response);
     };
     xhttp.send();
     xhttp.onerror =  (e) => {
@@ -10,9 +11,8 @@ function hostStart(gamePIN) {
     };
 }
 
-var stompClient = null;
-var questionId;
-var chartDataset;
+let correctAnswer, chartDataset, questionId, stompClient = null;
+let answer1, answer2, answer3, answer4;
 function hostDisplayQuestion() {
     var socket = new SockJS('/ws');
     stompClient = Stomp.over(socket);
@@ -28,11 +28,35 @@ function hostDisplayQuestion() {
                     document.getElementById("questionImg").setAttribute("src", question.image);
                 else
                     document.getElementById("questionImg").setAttribute("src", "");
-                document.getElementById("answer1").innerText = question.answer1;
-                document.getElementById("answer2").innerText = question.answer2;
-                document.getElementById("answer3").innerText = question.answer3;
-                document.getElementById("answer4").innerText = question.answer4;
+                answer1 = question.answer1;
+                answer2 = question.answer2;
+                answer3 = question.answer3;
+                answer4 = question.answer4;
+                document.getElementById("answer1").innerText = answer1;
+                document.getElementById("answer2").innerText = answer2;
+                document.getElementById("answer3").innerText = answer3;
+                document.getElementById("answer4").innerText = answer4;
                 document.getElementById("question").innerText = question.question;
+                let numbercorrectAnswer = parseInt(question.correctAnswer);
+                if (numbercorrectAnswer == 1)
+                    correctAnswer = question.answer1;
+                if (numbercorrectAnswer == 2)
+                    correctAnswer = question.answer2;
+                if (numbercorrectAnswer == 3)
+                    correctAnswer = question.answer3;
+                if (numbercorrectAnswer == 4)
+                    correctAnswer = question.answer4;
+
+                setTimer(question.time);
+                countDown((remainsSecond) => {
+                    let minutes = Math.floor(remainsSecond/60);
+                    let seconds = remainsSecond % 60;
+                    document.getElementById("endQuestionBtn").innerHTML = minutes + ":" + seconds;
+                }, () => {
+                    hostEndQuestion();
+                });
+
+
                 showScreen("questionScreen");
             }
             if (msg.type == "NEW_PLAYER") {
@@ -40,7 +64,7 @@ function hostDisplayQuestion() {
                 let playersListHTML = "";
                 let players = msg.content;
                 for (let i = players.length-1; i >= 0; i--) {
-                    playersListHTML += "<li data-functional-selector=\"player\" class=\"\" data-player-id=\"1468176837\"><span class=\"player-name\">"+ players[i].nickname +"</span></li>"
+                    playersListHTML += "<li class=\"list-inline-item tada animated\" style=\"width: auto;color: rgb(255,255,255);height: auto;margin-top: 40px;margin-right: 40px;margin-bottom: 40px;margin-left: 40px;font-family: Comfortaa, cursive;\">"+players[i].nickname+"</li>"
                 }
                 playersList.innerHTML = playersListHTML;
                 document.getElementById("playersCount").innerText = players.length;
@@ -50,9 +74,9 @@ function hostDisplayQuestion() {
                 showScreen("resultScreen");
             }
             if (msg.type == "END_QUESTION") {
-                showScreen("questionResultScreen");
                 chartDataset = msg.content;
                 plotChart();
+                showScreen("questionResultScreen");
             }
         });
     });
@@ -82,25 +106,22 @@ function hostCreatGame(hostQuesId) {
 }
 
 function showScreen(divId) {
-    var divID = ["questionScreen", "resultScreen", "questionResultScreen","playersScreen"];
-    for (var i = 0 ; i < divID.length; i++){
-        let showDiv = document.getElementById(divID[i]);
-        if(divID[i] == divId){
+    let divIDs = ["playersScreen", "questionScreen", "questionResultScreen","resultScreen"];
+    divIDs.forEach((eachDivID) => {
+        let showDiv = document.getElementById(eachDivID);
+        if (divId == eachDivID)
             showDiv.style.display = "block";
-        }
-        else{
+        else
             showDiv.style.display = "none";
-        }
-    }
+    });
 }
-
-// showScreen("questionScreen");
 
 function nextQuestion() {
     var xhttp = new XMLHttpRequest();
     xhttp.open("POST","1.0/game/next?gamePIN="+ gamePIN,true);
-    xhttp.onreadystatechange =() => {
-        console.log(xhttp.response);
+    xhttp.onreadystatechange = () => {
+        if (xhttp.readyState == 4)
+            console.log(xhttp.response);
     };
     xhttp.send();
     xhttp.onerror = () => {
@@ -112,7 +133,8 @@ function hostEndQuestion() {
     var xhttp = new XMLHttpRequest();
     xhttp.open("POST","1.0/game/endquestion?gamePIN="+ gamePIN + "&questionId=" + questionId, true);
     xhttp.onreadystatechange = () => {
-        console.log(xhttp.response);
+        if (xhttp.readyState == 4)
+            console.log(xhttp.response);
     };
     xhttp.send();
     xhttp.onerror = () => {
@@ -120,29 +142,25 @@ function hostEndQuestion() {
     };
 }
 
-let numberOfAnswer1;
-let numberOfAnswer2;
-let numberOfAnswer3;
-let numberOfAnswer4;
-
+var myChart;
 function plotChart() {
-    numberOfAnswer1 = chartDataset[0];
-    numberOfAnswer2 = chartDataset[1];
-    numberOfAnswer3 = chartDataset[2];
-    numberOfAnswer4 = chartDataset[3];
+    if (myChart){
+        myChart.destroy();
+    }
+    document.getElementById("correctAnswer").innerText = correctAnswer;
     var ctx = document.getElementById("myChart");
-    var myChart = new Chart(ctx, {
+    myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ["Question 1", "Question 2", "Question 3", "Question 4"],
+            labels: [answer1, answer2, answer3, answer4],
             datasets: [{
                 label: '#Number of answers',
                 data: chartDataset,
                 backgroundColor: [
-                    'rgb(192,23,51)',
-                    'rgb(19,104,206)',
-                    'rgb(216,158,0)',
-                    'rgba(41,143,13,0.99)',
+                    'rgba(192,23,51,0.65)',
+                    'rgba(19,104,206,0.65)',
+                    'rgba(216,158,0,0.65)',
+                    'rgba(41,143,13,0.65)',
                 ],
                 borderColor: [
                     'rgb(192,23,51)',
@@ -154,23 +172,32 @@ function plotChart() {
             }]
         },
         options: {
-            responsive: false,
+            legend: {
+                labels: {
+                    fontColor: "#000000",
+                    fontSize: 15,
+                }
+            },
+            responsive: true,
             scales: {
                 xAxes: [{
                     ticks: {
-                        maxRotation: 0,
-                        minRotation: 0
+                        maxRotation:  0,
+                        minRotation:  0,
+                        fontFamily: "Helvetica",
+                        fontSize:"15",
+                        fontColor:"#000000"
                     }
                 }],
                 yAxes: [{
                     ticks: {
-                        beginAtZero: true
+                        beginAtZero: true,
+                        fontFamily: "Helvetica",
+                        fontSize: "15",
+                        fontColor:"#000000"
                     }
                 }]
             }
         }
     });
 }
-
-
-showScreen("playersScreen");

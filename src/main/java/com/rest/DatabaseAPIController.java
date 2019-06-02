@@ -38,6 +38,14 @@ public class DatabaseAPIController {
 		return null;
 	}
 
+	@GetMapping(value = "/collection/list", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ApiResponse getAllCollections() {
+		ApiResponse response = new ApiResponse();
+		response.setType(ApiResponse.ApiResponseType.OK);
+		response.setContent(questionCollectionDAO.getAllQuestionCollections());
+		return response;
+	}
+
 }
 
 //class QuestionCollectionResponse {
