@@ -2562,37 +2562,37 @@ var _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator 
  */
 (function(e) {
     "use strict";
-    e.fn.fitVids = function(t) {
-        var a = {
-            customSelector: null,
-            ignore: null
-        };
-        if (!document.getElementById("fit-vids-style")) {
-            var r = document.head || document.getElementsByTagName("head")[0],
-                i = document.createElement("div");
-            i.innerHTML = "<p>x</p><style id=\"fit-vids-style\">" + ".fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}" + "</style>", r.appendChild(i.childNodes[1])
-        }
-        return t && e.extend(a, t), this.each(function() {
-            var t = ["iframe[src*=\"player.vimeo.com\"]", "iframe[src*=\"youtube.com\"]", "iframe[src*=\"youtube-nocookie.com\"]", "iframe[src*=\"kickstarter.com\"][src*=\"video.html\"]", "object", "embed"];
-            a.customSelector && t.push(a.customSelector);
-            var r = ".fitvidsignore";
-            a.ignore && (r = r + ", " + a.ignore);
-            var i = e(this).find(t.join(","));
-            i = i.not("object object"), i = i.not(r), i.each(function() {
-                var t = e(this);
-                if (!(0 < t.parents(r).length) && !("embed" === this.tagName.toLowerCase() && t.parent("object").length || t.parent(".fluid-width-video-wrapper").length)) {
-                    !t.css("height") && !t.css("width") && (isNaN(t.attr("height")) || isNaN(t.attr("width"))) && (t.attr("height", 9), t.attr("width", 16));
-                    var a = "object" === this.tagName.toLowerCase() || t.attr("height") && !isNaN(parseInt(t.attr("height"), 10)) ? parseInt(t.attr("height"), 10) : t.height(),
-                        i = isNaN(parseInt(t.attr("width"), 10)) ? t.width() : parseInt(t.attr("width"), 10);
-                    if (!t.attr("name")) {
-                        var n = "fitvid" + e.fn.fitVids._count;
-                        t.attr("name", n), e.fn.fitVids._count++
-                    }
-                    t.wrap("<div class=\"fluid-width-video-wrapper\"></div>").parent(".fluid-width-video-wrapper").css("padding-top", 100 * (a / i) + "%"), t.removeAttr("height").removeAttr("width")
-                }
-            })
-        })
-    }, e.fn.fitVids._count = 0
+    //  e.fn.fitVids = function(t) {
+    //     var a = {
+    //         customSelector: null,
+    //         ignore: null
+    //     };
+    //     if (!document.getElementById("fit-vids-style")) {
+    //         var r = document.head || document.getElementsByTagName("head")[0],
+    //             i = document.createElement("div");
+    //         i.innerHTML = "<p>x</p><style id=\"fit-vids-style\">" + ".fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}" + "</style>", r.appendChild(i.childNodes[1])
+    //     }
+    //     return t && e.extend(a, t), this.each(function() {
+    //         var t = ["iframe[src*=\"player.vimeo.com\"]", "iframe[src*=\"youtube.com\"]", "iframe[src*=\"youtube-nocookie.com\"]", "iframe[src*=\"kickstarter.com\"][src*=\"video.html\"]", "object", "embed"];
+    //         a.customSelector && t.push(a.customSelector);
+    //         var r = ".fitvidsignore";
+    //         a.ignore && (r = r + ", " + a.ignore);
+    //         var i = e(this).find(t.join(","));
+    //         i = i.not("object object"), i = i.not(r), i.each(function() {
+    //             var t = e(this);
+    //             if (!(0 < t.parents(r).length) && !("embed" === this.tagName.toLowerCase() && t.parent("object").length || t.parent(".fluid-width-video-wrapper").length)) {
+    //                 !t.css("height") && !t.css("width") && (isNaN(t.attr("height")) || isNaN(t.attr("width"))) && (t.attr("height", 9), t.attr("width", 16));
+    //                 var a = "object" === this.tagName.toLowerCase() || t.attr("height") && !isNaN(parseInt(t.attr("height"), 10)) ? parseInt(t.attr("height"), 10) : t.height(),
+    //                     i = isNaN(parseInt(t.attr("width"), 10)) ? t.width() : parseInt(t.attr("width"), 10);
+    //                 if (!t.attr("name")) {
+    //                     var n = "fitvid" + e.fn.fitVids._count;
+    //                     t.attr("name", n), e.fn.fitVids._count++
+    //                 }
+    //                 t.wrap("<div class=\"fluid-width-video-wrapper\"></div>").parent(".fluid-width-video-wrapper").css("padding-top", 100 * (a / i) + "%"), t.removeAttr("height").removeAttr("width")
+    //             }
+    //         })
+    //     })
+    // }, e.fn.fitVids._count = 0
 })(window.jQuery || window.Zepto), ! function(O, V, D) {
     function Y(a, r) {
         return ("undefined" == typeof a ? "undefined" : _typeof(a)) === r
@@ -3095,12 +3095,14 @@ var _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator 
         if ("object" === ("undefined" == typeof e ? "undefined" : _typeof(e)) || !e) return n.init.call(n, this);
         throw new Error("Method `" + e + "` does not exist on jQuery.fixedsticky")
     }, e.FixedFixed || t(e.document.documentElement).addClass(n.classes.withoutFixedFixed)
-})(window, jQuery), "use strict", $.fn.nextThrough = function(e) {
-    var t = $(this).last(),
-        a = $(e).add(t),
-        r = a.index(t);
-    return a.length == r ? $() : a.eq(r + 1)
-}, String.prototype.includes || (String.prototype.includes = function(e, t) {
+})
+// (window, jQuery), "use strict", $.fn.nextThrough = function(e) {
+//     var t = $(this).last(),
+//         a = $(e).add(t),
+//         r = a.index(t);
+//     return a.length == r ? $() : a.eq(r + 1)
+// }
+, String.prototype.includes || (String.prototype.includes = function(e, t) {
     return "number" != typeof t && (t = 0), !(t + e.length > this.length) && -1 !== this.indexOf(e, t)
 }), "NodeList" in window && !NodeList.prototype.forEach && (console.info("polyfill for IE11"), NodeList.prototype.forEach = function(e, t) {
     t = t || window;
