@@ -121,7 +121,7 @@ public class GameAPIController {
 			Integer[] submittedCount = game.endQuestion(questionId);
 			if (submittedCount != null) {
 				endQuestionResponse.setType(GameApiResponse.GameCommandType.OK);
-				endQuestionResponse.setContent(submittedCount);
+//				endQuestionResponse.setContent(submittedCount);
 				res.setStatus(HttpServletResponse.SC_OK);
 			}
 		}

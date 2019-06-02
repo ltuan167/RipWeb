@@ -148,6 +148,8 @@ public class Game implements Comparable<Game> {
 		WsMessage endQuestionMsg = new WsMessage();
 		endQuestionMsg.setType(WsMessage.WsMessageType.END_QUESTION);
 		broadcastMsg(endQuestionMsg);
+		endQuestionMsg.setContent(submittedCount);
+		sendMsg2Host(endQuestionMsg);
 		return submittedCount;
 	}
 

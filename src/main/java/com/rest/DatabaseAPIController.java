@@ -26,7 +26,8 @@ public class DatabaseAPIController {
 	@GetMapping(value = "/collection/get", produces = MediaType.APPLICATION_JSON_VALUE)
 	public Set<QuestionCollection> getQuestionCollectionById(@RequestParam String email, HttpServletRequest req, HttpServletResponse res) {
 		User user = userDAO.getUserByEmail(email);
-		if (user != null)
+//		if (user != null)
+		return null;
 //			Set<QuestionCollection> setOfQuestionCollections = user.getQuestionCollections();
 	}
 
