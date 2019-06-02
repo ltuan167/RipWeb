@@ -12,6 +12,7 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <title>Ripweb! | Play this quiz now!</title>
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Luckiest+Guy">
@@ -35,7 +36,7 @@
 </noscript>
 
 <div id="playersScreen" class="container-fluid jello animated" style="width: 100vw;height: 100vh;padding-left: 0px;padding-right: 0px;background-color: #e28c05;">
-    <select placeholder="Question collection name" id="hostQuesId">--%>
+    <select class="dropdown dropdown-list" placeholder="Question collection name" id="hostQuesId">
         <script>
             $.get("http://localhost/1.0/db/collection/list", (data) => {
                 let collections = data.content;
@@ -47,8 +48,8 @@
             });
         </script>
     </select>
-    <button onclick="hostCreatGame(document.getElementById('hostQuesId').value)">CREATE</button>
-    <button onclick="hostStart(gamePIN)">START</button>
+    <button class="btn btn-primary" onclick="hostCreatGame(document.getElementById('hostQuesId').value)">CREATE</button>
+    <button class="btn btn-secondary" onclick="hostStart(gamePIN)">START</button>
     <div class="row d-flex d-xl-flex align-items-xl-center" style="width: 100%;height: 20%;margin-right: 0;background-color: #fbfbfb;margin-left: 0;">
         <div class="col" style="width: 100%;height: 100%;padding-top: 15px;">
             <div style="width: 100%;height: 100%;">
