@@ -125,7 +125,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.bundle.min.js"></script>
 
-
 <script>
     // myAudio = new Audio("resources/js/remix.ogg");
     myAudio = new Audio("resources/js/chaulenba.mp3");
@@ -135,7 +134,6 @@
     }, false);
     myAudio.play();
 </script>
-
 
 </body>
 </html>
