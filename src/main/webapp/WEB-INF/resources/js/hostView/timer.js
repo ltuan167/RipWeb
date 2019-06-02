@@ -14,8 +14,8 @@ function countDown(onCountDown, onEnd) {
         return;
     if (remainSecond > 0)
         setTimeout(() => {
-            onCountDown(remainSecond);
             remainSecond--; // count down
+            onCountDown(remainSecond);
             countDown(onCountDown, onEnd)
         }, 1000);
     else

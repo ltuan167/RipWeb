@@ -67,7 +67,7 @@ function hostDisplayQuestion() {
                 let playersListHTML = "";
                 let players = msg.content;
                 for (let i = players.length-1; i >= 0; i--) {
-                    if (i != 0)
+                    if (i != 0 || players.length == 1)
                         playersListHTML += "<li class=\"list-inline-item tada animated\" style=\"width: auto;color: rgb(255,255,255);height: auto;margin-top: 40px;margin-right: 40px;margin-bottom: 40px;margin-left: 40px;font-family: Comfortaa, cursive;\">"+players[i].nickname+"</li>";
                     else
                         playersListHTML += "<li class=\"list-inline-item\" style=\"width: auto;color: rgb(255,255,255);height: auto;margin-top: 40px;margin-right: 40px;margin-bottom: 40px;margin-left: 40px;font-family: Comfortaa, cursive;\">"+players[i].nickname+"</li>";
@@ -82,8 +82,8 @@ function hostDisplayQuestion() {
                 document.getElementById("nextQuestionBtn").innerHTML = "SHOW RESULT!";
                 endplayers = msg.content;
                 endplayers.forEach((endplayer) => {
-                    endscores += endplayer.score + ' ';
-                    endNickName += endplayer.nickname + ' ';
+                    endscores.push(endplayer.score);
+                    endNickName.push(endplayer.nickname);
                 });
                 console.log("endplayers: " + endscores);
                 console.log("endnickname: " + endNickName);
@@ -234,10 +234,10 @@ function plotEndGameChart() {
     endGameChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: endNickName.split(' '),
+            labels: endNickName,
             datasets: [{
-                label: '#Number of players',
-                data: endscores.split(' '),
+                label: '#Score',
+                data: endscores,
                 backgroundColor: [
                     'rgba(192,23,51,0.65)',
                     'rgba(19,104,206,0.65)',
@@ -279,6 +279,12 @@ function plotEndGameChart() {
                         fontColor:"#000000"
                     }
                 }]
+            }
+        },
+        plugins: {
+            datalabels: {
+                display: true,
+                color: "#000000",
             }
         }
     });
