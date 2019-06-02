@@ -128,10 +128,10 @@
 
 <script>
     // myAudio = new Audio("resources/js/remix.ogg");
-    myAudio = new Audio('https://cf-media.sndcdn.com/c4JphYAv3ps3.128.mp3?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovL2NmLW1lZGlhLnNuZGNkbi5jb20vYzRKcGhZQXYzcHMzLjEyOC5tcDMiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE1NTk0OTAxMjR9fX1dfQ__&Signature=foakVZLEOqm22~B72aBwkIFbvs1I4VmUcFhFawJjnlZ2n9Vu-KYQRd9BXNxh410J3Z5zPMv11YxaKij7N3~Q5VEefN0QcthbzEXjSvpZM0R1ubXa~-M62D0hNkNi688oE-eX4Y6BH2YHAE2vzTTODz2-0MeXUKv25nmztb4eWIEVZsnz3-TiDnKh7Do7-3ecTMKFRMF0uc4VGCUFPxrBzTvbiN2-~y0JPZus1IvLvMJTshFtrxRWVizUvFduOCqGCHUgqIy9fm6clTf7Yoj-yH3HGuJE92qxnJofjTvtVGS52KkJcm2zQtMsJIDdX5teCLUjFYLiixZ9XWxmBh9YvQ__&Key-Pair-Id=APKAI6TU7MMXM5DG6EPQ');
-    myAudio.addEventListener('ended', function(a) {
-        a.currentTime = 0;
-        a.play();
+    myAudio = new Audio("resources/js/chaulenba.mp3");
+    myAudio.addEventListener('ended', function() {
+        this.currentTime = 0;
+        this.play();
     }, false);
     myAudio.play();
 </script>
