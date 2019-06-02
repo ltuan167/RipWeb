@@ -38,6 +38,9 @@ function hostDisplayQuestion() {
                 playersList.innerHTML = playersListHTML;
                 document.getElementById("playersCount").innerText = players.length;
             }
+            if ((msg.type == "END_GAME")) {
+                // show result
+            }
         });
     });
     stompClient.onerror = () => {
@@ -80,6 +83,16 @@ function showScreen(divId) {
 
 // showScreen("questionScreen");
 
-
+function nextQuestion() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("POST","1.0/game/next?gamePIN="+ gamePIN,true);
+    xhttp.onreadystatechange =() => {
+        console.log(xhttp.response);
+    };
+    xhttp.send();
+    xhttp.onerror = () => {
+        console.error(xhttp.statusText);
+    };
+}
 
 

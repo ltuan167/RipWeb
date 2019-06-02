@@ -78,7 +78,6 @@
             <div class="screen__main instructions" ng-class="{'screen__main--instructions-team-mode': isTeamMode}">
                 <h1 class="ng-binding">      You're in!    </h1>
                 <h2 class="instructions__subheader ng-binding">      See your nickname onscreen?    </h2>
-                <button onclick="nextQuestion()">Next Question</button>
                 <ul class="players__members-list ng-hide" ng-show="isTeamMode">
                 </ul>
             </div>
@@ -188,7 +187,6 @@
                 <!-- end ngIf: showStatusBarScore -->
             </div>
             <button onclick="endGame()">End Game</button>
-            <button onclick="nextQuestion()">Next Question</button>
             <div class="screen__main screen__main--gutter-none selectanswer">
                 <div class="answerFeedback animated-background animated-background--fast">
                     <div class="spinner">      </div>

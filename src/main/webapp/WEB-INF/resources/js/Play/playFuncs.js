@@ -48,16 +48,13 @@ function joinGame() {
         console.error(xhttp.statusText);
     };
 }
-function nextQuestion() {
-    showScreen("playScreen");
-}
 
 var questionid ;
 function submitAnswer(chosenAnswerId) {
     var inputGamePin = document.getElementById('inputGamePin').value;
     var xhttp = new XMLHttpRequest();
     xhttp.open("POST", "1.0/game/submit?gamePIN=" + inputGamePin + "&questionId="+questionid+"&chooseAnswerId=" + chosenAnswerId, true);
-    xhttp.onreadystatechange = function() {
+    xhttp.onreadystatechange = () => {
         if ( xhttp.readyState == "4" ) {
             var res = JSON.parse(xhttp.response);
             console.log("Type: " + res.type);
@@ -75,7 +72,7 @@ function submitAnswer(chosenAnswerId) {
         }
     };
     xhttp.send();
-    xhttp.onerror =  (e) => {
+    xhttp.onerror =  () => {
         console.error(xhttp.statusText);
     };
 }
