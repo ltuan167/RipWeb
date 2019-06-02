@@ -101,7 +101,7 @@ public class GameAPIController {
 		Game game = GameManager.getInstance().getGameByPIN(gamePIN);
 		if (game != null) {
 			int score = game.validateAnswerAndGetScore(req.getSession().getId(), questionId, chooseAnswerId);
-			game.checkAllPlayerSubmitted();
+			game.checkAllPlayerSubmitted(questionId);
 			if (score >= 0) {
 				submittedResponse.setType(GameApiResponse.GameCommandType.SUBMIT_ACCEPTED);
 				submittedResponse.setContent(score);
@@ -118,8 +118,10 @@ public class GameAPIController {
 		GameApiResponse endQuestionResponse = new GameApiResponse();
 		Game game = GameManager.getInstance().getGameByPIN(gamePIN);
 		if (game != null) {
-			if (game.endQuestion() == true) {
+			Integer[] submittedCount = game.endQuestion(questionId);
+			if (submittedCount != null) {
 				endQuestionResponse.setType(GameApiResponse.GameCommandType.OK);
+				endQuestionResponse.setContent(submittedCount);
 				res.setStatus(HttpServletResponse.SC_OK);
 			}
 		}
