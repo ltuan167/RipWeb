@@ -1388,7 +1388,7 @@ input[type=search] {
     box-sizing: content-box;
     -webkit-appearance: textfield;
     -moz-appearance: textfield;
-    appearance: textfield
+    /*appearance: textfield;*/
 }
 
 .alert,
@@ -3080,7 +3080,7 @@ table .span24 {
 .icon-white,
 .nav>.active>a>[class*=" icon-"],
 .nav>.active>a>[class^=icon-] {
-    background-image: url(../img/glyphicons-halflings-white.png)
+    /*background-image: url(../img/glyphicons-halflings-white.png)*/
 }
 
 .icon-adjust,
@@ -3205,7 +3205,7 @@ table .span24 {
     height: 14px;
     line-height: 14px;
     vertical-align: text-top;
-    background-image: url(../img/glyphicons-halflings.png);
+    /*background-image: url(../img/glyphicons-halflings.png);*/
     background-repeat: no-repeat;
     margin-top: 1px
 }
@@ -6311,7 +6311,7 @@ a.label:hover {
 .counter,
 .gameover .correctCount .icon,
 .gameover .incorrectCount .icon {
-    background-image: url(../img/sprites.png);
+    /*background-image: url(../../img/sprites.png);*/
     background-repeat: no-repeat
 }
 
@@ -8461,33 +8461,33 @@ input.username.invalid.placeholder {
     color: #f9a!important
 }
 
-.bgcolorFrames 0% {
-    background-color: #45a3e5
-}
+/*.bgcolorFrames 0% {*/
+/*    background-color: #45a3e5*/
+/*}*/
 
-.bgcolorFrames 17% {
-    background-color: #3cc
-}
+/*.bgcolorFrames 17% {*/
+/*    background-color: #3cc*/
+/*}*/
 
-.bgcolorFrames 34% {
-    background-color: #66bf39
-}
+/*.bgcolorFrames 34% {*/
+/*    background-color: #66bf39*/
+/*}*/
 
-.bgcolorFrames 51% {
-    background-color: #ffa602
-}
+/*.bgcolorFrames 51% {*/
+/*    background-color: #ffa602*/
+/*}*/
 
-.bgcolorFrames 67% {
-    background-color: #eb670f
-}
+/*.bgcolorFrames 67% {*/
+/*    background-color: #eb670f*/
+/*}*/
 
-.bgcolorFrames 84% {
-    background-color: #f35
-}
+/*.bgcolorFrames 84% {*/
+/*    background-color: #f35*/
+/*}*/
 
-.bgcolorFrames 100% {
-    background-color: #864cbf
-}
+/*.bgcolorFrames 100% {*/
+/*    background-color: #864cbf*/
+/*}*/
 
 @keyframes bgcolor {
     0% {
@@ -9776,7 +9776,7 @@ button.but-on-off:disabled {
     -ms-flex-direction: column;
     flex-direction: column;
     -webkit-justify-content: space-around;
-    -ms-flex-pack: distribute;
+    /*-ms-flex-pack: distribute;*/
     justify-content: space-around;
     -webkit-align-items: center;
     -ms-flex-align: center;
@@ -12669,7 +12669,7 @@ button.answer.reactionB .answer-button-inner-wrapper {
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
     flex-direction: row;
-    box-shadow: 0 .125rem .25rem 0 0 rgba(0, 0, 0, .15);
+    /*box-shadow: 0 .125rem .25rem 0 0 rgba(0, 0, 0, .15);*/
     transition: box-shadow 250ms ease-in-out
 }
 

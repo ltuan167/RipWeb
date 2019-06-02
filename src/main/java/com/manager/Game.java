@@ -117,11 +117,11 @@ public class Game implements Comparable<Game> {
 
 	private boolean broadcastMsg(Object msg2broadcast) {
 		try {
-			System.out.println("Game WS Topic: " + gameWsTopic);
+//			System.out.println("Game WS Topic: " + gameWsTopic);
 			msg.convertAndSend(gameWsTopic, msg2broadcast);
 			return true;
 		} catch (Exception e) {
-			System.err.println("[broadcastMsg]" + e.getMessage());
+//			System.err.println("[broadcastMsg]" + e.getMessage());
 			return false;
 		}
 	}

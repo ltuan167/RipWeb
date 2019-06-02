@@ -296,7 +296,7 @@ h4 {
 
 .react-component .grid--justify-around {
     -webkit-justify-content: space-around;
-    -ms-flex-pack: distribute;
+    /*-ms-flex-pack: distribute;*/
     justify-content: space-around
 }
 
@@ -3240,14 +3240,14 @@ input[type=submit] {
     cursor: pointer;
     -webkit-appearance: button;
     -moz-appearance: button;
-    appearance: button
+    /*appearance: button*/
 }
 
 input[type=search] {
     box-sizing: content-box;
     -webkit-appearance: textfield;
     -moz-appearance: textfield;
-    appearance: textfield
+    /*appearance: textfield*/
 }
 
 .btn-block,
@@ -4972,7 +4972,7 @@ table .span24 {
 .icon-white,
 .nav>.active>a>[class*=" icon-"],
 .nav>.active>a>[class^=icon-] {
-    background-image: url(../img/glyphicons-halflings-white.png)
+    /*background-image: url(../img/glyphicons-halflings-white.png)*/
 }
 
 .icon-adjust,
@@ -5088,7 +5088,7 @@ table .span24 {
     height: 14px;
     line-height: 14px;
     vertical-align: text-top;
-    background-image: url(../img/glyphicons-halflings.png);
+    /*background-image: url(../img/glyphicons-halflings.png);*/
     background-repeat: no-repeat;
     margin-top: 1px
 }
@@ -5369,7 +5369,7 @@ table .span24 {
     height: 14px;
     line-height: 14px;
     vertical-align: text-top;
-    background-image: url(../img/glyphicons-halflings.png);
+    /*background-image: url(../img/glyphicons-halflings.png);*/
     background-repeat: no-repeat;
     margin-top: 1px;
     background-position: -336px -48px
@@ -5662,7 +5662,7 @@ table .span24 {
     height: 14px;
     line-height: 14px;
     vertical-align: text-top;
-    background-image: url(../img/glyphicons-halflings.png);
+    /*background-image: url(../img/glyphicons-halflings.png);*/
     background-repeat: no-repeat;
     margin-top: 1px
 }
@@ -5700,7 +5700,7 @@ table .span24 {
     height: 14px;
     line-height: 14px;
     vertical-align: text-top;
-    background-image: url(../img/glyphicons-halflings.png);
+    /*background-image: url(../img/glyphicons-halflings.png);*/
     background-repeat: no-repeat;
     margin-top: 1px;
     background-position: -408px -120px;
@@ -5732,7 +5732,7 @@ table .span24 {
     height: 14px;
     line-height: 14px;
     vertical-align: text-top;
-    background-image: url(../img/glyphicons-halflings.png);
+    /*background-image: url(../img/glyphicons-halflings.png);*/
     background-repeat: no-repeat;
     margin-top: 1px;
     display: inline-block
@@ -5784,7 +5784,7 @@ table .span24 {
     height: 14px;
     line-height: 14px;
     vertical-align: text-top;
-    background-image: url(../img/glyphicons-halflings.png);
+    /*background-image: url(../img/glyphicons-halflings.png);*/
     background-repeat: no-repeat;
     margin-top: 1px;
     background-position: -192px -144px
@@ -8253,7 +8253,7 @@ html {
 .counter,
 .scoreboard .correctIcon,
 .timer {
-    background-image: url(../img/sprites.png)
+    /*background-image: url(../img/sprites.png)*/
 }
 
 .correctCount .icon,
@@ -8881,7 +8881,7 @@ button.incorrect {
 }
 
 .new:after {
-    content: url(/shared/theme/kahoot/img/icn_ribbon.svg);
+    /*content: url(/shared/theme/kahoot/img/icn_ribbon.svg);*/
     position: absolute;
     top: -2px;
     right: -2px;
@@ -8923,7 +8923,7 @@ h6 {
 }
 
 .ghostmode-cta a:before {
-    content: url(/shared/theme/kahoot/img/icn_arrow.svg);
+    /*content: url(/shared/theme/kahoot/img/icn_arrow.svg);*/
     position: absolute;
     top: -5px;
     left: -30px;
@@ -9421,7 +9421,7 @@ button:focus {
 }
 
 .kick-player-style:after {
-    content: url(/shared/theme/kahoot/img/icn_kick_sml.svg);
+    /*content: url(/shared/theme/kahoot/img/icn_kick_sml.svg);*/
     display: inline-block;
     height: 20px;
     width: 20px;
@@ -9629,7 +9629,7 @@ button[fullscreen] .fullscreen-button__label {
 }
 
 .btn.white .icon-fullscreen {
-    background-image: url(../img/sprites.png);
+    /*background-image: url(../img/sprites.png);*/
     background-position: -188px -570px
 }
 
@@ -9756,7 +9756,7 @@ h4.withBackground {
 }
 
 .lobby.valignwrapper.wifi {
-    background-image: url(../img/wifi-bar-bottom.svg);
+    /*background-image: url(../img/wifi-bar-bottom.svg);*/
     background-position: center 48px;
     background-repeat: no-repeat
 }
@@ -9781,7 +9781,7 @@ h4.withBackground {
 }
 
 .joinNow .stepGraphic {
-    background-image: url(../img/sprites.png);
+    /*background-image: url(../img/sprites.png);*/
     background-repeat: no-repeat;
     width: 280px;
     height: 125px
@@ -9873,12 +9873,12 @@ h4.withBackground {
 }
 
 .statusbar.lobby.ghostmode {
-    background-image: url(/shared/theme/kahoot/img/icn_ghost_mode_kahoot_logo.svg)
+    /*background-image: url(/shared/theme/kahoot/img/icn_ghost_mode_kahoot_logo.svg)*/
 }
 
 .statusbar.lobby.teammode {
     height: 5.75rem;
-    background-image: url(/shared/theme/kahoot/img/icn_kahoot_logo_team_mode.svg)
+    /*background-image: url(/shared/theme/kahoot/img/icn_kahoot_logo_team_mode.svg)*/
 }
 
 .isOrg .statusbar.lobby,
@@ -9891,7 +9891,7 @@ h4.withBackground {
     position: fixed;
     right: 42px;
     bottom: 13px;
-    background: url(/shared/theme/kahoot/img/icn_kahoot_logo.svg) center/contain no-repeat;
+    /*background: url(/shared/theme/kahoot/img/icn_kahoot_logo.svg) center/contain no-repeat;*/
     width: 129px;
     height: 50px;
     opacity: .7;
@@ -10144,22 +10144,22 @@ h4.withBackground {
 }
 
 .scoreboard .scoreboardtitle.answerA {
-    background-image: url(/shared/theme/kahoot/img/icn_controller_triangle.svg);
+    /*background-image: url(/shared/theme/kahoot/img/icn_controller_triangle.svg);*/
     background-color: #e21b3c
 }
 
 .scoreboard .scoreboardtitle.answerB {
-    background-image: url(/shared/theme/kahoot/img/icn_controller_diamond.svg);
+    /*background-image: url(/shared/theme/kahoot/img/icn_controller_diamond.svg);*/
     background-color: #1368ce
 }
 
 .scoreboard .scoreboardtitle.answerC {
-    background-image: url(/shared/theme/kahoot/img/icn_controller_circle.svg);
+    /*background-image: url(/shared/theme/kahoot/img/icn_controller_circle.svg);*/
     background-color: #d89e00
 }
 
 .scoreboard .scoreboardtitle.answerD {
-    background-image: url(/shared/theme/kahoot/img/icn_controller_square.svg);
+    /*background-image: url(/shared/theme/kahoot/img/icn_controller_square.svg);*/
     background-color: #26890c
 }
 
@@ -10174,7 +10174,7 @@ h4.withBackground {
 }
 
 .scoreboard .result .choicelabel.answerA {
-    background-image: url(/shared/theme/kahoot/img/icn_controller_triangle.svg);
+    /*background-image: url(/shared/theme/kahoot/img/icn_controller_triangle.svg);*/
     background-color: #e21b3c
 }
 
@@ -10183,7 +10183,7 @@ h4.withBackground {
 }
 
 .scoreboard .result .choicelabel.answerB {
-    background-image: url(/shared/theme/kahoot/img/icn_controller_diamond.svg);
+    /*background-image: url(/shared/theme/kahoot/img/icn_controller_diamond.svg);*/
     background-color: #1368ce
 }
 
@@ -10192,7 +10192,7 @@ h4.withBackground {
 }
 
 .scoreboard .result .choicelabel.answerC {
-    background-image: url(/shared/theme/kahoot/img/icn_controller_circle.svg);
+    /*background-image: url(/shared/theme/kahoot/img/icn_controller_circle.svg);*/
     background-color: #d89e00
 }
 
@@ -10201,7 +10201,7 @@ h4.withBackground {
 }
 
 .scoreboard .result .choicelabel.answerD {
-    background-image: url(/shared/theme/kahoot/img/icn_controller_square.svg);
+    /*background-image: url(/shared/theme/kahoot/img/icn_controller_square.svg);*/
     background-color: #26890c
 }
 
@@ -10226,7 +10226,7 @@ h4.withBackground {
 }
 
 .scoreboard .result .choicetotal.answerA .correctIcon {
-    background-image: url(/shared/theme/kahoot/img/icn_tick_red.svg)
+    /*background-image: url(/shared/theme/kahoot/img/icn_tick_red.svg)*/
 }
 
 .scoreboard .result .choicetotal.answerB {
@@ -10234,7 +10234,7 @@ h4.withBackground {
 }
 
 .scoreboard .result .choicetotal.answerB .correctIcon {
-    background-image: url(/shared/theme/kahoot/img/icn_tick_blue.svg)
+    /*background-image: url(/shared/theme/kahoot/img/icn_tick_blue.svg)*/
 }
 
 .scoreboard .result .choicetotal.answerC {
@@ -10242,7 +10242,7 @@ h4.withBackground {
 }
 
 .scoreboard .result .choicetotal.answerC .correctIcon {
-    background-image: url(/shared/theme/kahoot/img/icn_tick_yellow.svg)
+    /*background-image: url(/shared/theme/kahoot/img/icn_tick_yellow.svg)*/
 }
 
 .scoreboard .result .choicetotal.answerD {
@@ -10250,7 +10250,7 @@ h4.withBackground {
 }
 
 .scoreboard .result .choicetotal.answerD .correctIcon {
-    background-image: url(/shared/theme/kahoot/img/icn_tick_green.svg)
+    /*background-image: url(/shared/theme/kahoot/img/icn_tick_green.svg)*/
 }
 
 .scoreboard .result .resultbar {
@@ -10384,11 +10384,11 @@ button.but-advance.but-advance--on-orange:active {
 }
 
 .correctCount .icon {
-    background-image: url(/shared/theme/kahoot/img/icn_tick.svg)
+    /*background-image: url(/shared/theme/kahoot/img/icn_tick.svg)*/
 }
 
 .incorrectCount .icon {
-    background-image: url(/shared/theme/kahoot/img/icn_incorrect.svg)
+    /*background-image: url(/shared/theme/kahoot/img/icn_incorrect.svg)*/
 }
 
 .kahoot-registration #alert-container-inline.alert-error {
@@ -10444,12 +10444,12 @@ button.but-advance.but-advance--on-orange:active {
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    background-image: url(/shared/theme/kahoot/img/kahoot-blue.png);
+    /*background-image: url(/shared/theme/kahoot/img/kahoot-blue.png);*/
     vertical-align: top
 }
 
 .svg .kahoot-registration.overlay .logo-blue {
-    background-image: url(/shared/theme/kahoot/img/kahoot-blue.svg)
+    /*background-image: url(/shared/theme/kahoot/img/kahoot-blue.svg)*/
 }
 
 .kahoot-registration.overlay .logo-blue span {
@@ -10464,14 +10464,14 @@ button.but-advance.but-advance--on-orange:active {
 }
 
 .kahoot-registration.overlay .login-divider {
-    background-image: url(/shared/theme/kahoot/img/overlay-divider.png);
+    /*background-image: url(/shared/theme/kahoot/img/overlay-divider.png);*/
     height: 41px;
     background-repeat: no-repeat;
     background-position: center bottom
 }
 
 .svg .kahoot-registration.overlay .login-divider {
-    background-image: url(/shared/theme/kahoot/img/overlay-divider.svg)
+    /*background-image: url(/shared/theme/kahoot/img/overlay-divider.svg)*/
 }
 
 .kahoot-registration.overlay .login-content {
@@ -10618,7 +10618,7 @@ button.but-advance.but-advance--on-orange:active {
 }
 
 .overlay.kahoot-registration.kahoot-detail #navbar .back-nav .icon-back {
-    background-image: url(/shared/theme/kahoot/img/Pagination_arrow.png);
+    /*background-image: url(/shared/theme/kahoot/img/Pagination_arrow.png);*/
     background-position: center 55%;
     background-repeat: no-repeat;
     background-size: contain;
@@ -10631,7 +10631,7 @@ button.but-advance.but-advance--on-orange:active {
 }
 
 .svg .overlay.kahoot-registration.kahoot-detail #navbar .back-nav .icon-back {
-    background-image: url(/shared/theme/kahoot/img/Pagination_arrow.svg)
+    /*background-image: url(/shared/theme/kahoot/img/Pagination_arrow.svg)*/
 }
 
 .overlay.kahoot-registration.kahoot-detail #navbar .back-nav .logo {
@@ -10665,7 +10665,7 @@ button.but-advance.but-advance--on-orange:active {
 }
 
 .overlay.kahoot-registration.kahoot-detail .media .back .back-icon {
-    background-image: url(/shared/theme/kahoot/img/Back_arrow.png);
+    /*background-image: url(/shared/theme/kahoot/img/Back_arrow.png);*/
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -10676,7 +10676,7 @@ button.but-advance.but-advance--on-orange:active {
 }
 
 .svg .overlay.kahoot-registration.kahoot-detail .media .back .back-icon {
-    background-image: url(/shared/theme/kahoot/img/Back_arrow.svg)
+    /*background-image: url(/shared/theme/kahoot/img/Back_arrow.svg)*/
 }
 
 .overlay.kahoot-registration.kahoot-detail .media .back:hover {
@@ -11076,7 +11076,7 @@ button.but-advance.but-advance--on-orange:active {
 .slideshow .slideshow-controls .next,
 .slideshow .slideshow-controls .prev {
     position: absolute;
-    background-image: url(/shared/theme/kahoot/img/Pagination_arrow.png);
+    /*background-image: url(/shared/theme/kahoot/img/Pagination_arrow.png);*/
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -11088,7 +11088,7 @@ button.but-advance.but-advance--on-orange:active {
 
 .svg .slideshow .slideshow-controls .next,
 .svg .slideshow .slideshow-controls .prev {
-    background-image: url(/shared/theme/kahoot/img/Pagination_arrow.svg)
+    /*background-image: url(/shared/theme/kahoot/img/Pagination_arrow.svg)*/
 }
 
 .slideshow .slideshow-controls .next {
@@ -11112,7 +11112,7 @@ button.but-advance.but-advance--on-orange:active {
 
 .slideshow .slideshow-controls .pagination .pagination-item {
     display: inline-block;
-    background-image: url(/shared/theme/kahoot/img/Pagination_indicator.png);
+    /*background-image: url(/shared/theme/kahoot/img/Pagination_indicator.png);*/
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -11131,17 +11131,17 @@ button.but-advance.but-advance--on-orange:active {
 }
 
 .svg .slideshow .slideshow-controls .pagination .pagination-item {
-    background-image: url(/shared/theme/kahoot/img/Pagination_indicator.svg)
+    /*background-image: url(/shared/theme/kahoot/img/Pagination_indicator.svg)*/
 }
 
 .slideshow .slideshow-controls .pagination .pagination-item.active,
 .slideshow .slideshow-controls .pagination .pagination-item:hover {
-    background-image: url(/shared/theme/kahoot/img/Pagination_indicator_active.png)
+    /*background-image: url(/shared/theme/kahoot/img/Pagination_indicator_active.png)*/
 }
 
 .svg .slideshow .slideshow-controls .pagination .pagination-item.active,
 .svg .slideshow .slideshow-controls .pagination .pagination-item:hover {
-    background-image: url(/shared/theme/kahoot/img/Pagination_indicator_active.svg)
+    /*background-image: url(/shared/theme/kahoot/img/Pagination_indicator_active.svg)*/
 }
 
 .slideshow .slide {
@@ -11159,40 +11159,40 @@ button.but-advance.but-advance--on-orange:active {
 }
 
 .intro-slideshow .slide-01 {
-    background-image: url(/shared/theme/kahoot/img/slides/01.jpg)
+    /*background-image: url(/shared/theme/kahoot/img/slides/01.jpg)*/
 }
 
 .intro-slideshow .slide-02 {
-    background-image: url(/shared/theme/kahoot/img/slides/02.jpg)
+    /*background-image: url(/shared/theme/kahoot/img/slides/02.jpg)*/
 }
 
 .intro-slideshow .slide-03 {
-    background-image: url(/shared/theme/kahoot/img/slides/03.jpg)
+    /*background-image: url(/shared/theme/kahoot/img/slides/03.jpg)*/
 }
 
 .intro-slideshow .slide-04 {
-    background-image: url(/shared/theme/kahoot/img/slides/04.jpg)
+    /*background-image: url(/shared/theme/kahoot/img/slides/04.jpg)*/
 }
 
 .intro-slideshow .slide-05 {
-    background-image: url(/shared/theme/kahoot/img/slides/05.jpg)
+    /*background-image: url(/shared/theme/kahoot/img/slides/05.jpg)*/
 }
 
 @media (-webkit-min-device-pixel-ratio:1.5) {
     .intro-slideshow .slide-01 {
-        background-image: url(/shared/theme/kahoot/img/slides/01@2x.jpg)
+        /*background-image: url(/shared/theme/kahoot/img/slides/01@2x.jpg)*/
     }
     .intro-slideshow .slide-02 {
-        background-image: url(/shared/theme/kahoot/img/slides/02@2x.jpg)
+        /*background-image: url(/shared/theme/kahoot/img/slides/02@2x.jpg)*/
     }
     .intro-slideshow .slide-03 {
-        background-image: url(/shared/theme/kahoot/img/slides/03@2x.jpg)
+        /*background-image: url(/shared/theme/kahoot/img/slides/03@2x.jpg)*/
     }
     .intro-slideshow .slide-04 {
-        background-image: url(/shared/theme/kahoot/img/slides/04@2x.jpg)
+        /*background-image: url(/shared/theme/kahoot/img/slides/04@2x.jpg)*/
     }
     .intro-slideshow .slide-05 {
-        background-image: url(/shared/theme/kahoot/img/slides/05@2x.jpg)
+        /*background-image: url(/shared/theme/kahoot/img/slides/05@2x.jpg)*/
     }
 }
 
@@ -11241,7 +11241,7 @@ button.but-advance.but-advance--on-orange:active {
 }
 
 .alert.alert--info .alert__body__icon {
-    background-image: url(/shared/theme/kahoot/img/icn_notification_info.svg)
+    /*background-image: url(/shared/theme/kahoot/img/icn_notification_info.svg)*/
 }
 
 .alert.alert--error {
@@ -11249,7 +11249,7 @@ button.but-advance.but-advance--on-orange:active {
 }
 
 .alert.alert--error .alert__body__icon {
-    background-image: url(/shared/theme/kahoot/img/icn_notification_error.svg)
+    /*background-image: url(/shared/theme/kahoot/img/icn_notification_error.svg)*/
 }
 
 .alert .icon {
@@ -11274,7 +11274,7 @@ button.but-advance.but-advance--on-orange:active {
     position: absolute;
     top: 0;
     right: 0;
-    background: url(/shared/theme/kahoot/img/icn_incorrect.svg) center/20px no-repeat
+    /*background: url(/shared/theme/kahoot/img/icn_incorrect.svg) center/20px no-repeat*/
 }
 
 .alert .alert__body {
@@ -11855,7 +11855,7 @@ button.answer.answerD {
 #cboxClose {
     top: 10px;
     right: 10px;
-    background: url(/shared/theme/kahoot/img/icn_incorrect.svg) center/50% no-repeat #333;
+    /*background: url(/shared/theme/kahoot/img/icn_incorrect.svg) center/50% no-repeat #333;*/
     border-radius: 50%
 }
 
@@ -11872,7 +11872,7 @@ button.answer.answerD {
 }
 
 .alert.alert--kick .alert__body__icon {
-    background-image: url(/shared/theme/kahoot/img/icn_kick.svg)
+    /*background-image: url(/shared/theme/kahoot/img/icn_kick.svg)*/
 }
 
 .alert .alert__body {
@@ -11886,7 +11886,7 @@ button.answer.answerD {
 
 .alert .alert__body__msg {
     padding-left: 20px;
-    background-image: url();
+    /*background-image: url();*/
     font-size: 28px;
     line-height: 34px;
     color: #fff
@@ -11900,7 +11900,7 @@ button.answer.answerD {
 .alert.with-logo .logo {
     position: absolute;
     display: block;
-    background-image: url(/shared/theme/kahoot/img/icn_kahoot_logo.svg);
+    /*background-image: url(/shared/theme/kahoot/img/icn_kahoot_logo.svg);*/
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -11919,7 +11919,7 @@ button.answer.answerD {
 }
 
 .alert-kick i {
-    background-image: url(/shared/theme/kahoot/img/icn_kick_lrg.svg);
+    /*background-image: url(/shared/theme/kahoot/img/icn_kick_lrg.svg);*/
     background-repeat: no-repeat
 }
 
@@ -12080,7 +12080,7 @@ div.leaderboard .name .player-name:hover.ghost-player {
 }
 
 div.leaderboard .name .player-name:hover:after {
-    content: url(/shared/theme/kahoot/img/icn_kick_sml.svg);
+    /*content: url(/shared/theme/kahoot/img/icn_kick_sml.svg);*/
     height: 26px;
     width: 26px;
     position: absolute;
@@ -12089,7 +12089,7 @@ div.leaderboard .name .player-name:hover:after {
 }
 
 div.leaderboard tr.first .player-name:hover:after {
-    content: url(/shared/theme/kahoot/img/blk_kick_icon_lrg.svg);
+    /*content: url(/shared/theme/kahoot/img/blk_kick_icon_lrg.svg);*/
     height: 26px;
     width: 26px;
     position: absolute;
@@ -12098,7 +12098,7 @@ div.leaderboard tr.first .player-name:hover:after {
 }
 
 div.leaderboard tr.reward-player .player-name:hover:after {
-    content: url(/shared/theme/kahoot/img/icn_kick_sml.svg);
+    /*content: url(/shared/theme/kahoot/img/icn_kick_sml.svg);*/
     height: 26px;
     width: 26px;
     position: absolute;
@@ -12106,33 +12106,33 @@ div.leaderboard tr.reward-player .player-name:hover:after {
     top: -2px!important
 }
 
-.bgcolorFrames 0% {
-    background-color: #45a3e5
-}
+/*.bgcolorFrames 0% {*/
+/*    background-color: #45a3e5*/
+/*}*/
 
-.bgcolorFrames 17% {
-    background-color: #3cc
-}
+/*.bgcolorFrames 17% {*/
+/*    background-color: #3cc*/
+/*}*/
 
-.bgcolorFrames 34% {
-    background-color: #66bf39
-}
+/*.bgcolorFrames 34% {*/
+/*    background-color: #66bf39*/
+/*}*/
 
-.bgcolorFrames 51% {
-    background-color: #ffa602
-}
+/*.bgcolorFrames 51% {*/
+/*    background-color: #ffa602*/
+/*}*/
 
-.bgcolorFrames 61% {
-    background-color: #eb670f
-}
+/*.bgcolorFrames 61% {*/
+/*    background-color: #eb670f*/
+/*}*/
 
-.bgcolorFrames 84% {
-    background-color: #f35
-}
+/*.bgcolorFrames 84% {*/
+/*    background-color: #f35*/
+/*}*/
 
-.bgcolorFrames 100% {
-    background-color: #864cbf
-}
+/*.bgcolorFrames 100% {*/
+/*    background-color: #864cbf*/
+/*}*/
 
 @-webkit-keyframes bgcolor {
     0% {
@@ -12260,7 +12260,7 @@ div.leaderboard tr.reward-player .player-name:hover:after {
 }
 
 .lobby-contain .player-list .player-name:hover:after {
-    content: url(/shared/theme/kahoot/img/icn_kick_sml.svg);
+    /*content: url(/shared/theme/kahoot/img/icn_kick_sml.svg);*/
     display: inline-block;
     height: 20px;
     width: 20px;
@@ -12851,7 +12851,7 @@ div.leaderboard tr.reward-player .player-name:hover:after {
     right: -500px;
     bottom: -500px;
     left: -500px;
-    background: url(/shared/theme/kahoot/img/graphics/radial_burst.svg) center/cover no-repeat
+    /*background: url(/shared/theme/kahoot/img/graphics/radial_burst.svg) center/cover no-repeat*/
 }
 
 .intro-screen {
@@ -12876,7 +12876,7 @@ div.leaderboard tr.reward-player .player-name:hover:after {
 .intro-screen .intro-bg {
     width: 100%;
     height: 100%;
-    background-image: url(/shared/theme/kahoot/img/graphics/player_screen_min.svg);
+    /*background-image: url(/shared/theme/kahoot/img/graphics/player_screen_min.svg);*/
     background-position: center;
     background-repeat: no-repeat;
     background-size: 80%;
@@ -12888,7 +12888,7 @@ div.leaderboard tr.reward-player .player-name:hover:after {
 
 .intro-screen .intro-bg--team {
     background-color: transparent;
-    background-image: url(/shared/theme/kahoot/img/graphics/player_screen_team_min.svg)
+    /*background-image: url(/shared/theme/kahoot/img/graphics/player_screen_team_min.svg)*/
 }
 
 @media screen and (min-width:48em) and (orientation:portrait) {
@@ -12952,14 +12952,14 @@ div.leaderboard tr.reward-player .player-name:hover:after {
     background-position: bottom center;
     background-repeat: no-repeat;
     background-size: contain;
-    background-image: url(/shared/theme/kahoot/img/graphics/controller_devices.png);
+    /*background-image: url(/shared/theme/kahoot/img/graphics/controller_devices.png);*/
     z-index: 0
 }
 
 @media (-webkit-min-device-pixel-ratio:2) and (-webkit-min-device-pixel-ratio:1.5),
 (-webkit-min-device-pixel-ratio:2) and (min-resolution:144dpi) {
     .intro-screen .intro-hands {
-        background-image: url(/shared/theme/kahoot/img/graphics/controller_devices@x2.png)
+        /*background-image: url(/shared/theme/kahoot/img/graphics/controller_devices@x2.png)*/
     }
 }
 
@@ -13049,7 +13049,7 @@ div.leaderboard tr.reward-player .player-name:hover:after {
 }
 
 .intro-screen .intro-hands--team {
-    background-image: url(/shared/theme/kahoot/img/graphics/controller_hands.svg)
+    /*background-image: url(/shared/theme/kahoot/img/graphics/controller_hands.svg)*/
 }
 
 .intro-screen .intro-hands.fadeIn {
@@ -13653,19 +13653,19 @@ div.leaderboard tr.reward-player .player-name:hover:after {
 }
 
 .finalscoreboard div.controls .panel .signin:hover .icon-play-custom {
-    background-image: url(/shared/theme/kahoot/img/icon-play.png)
+    /*background-image: url(/shared/theme/kahoot/img/icon-play.png)*/
 }
 
 .svg .finalscoreboard div.controls .panel .signin:hover .icon-play-custom {
-    background-image: url(/shared/theme/kahoot/img/icon-play.svg)
+    /*background-image: url(/shared/theme/kahoot/img/icon-play.svg)*/
 }
 
 .finalscoreboard div.controls .panel .signin .icon-play-custom {
-    background-image: url(/shared/theme/kahoot/img/icon-play-dark.png)
+    /*background-image: url(/shared/theme/kahoot/img/icon-play-dark.png)*/
 }
 
 .svg .finalscoreboard div.controls .panel .signin .icon-play-custom {
-    background-image: url(/shared/theme/kahoot/img/icon-play-dark.svg)
+    /*background-image: url(/shared/theme/kahoot/img/icon-play-dark.svg)*/
 }
 
 .finalscoreboard div.controls .panel.center {
@@ -13685,7 +13685,7 @@ div.leaderboard tr.reward-player .player-name:hover:after {
 }
 
 .finalscoreboard div.controls .results span.cloud-download-icon {
-    background-image: url(/shared/theme/kahoot/img/cloud-download.png);
+    /*background-image: url(/shared/theme/kahoot/img/cloud-download.png);*/
     width: 37px;
     height: 22px;
     display: inline-block;
@@ -13727,7 +13727,7 @@ div.leaderboard tr.reward-player .player-name:hover:after {
 }
 
 .finalscoreboard div.controls .results-icon span.drive-icon {
-    background-image: url(/shared/theme/kahoot/img/google_drive.png);
+    /*background-image: url(/shared/theme/kahoot/img/google_drive.png);*/
     width: 28px;
     height: 28px;
     display: inline-block;
@@ -13787,7 +13787,7 @@ div.leaderboard tr.reward-player .player-name:hover:after {
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    background-image: url(/shared/theme/kahoot/img/arrow_vertical.svg);
+    /*background-image: url(/shared/theme/kahoot/img/arrow_vertical.svg);*/
     position: absolute;
     width: 24px;
     height: 40px;
@@ -13806,7 +13806,7 @@ div.leaderboard tr.reward-player .player-name:hover:after {
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    background-image: url(/shared/theme/kahoot/img/google_drive_text.png);
+    /*background-image: url(/shared/theme/kahoot/img/google_drive_text.png);*/
     vertical-align: top
 }
 
@@ -13946,7 +13946,7 @@ div.leaderboard tr.reward-player .player-name:hover:after {
     position: relative;
     background: #fff;
     color: #333;
-    border-radius: none;
+    /*border-radius: none;*/
     height: 50px;
     width: 230px;
     font-weight: 400;
@@ -13972,7 +13972,7 @@ div.leaderboard tr.reward-player .player-name:hover:after {
     position: relative;
     background: #fff;
     color: #333;
-    border-radius: none;
+    /*border-radius: none;*/
     height: 50px;
     width: 230px;
     font-weight: 400;
@@ -14533,7 +14533,7 @@ div.leaderboard tr.reward-player .player-name:hover:after {
 }
 
 .players-block:hover .players-block__name--kickable:after {
-    content: url(/shared/theme/kahoot/img/icn_kick_sml.svg);
+    /*content: url(/shared/theme/kahoot/img/icn_kick_sml.svg);*/
     display: inline-block;
     height: 20px;
     width: 20px;
@@ -14840,7 +14840,7 @@ div.leaderboard tr.reward-player .player-name:hover:after {
 
 .button:focus,
 .button:hover {
-    height: calc(2.5rem, -2px);
+    /*height: calc(2.5rem, -2px);*/
     margin-top: 2px;
     padding-bottom: 2px;
     background-color: #3b8bc4;
@@ -14848,7 +14848,7 @@ div.leaderboard tr.reward-player .player-name:hover:after {
 }
 
 .button:active {
-    height: calc(2.5rem, -4px);
+    /*height: calc(2.5rem, -4px);*/
     margin-top: 4px;
     padding-bottom: 0;
     background-color: #3072a1;
@@ -15102,7 +15102,7 @@ button.but-dialog {
 }
 
 .reward-banner__kickable:hover:after {
-    content: url(/shared/theme/kahoot/img/icn_kick_sml.svg);
+    /*content: url(/shared/theme/kahoot/img/icn_kick_sml.svg);*/
     position: absolute;
     width: 26px;
     height: 26px;
@@ -15185,22 +15185,22 @@ button.but-dialog {
 }
 
 .two-factor-auth__card--0 {
-    background-image: url(/shared/theme/kahoot/img/icn_controller_triangle.svg);
+    /*background-image: url(/shared/theme/kahoot/img/icn_controller_triangle.svg);*/
     background-color: #e21b3c
 }
 
 .two-factor-auth__card--1 {
-    background-image: url(/shared/theme/kahoot/img/icn_controller_diamond.svg);
+    /*background-image: url(/shared/theme/kahoot/img/icn_controller_diamond.svg);*/
     background-color: #1368ce
 }
 
 .two-factor-auth__card--2 {
-    background-image: url(/shared/theme/kahoot/img/icn_controller_circle.svg);
+    /*background-image: url(/shared/theme/kahoot/img/icn_controller_circle.svg);*/
     background-color: #d89e00
 }
 
 .two-factor-auth__card--3 {
-    background-image: url(/shared/theme/kahoot/img/icn_controller_square.svg);
+    /*background-image: url(/shared/theme/kahoot/img/icn_controller_square.svg);*/
     background-color: #26890c
 }
 
@@ -15544,7 +15544,7 @@ a.but-media:active {
 }
 
 a.but-media i {
-    background-image: url(/shared/theme/kahoot/img/show_image_icn.svg);
+    /*background-image: url(/shared/theme/kahoot/img/show_image_icn.svg);*/
     background-position: bottom;
     width: 16px;
     height: 16px;
