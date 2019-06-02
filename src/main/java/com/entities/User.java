@@ -1,6 +1,7 @@
 package com.entities;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
@@ -26,6 +27,7 @@ public class User {
 	@Column(name = "email", unique = true, length = 70)
 	private String email;
 
+	@JsonIgnore
 	@Column(name = "password")
 	private String password;
 
@@ -40,15 +42,6 @@ public class User {
 	private Set<QuestionCollection> questionCollections;
 
 	public User() {}
-
-//	private String[] roles;
-
-//	public String[] getRoles() {
-//		return roles;
-//	}
-//	public void setRoles(String[] roles) {
-//		this.roles = roles;
-//	}
 
 	public int getId() { return id;}
 	public void setId(int id) {this.id = id;}
@@ -71,12 +64,10 @@ public class User {
 
 	public Set<QuestionCollection> getQuestionCollections() { return questionCollections; }
 
+	@JsonIgnore
 	public List<GrantedAuthority> getAuthorities() {
 		List<GrantedAuthority> authorities = new ArrayList<>();
 		authorities.add(new SimpleGrantedAuthority("ROLE_USER"));
-//		for (String role : roles) {
-//			authorities.add(new SimpleGrantedAuthority(role));
-//		}
 		return authorities;
 	}
 

@@ -671,29 +671,29 @@
                         <header role="heading" class="layout__head">
                             <header class="top-bar top-bar--secondary" data-functional-selector="overview-block-top-bar" role="navigation">
                                 <div class="top-bar__left">
-                                    <button type="button" role="button" data-functional-selector="overview-block-top-bar__exit-button" class="icon-button top-bar__icon-button">
-                                       <span class="icon-button__wrap">
-                                          <span class="icon icon-button__icon icon--solid">
-                                             <svg class="icon__svg" data-functional-selector="icon" focusable="false">
-                                                <use class="icon__use" xlink:href="#close"></use>
-                                             </svg>
-                                          </span>
-                                          <span class="icon-button__text undefined">Exit</span>
-                                       </span>
-                                    </button>
+<%--                                    <button type="button" role="button" data-functional-selector="overview-block-top-bar__exit-button" class="icon-button top-bar__icon-button">--%>
+<%--                                       <span class="icon-button__wrap">--%>
+<%--                                          <span class="icon icon-button__icon icon--solid">--%>
+<%--                                             <svg class="icon__svg" data-functional-selector="icon" focusable="false">--%>
+<%--                                                <use class="icon__use" xlink:href="#close"></use>--%>
+<%--                                             </svg>--%>
+<%--                                          </span>--%>
+<%--                                          <span class="icon-button__text undefined">Exit</span>--%>
+<%--                                       </span>--%>
+<%--                                    </button>--%>
                                 </div>
                                 <div class="top-bar__title" data-functional-selector="top-bar-title">
                                     <span class="icon top-bar__logo">
-                                       <svg class="icon__svg" data-functional-selector="icon" focusable="false">
-                                          <use class="icon__use" xlink:href="#logo-k"></use>
-                                       </svg>
+<%--                                       <svg class="icon__svg" data-functional-selector="icon" focusable="false">--%>
+<%--                                          <use class="icon__use" xlink:href="#logo-k"></use>--%>
+<%--                                       </svg>--%>
                                     </span>
-                                    <!-- react-text: 618 -->Quiz<!-- /react-text -->
+                                    <!-- react-text: 618 -->Ripweb! 2019<!-- /react-text -->
                                 </div>
                                 <div class="top-bar__right">
-                                    <button type="button" role="button" data-functional-selector="overview-block-top-bar__success-button" class="button button--positive">
-                                        <a href="hostView"><!-- react-text: 621 -->Save<!-- /react-text --></a>
-                                    </button>
+<%--                                    <button type="button" role="button" data-functional-selector="overview-block-top-bar__success-button" class="button button--positive">--%>
+<%--&lt;%&ndash;                                        <a href="hostView"><!-- react-text: 621 -->Save<!-- /react-text --></a>&ndash;%&gt;--%>
+<%--                                    </button>--%>
                                 </div>
                             </header>
                         </header>
@@ -703,8 +703,8 @@
                                 <section class="content-block" data-functional-selector="description-content-block">
                                     <figure class="image content-block__figure" style="background-image: url('https://images-cdn.kahoot.it/7e22b324-f27d-469f-9c27-59974d578928?auto=webp'); background-size: contain;"></figure>
                                     <div class="content-block__copy">
-                                        <h1 class="content-block__header" data-functional-selector="description-content-block__header" id="gameCollectionName">Welcome ${nickname}</h1>
-                                        <p class="content-block__text" data-functional-selector="description-content-block__main" id="questionCollectionDescription">#ripweb</p>
+                                        <h1 class="content-block__header" data-functional-selector="description-content-block__header" id="gameCollectionName"></h1>
+                                        <p class="content-block__text" data-functional-selector="description-content-block__main" id="questionCollectionDescription"></p>
                                         <span class="content-block__supplementary" data-functional-selector="description-content-block__supplementary">
                                           <div>
                                              <div class="content-block-visibility-wrapper">
@@ -828,6 +828,10 @@
     })(window, document, '//static.hotjar.com/c/hotjar-', '.js?sv=');
 </script>
 
+<script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
 <script>
     loadQuestions();
 </script>

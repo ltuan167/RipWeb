@@ -1,10 +1,10 @@
 package com.model;
 
-public class GameApiResponse {
-	private GameCommandType type;
+public class ApiResponse {
+	private ApiResponseType type;
 	private Object content;
 
-	public enum GameCommandType {
+	public enum ApiResponseType {
 		GAME_CREATED,           // {type: "GAME_CREATED", content: "{GamePin}"}
 		JOIN_ACCEPTED,          // {type: "JOIN_ACCEPTED", content: "{playerList}"}
 		JOIN_DENIED,
@@ -17,10 +17,10 @@ public class GameApiResponse {
 		OK
 	}
 
-	public GameCommandType getType() {
+	public ApiResponseType getType() {
 		return type;
 	}
-	public void setType(GameCommandType type) {
+	public void setType(ApiResponseType type) {
 		this.type = type;
 	}
 

@@ -9,10 +9,12 @@ function generateQuestionBox(image, question, questionId) {
     "    </div>\n" +
     "    <div class=\"draggable__container\">\n" +
     "    <section class=\"content-block content-block--bg question-content-block content-block--no-image\" data-functional-selector=\"game-block-content-block\">\n" +
-    "    <figure class=\"content-block__figure content-block__figure--overlay\"><span class=\"content-block__info content-block__info--text\" data-functional-selector=\"game-block-content-block__info\">Image</span></figure>\n" +
+    "    <figure class=\"content-block__figure content-block__figure--overlay\"><span class=\"content-block__info content-block__info--text\" data-functional-selector=\"game-block-content-block__info\">"+
+        "<img src='"     +    ((image) ? image : "")   +        "'>" +
+        "</span></figure>\n" +
     "<div class=\"content-block__copy\">\n" +
     "    <p class=\"content-block__text\" data-functional-selector=\"game-block-content-block__main\">"+question+"</p>\n" +
-    "</div>\n" +
+    "</div>" +
     // "<div class=\"dropdown-list dropdown-list--secondary question-content-block__dropdown-list\" data-functional-selector=\"game-block-content-block__time-limit-dropdown-list\">\n" +
     // "    <label class=\"label dropdown-list--secondary question-content-block__dropdown-list\" for=\"question-content-block__time-limit-dropdown-list__select\" data-functional-selector=\"game-block-content-block__time-limit-dropdown-list__label\">\n" +
     // "</label>\n" +
@@ -97,11 +99,37 @@ function generateQuestionBox(image, question, questionId) {
     "    </div>";
 }
 
-function loadQuestions() {
-    document.getElementById("gameCollectionName").innerText = "Question collection name here!";
-    document.getElementById("questionCollectionDescription").innerText = "Question collection description!";
-    var questionsArea = document.getElementById("questionsArea");
-    for (var i = 0; i < 3; i++) {
-        questionsArea.innerHTML += generateQuestionBox(null, "This is a question " + i, i);
+var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = window.location.search.substring(1),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+        }
     }
+}
+
+function loadQuestions() {
+    var questionsArea = document.getElementById("questionsArea");
+    questionsArea.innerHTML = ""; // clear questions area
+
+    let questionCollectionId = getUrlParameter("questionCollectionId");
+    if (questionCollectionId) {
+        $.get("http://localhost/1.0/db/collection/get?questionCollectionId="+questionCollectionId, (data) => {
+            let collection = data.content;
+            if (collection) {
+                document.getElementById("gameCollectionName").innerText = collection.name;
+                document.getElementById("questionCollectionDescription").innerText = collection.description;
+            }
+            collection.questions.forEach((question) => {
+                questionsArea.innerHTML += generateQuestionBox(question.imag, question.question, question.id);
+            })
+        });
+    }
+
 }
