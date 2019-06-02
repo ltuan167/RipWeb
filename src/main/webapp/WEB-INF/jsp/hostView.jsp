@@ -25,11 +25,11 @@
     <style type="text/css">[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Kahoot! | Play this quiz now!</title>
+    <title>Ripweb! | Play this quiz now!</title>
     <meta name="keywords" content="Blended Learning, Classroom Response System, Student Response System, Student Engagement, Game Based Learning, Formative Assessment, Adaptive Learning, Mobile Learning, e-learning, Free Education Apps, iPads in the Classroom, Pedagogy, Pedagogy and Technology Learning Space, Student Centric, Business Apps, Interactive Classroom, Audience Response System, Survey Tool">
-    <meta name="description" content="Play a game of Kahoot! here. Kahoot! is a free game-based learning platform that makes it fun to learn – any subject, in any language, on any device, for all ages!">
+    <meta name="description" content="Play a game of Ripweb! here. Ripweb! is a free game-based learning platform that makes it fun to learn – any subject, in any language, on any device, for all ages!">
     <meta name="viewport" dynamic-viewport="" content="">
-    <meta property="og:title" content="Kahoot! | Play this quiz now!">
+    <meta property="og:title" content="Ripweb! | Play this quiz now!">
     <meta property="og:image" content="https://kahoot-static-assets.s3.amazonaws.com/social/kahoot_meta_og_image.jpg">
 <%--    <link rel="shortcut icon" href="https://play.kahoot.it/shared/theme/kahoot/img/icons/favicon.ico">--%>
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://play.kahoot.it/img/ico/apple-touch-icon-144-precomposed.png">
@@ -91,20 +91,20 @@
 </head>
 <body keypress="" dynamic-background="" class="touchpadSwipeAnimationCore animate-background">
 <!--[if lt IE 9]>
-<div class="browser-warning alert center">Sorry but this browser is too old for Kahoot! <a href="http://browsehappy.com/">Upgrade to a better one</a> to play.</div>
+<div class="browser-warning alert center">Sorry but this browser is too old for Ripweb! <a href="http://browsehappy.com/">Upgrade to a better one</a> to play.</div>
 <![endif]-->
 <noscript>
-    <h1>Kahoot! needs JavaScript to work</h1>
+    <h1>Ripweb! needs JavaScript to work</h1>
     <p>
-        To use Kahoot!, you need to have JavaScript enabled in your browser. To enable JavaScript, please do the following:
+        To use Ripweb!, you need to have JavaScript enabled in your browser. To enable JavaScript, please do the following:
     </p>
     <ul>
         <li><a href="http://enable-javascript.com/">Follow these instructions</a>.</li>
         <li>Make sure you have the <a href="https://www.mozilla.org/en-US/firefox/new/">latest browser</a>.</li>
         <li>Turn off or disable the NoScript extension, if you have it.</li>
-        <li>Contact your IT administrator to allow access to Kahoot! in your security preferences.</li>
+        <li>Contact your IT administrator to allow access to Ripweb! in your security preferences.</li>
     </ul>
-    <p>If you continue to have problems, please let us know by <a href="http://kahoot.uservoice.com/">contacting Kahoot! support</a>.</p>
+    <p>If you continue to have problems, please let us know by <a href="http://ripweb.uservoice.com/">contacting Ripweb! support</a>.</p>
 </noscript>
 <div style="height: 0; width: 0; position: absolute; visibility: hidden">
     <!-- inject:svg -->
@@ -263,7 +263,7 @@
             </div>
         </div>
         <div class="statusbar lobby ">
-            <span class="visually-hidden">      Kahoot!    </span>    <!-- ngIf: brandLogoProps -->
+            <span class="visually-hidden">      Ripweb!    </span>    <!-- ngIf: brandLogoProps -->
         </div>
         <div class="numberBoard playerCount">    <i class="number ng-binding" id="playersCount">0</i><br>    <i class="countLabel ng-binding">Players</i>  </div>
         <playerlist>
