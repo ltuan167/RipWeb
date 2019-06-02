@@ -107,7 +107,8 @@
 
 <<div id="questionResultScreen" class="container-fluid">
 <%--    PLOT CHART HERE --%>
-    <canvas id="myChart" style="width: 100%; height: 100%;"></canvas>
+    <canvas id="myChart" style="width: 80%; height: 80%;"></canvas>
+    <b><strong>Correct Answer: </strong> <a id="correctAnswer"></a> </b>
     <button onclick="nextQuestion()">Next Question</button>
 </div>
 
