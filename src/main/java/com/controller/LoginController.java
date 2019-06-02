@@ -2,6 +2,7 @@ package com.controller;
 
 import com.JWT.JwtService;
 import com.dao.UserDAO;
+import com.entities.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -29,13 +30,14 @@ class LoginController {
 	                    HttpServletResponse res,
 	                    final Model model) {
 		try {
-			if (new BCryptPasswordEncoder().matches(password, userDAO.loadPassword(email))) { // check valid user
+			User user = userDAO.getUserByEmail(email);
+			if (new BCryptPasswordEncoder().matches(password, user.getPassword())) { // check valid user
 				String token = jwtService.generateTokenLogin(email);
-				req.getSession().setAttribute("jwt", token);
-//				Cookie jwtCookie = new Cookie("jwt", token);
+				Cookie jwtCookie = new Cookie("jwt", token);
 //				jwtCookie.setSecure(true);
-//				res.addCookie(jwtCookie);
-				model.addAttribute("nickname", userDAO.loadNickname(email));
+				res.addCookie(jwtCookie);
+				req.getSession().setAttribute("user", user);
+				model.addAttribute("nickname", user.getEmail());
 				return "homepage";
 			} else {
 				model.addAttribute("msg","Wrong email or password");
@@ -52,14 +54,12 @@ class LoginController {
 	public String getLogin(final Model model) {
 		return "login";
 	}
-//
-//	@RequestMapping("/admin")
-//	public String admin() { return "admin"; }
-//	@RequestMapping("/user")
-//	public String user() { return "user"; }
-//
+
+
 	@RequestMapping("/logout")
-	public String logout(final Model model) {
+	public String logout(HttpServletRequest req, HttpServletResponse res, Model model) {
+		req.getSession().invalidate();
+		res.addCookie(new Cookie("jwt", null));
 		model.addAttribute("message", "Logged out!");
 		return "login";
 	}

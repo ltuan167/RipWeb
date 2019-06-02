@@ -36,8 +36,9 @@ public class UserDAO {
 
 	public User getUserByEmail(String email) {
 		Session session = this.sessionFactory.getCurrentSession();
+		session.beginTransaction();
 		String hql = "SELECT * FROM User WHERE email='"+email+"'";
-		return (User) session.createNativeQuery(hql).getResultList().get(0);
+		return (User) session.createSQLQuery(hql).addEntity(User.class).getResultList().get(0);
 	}
 
 	public String loadPassword(String email) {
