@@ -374,8 +374,10 @@
 
 <center><div id="questionResultScreen">
 <%--    PLOT CHART HERE --%>
-    <canvas id="myChart" width="500" height="500"></canvas>
+    <canvas id="myChart" width="600px " height="400px "></canvas>
     <button onclick="nextQuestion()" ng-class="playBtnState">Next Question</button>
+    <br><br>
+    <b><strong>Correct Answer: <div id="correctAnswer"></div></strong></b>
 </div></center>
 
 <div id="resultScreen">

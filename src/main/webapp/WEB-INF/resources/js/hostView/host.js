@@ -10,9 +10,8 @@ function hostStart(gamePIN) {
     };
 }
 
-var stompClient = null;
-var questionId;
-var chartDataset;
+let correctAnswer, chartDataset, questionId, stompClient = null;
+let answer1, answer2, answer3, answer4;
 function hostDisplayQuestion() {
     var socket = new SockJS('/ws');
     stompClient = Stomp.over(socket);
@@ -28,11 +27,24 @@ function hostDisplayQuestion() {
                     document.getElementById("questionImg").setAttribute("src", question.image);
                 else
                     document.getElementById("questionImg").setAttribute("src", "");
-                document.getElementById("answer1").innerText = question.answer1;
-                document.getElementById("answer2").innerText = question.answer2;
-                document.getElementById("answer3").innerText = question.answer3;
-                document.getElementById("answer4").innerText = question.answer4;
+                answer1 = question.answer1;
+                answer2 = question.answer2;
+                answer3 = question.answer3;
+                answer4 = question.answer4;
+                document.getElementById("answer1").innerText = answer1;
+                document.getElementById("answer2").innerText = answer2;
+                document.getElementById("answer3").innerText = answer3;
+                document.getElementById("answer4").innerText = answer4;
                 document.getElementById("question").innerText = question.question;
+                let numbercorrectAnswer = parseInt(question.correctAnswer);
+                if (numbercorrectAnswer == 1)
+                    correctAnswer = question.answer1;
+                if (numbercorrectAnswer == 2)
+                    correctAnswer = question.answer2;
+                if (numbercorrectAnswer == 3)
+                    correctAnswer = question.answer3;
+                if (numbercorrectAnswer == 4)
+                    correctAnswer = question.answer4;
                 showScreen("questionScreen");
             }
             if (msg.type == "NEW_PLAYER") {
@@ -120,29 +132,25 @@ function hostEndQuestion() {
     };
 }
 
-let numberOfAnswer1;
-let numberOfAnswer2;
-let numberOfAnswer3;
-let numberOfAnswer4;
-
+var myChart;
 function plotChart() {
-    numberOfAnswer1 = chartDataset[0];
-    numberOfAnswer2 = chartDataset[1];
-    numberOfAnswer3 = chartDataset[2];
-    numberOfAnswer4 = chartDataset[3];
+    if (myChart){
+        myChart.destroy();
+    }
+    document.getElementById("correctAnswer").innerText = correctAnswer;
     var ctx = document.getElementById("myChart");
-    var myChart = new Chart(ctx, {
+    myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ["Question 1", "Question 2", "Question 3", "Question 4"],
+            labels: [answer1, answer2, answer3, answer4],
             datasets: [{
                 label: '#Number of answers',
                 data: chartDataset,
                 backgroundColor: [
-                    'rgb(192,23,51)',
-                    'rgb(19,104,206)',
-                    'rgb(216,158,0)',
-                    'rgba(41,143,13,0.99)',
+                    'rgba(192,23,51,0.65)',
+                    'rgba(19,104,206,0.65)',
+                    'rgba(216,158,0,0.65)',
+                    'rgba(41,143,13,0.65)',
                 ],
                 borderColor: [
                     'rgb(192,23,51)',
@@ -154,23 +162,33 @@ function plotChart() {
             }]
         },
         options: {
-            responsive: false,
+            legend: {
+                labels: {
+                    fontColor: "#000000",
+                    fontSize: 15,
+                }
+            },
+            responsive: true,
             scales: {
                 xAxes: [{
                     ticks: {
-                        maxRotation: 0,
-                        minRotation: 0
+                        maxRotation:  0,
+                        minRotation:  0,
+                        fontFamily: "Helvetica",
+                        fontSize:"15",
+                        fontColor:"#000000"
                     }
                 }],
                 yAxes: [{
                     ticks: {
-                        beginAtZero: true
+                        beginAtZero: true,
+                        fontFamily: "Helvetica",
+                        fontSize: "15",
+                        fontColor:"#000000"
                     }
                 }]
             }
         }
     });
 }
-
-
 showScreen("playersScreen");
