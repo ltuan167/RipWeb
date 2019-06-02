@@ -7,6 +7,7 @@ public class WsMessage {
 
 	public enum WsMessageType {
 		NEW_PLAYER,
+		END_QUESTION,
 		NEXT_QUESTION,
 		END_GAME
 	}

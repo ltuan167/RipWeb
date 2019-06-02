@@ -52,23 +52,6 @@ public class GameAPIController {
 		return joinResponse;
 	}
 
-	@PostMapping(value = "/submit", produces = MediaType.APPLICATION_JSON_VALUE)
-	public GameApiResponse submitAnswer(@RequestParam int gamePIN, @RequestParam int questionId, @RequestParam int chooseAnswerId, HttpServletRequest req, HttpServletResponse res) {
-		GameApiResponse submittedResponse = new GameApiResponse();
-		Game game = GameManager.getInstance().getGameByPIN(gamePIN);
-		if (game != null) {
-			int score = game.validateAnswerAndGetScore(req.getSession().getId(), questionId, chooseAnswerId);
-			if (score >= 0) {
-				submittedResponse.setType(GameApiResponse.GameCommandType.SUBMIT_ACCEPTED);
-				submittedResponse.setContent(score);
-				res.setStatus(HttpServletResponse.SC_ACCEPTED);
-				return submittedResponse;
-			}
-		}
-		res.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-		return null;
-	}
-
 	@PostMapping(value = "/start", produces = MediaType.APPLICATION_JSON_VALUE)
 	public GameApiResponse startGame(@RequestParam int gamePIN, HttpServletRequest req, HttpServletResponse res) {
 		GameApiResponse startGameResponse = new GameApiResponse();
@@ -109,6 +92,38 @@ public class GameAPIController {
 			return nextQuestionResponse;
 		}
 		res.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+		return null;
+	}
+
+	@PostMapping(value = "/submit", produces = MediaType.APPLICATION_JSON_VALUE)
+	public GameApiResponse submitAnswer(@RequestParam int gamePIN, @RequestParam int questionId, @RequestParam int chooseAnswerId, HttpServletRequest req, HttpServletResponse res) {
+		GameApiResponse submittedResponse = new GameApiResponse();
+		Game game = GameManager.getInstance().getGameByPIN(gamePIN);
+		if (game != null) {
+			int score = game.validateAnswerAndGetScore(req.getSession().getId(), questionId, chooseAnswerId);
+			game.checkAllPlayerSubmitted();
+			if (score >= 0) {
+				submittedResponse.setType(GameApiResponse.GameCommandType.SUBMIT_ACCEPTED);
+				submittedResponse.setContent(score);
+				res.setStatus(HttpServletResponse.SC_ACCEPTED);
+				return submittedResponse;
+			}
+		}
+		res.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+		return null;
+	}
+
+	@PostMapping(value = "/endquestion", produces = MediaType.APPLICATION_JSON_VALUE)
+	public GameApiResponse endQuestion(@RequestParam int gamePIN, @RequestParam int questionId, HttpServletRequest req, HttpServletResponse res) {
+		GameApiResponse endQuestionResponse = new GameApiResponse();
+		Game game = GameManager.getInstance().getGameByPIN(gamePIN);
+		if (game != null) {
+			if (game.endQuestion() == true) {
+				endQuestionResponse.setType(GameApiResponse.GameCommandType.OK);
+				res.setStatus(HttpServletResponse.SC_OK);
+			}
+		}
+		res.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 		return null;
 	}
 
