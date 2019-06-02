@@ -1169,7 +1169,7 @@
         }
     </style>
     <link rel="stylesheet" href="resources/css/homepage.css" as="style" onload="null" data-loadcss="true" media="all">
-    <noscript><link rel="stylesheet" href="https://kahoot.com/wp-content/themes/kahoot2017/assets/cssv/screen-ac4ffd37aa.css"></noscript>
+<%--    <noscript><link rel="stylesheet" href="https://kahoot.com/wp-content/themes/kahoot2017/assets/cssv/screen-ac4ffd37aa.css"></noscript>--%>
     <%--    <script async="" src="final_files/gtm_005.js"></script>--%>
     <script type="text/javascript" id="www-widgetapi-script" src="resources/js/homepage/www-widgetapi_005.js" async=""></script>
     <script src="resources/js/homepage/iframe_api_002.txt"></script>
@@ -1368,7 +1368,8 @@
                     </div>
                     <div>
                         <h1 id="kahootvideo" class="visually-hidden">Ripweb played around the world</h1>
-                        <iframe id="fs-video" src="" data-src="https://www.youtube.com/embed/yZvikyjgA1U?version=3&amp;autoplay=1&amp;loop=1&amp;mute=0&amp;disablekb=1&amp;modestbranding=1&amp;showinfo=0&amp;controls=1&amp;rel=0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="560" height="315" frameborder="0"></iframe>
+<%--                        <iframe id="fs-video" src="" data-src="https://www.youtube.com/embed/yZvikyjgA1U?version=3&amp;autoplay=1&amp;loop=1&amp;mute=0&amp;disablekb=1&amp;modestbranding=1&amp;showinfo=0&amp;controls=1&amp;rel=0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="560" height="315" frameborder="0"></iframe>--%>
+<%--                   --%>
                     </div>
                 </div>
             </dialog>
@@ -1425,7 +1426,7 @@
                                             <div class="author-meta">
                                                 <figure class="author-meta__avatar" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
                                                     <a href=" https://www.facebook.com/tranduckhoatcu" rel="author" itemprop="url" aria-labelledby="author-post-id-7707">
-                                                        <img alt="Daniel Senn, Poio avatar" class="lzy-loaded" data-lzy-src="https://kahoot.com/files/2017/05/daria_trans-64x64.png" src="resources/img/homepage/khoa1.jpg" width="64" height="64">
+                                                        <img alt="Daniel Senn, Poio avatar" class="lzy-loaded" src="resources/img/homepage/khoa1.jpg" width="64" height="64">
                                                     </a>
                                                     <meta itemprop="name" content="Daniel Senn, Poio">
                                                 </figure>
@@ -1500,7 +1501,7 @@
                                         <div class="author-meta">
                                             <figure class="author-meta__avatar" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
                                                 <a href="https://www.facebook.com/l.etu.an20320" rel="author" itemprop="url" aria-labelledby="author-post-id-7649">
-                                                    <img alt="Jean-Baptiste Huynh, DragonBox avatar" class="lzy-loaded" data-lzy-src="https://kahoot.com/files/2017/05/daria_trans-64x64.png" src="resources/img/homepage/tuan1.png" width="64" height="64">
+                                                    <img alt="Jean-Baptiste Huynh, DragonBox avatar" class="lzy-loaded" src="resources/img/homepage/tuan1.png" width="64" height="64">
                                                 </a>
                                                 <meta itemprop="name" content="Jean-Baptiste Huynh, DragonBox">
                                             </figure>
@@ -1575,7 +1576,7 @@
                                         <div class="author-meta">
                                             <figure class="author-meta__avatar" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
                                                 <a href="https://www.facebook.com/hungthuanmk" rel="author" itemprop="url" aria-labelledby="author-post-id-7637">
-                                                    <img alt=" avatar" class="lzy-loaded" data-lzy-src="https://kahoot.com/files/2017/05/daria_trans-64x64.png" src="resources/img/homepage/thuan1.jpg" width="64" height="64">
+                                                    <img alt=" avatar" class="lzy-loaded"  src="resources/img/homepage/thuan1.jpg" width="64" height="64">
 
 
                                                 </a>
@@ -1739,7 +1740,7 @@
         </div>
     </div>
 </footer>
-<script src="resources/js/homepage/jquery-3.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="resources/js/homepage/jquery-3.js"></script>
 <!-- add these only when needed -->
 <div class="modal-overlay"></div>
 <script id="k-functions" src="resources/js/homepage/functions-64617a5349.js"></script>
@@ -1756,7 +1757,8 @@
 function decorateUrl(a,d,c){var h=a.split("#");a=h[0];d="deviceId\x3d"+d;c=c?"\x26sessionId\x3d"+c:"";var b="";var e=-1!=a.indexOf("?")?"\x26":"?";1<h.length&&(b="#"+h[1]);return a.replace(/&+/,"\x26")+e+d+c+b}function addParametersToUrl(a,d,c){a=$(d);a.click(function(a){a.preventDefault();var b=decorateUrl($(this).attr("href"),c.options.deviceId,c.getSessionId());setTimeout(function(){$(this).attr("target")?window.open(b,$(this).attr("target")):location.href=b},google_tag_manager["GTM-WFBWSXS"].macro(1))})}
 var AMPLITUDE_PROD="f4f55f73fbc8e071422c933108b66218",AMPLITUDE_QA="21f4703dee4bd6177fd067a4bd46704e",AMPLITUDE_STAGE="a6c075873a5c8c01460378bcac83ddd4",AMPLITUDE_EXP="7ea5622e950dccb73e96a448ab82422b",amplitudeKey=AMPLITUDE_PROD,deviceId=getParameterByName("deviceId")||null,sessionId=getParameterByName("sessionId")||null,cookieDomain="."+location.host.split(".").slice(-2).join(".");/(experimental|stage.kahoot.com)/i.test(window.location.hostname)&&(amplitudeKey=AMPLITUDE_EXP);
 amplitude.getInstance().init(amplitudeKey,null,{saveEvents:!0,includeUtm:!0,includeReferrer:!0,deviceId:deviceId},function(a){var d=18E5;sessionId&&!isNaN(sessionId)&&Number(sessionId)+d>Date.now()&&a.setSessionId(Number(sessionId));d=getParameterByName("from").replace("create.","")||"kahoot.it";$('[href*\x3d"'+d+'"]').each(function(c,d){addParametersToUrl(c,d,a)});$('[href*\x3d"kahoot.com/register"]').each(function(c,d){addParametersToUrl(c,d,a)})});
-amplitude.getInstance().logEvent("[Website] Pageview",google_tag_manager["GTM-WFBWSXS"].macro(7));</script><script type="text/javascript" id="">$("a").click(function(){var a=$(this).data("tracking-id");void 0!=a&&dataLayer.push({event:"clickTopBar",trackid:a})});
+<%--amplitude.getInstance().logEvent("[Website] Pageview",google_tag_manager["GTM-WFBWSXS"].macro(7));</script><script type="text/javascript" id="">$("a").click(function(){var a=$(this).data("tracking-id");void 0!=a&&dataLayer.push({event:"clickTopBar",trackid:a})});--%>
+
 </script>
 </body>
 </html>
