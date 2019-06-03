@@ -113,6 +113,7 @@
 
 <div id="resultScreen" class="container-fluid">
     <canvas id="endGameChart" style="margin-top:20px;width: 40%; height: 40%;"></canvas>
+    <b style="font-size: 33px; width: 100%; text-align: center"><strong>And the winner is: </strong> <a id="winner"></a> </b>
 </div>
 
 <script src="resources/js/hostView/timer.js"></script>

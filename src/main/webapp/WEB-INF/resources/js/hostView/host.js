@@ -89,6 +89,7 @@ function hostDisplayQuestion() {
                 console.log("endplayers: " + endscores); // Debug
                 console.log("endnickname: " + endNickName);
                 plotChart(endGameChart, "endGameChart", endNickName, endscores);
+                getWinner();
                 showScreen("resultScreen");
             }
             if (msg.type == "END_QUESTION") {
@@ -229,4 +230,16 @@ function plotChart(chart, elementFilledIn, labels, data) {
             }
         }
     });
+}
+
+function getWinner() {
+    let winner = "";
+    let maxScore = Math.max(...endscores);
+    $.each(endscores, function (idx, value) {
+        if (value === maxScore) {
+            winner = endNickName[idx];
+        }
+    });
+    console.log("Winner: "+winner);
+    document.getElementById("winner").innerText = winner;
 }
