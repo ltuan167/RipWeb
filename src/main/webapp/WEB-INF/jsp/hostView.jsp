@@ -5,10 +5,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.5.0"></script>
-
-
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <title>Ripweb! | Play this quiz now!</title>
 
@@ -109,13 +106,13 @@
 
 <div id="questionResultScreen" class="container-fluid">
 <%--    PLOT CHART HERE --%>
-    <canvas id="chartBetweenQuestions" style="width: 70%; height: 50%;"></canvas>
+    <canvas id="chartBetweenQuestions" style="width: 40%; height: 40%;"></canvas>
     <b style="font-size: 33px; width: 100%; text-align: center"><strong>Correct Answer: </strong> <a id="correctAnswer"></a> </b>
     <button id="nextQuestionBtn" class="btn btn-info" onclick="nextQuestion()">Next Question</button>
 </div>
 
 <div id="resultScreen" class="container-fluid">
-    <canvas id="endGameChart" style="width: 70%; height: 50%;"></canvas>
+    <canvas id="endGameChart" style="width: 40%; height: 40%;"></canvas>
     <b style="font-size: large"><strong>We are in resultScreen now</strong></b>
 </div>
 
