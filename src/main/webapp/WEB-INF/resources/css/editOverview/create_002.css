@@ -5608,7 +5608,6 @@ p {
 .content-block__copy {
     -ms-flex: 1 0;
     flex: 1 0;
-    margin: auto 1rem auto 0
 }
 
 .content-block__copy--top {

@@ -691,8 +691,6 @@
                                                     <option value="3">One</option>
                                                 </select>
                                                  <a style="margin-left: 10px;">ID: </a> <a id="collectionId" style="margin-left:5px; margin-right: 20px;">1</a>
-                                                 <input type="text" id="collectionName" style="margin-right: 10px;" value="" placeholder="Name"/>
-                                                 <input type="text" id="collectionDescription" value="" placeholder="Description"/>
                                              </div>
                                        </span>
                                     </div>
@@ -700,11 +698,6 @@
                                         <div class="" style="display: inline;" data-tooltipped="" aria-describedby="tippy-tooltip-22" data-original-title="Edit your kahoot description">
                                             <button type="button" role="button" data-functional-selector="edit-description-button description-content-block__edit-button" class="icon-button edit-description-button content-block__icon-button" aria-label="Edit description">
                                              <span class="icon-button__wrap">
-                                                <span class="icon icon-button__icon icon--large icon--solid">
-                                                   <svg class="icon__svg" data-functional-selector="icon" focusable="false">
-                                                      <use class="icon__use" xlink:href="#edit"></use>
-                                                   </svg>
-                                                </span>
                                              </span>
                                             </button>
                                         </div>
@@ -713,11 +706,6 @@
                                         <div class="" style="display: inline;" data-tooltipped="" aria-describedby="tippy-tooltip-22" data-original-title="Edit your kahoot description">
                                             <button type="button" role="button" data-functional-selector="edit-description-button description-content-block__edit-button" class="icon-button edit-description-button content-block__icon-button" aria-label="Edit description">
                                              <span class="icon-button__wrap">
-                                                <span class="icon icon-button__icon icon--large icon--solid">
-                                                   <svg class="icon__svg" data-functional-selector="icon" focusable="false">
-                                                      <use class="icon__use" xlink:href="#edit"></use>
-                                                   </svg>
-                                                </span>
                                              </span>
                                             </button>
                                         </div>
@@ -738,6 +726,12 @@
                                                    <svg class="icon__svg" data-functional-selector="icon" focusable="false">
                                                       <use class="icon__use" xlink:href="#user"></use>
                                                    </svg>
+                                                    <div class="content-block-visibility-wrapper">
+                                                        <span id="collectionNameLabel" style=" white-space: nowrap; margin-right: 50px; display: block">Name: khoa</span>
+                                                        <span id="collectionDescriptionLabel" style=" white-space: nowrap; display: block;">Description: dang test ma</span>
+                                                 <input type="text" id="collectionName" style="margin-right: 10px; display: none" value="" placeholder="Name"/>
+                                                 <input type="text" id="collectionDescription" value="" style="display: none" placeholder="Description"/>
+                                             </div>
                                                 </span>
                                                 <span>Only you</span>
                                              </div>
@@ -748,9 +742,14 @@
                                         <div class="" style="display: inline;" data-tooltipped="" aria-describedby="tippy-tooltip-22" data-original-title="Edit your kahoot description">
                                             <button type="button" role="button" data-functional-selector="edit-description-button description-content-block__edit-button" class="icon-button edit-description-button content-block__icon-button" aria-label="Edit description">
                                              <span class="icon-button__wrap">
-                                                <span class="icon icon-button__icon icon--large icon--solid">
+                                                <span id="editButton" class="icon icon-button__icon icon--large icon--solid" style="display:none;" onclick="editButtonAction()">
                                                    <svg class="icon__svg" data-functional-selector="icon" focusable="false">
                                                       <use class="icon__use" xlink:href="#edit"></use>
+                                                   </svg>
+                                                </span>
+                                                 <span id="addButton" class="icon icon-button__icon content-actions__icon icon--large icon--solid icon-button__icon" onclick="addButtonAction()" style="display:none;">
+                                                   <svg class="icon__svg" data-functional-selector="icon" focusable="false">
+                                                      <use class="icon__use" xlink:href="#add"></use>
                                                    </svg>
                                                 </span>
                                              </span>
@@ -859,6 +858,63 @@
         crossorigin="anonymous"></script>
 <script>
     loadQuestions();
+</script>
+<script>
+
+    document.getElementById('collectionName').value = null
+    document.getElementById('collectionDescription').value = null
+    if((!$('#collectionName').val()) && (!$('#collectionDescription').val())){
+        $('#addButton').hide();
+        $('#editButton').show();
+    }
+    else {
+        $('#addButton').show();
+        $('#editButton').hide();
+    }
+    editButtonAction = function getFocus() {
+        var a = document.getElementById("collectionNameLabel");
+        var b = document.getElementById("collectionDescriptionLabel");
+        var c = document.getElementById("collectionName");
+        var d = document.getElementById("collectionDescription");
+        if ((a.style.display === "block" && b.style.display === "block") && (c.style.display === "none" && d.style.display === "none")) {
+            a.style.display = "none";
+            b.style.display = "none";
+            c.style.display = "block";
+            d.style.display = "block";
+        }
+
+
+        document.getElementById("collectionName").focus();
+
+
+    }
+    addButtonAction = function getFocus() {
+        var a = document.getElementById("collectionNameLabel");
+        var b = document.getElementById("collectionDescriptionLabel");
+        var c = document.getElementById("collectionName");
+        var d = document.getElementById("collectionDescription");
+        if ((a.style.display === "none" && b.style.display === "none") && (c.style.display === "block" && d.style.display === "block")) {
+            a.style.display = "block";
+            b.style.display = "block";
+            c.style.display = "none";
+            d.style.display = "none";
+        }
+        $('#collectionNameLabel').html('Name: '+document.getElementById("collectionName").value);
+        $('#collectionDescriptionLabel').html('Description: '+document.getElementById("collectionDescription").value);
+    }
+
+    $(document).ready(function(){
+        $('#editButton').click(function(){
+            $('#addButton').toggle(100);
+            $('#editButton').toggle(100);
+        });
+    });
+    $(document).ready(function(){
+        $('#addButton').click(function(){
+            $('#addButton').toggle(100);
+            $('#editButton').toggle(100);
+        });
+    });
 </script>
 
 </body>
