@@ -66,16 +66,15 @@ function hostDisplayQuestion() {
             }
             if (msg.type == "NEW_PLAYER") {
                 let playersList = document.getElementById("playersList");
-                let playersListHTML = "";
                 let players = msg.content;
-                for (let i = players.length - 1; i >= 0; i--) {
-                    if (i != 0 || players.length == 1)
-                        playersListHTML += "<li class=\"list-inline-item tada animated\" style=\"width: auto;color: rgb(255,255,255);height: auto;margin-top: 40px;margin-right: 40px;margin-bottom: 40px;margin-left: 40px;font-family: Comfortaa, cursive;\">" + players[i].nickname + "</li>";
-                    else
-                        playersListHTML += "<li class=\"list-inline-item\" style=\"width: auto;color: rgb(255,255,255);height: auto;margin-top: 40px;margin-right: 40px;margin-bottom: 40px;margin-left: 40px;font-family: Comfortaa, cursive;\">" + players[i].nickname + "</li>";
+                if (players) {
+                    let newPlayersListHTML = "<li class=\"list-inline-item tada animated\" style=\"width: auto;color: rgb(255,255,255);height: auto;margin-top: 40px;margin-right: 40px;margin-bottom: 40px;margin-left: 40px;font-family: Comfortaa, cursive;\">" + players[players.length-1].nickname + "</li>";
+                    for (let i = players.length - 2; i > 0; i--) {
+                        newPlayersListHTML += "<li class=\"list-inline-item\" style=\"width: auto;color: rgb(255,255,255);height: auto;margin-top: 40px;margin-right: 40px;margin-bottom: 40px;margin-left: 40px;font-family: Comfortaa, cursive;\">" + players[i].nickname + "</li>";
+                    }
+                    playersList.innerHTML = newPlayersListHTML;
+                    document.getElementById("playersCount").innerText = players.length;
                 }
-                playersList.innerHTML = playersListHTML;
-                document.getElementById("playersCount").innerText = players.length;
             }
             if (msg.type == "END_GAME") {
                 // show result

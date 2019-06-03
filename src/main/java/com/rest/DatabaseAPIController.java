@@ -38,6 +38,44 @@ public class DatabaseAPIController {
 		return null;
 	}
 
+	@PutMapping(value = "/collection/put", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ApiResponse addNewQuestionCollection(@RequestParam Integer owner_id, @RequestParam String name, @RequestParam(required = false) String description,
+												@RequestBody(required = false) Set<Question> questionSet, HttpServletResponse res) {
+		QuestionCollection newQuestionCollection = new QuestionCollection();
+		User owner = userDAO.getUserById(owner_id);
+		if (owner != null) {
+			newQuestionCollection.setOwner_id(owner);
+			newQuestionCollection.setName(name);
+			if (description != null)
+				newQuestionCollection.setDescription(description);
+
+			Integer newCollectionId = questionCollectionDAO.addNewQuestionCollection(newQuestionCollection);
+			if (newCollectionId != null) {
+				if (questionSet != null)
+					questionCollectionDAO.updateNewQuestions2Collection(newCollectionId, questionSet);
+				ApiResponse response = new ApiResponse();
+				response.setType(ApiResponse.ApiResponseType.OK);
+				response.setContent(newCollectionId);
+				return response;
+			}
+		}
+		res.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+		return null;
+	}
+
+
+//	@RequestParam String question, @RequestParam(required = false) String image,
+//	@RequestParam Integer correctAnswer, @RequestParam String answer1, @RequestParam String answer2, @RequestParam String answer3,
+//	@RequestParam String answer4,
+	@PutMapping(value = "/question/put", produces = MediaType.APPLICATION_JSON_VALUE)
+	public void addNewQuestion(@RequestParam Integer collectionId, @RequestBody Set<Question> questionSet, HttpServletResponse res) {
+		if (questionCollectionDAO.updateNewQuestions2Collection(collectionId, questionSet)) {
+			res.setStatus(HttpServletResponse.SC_OK);
+			return;
+		}
+		res.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+	}
+
 	@GetMapping(value = "/collection/list", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ApiResponse getAllCollections() {
 		ApiResponse response = new ApiResponse();
@@ -48,13 +86,6 @@ public class DatabaseAPIController {
 
 }
 
-//class QuestionCollectionResponse {
-//	private QuestionCollection info;
-//	private Set<Question> questions;
-//
-//	public QuestionCollection getInfo() { return info; }
-//	public void setInfo(QuestionCollection info) { this.info = info; }
-//
-//	public Set<Question> getQuestions() { return questions; }
-//	public void setQuestions(Set<Question> questions) { this.questions = questions; }
+//class QuestionPacks {
+//	Set<Question>
 //}

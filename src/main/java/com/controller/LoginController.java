@@ -32,6 +32,7 @@ class LoginController {
 		try {
 			User user = userDAO.getUserByEmail(email);
 			if (new BCryptPasswordEncoder().matches(password, user.getPassword())) { // check valid user
+				req.getSession().setAttribute("user", user);
 				String token = jwtService.generateTokenLogin(email);
 				Cookie jwtCookie = new Cookie("jwt", token);
 //				jwtCookie.setSecure(true);
@@ -44,7 +45,6 @@ class LoginController {
 				return "login";
 			}
 		} catch (Exception ex) {
-//			model.addAttribute("msg","Wrong email or password");
 			System.err.println(ex.getMessage());  // Debug
 			return "login";
 		}
@@ -58,6 +58,8 @@ class LoginController {
 
 	@RequestMapping("/logout")
 	public String logout(HttpServletRequest req, HttpServletResponse res, Model model) {
+		if (req.getSession().getAttribute("user") != null)
+			req.getSession().removeAttribute("user");
 		req.getSession().invalidate();
 		res.addCookie(new Cookie("jwt", null));
 		model.addAttribute("message", "Logged out!");

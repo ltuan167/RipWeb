@@ -1,5 +1,6 @@
 package com.dao;
 
+import com.entities.QuestionCollection;
 import com.entities.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -39,6 +40,15 @@ public class UserDAO {
 		session.beginTransaction();
 		String hql = "SELECT * FROM User WHERE email='"+email+"'";
 		return (User) session.createSQLQuery(hql).addEntity(User.class).getResultList().get(0);
+	}
+
+	public User getUserById(Integer userId) {
+		Session session = sessionFactory.getCurrentSession();
+		Transaction tx = session.beginTransaction();
+		String sql = "SELECT * FROM User WHERE id="+userId;
+		User user = (User) session.createSQLQuery(sql).addEntity(User.class).uniqueResult();
+		tx.commit();
+		return user;
 	}
 
 	public String loadPassword(String email) {
