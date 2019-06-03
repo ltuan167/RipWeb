@@ -49,7 +49,6 @@ public class DatabaseAPIController {
 			if (description != null)
 				newQuestionCollection.setDescription(description);
 
-
 			Integer newCollectionId = questionCollectionDAO.addNewQuestionCollection(newQuestionCollection);
 			if (newCollectionId != null) {
 				if (questionSet != null)
