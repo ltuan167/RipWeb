@@ -120,7 +120,7 @@ function loadQuestions() {
 
     let questionCollectionId = getUrlParameter("questionCollectionId");
     if (questionCollectionId) {
-        $.get("http://localhost/1.0/db/collection/get?questionCollectionId="+questionCollectionId, (data) => {
+        $.get("1.0/db/collection/get?questionCollectionId="+questionCollectionId, (data) => {
             let collection = data.content;
             if (collection) {
                 document.getElementById("gameCollectionName").innerText = collection.name;

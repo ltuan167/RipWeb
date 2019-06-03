@@ -38,7 +38,7 @@
 <div id="playersScreen" class="container-fluid jello animated" style="width: 100vw;height: 100vh;padding-left: 0px;padding-right: 0px;background-color: #e28c05;">
     <select class="dropdown dropdown-list" placeholder="Question collection name" id="hostQuesId">
         <script>
-            $.get("http://localhost/1.0/db/collection/list", (data) => {
+            $.get("1.0/db/collection/list", (data) => {
                 let collections = data.content;
                 if (collections) {
                     collections.forEach((collection) => {
