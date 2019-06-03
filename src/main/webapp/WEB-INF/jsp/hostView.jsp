@@ -106,14 +106,13 @@
 
 <div id="questionResultScreen" class="container-fluid">
 <%--    PLOT CHART HERE --%>
-    <canvas id="chartBetweenQuestions" style="width: 40%; height: 40%;"></canvas>
+    <canvas id="chartBetweenQuestions" style="margin-top:20px;width: 40%; height: 40%;"></canvas>
     <b style="font-size: 33px; width: 100%; text-align: center"><strong>Correct Answer: </strong> <a id="correctAnswer"></a> </b>
     <button id="nextQuestionBtn" class="btn btn-info" onclick="nextQuestion()">Next Question</button>
 </div>
 
 <div id="resultScreen" class="container-fluid">
-    <canvas id="endGameChart" style="width: 40%; height: 40%;"></canvas>
-    <b style="font-size: large"><strong>We are in resultScreen now</strong></b>
+    <canvas id="endGameChart" style="margin-top:20px;width: 40%; height: 40%;"></canvas>
 </div>
 
 <script src="resources/js/hostView/timer.js"></script>
