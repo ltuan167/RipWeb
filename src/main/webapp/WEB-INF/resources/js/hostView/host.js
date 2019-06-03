@@ -15,6 +15,7 @@ let correctAnswer, chartDataset, questionId, stompClient = null;
 let game_ended = false;
 let answer1, answer2, answer3, answer4;
 let endscores =[], endNickName = [];
+let chartBetweenQuestions, endGameChart;
 function hostDisplayQuestion() {
     var socket = new SockJS('/ws');
     stompClient = Stomp.over(socket);
@@ -85,15 +86,15 @@ function hostDisplayQuestion() {
                     endscores.push(endplayer.score);
                     endNickName.push(endplayer.nickname);
                 });
-                console.log("endplayers: " + endscores);
+                console.log("endplayers: " + endscores); // Debug
                 console.log("endnickname: " + endNickName);
-                plotEndGameChart();
+                plotChart(endGameChart,"endGameChart",endNickName,endscores);
                 showScreen("resultScreen");
             }
             if (msg.type == "END_QUESTION") {
                 stopTimer();
                 chartDataset = msg.content;
-                plotBetweenChart();
+                plotChart(chartBetweenQuestions,"chartBetweenQuestions",[answer1, answer2, answer3, answer4],chartDataset);
                 showScreen("questionResultScreen");
             }
         });
@@ -168,22 +169,23 @@ function hostEndQuestion() {
     };
 }
 
-var chartBetweenQuestions;
-function plotBetweenChart() {
-    if (chartBetweenQuestions){
-        chartBetweenQuestions.destroy();
-    }
-    var ctx = document.getElementById("chartBetweenQuestions");
 
-        chartBetweenQuestions = new Chart (ctx, {
+
+function plotChart(chart, elementFilledIn, lables, data) {
+    if (chart){
+        chart.destroy();
+    }
+    var ctx = document.getElementById(elementFilledIn);
+
+    chart = new Chart (ctx, {
         type: 'bar',
         data: {
 
-            labels: [answer1, answer2, answer3, answer4],
+            labels: lables,
             datasets: [{
 
                 // label: '#Scores',
-                data: chartDataset,
+                data: data,
                 backgroundColor: [
                     'rgba(192,23,51,0.65)',
                     'rgba(19,104,206,0.65)',
@@ -232,89 +234,6 @@ function plotBetweenChart() {
                         size: 25,
                         weight: 600
                     },
-                }
-            }
-        }
-    });
-
-}
-
-
-var endGameChart;
-function plotEndGameChart() {
-    if (endGameChart){
-        endGameChart.destroy();
-    }
-    var ctx = document.getElementById("endGameChart");
-
-    endGameChart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-
-            labels: endNickName,
-            datasets: [{
-
-                // label: '#Scores',
-                data: endscores,
-                backgroundColor: [
-                    'rgba(192,23,51,0.65)',
-                    'rgba(19,104,206,0.65)',
-                    'rgba(216,158,0,0.65)',
-                    'rgba(41,143,13,0.65)',
-                ],
-                borderColor: [
-                    'rgb(192,23,51)',
-                    'rgb(19,104,206)',
-                    'rgb(216,158,0)',
-                    'rgba(41,143,13,0.99)',
-                ],
-                borderWidth: 2
-            }]
-        },
-        options: {
-            scales:{
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true,
-                        fontFamily: "Helvetica",
-                        fontSize: "25",
-                        fontColor:"#000000"
-                    }
-                }],
-                xAxes: [{
-                    ticks: {
-                        beginAtZero: true,
-                        fontFamily: "Helvetica",
-                        fontSize: "25",
-                        fontColor:"#000000"
-                    }
-                }]
-            },
-            legend: false,
-            tooltip: false,
-            plugins: {
-                datalabels: {
-                    align: function(context) {
-                        var index = context.dataIndex;
-                        var value = context.dataset.data[index];
-                        var invert = Math.abs(value) <= 1;
-                        return value < 1 ? 'end' : 'start'
-                    },
-                    // anchor: 'end',
-                    // backgroundColor: null,
-                    // borderColor: null,
-                    // borderRadius: 2,
-                    // borderWidth: 1,
-                    // color: '#223388',
-                    font: {
-                        size: 25,
-                        weight: 600
-                    },
-                    // offset: 1,
-                    // padding: 0,
-                    // formatter: function(value) {
-                    //     return Math.round(value * 10) / 10
-                    // }
                 }
             }
         }
