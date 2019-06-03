@@ -1,12 +1,12 @@
 function hostStart(gamePIN) {
     var xhttp = new XMLHttpRequest();
-    xhttp.open("POST","1.0/game/start?gamePIN=" + gamePIN, true);
-    xhttp.onreadystatechange =  () => {
+    xhttp.open("POST", "1.0/game/start?gamePIN=" + gamePIN, true);
+    xhttp.onreadystatechange = () => {
         if (xhttp.readyState == 4)
             console.log(xhttp.response);
     };
     xhttp.send();
-    xhttp.onerror =  (e) => {
+    xhttp.onerror = (e) => {
         console.error(xhttp.statusText);
     };
 }
@@ -14,14 +14,15 @@ function hostStart(gamePIN) {
 let correctAnswer, chartDataset, questionId, stompClient = null;
 let game_ended = false;
 let answer1, answer2, answer3, answer4;
-let endscores =[], endNickName = [];
+let endscores = [], endNickName = [];
 let chartBetweenQuestions, endGameChart;
+
 function hostDisplayQuestion() {
     var socket = new SockJS('/ws');
     stompClient = Stomp.over(socket);
-    stompClient.connect({},  () =>  {
+    stompClient.connect({}, () => {
         console.log('Connected');
-        stompClient.subscribe('/game/'+ gamePIN + "/host", (data) => {
+        stompClient.subscribe('/game/' + gamePIN + "/host", (data) => {
             let msg = JSON.parse(data.body);
             console.log("Type: " + msg.type);
             if (msg.type == "NEXT_QUESTION") {
@@ -52,7 +53,7 @@ function hostDisplayQuestion() {
                 document.getElementById("correctAnswer").innerText = correctAnswer;
                 setTimer(question.time);
                 countDown((remainsSecond) => {
-                    let minutes = Math.floor(remainsSecond/60);
+                    let minutes = Math.floor(remainsSecond / 60);
                     let seconds = remainsSecond % 60;
                     document.getElementById("endQuestionBtn").innerHTML = minutes + ":" + seconds;
                 }, () => {
@@ -67,11 +68,11 @@ function hostDisplayQuestion() {
                 let playersList = document.getElementById("playersList");
                 let playersListHTML = "";
                 let players = msg.content;
-                for (let i = players.length-1; i >= 0; i--) {
+                for (let i = players.length - 1; i >= 0; i--) {
                     if (i != 0 || players.length == 1)
-                        playersListHTML += "<li class=\"list-inline-item tada animated\" style=\"width: auto;color: rgb(255,255,255);height: auto;margin-top: 40px;margin-right: 40px;margin-bottom: 40px;margin-left: 40px;font-family: Comfortaa, cursive;\">"+players[i].nickname+"</li>";
+                        playersListHTML += "<li class=\"list-inline-item tada animated\" style=\"width: auto;color: rgb(255,255,255);height: auto;margin-top: 40px;margin-right: 40px;margin-bottom: 40px;margin-left: 40px;font-family: Comfortaa, cursive;\">" + players[i].nickname + "</li>";
                     else
-                        playersListHTML += "<li class=\"list-inline-item\" style=\"width: auto;color: rgb(255,255,255);height: auto;margin-top: 40px;margin-right: 40px;margin-bottom: 40px;margin-left: 40px;font-family: Comfortaa, cursive;\">"+players[i].nickname+"</li>";
+                        playersListHTML += "<li class=\"list-inline-item\" style=\"width: auto;color: rgb(255,255,255);height: auto;margin-top: 40px;margin-right: 40px;margin-bottom: 40px;margin-left: 40px;font-family: Comfortaa, cursive;\">" + players[i].nickname + "</li>";
                 }
                 playersList.innerHTML = playersListHTML;
                 document.getElementById("playersCount").innerText = players.length;
@@ -88,13 +89,14 @@ function hostDisplayQuestion() {
                 });
                 console.log("endplayers: " + endscores); // Debug
                 console.log("endnickname: " + endNickName);
-                plotChart(endGameChart,"endGameChart",endNickName,endscores);
+                plotChart(endGameChart, "endGameChart", endNickName, endscores);
                 showScreen("resultScreen");
             }
             if (msg.type == "END_QUESTION") {
                 stopTimer();
                 chartDataset = msg.content;
-                plotChart(chartBetweenQuestions,"chartBetweenQuestions",[answer1, answer2, answer3, answer4],chartDataset);
+                console.log("ChartDataset nef mas: " + chartDataset);
+                plotChart(chartBetweenQuestions, "chartBetweenQuestions", [answer1, answer2, answer3, answer4], chartDataset);
                 showScreen("questionResultScreen");
             }
         });
@@ -103,10 +105,12 @@ function hostDisplayQuestion() {
         console.error(stompClient.statusText);
     };
 }
+
 let gamePIN = null;
+
 function hostCreatGame(hostQuesId) {
-    var xhttp = new XMLHttpRequest();
-    xhttp.open("POST","1.0/game/create?questionCollectionId=" + hostQuesId, true);
+    let xhttp = new XMLHttpRequest();
+    xhttp.open("POST", "1.0/game/create?questionCollectionId=" + hostQuesId, true);
     xhttp.onreadystatechange = () => {
         if (xhttp.readyState == XMLHttpRequest.DONE) {
             if (xhttp.status == 201) {
@@ -122,13 +126,13 @@ function hostCreatGame(hostQuesId) {
         }
     };
     xhttp.send();
-    xhttp.onerror =  (e) => {
+    xhttp.onerror = (e) => {
         console.error(xhttp.statusText);
     };
 }
 
 function showScreen(divId) {
-    let divIDs = ["playersScreen", "questionScreen", "questionResultScreen","resultScreen"];
+    let divIDs = ["playersScreen", "questionScreen", "questionResultScreen", "resultScreen"];
     divIDs.forEach((eachDivID) => {
         let showDiv = document.getElementById(eachDivID);
         if (divId == eachDivID)
@@ -144,8 +148,8 @@ function nextQuestion() {
         return;
     }
 
-    var xhttp = new XMLHttpRequest();
-    xhttp.open("POST","1.0/game/next?gamePIN="+ gamePIN,true);
+    let xhttp = new XMLHttpRequest();
+    xhttp.open("POST", "1.0/game/next?gamePIN=" + gamePIN, true);
     xhttp.onreadystatechange = () => {
         if (xhttp.readyState == 4)
             console.log(xhttp.response);
@@ -157,8 +161,8 @@ function nextQuestion() {
 }
 
 function hostEndQuestion() {
-    var xhttp = new XMLHttpRequest();
-    xhttp.open("POST","1.0/game/endquestion?gamePIN="+ gamePIN + "&questionId=" + questionId, true);
+    let xhttp = new XMLHttpRequest();
+    xhttp.open("POST", "1.0/game/endquestion?gamePIN=" + gamePIN + "&questionId=" + questionId, true);
     xhttp.onreadystatechange = () => {
         if (xhttp.readyState == 4)
             console.log(xhttp.response);
@@ -170,53 +174,46 @@ function hostEndQuestion() {
 }
 
 
-
-function plotChart(chart, elementFilledIn, lables, data) {
-    if (chart){
+let myColor = [];
+function plotChart(chart, elementFilledIn, labels, data) {
+    if (chart) {
         chart.destroy();
     }
-    var ctx = document.getElementById(elementFilledIn);
-
-    chart = new Chart (ctx, {
+    if (elementFilledIn === "chartBetweenQuestions") {
+        $.each(labels, function (idx, value) {
+            if (value === correctAnswer) {
+                myColor[idx] = 'rgb(19,104,206)';
+            } else myColor[idx] = 'rgba(245,27,66,0.75)';
+        });
+    } else myColor = ['rgb(255,15,0)', 'rgb(19,104,206)', 'rgb(216,158,0)', 'rgba(41,143,13,0.99)',];0
+    let ctx = document.getElementById(elementFilledIn);
+    chart = new Chart(ctx, {
         type: 'bar',
         data: {
-
-            labels: lables,
+            labels: labels,
             datasets: [{
-
                 // label: '#Scores',
                 data: data,
-                backgroundColor: [
-                    'rgba(192,23,51,0.65)',
-                    'rgba(19,104,206,0.65)',
-                    'rgba(216,158,0,0.65)',
-                    'rgba(41,143,13,0.65)',
-                ],
-                borderColor: [
-                    'rgb(192,23,51)',
-                    'rgb(19,104,206)',
-                    'rgb(216,158,0)',
-                    'rgba(41,143,13,0.99)',
-                ],
+                backgroundColor: myColor,
+                borderColor: myColor,
                 borderWidth: 2
             }]
         },
         options: {
-            scales:{
+            scales: {
                 yAxes: [{
                     ticks: {
                         beginAtZero: true,
                         fontFamily: "Helvetica",
-                        fontSize: "25",
-                        fontColor:"#000000"
+                        fontSize: "30",
+                        fontColor: "#000000"
                     }
                 }],
                 xAxes: [{
                     ticks: {
-                        beginAtZero: true,
                         fontFamily: "Helvetica",
-                        fontSize: "25",
-                        fontColor:"#000000"
+                        fontSize: "30",
+                        fontColor: "#000000"
                     }
                 }]
             },
@@ -224,19 +221,13 @@ function plotChart(chart, elementFilledIn, lables, data) {
             tooltip: false,
             plugins: {
                 datalabels: {
-                    align: function(context) {
-                        var index = context.dataIndex;
-                        var value = context.dataset.data[index];
-                        var invert = Math.abs(value) <= 1;
-                        return value < 1 ? 'end' : 'start'
-                    },
+                    align: 'top',
                     font: {
-                        size: 25,
-                        weight: 600
+                        size: 45,
+                        weight: 600,
                     },
                 }
             }
         }
     });
-
 }
