@@ -34,4 +34,15 @@ public class QuestionCollectionDAO {
 		return listOfCollections;
 	}
 
+	public Integer addNewQuestionCollection(QuestionCollection questionCollection) {
+		if (questionCollection != null) {
+			Session session = sessionFactory.openSession();
+			Transaction tx = session.beginTransaction();
+			Integer newCollectionId = (Integer) session.save(questionCollection);
+			tx.commit();
+			return newCollectionId;
+		}
+		return null;
+	}
+
 }

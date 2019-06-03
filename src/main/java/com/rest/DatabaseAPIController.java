@@ -38,6 +38,27 @@ public class DatabaseAPIController {
 		return null;
 	}
 
+	@PutMapping(value = "/collection/put/by/id", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ApiResponse addNewQuestionCollection(@RequestParam Integer owner_id, @RequestParam String name, @RequestParam(required = false) String description, HttpServletResponse res) {
+		QuestionCollection newQuestionCollection = new QuestionCollection();
+		User owner = userDAO.getUserById(owner_id);
+		if (owner != null) {
+			newQuestionCollection.setOwner_id(owner);
+			newQuestionCollection.setName(name);
+			if (description != null)
+				newQuestionCollection.setDescription(description);
+			Integer newCollectionId = questionCollectionDAO.addNewQuestionCollection(newQuestionCollection);
+			if (newCollectionId != null) {
+				ApiResponse response = new ApiResponse();
+				response.setType(ApiResponse.ApiResponseType.OK);
+				response.setContent(newCollectionId);
+				return response;
+			}
+		}
+		res.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+		return null;
+	}
+
 	@GetMapping(value = "/collection/list", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ApiResponse getAllCollections() {
 		ApiResponse response = new ApiResponse();
