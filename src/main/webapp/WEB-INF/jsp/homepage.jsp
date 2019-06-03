@@ -18,7 +18,16 @@
         html {
             font-family: sans-serif;
             -ms-text-size-adjust: 100%;
-            -webkit-text-size-adjust: 100%
+            -webkit-text-size-adjust: 100%;
+            overflow: scroll;
+            overflow-x: hidden;
+        }
+
+        ::-webkit-scrollbar {
+            width: 0;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #FF0000;
         }
 
         body {
@@ -1430,32 +1439,21 @@
                                                     <meta itemprop="name" content="Daniel Senn, Poio">
                                                 </figure>
                                                 <div class="author-meta__info">
-
                                                     <a class="author-meta__name" id="author-post-id-7707" href="https://www.facebook.com/tranduckhoatcu"><span class="visually-hidden">Author:</span>Khoa Tran, Tcu</a>
-
                                                     <span class="author-meta__date" datetime="2019-05-15T05:36:37+00:00">Dec 06, 1998</span>
-
                                                     <meta itemprop="datePublished" content="2019-05-15T05:36:37+00:00" datetime="2019-05-15T05:36:37+00:00">
                                                     <meta itemprop="dateModified" content="2019-05-15T05:36:37+00:00" datetime="2019-05-15T05:36:37+00:00">
-
                                                     <div itemprop="publisher" itemscope="" itemtype="https://schema.org/Organization" class="visually-hidden" style="display:none;">
                                                         <meta itemprop="name" content="RipWeb!">
                                                         <div itemprop="logo" itemscope="" itemtype="https://schema.org/ImageObject">
                                                             <meta itemprop="url" content="https://kahoot.com/kahoot.png">
                                                         </div>
                                                     </div>
-
                                                 </div>
                                             </div>
-
-
                                             <div class="card-component__snippet">
                                                 <h1 itemprop="headline" id="post-id-7707"><a title="Front-end Developer">Front-end Developer</a></h1>
-
                                                 <p itemprop="description">Have a good day <3</p>
-
-
-
                                             </div>
                                             <div class="skew-wrap">
                                                 <div class="card-component__hashtag skew">
@@ -1463,31 +1461,14 @@
                                                         <a href="https://www.facebook.com/tranduckhoatcu" rel="tag">Learn More</a>						</div>
                                                 </div>
                                             </div>
-
                                         </div><!--blog-component__body -->
-
-
-
                                     </article>
                                 </div><!-- //layout__item --><div class="layout__item" style="opacity: 1; display: flex; transform: scaleX(1) scaleY(1);">
-
-
                                 <article class="card-component  component-theme--green" itemscope="" itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
-
-
                                     <meta itemprop="mainEntityOfPage" content="https://github.com/lttony98">
-
-
-
-
-
-
-
-
                                     <figure class="card-component__img" itemprop="image" itemscope="" itemtype="https://schema.org/ImageObject">
                                         <a href="https://github.com/lttony98" class="skew" aria-labelledby="post-id-7649">
                                             <div class="skew__inner">
-
                                                 <img src="resources/img/homepage/tuan2.jpg" class="attachment-blog-component size-blog-component wp-post-image lzy-loaded" alt="Ripweb! and DragonBox join forces to make learning math awesome" itemprop="url"  width="570" height="320">
                                                 <meta itemprop="url" content="https://kahoot.com/files/2019/05/make-learning-math-awesome-blog-cover-725x408.jpg">
                                                 <meta itemprop="height" content="570">
@@ -1495,7 +1476,6 @@
                                             </div>
                                         </a>
                                     </figure>
-
                                     <div class="card-component__body card-component__body--tag">
                                         <div class="author-meta">
                                             <figure class="author-meta__avatar" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
@@ -1508,7 +1488,7 @@
 
                                                 <a class="author-meta__name" id="author-post-id-7649" href="https://www.facebook.com/l.etu.an20320"><span class="visually-hidden">Author:</span>Le Tuan, Lee</a>
 
-                                                <span class="author-meta__date" datetime="2019-05-09T03:44:00+00:00">?? ??, 1998</span>
+                                                <span class="author-meta__date" datetime="2019-05-09T03:44:00+00:00">July 16 1998</span>
 
                                                 <meta itemprop="datePublished" content="2019-05-09T03:44:00+00:00" datetime="2019-05-09T03:44:00+00:00">
                                                 <meta itemprop="dateModified" content="2019-05-09T03:44:00+00:00" datetime="2019-05-09T03:44:00+00:00">
@@ -1519,18 +1499,12 @@
                                                         <meta itemprop="url" content="https://kahoot.com/kahoot.png">
                                                     </div>
                                                 </div>
-
                                             </div>
                                         </div>
-
-
                                         <div class="card-component__snippet">
                                             <h1 itemprop="headline" id="post-id-7649"><a title="Back-end Developer">Back-end Developer</a></h1>
 
-                                            <p itemprop="description">your quote ???</p>
-
-
-
+                                            <p itemprop="description">Everything is good except it sucks!</p>
                                         </div>
                                         <div class="skew-wrap">
                                             <div class="card-component__hashtag skew">
@@ -1538,31 +1512,16 @@
                                                     <a href="https://www.facebook.com/l.etu.an20320" rel="tag">Learn More</a>						</div>
                                             </div>
                                         </div>
-
                                     </div><!--blog-component__body -->
-
-
-
                                 </article>
                             </div><!-- //layout__item --><div class="layout__item" style="opacity: 1; display: flex; transform: scaleX(1) scaleY(1);">
 
 
                                 <article class="card-component  component-theme--red" itemscope="" itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
-
-
                                     <meta itemprop="mainEntityOfPage" content="https://github.com/hungthuanmk">
-
-
-
-
-
-
-
-
                                     <figure class="card-component__img" itemprop="image" itemscope="" itemtype="https://schema.org/ImageObject">
                                         <a href="https://github.com/hungthuanmk" class="skew" aria-labelledby="post-id-7637">
                                             <div class="skew__inner">
-
                                                 <img src="resources/img/homepage/thuan2.jpg" class="attachment-blog-component size-blog-component wp-post-image lzy-loaded" alt="Happy Teacher Appreciation Week!" itemprop="url" width="570" height="320">
                                                 <meta itemprop="url" content="https://kahoot.com/files/2019/05/teacher_appreciation_week_2019-725x408.png">
                                                 <meta itemprop="height" content="570">
@@ -1576,16 +1535,13 @@
                                             <figure class="author-meta__avatar" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
                                                 <a href="https://www.facebook.com/hungthuanmk" rel="author" itemprop="url" aria-labelledby="author-post-id-7637">
                                                     <img alt=" avatar" class="lzy-loaded" data-lzy-src="https://kahoot.com/files/2017/05/daria_trans-64x64.png" src="resources/img/homepage/thuan1.jpg" width="64" height="64">
-
-
                                                 </a>
                                                 <meta itemprop="name" content="Daria Golubeva">
                                             </figure>
                                             <div class="author-meta__info">
 
                                                 <a class="author-meta__name" id="author-post-id-7637" href="https://www.facebook.com/hungthuanmk"><span class="visually-hidden">Author:</span>Nguyen Phan Hung Thuan</a>
-
-                                                <span class="author-meta__date" datetime="2019-05-06T11:59:01+00:00">?? ??, 1998</span>
+                                                <span class="author-meta__date" datetime="2019-05-06T11:59:01+00:00">June 27 1998</span>
 
                                                 <meta itemprop="datePublished" content="2019-05-06T11:59:01+00:00" datetime="2019-05-06T11:59:01+00:00">
                                                 <meta itemprop="dateModified" content="2019-05-06T11:59:01+00:00" datetime="2019-05-06T11:59:01+00:00">

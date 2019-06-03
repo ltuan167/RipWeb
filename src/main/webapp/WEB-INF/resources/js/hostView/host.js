@@ -15,6 +15,7 @@ let correctAnswer, chartDataset, questionId, stompClient = null;
 let game_ended = false;
 let answer1, answer2, answer3, answer4;
 let endscores =[], endNickName = [];
+let chartBetweenQuestions, endGameChart;
 function hostDisplayQuestion() {
     var socket = new SockJS('/ws');
     stompClient = Stomp.over(socket);
@@ -48,7 +49,7 @@ function hostDisplayQuestion() {
                     correctAnswer = question.answer3;
                 if (numbercorrectAnswer == 4)
                     correctAnswer = question.answer4;
-
+                document.getElementById("correctAnswer").innerText = correctAnswer;
                 setTimer(question.time);
                 countDown((remainsSecond) => {
                     let minutes = Math.floor(remainsSecond/60);
@@ -85,15 +86,15 @@ function hostDisplayQuestion() {
                     endscores.push(endplayer.score);
                     endNickName.push(endplayer.nickname);
                 });
-                console.log("endplayers: " + endscores);
+                console.log("endplayers: " + endscores); // Debug
                 console.log("endnickname: " + endNickName);
-                plotEndGameChart();
+                plotChart(endGameChart,"endGameChart",endNickName,endscores);
                 showScreen("resultScreen");
             }
             if (msg.type == "END_QUESTION") {
                 stopTimer();
                 chartDataset = msg.content;
-                plotBetweenChart();
+                plotChart(chartBetweenQuestions,"chartBetweenQuestions",[answer1, answer2, answer3, answer4],chartDataset);
                 showScreen("questionResultScreen");
             }
         });
@@ -114,6 +115,9 @@ function hostCreatGame(hostQuesId) {
                 gamePIN = msg.content;
                 document.getElementById("gamePinCreated").innerText = gamePIN;
                 hostDisplayQuestion();
+            } else {
+                if (xhttp.status == 417)
+                    alert("This collection does not have any questions!");
             }
         }
     };
@@ -165,79 +169,23 @@ function hostEndQuestion() {
     };
 }
 
-var chartBetweenQuestions;
-function plotBetweenChart() {
-    if (chartBetweenQuestions){
-        chartBetweenQuestions.destroy();
-    }
-    document.getElementById("correctAnswer").innerText = correctAnswer;
-    var ctx = document.getElementById("chartBetweenQuestions");
-    chartBetweenQuestions = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: [answer1, answer2, answer3, answer4],
-            datasets: [{
-                label: '#Number of answers',
-                data: chartDataset,
-                backgroundColor: [
-                    'rgba(192,23,51,0.65)',
-                    'rgba(19,104,206,0.65)',
-                    'rgba(216,158,0,0.65)',
-                    'rgba(41,143,13,0.65)',
-                ],
-                borderColor: [
-                    'rgb(192,23,51)',
-                    'rgb(19,104,206)',
-                    'rgb(216,158,0)',
-                    'rgba(41,143,13,0.99)',
-                ],
-                borderWidth: 2
-            }]
-        },
-        options: {
-            legend: {
-                labels: {
-                    fontColor: "#000000",
-                    fontSize: 15,
-                }
-            },
-            responsive: true,
-            scales: {
-                xAxes: [{
-                    ticks: {
-                        maxRotation:  0,
-                        minRotation:  0,
-                        fontFamily: "Helvetica",
-                        fontSize:"15",
-                        fontColor:"#000000"
-                    }
-                }],
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true,
-                        fontFamily: "Helvetica",
-                        fontSize: "15",
-                        fontColor:"#000000"
-                    }
-                }]
-            }
-        }
-    });
-}
 
-var endGameChart;
-function plotEndGameChart() {
-    if (endGameChart){
-        endGameChart.destroy();
+
+function plotChart(chart, elementFilledIn, lables, data) {
+    if (chart){
+        chart.destroy();
     }
-    var ctx = document.getElementById("endGameChart");
-    endGameChart = new Chart(ctx, {
+    var ctx = document.getElementById(elementFilledIn);
+
+    chart = new Chart (ctx, {
         type: 'bar',
         data: {
-            labels: endNickName,
+
+            labels: lables,
             datasets: [{
-                label: '#Score',
-                data: endscores,
+
+                // label: '#Scores',
+                data: data,
                 backgroundColor: [
                     'rgba(192,23,51,0.65)',
                     'rgba(19,104,206,0.65)',
@@ -254,38 +202,41 @@ function plotEndGameChart() {
             }]
         },
         options: {
-            legend: {
-                labels: {
-                    fontColor: "#000000",
-                    fontSize: 15,
-                }
-            },
-            responsive: true,
-            scales: {
-                xAxes: [{
-                    ticks: {
-                        maxRotation:  0,
-                        minRotation:  0,
-                        fontFamily: "Helvetica",
-                        fontSize:"15",
-                        fontColor:"#000000"
-                    }
-                }],
+            scales:{
                 yAxes: [{
                     ticks: {
                         beginAtZero: true,
                         fontFamily: "Helvetica",
-                        fontSize: "15",
+                        fontSize: "25",
+                        fontColor:"#000000"
+                    }
+                }],
+                xAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                        fontFamily: "Helvetica",
+                        fontSize: "25",
                         fontColor:"#000000"
                     }
                 }]
-            }
-        },
-        plugins: {
-            datalabels: {
-                display: true,
-                color: "#000000",
+            },
+            legend: false,
+            tooltip: false,
+            plugins: {
+                datalabels: {
+                    align: function(context) {
+                        var index = context.dataIndex;
+                        var value = context.dataset.data[index];
+                        var invert = Math.abs(value) <= 1;
+                        return value < 1 ? 'end' : 'start'
+                    },
+                    font: {
+                        size: 25,
+                        weight: 600
+                    },
+                }
             }
         }
     });
+
 }

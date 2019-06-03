@@ -26,10 +26,12 @@ public class QuestionCollectionDAO {
 		return questionCollection;
 	}
 
-	public List getAllQuestionCollections() {
+	public List<QuestionCollection> getAllQuestionCollections() {
 		Session session = sessionFactory.getCurrentSession();
-		session.beginTransaction();
-		return session.createSQLQuery("SELECT * FROM QuestionCollection").addEntity(QuestionCollection.class).getResultList();
+		Transaction tx = session.beginTransaction();
+		List<QuestionCollection> listOfCollections = session.createSQLQuery("SELECT * FROM QuestionCollection").addEntity(QuestionCollection.class).getResultList();
+		tx.commit();
+		return listOfCollections;
 	}
 
 }

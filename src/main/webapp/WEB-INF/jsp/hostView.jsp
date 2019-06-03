@@ -5,13 +5,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.5.0"></script>
-
-
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <title>Ripweb! | Play this quiz now!</title>
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Luckiest+Guy">
@@ -35,9 +33,9 @@
 </noscript>
 
 <div id="playersScreen" class="container-fluid jello animated" style="width: 100vw;height: 100vh;padding-left: 0px;padding-right: 0px;background-color: #e28c05;">
-    <select placeholder="Question collection name" id="hostQuesId">--%>
+    <select class="dropdown dropdown-list" placeholder="Question collection name" id="hostQuesId">
         <script>
-            $.get("http://localhost/1.0/db/collection/list", (data) => {
+            $.get("1.0/db/collection/list", (data) => {
                 let collections = data.content;
                 if (collections) {
                     collections.forEach((collection) => {
@@ -47,8 +45,8 @@
             });
         </script>
     </select>
-    <button onclick="hostCreatGame(document.getElementById('hostQuesId').value)">CREATE</button>
-    <button onclick="hostStart(gamePIN)">START</button>
+    <button class="btn btn-primary" onclick="hostCreatGame(document.getElementById('hostQuesId').value)">CREATE</button>
+    <button class="btn btn-secondary" onclick="hostStart(gamePIN)">START</button>
     <div class="row d-flex d-xl-flex align-items-xl-center" style="width: 100%;height: 20%;margin-right: 0;background-color: #fbfbfb;margin-left: 0;">
         <div class="col" style="width: 100%;height: 100%;padding-top: 15px;">
             <div style="width: 100%;height: 100%;">
@@ -108,13 +106,13 @@
 
 <div id="questionResultScreen" class="container-fluid">
 <%--    PLOT CHART HERE --%>
-    <canvas id="chartBetweenQuestions" style="width: 70%; height: 50%;"></canvas>
-    <b style="font-size: large"><strong>Correct Answer: </strong> <a id="correctAnswer"></a> </b>
-    <button id="nextQuestionBtn" onclick="nextQuestion()">Next Question</button>
+    <canvas id="chartBetweenQuestions" style="width: 40%; height: 40%;"></canvas>
+    <b style="font-size: 33px; width: 100%; text-align: center"><strong>Correct Answer: </strong> <a id="correctAnswer"></a> </b>
+    <button id="nextQuestionBtn" class="btn btn-info" onclick="nextQuestion()">Next Question</button>
 </div>
 
 <div id="resultScreen" class="container-fluid">
-    <canvas id="endGameChart" style="width: 70%; height: 50%;"></canvas>
+    <canvas id="endGameChart" style="width: 40%; height: 40%;"></canvas>
     <b style="font-size: large"><strong>We are in resultScreen now</strong></b>
 </div>
 
@@ -129,8 +127,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.bundle.min.js"></script>
 
 <script>
-    // myAudio = new Audio("resources/js/remix.ogg");
-    myAudio = new Audio("resources/js/chaulenba.mp3");
+    myAudio = new Audio("resources/js/remix.ogg");
+    // myAudio = new Audio("resources/js/chaulenba.mp3");
     myAudio.addEventListener('ended', function() {
         this.currentTime = 0;
         this.play();

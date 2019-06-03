@@ -21,6 +21,10 @@ showScreen("pinScreen");
 function joinGame() {
     var inputGamePin = document.getElementById('inputGamePin').value;
     var inputNickname = document.getElementById('inputNickName').value;
+    if (!inputGamePin || !inputNickname || inputGamePin == "" || inputNickname == "") {
+        alert("Please enter game PIN and nickname!");
+        return false;
+    }
     var xhttp = new XMLHttpRequest();
     xhttp.open("POST", "1.0/game/join?gamePIN=" + inputGamePin + "&nickname=" + inputNickname, true);
     xhttp.setRequestHeader('Content-type','application/x-www-form-urlencoded');

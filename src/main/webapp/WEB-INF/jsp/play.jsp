@@ -224,7 +224,16 @@
     </div>
 </div>
 <div id="endScreen">
-    End game!
+    <h1 style=" font-size: large; text-align: center">
+        <b style="color: #0e0e0e"><strong>
+            <br><br>
+            We are in the End Game now!!<br>
+            Check out the result on your teacher's display
+        </strong></b>
+        <div style="position: relative">
+            <img src="resources/img/homepage/make-learning-math-awesome-blog-cover-570x320.jpg">
+        </div>
+    </h1>
 </div>
 <script src = "resources/js/Play/playFuncs.js"></script>
 <script src = "resources/js/Play/playWs.js"></script>
