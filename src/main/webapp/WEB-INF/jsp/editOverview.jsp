@@ -662,42 +662,68 @@
 <div id="app">
     <div data-reactroot="" data-functional-selector="create-app">
         <div>
-            <span></span>
             <div class="layout layout--create layout--new-topbar-active">
-                <div class="layout__circle"></div>
-                <div class="layout__half-circle"></div>
                 <div id="layout" class="layout__inner">
                     <div class="layout__body-wrapper">
                         <header role="heading" class="layout__head">
                             <header class="top-bar top-bar--secondary" data-functional-selector="overview-block-top-bar" role="navigation">
                                 <div class="top-bar__left">
-<%--                                    <button type="button" role="button" data-functional-selector="overview-block-top-bar__exit-button" class="icon-button top-bar__icon-button">--%>
-<%--                                       <span class="icon-button__wrap">--%>
-<%--                                          <span class="icon icon-button__icon icon--solid">--%>
-<%--                                             <svg class="icon__svg" data-functional-selector="icon" focusable="false">--%>
-<%--                                                <use class="icon__use" xlink:href="#close"></use>--%>
-<%--                                             </svg>--%>
-<%--                                          </span>--%>
-<%--                                          <span class="icon-button__text undefined">Exit</span>--%>
-<%--                                       </span>--%>
-<%--                                    </button>--%>
                                 </div>
                                 <div class="top-bar__title" data-functional-selector="top-bar-title">
                                     <span class="icon top-bar__logo">
-<%--                                       <svg class="icon__svg" data-functional-selector="icon" focusable="false">--%>
-<%--                                          <use class="icon__use" xlink:href="#logo-k"></use>--%>
-<%--                                       </svg>--%>
                                     </span>
-                                    <!-- react-text: 618 -->Ripweb! 2019<!-- /react-text -->
                                 </div>
                                 <div class="top-bar__right">
-<%--                                    <button type="button" role="button" data-functional-selector="overview-block-top-bar__success-button" class="button button--positive">--%>
-<%--&lt;%&ndash;                                        <a href="hostView"><!-- react-text: 621 -->Save<!-- /react-text --></a>&ndash;%&gt;--%>
-<%--                                    </button>--%>
                                 </div>
                             </header>
                         </header>
                         <main role="main" class="layout__body layout__body--create">
+                            <section>
+                                <h1 class="heading heading--five heading--no-margin heading--secondary">Question Collection</h1>
+                                <section class="content-block" data-functional-selector="description-content-block">
+                                    <div class="content-block__copy">
+                                        <h1 class="content-block__header" data-functional-selector="description-content-block__header" id="gameCollectionName"></h1>
+                                        <p class="content-block__text" data-functional-selector="description-content-block__main" id="questionCollectionDescription"></p>
+                                        <span class="content-block__supplementary" data-functional-selector="description-content-block__supplementary">
+                                             <div class="content-block-visibility-wrapper">
+                                                <select id="collectionSelector" placeholder="Select collection here!">
+                                                    <option value="2">J2EE</option>
+                                                    <option value="3">One</option>
+                                                </select>
+                                                 <a style="margin-left: 10px;">ID: </a> <a id="collectionId" style="margin-left:5px; margin-right: 20px;">1</a>
+                                                 <input type="text" id="collectionName" style="margin-right: 10px;" value="" placeholder="Name"/>
+                                                 <input type="text" id="collectionDescription" value="" placeholder="Description"/>
+                                             </div>
+                                       </span>
+                                    </div>
+                                    <aside class="content-block__actions">
+                                        <div class="" style="display: inline;" data-tooltipped="" aria-describedby="tippy-tooltip-22" data-original-title="Edit your kahoot description">
+                                            <button type="button" role="button" data-functional-selector="edit-description-button description-content-block__edit-button" class="icon-button edit-description-button content-block__icon-button" aria-label="Edit description">
+                                             <span class="icon-button__wrap">
+                                                <span class="icon icon-button__icon icon--large icon--solid">
+                                                   <svg class="icon__svg" data-functional-selector="icon" focusable="false">
+                                                      <use class="icon__use" xlink:href="#edit"></use>
+                                                   </svg>
+                                                </span>
+                                             </span>
+                                            </button>
+                                        </div>
+                                    </aside>
+                                    <aside class="content-block__actions" style="margin-left: 5px;">
+                                        <div class="" style="display: inline;" data-tooltipped="" aria-describedby="tippy-tooltip-22" data-original-title="Edit your kahoot description">
+                                            <button type="button" role="button" data-functional-selector="edit-description-button description-content-block__edit-button" class="icon-button edit-description-button content-block__icon-button" aria-label="Edit description">
+                                             <span class="icon-button__wrap">
+                                                <span class="icon icon-button__icon icon--large icon--solid">
+                                                   <svg class="icon__svg" data-functional-selector="icon" focusable="false">
+                                                      <use class="icon__use" xlink:href="#edit"></use>
+                                                   </svg>
+                                                </span>
+                                             </span>
+                                            </button>
+                                        </div>
+                                    </aside>
+                                </section>
+                            </section>
                             <section>
                                 <h1 class="heading heading--five heading--no-margin heading--secondary">Description</h1>
                                 <section class="content-block" data-functional-selector="description-content-block">
@@ -759,7 +785,6 @@
 <%--                                    </button>--%>
 <%--                                </div>--%>
                             </section>
-                            <!-- react-empty: 912 --><!-- react-empty: 914 -->
                         </main>
                     </div>
                 </div>
