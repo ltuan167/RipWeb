@@ -2603,6 +2603,10 @@ p {
 .ie9 .content-block__info {
     height: auto
 }
+.icon-toggle__icon--active {
+    background: #478628;
+    border: .1875rem solid #478628;
+}
 
 .ie9 .content-block__copy {
     vertical-align: middle;
@@ -4189,8 +4193,6 @@ p {
 }
 
 .icon-toggle__icon--active {
-    display: none;
-    visibility: hidden
 }
 
 .icon-toggle__check {

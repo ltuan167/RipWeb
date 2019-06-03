@@ -4189,8 +4189,6 @@ p {
 }
 
 .icon-toggle__icon--active {
-    display: none;
-    visibility: hidden
 }
 
 .icon-toggle__check {

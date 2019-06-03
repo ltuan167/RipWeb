@@ -15,13 +15,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta itemprop="version" content="1.729.0">
-    <title>Edit your kahoot | Question</title>
+    <title>Edit your RipWeb | Question</title>
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
-    <link rel="shortcut icon" href="https://create.kahoot.it/assets/img/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://create.kahoot.it/assets/img/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://create.kahoot.it/assets/img/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://create.kahoot.it/assets/img/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="https://create.kahoot.it/assets/img/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="resources/icon/favicon.png">
     <link href="resources/css/editQuestion/commons_002.css" rel="stylesheet">
     <link href="resources/css/editQuestion/commons.css" rel="stylesheet">
     <link href="resources/css/editQuestion/create_002.css" rel="stylesheet">
@@ -32,11 +28,18 @@
     <link rel="stylesheet" href="resources/css/editQuestion/css.css" media="all">
     <script type="text/javascript" src="resources/js/editQuestion/vendorscreateplusprofile.js" defer="defer"></script>
 <%--    <script async="" src="resources/js/editQuestion/hotjar-554762.js"></script>--%>
+    <style>
+        .icon-toggle__icon--active{
+            background: #478628;
+            border-color: #478628;
+            display: block;
+            visibility: visible;
+        }
+    </style>
+
 </head>
 <body class="touchpadSwipeAnimationCore">
-<!-- SVG Sprite Injection -->
 <div style="height: 0; width: 0; position: absolute; visibility: hidden">
-    <!-- inject:svg -->
     <svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
         <defs>
             <linearGradient x1="0%" y1="0%" y2="100%" id="a">
@@ -685,7 +688,7 @@
                                           <use class="icon__use" xlink:href="#logo-k"></use>
                                        </svg>
                                     </span>
-                                    <!-- react-text: 933 -->Question 5<!-- /react-text -->
+                                    <!-- react-text: 933 -->Question ?? :D ??<!-- /react-text -->
                                 </div>
                                 <div class="top-bar__right">
                                     <button type="button" role="button" data-functional-selector="quiz-block-top-bar__success-button" class="button button--positive">
@@ -793,11 +796,11 @@
                                                             <span class="icon-button__wrap">
                                                                <span class="icon icon-button__icon icon--large">
                                                                   <svg class="icon__svg" data-functional-selector="icon" focusable="false">
-                                                                     <use class="icon__use" xlink:href="#getty"></use>
+                                                                     <use class="icon__use" xlink:href="#image-colored"></use>
                                                                   </svg>
                                                                </span>
-                                                               <span class="icon-button__text undefined">Image Library by Getty Images</span>
-                                                               <div class="visibly-hidden" id="getty__accessibility-description">Kahoot! Image Library by Getty Images</div>
+                                                               <span class="icon-button__text undefined">Upload Your Question Image</span>
+                                                               <div class="visibly-hidden" id="getty__accessibility-description">Upload Your Question Image</div>
                                                             </span>
                                                                 </button>
                                                                 <div class="getty-image-picker__open-button-new-wrapper">
@@ -807,37 +810,11 @@
                                                         </div>
                                                         <div data-functional-selector="game-block-image-uploader">
                                                             <div class="" style="display: inline;" data-tooltipped="" aria-describedby="tippy-tooltip-41" data-original-title="Upload an image to your kahoot">
-                                                                <button type="button" role="button" data-functional-selector="game-block-image-uploader__add-image-button" class="icon-button icon-button--stack icon-button--invert media-uploader__icon-button">
-                                                            <span class="icon-button__wrap">
-                                                               <span class="icon icon-button__icon icon--large">
-                                                                  <svg class="icon__svg" data-functional-selector="icon" focusable="false">
-                                                                     <use class="icon__use" xlink:href="#image-colored"></use>
-                                                                  </svg>
-                                                               </span>
-                                                               <span class="icon-button__text undefined">Upload your image</span>
-                                                               <div class="visibly-hidden" id="image-colored__accessibility-description">Add
-                                                                  an image (JPG, PNG, GIF, max. 5MB) or YouTube video to deepen
-                                                                  understanding, boost engagement or spark critical thinking. Why not try
-                                                                  out our NEW Image Library (provided by Getty Images)? It's so quick and
-                                                                  easy to find and add one of millions of images to your kahoot!
-                                                               </div>
-                                                            </span>
-                                                                </button>
                                                             </div>
                                                             <input type="file" id="image-uploader" class="no-display" accept="image/gif, image/jpeg, image/jpg, image/png" data-functional-selector="game-block-image-uploader__file-input">
                                                         </div>
                                                         <div data-functional-selector="game-block-video-uploader">
                                                             <div class="" style="display: inline;" data-tooltipped="" aria-describedby="tippy-tooltip-42" data-original-title="Add a YouTube video to your kahoot">
-                                                                <button type="button" role="button" data-functional-selector="game-block-video-uploader__add-video-button" class="icon-button icon-button--stack icon-button--invert media-uploader__icon-button">
-                                                            <span class="icon-button__wrap">
-                                                               <span class="icon icon-button__icon icon--large">
-                                                                  <svg class="icon__svg" data-functional-selector="icon" focusable="false">
-                                                                     <use class="icon__use" xlink:href="#video-colored"></use>
-                                                                  </svg>
-                                                               </span>
-                                                               <span class="icon-button__text undefined">Add YouTube link</span>
-                                                            </span>
-                                                                </button>
                                                             </div>
                                                         </div>
                                                         <p class="media-uploader__instruction" data-functional-selector="game-block-media-uploader__drag-and-drop-instruction">or drag &amp; drop image</p>
@@ -874,7 +851,7 @@
                                                     <div class="icon-toggle answer-input-field__icon-toggle" data-functional-selector="game-block-answer-correct-icon-toggle">
                                                         <input type="checkbox" class="icon-toggle__check" id="game-block-answer-correct-icon-toggle-0__input" aria-labelledby="game-block-answer-correct-icon-toggle-0__label" aria-label="Is this answer correct?" aria-invalid="false" data-functional-selector="game-block-answer-correct-icon-toggle__input" value="on">
                                                         <label class="label icon-toggle__label answer-input-field__icon-toggle__label" for="game-block-answer-correct-icon-toggle-0__input" data-functional-selector="game-block-answer-correct-icon-toggle__label">
-                                                      <span class="icon icon--solid icon-toggle__icon answer-input-field__icon-toggle__icon icon-toggle__icon--inactive" title="Click to make this a correct answer">
+                                                      <span id="answer1" class="icon icon--solid icon-toggle__icon answer-input-field__icon-toggle__icon icon-toggle__icon--inactive" onclick="toggleButton1()" title="Click to make this a correct answer">
                                                          <svg class="icon__svg" data-functional-selector="icon" focusable="false">
                                                             <use class="icon__use" xlink:href="#check"></use>
                                                          </svg>
@@ -908,7 +885,7 @@
                                                     <div class="icon-toggle answer-input-field__icon-toggle" data-functional-selector="game-block-answer-correct-icon-toggle">
                                                         <input type="checkbox" class="icon-toggle__check" id="game-block-answer-correct-icon-toggle-1__input" aria-labelledby="game-block-answer-correct-icon-toggle-1__label" aria-label="Is this answer correct?" aria-invalid="false" data-functional-selector="game-block-answer-correct-icon-toggle__input" value="on">
                                                         <label class="label icon-toggle__label answer-input-field__icon-toggle__label" for="game-block-answer-correct-icon-toggle-1__input" data-functional-selector="game-block-answer-correct-icon-toggle__label">
-                                                      <span class="icon icon--solid icon-toggle__icon answer-input-field__icon-toggle__icon icon-toggle__icon--inactive" title="Click to make this a correct answer">
+                                                      <span id="answer2" onclick="toggleButton2()" class="icon icon--solid icon-toggle__icon answer-input-field__icon-toggle__icon icon-toggle__icon--inactive" title="Click to make this a correct answer">
                                                          <svg class="icon__svg" data-functional-selector="icon" focusable="false">
                                                             <use class="icon__use" xlink:href="#check"></use>
                                                          </svg>
@@ -944,7 +921,7 @@
                                                     <div class="icon-toggle answer-input-field__icon-toggle" data-functional-selector="game-block-answer-correct-icon-toggle">
                                                         <input type="checkbox" class="icon-toggle__check" id="game-block-answer-correct-icon-toggle-2__input" aria-labelledby="game-block-answer-correct-icon-toggle-2__label" aria-label="Is this answer correct?" aria-invalid="false" data-functional-selector="game-block-answer-correct-icon-toggle__input" value="on">
                                                         <label class="label icon-toggle__label answer-input-field__icon-toggle__label" for="game-block-answer-correct-icon-toggle-2__input" data-functional-selector="game-block-answer-correct-icon-toggle__label">
-                                                      <span class="icon icon--solid icon-toggle__icon answer-input-field__icon-toggle__icon icon-toggle__icon--inactive" title="Click to make this a correct answer">
+                                                      <span id="answer3" onclick="toggleButton3()" class="icon icon--solid icon-toggle__icon answer-input-field__icon-toggle__icon icon-toggle__icon--inactive" title="Click to make this a correct answer">
                                                          <svg class="icon__svg" data-functional-selector="icon" focusable="false">
                                                             <use class="icon__use" xlink:href="#check"></use>
                                                          </svg>
@@ -978,7 +955,7 @@
                                                     <div class="icon-toggle answer-input-field__icon-toggle" data-functional-selector="game-block-answer-correct-icon-toggle">
                                                         <input type="checkbox" class="icon-toggle__check" id="game-block-answer-correct-icon-toggle-3__input" aria-labelledby="game-block-answer-correct-icon-toggle-3__label" aria-label="Is this answer correct?" aria-invalid="false" data-functional-selector="game-block-answer-correct-icon-toggle__input" value="on">
                                                         <label class="label icon-toggle__label answer-input-field__icon-toggle__label" for="game-block-answer-correct-icon-toggle-3__input" data-functional-selector="game-block-answer-correct-icon-toggle__label">
-                                                      <span class="icon icon--solid icon-toggle__icon answer-input-field__icon-toggle__icon icon-toggle__icon--inactive" title="Click to make this a correct answer">
+                                                      <span id="answer4" onclick="toggleButton4()" class="icon icon--solid icon-toggle__icon answer-input-field__icon-toggle__icon icon-toggle__icon--inactive" title="Click to make this a correct answer">
                                                          <svg class="icon__svg" data-functional-selector="icon" focusable="false">
                                                             <use class="icon__use" xlink:href="#check"></use>
                                                          </svg>
@@ -990,18 +967,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div data-functional-selector="game-block-resources-input-field" class="input-field" id="game-block-resources-input-field">
-                                    <label class="label" for="game-block-resources-input-field__input" data-functional-selector="game-block-resources-input-field__label">
-                                        <!-- react-text: 1153 -->Credit resources<!-- /react-text -->
-                                    </label>
-                                    <div class="input-field__wrap">
-                                        <textarea id="game-block-resources-input-field__input" type="text" data-functional-selector="game-block-resources-input-field__input" aria-required="false" aria-invalid="false" class="input-field__input input-field__input--2-lines input-field__input--textarea input-field__input--counter" maxlength="1000"></textarea>
-                                        <span class="input-field__counter" aria-live="polite" aria-atomic="true" data-functional-selector="game-block-resources-input-field__character-limit">
-                                          <!-- react-text: 1157 -->1000<!-- /react-text --><span class="visibly-hidden"> characters remaining</span>
-                                       </span>
-                                        <div class="input-field__error" data-functional-selector="game-block-resources-input-field__error"><span></span></div>
-                                    </div>
-                                </div>
                             </form>
                             <!-- react-empty: 1161 --><!-- react-empty: 1169 -->
                         </main>
@@ -1011,64 +976,45 @@
         </div>
     </div>
 </div>
-<script type="text/javascript">
-    (function(e,t){var n=e.amplitude||{_q:[],_iq:{}};var r=t.createElement("script")
-    ;r.type="text/javascript";r.async=true
-    ;r.src="https://cdn.amplitude.com/libs/amplitude-4.2.1-min.gz.js"
-    ;r.onload=function(){if(e.amplitude.runQueuedFunctions){
-        e.amplitude.runQueuedFunctions()}else{
-        console.log("[Amplitude] Error: could not load SDK")}}
-    ;var i=t.getElementsByTagName("script")[0];i.parentNode.insertBefore(r,i)
-    ;function s(e,t){e.prototype[t]=function(){
-        this._q.push([t].concat(Array.prototype.slice.call(arguments,0)));return this}}
-        var o=function(){this._q=[];return this}
-        ;var a=["add","append","clearAll","prepend","set","setOnce","unset"]
-        ;for(var u=0;u<a.length;u++){s(o,a[u])}n.Identify=o;var c=function(){this._q=[]
-            ;return this}
-        ;var l=["setProductId","setQuantity","setPrice","setRevenueType","setEventProperties"]
-        ;for(var p=0;p<l.length;p++){s(c,l[p])}n.Revenue=c
-        ;var d=["init","logEvent","logRevenue","setUserId","setUserProperties","setOptOut","setVersionName","setDomain","setDeviceId","setGlobalUserProperties","identify","clearUserProperties","setGroup","logRevenueV2","regenerateDeviceId","logEventWithTimestamp","logEventWithGroups","setSessionId","resetSessionId"]
-        ;function v(e){function t(t){e[t]=function(){
-            e._q.push([t].concat(Array.prototype.slice.call(arguments,0)))}}
-            for(var n=0;n<d.length;n++){t(d[n])}}v(n);n.getInstance=function(e){
-            e=(!e||e.length===0?"$default_instance":e).toLowerCase()
-            ;if(!n._iq.hasOwnProperty(e)){n._iq[e]={_q:[]};v(n._iq[e])}return n._iq[e]}
-        ;e.amplitude=n})(window,document);
-</script>
-<script async="">
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    ga('create', 'UA-35308575-1', 'auto', {'sampleRate': 1, 'allowLinker': true});
-    ga('set', 'anonymizeIp', true);
-    ga('send', 'pageview');
-</script>
-<%--<script src="resources/js/editQuestion/webfont.js"></script>--%>
 <script>
-    WebFont.load({
-        google: {
-            families: [
-                'Montserrat:400,700'
-            ]
-        }
-    });
-</script>
-<script async="" src="resources/js/editQuestion/kahunaAPI_min.js"></script>
-<!-- Hotjar Tracking Code for https://create.kahoot.it/ -->
-<script async="">
-    (function(h, o, t, j, a, r) {
-        h.hj = h.hj || function() {
-            (h.hj.q = h.hj.q || []).push(arguments);
-        };
-        h._hjSettings = {hjid: 554762, hjsv: 5};
-        a = o.getElementsByTagName('head')[0];
-        r = o.createElement('script');
-        r.async = 1;
-        r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
-        a.appendChild(r);
-    })(window, document, '//static.hotjar.com/c/hotjar-', '.js?sv=');
+
+    function toggleButton1() {
+        document.getElementById("answer1").classList.toggle("icon-toggle__icon--active");
+        if (document.getElementById("answer2").classList.contains("icon-toggle__icon--active"))
+            document.getElementById("answer2").classList.remove("icon-toggle__icon--active");
+        else if (document.getElementById("answer3").classList.contains("icon-toggle__icon--active"))
+            document.getElementById("answer3").classList.remove("icon-toggle__icon--active");
+        else if (document.getElementById("answer4").classList.contains("icon-toggle__icon--active"))
+            document.getElementById("answer4").classList.remove("icon-toggle__icon--active");
+    }
+    function toggleButton2() {
+        document.getElementById("answer2").classList.toggle("icon-toggle__icon--active");
+        if (document.getElementById("answer1").classList.contains("icon-toggle__icon--active"))
+            document.getElementById("answer1").classList.remove("icon-toggle__icon--active");
+        else if (document.getElementById("answer3").classList.contains("icon-toggle__icon--active"))
+            document.getElementById("answer3").classList.remove("icon-toggle__icon--active");
+        else if (document.getElementById("answer4").classList.contains("icon-toggle__icon--active"))
+            document.getElementById("answer4").classList.remove("icon-toggle__icon--active");
+    }
+    function toggleButton3() {
+        document.getElementById("answer3").classList.toggle("icon-toggle__icon--active");
+        if (document.getElementById("answer1").classList.contains("icon-toggle__icon--active"))
+            document.getElementById("answer1").classList.remove("icon-toggle__icon--active");
+        else if (document.getElementById("answer2").classList.contains("icon-toggle__icon--active"))
+            document.getElementById("answer2").classList.remove("icon-toggle__icon--active");
+        else if (document.getElementById("answer4").classList.contains("icon-toggle__icon--active"))
+            document.getElementById("answer4").classList.remove("icon-toggle__icon--active");
+    }
+    function toggleButton4() {
+        document.getElementById("answer4").classList.toggle("icon-toggle__icon--active");
+        if (document.getElementById("answer1").classList.contains("icon-toggle__icon--active"))
+            document.getElementById("answer1").classList.remove("icon-toggle__icon--active");
+        else if (document.getElementById("answer2").classList.contains("icon-toggle__icon--active"))
+            document.getElementById("answer2").classList.remove("icon-toggle__icon--active");
+        else if (document.getElementById("answer3").classList.contains("icon-toggle__icon--active"))
+            document.getElementById("answer3").classList.remove("icon-toggle__icon--active");
+    }
 </script>
 </body>
 </html>
