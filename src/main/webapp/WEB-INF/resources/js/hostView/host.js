@@ -69,7 +69,7 @@ function hostDisplayQuestion() {
                 let players = msg.content;
                 if (players) {
                     let newPlayersListHTML = "<li class=\"list-inline-item tada animated\" style=\"width: auto;color: rgb(255,255,255);height: auto;margin-top: 40px;margin-right: 40px;margin-bottom: 40px;margin-left: 40px;font-family: Comfortaa, cursive;\">" + players[players.length-1].nickname + "</li>";
-                    for (let i = players.length - 2; i > 0; i--) {
+                    for (let i = players.length - 2; i >= 0; i--) {
                         newPlayersListHTML += "<li class=\"list-inline-item\" style=\"width: auto;color: rgb(255,255,255);height: auto;margin-top: 40px;margin-right: 40px;margin-bottom: 40px;margin-left: 40px;font-family: Comfortaa, cursive;\">" + players[i].nickname + "</li>";
                     }
                     playersList.innerHTML = newPlayersListHTML;
