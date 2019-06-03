@@ -50,9 +50,9 @@ public class GameManager {
 		return games.get(gamePIN);
 	}
 
-	public synchronized boolean removeGame(Integer gamePIN) {
+	public boolean removeGame(Integer gamePIN) {
 		if (games.containsKey(gamePIN)) {
-			Game removedGame = games.remove(games.get(gamePIN));
+			Game removedGame = games.remove(gamePIN);
 			if (removedGame != null) {
 				availablePINs.push(gamePIN);
 				return true;

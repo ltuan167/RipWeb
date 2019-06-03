@@ -28,7 +28,7 @@
             <script>
                 $("#createGame").click(() => {
                     for (var i=0; i<10; i++)
-                    postRest("http://localhost/1.0/game/create?questionCollectionId="+$("#questionCollectionId").val(), null);
+                    postRest("1.0/game/create?questionCollectionId="+$("#questionCollectionId").val(), null);
                 });
             </script>
         </tr>
@@ -39,8 +39,7 @@
             <td><button id="joinGame">Join Game</button></td>
             <script>
                 $("#joinGame").click(() => {
-                    // for (var i=0; i<2; i++)
-                        postRest("http://localhost/1.0/game/join?gamePIN="+$("#gamePIN").val()+"&nickname="+$("#nickname").val(), null);
+                    postRest("1.0/game/join?gamePIN="+$("#gamePIN").val()+"&nickname="+$("#nickname").val(), null);
                 });
             </script>
         </tr>
@@ -52,7 +51,7 @@
             <td><button id="submit">Submit Answer</button></td>
             <script>
                 $("#submit").click(() => {
-                    postRest("http://localhost/1.0/game/submit?gamePIN="+$("#gamePIN2").val()+"&questionId="+$("#questionId")+"&chooseAnswerId="+$("#chooseAnswerId").val(), null);
+                    postRest("1.0/game/submit?gamePIN="+$("#gamePIN2").val()+"&questionId="+$("#questionId")+"&chooseAnswerId="+$("#chooseAnswerId").val(), null);
                 });
             </script>
         </tr>
@@ -62,7 +61,7 @@
             <td><button id="removeGame">Remove Game</button></td>
             <script>
                 $("#removeGame").click(() => {
-                    postRest("http://localhost/1.0/game/remove?gamePIN="+$("#gamePIN1").val(), null);
+                    postRest("1.0/game/remove?gamePIN="+$("#gamePIN1").val(), null);
                 });
             </script>
         </tr>
