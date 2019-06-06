@@ -4,8 +4,8 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>springTest</groupId>
-  <artifactId>springMVC</artifactId>
+  <groupId>com.hcmiu</groupId>
+  <artifactId>ripweb</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>war</packaging>
 
@@ -186,9 +186,22 @@
   </dependencies>
 
   <build>
-    <finalName>springMVC</finalName>
+    <finalName>ripweb</finalName>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
+        <plugin>
+          <groupId>org.apache.tomcat.maven</groupId>
+          <artifactId>tomcat7-maven-plugin</artifactId>
+          <version>2.2</version>
+          <configuration>
+            <url>http://165.22.254.52:8080/manager/text</url>
+            <username>tomcat</username>
+            <password>tomcat</password>
+<!--            <port>80</port>-->
+            <path>/ripweb</path>
+            <version>1.0</version>
+          </configuration>
+        </plugin>
         <plugin>
           <artifactId>maven-clean-plugin</artifactId>
           <version>3.1.0</version>
