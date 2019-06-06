@@ -88,7 +88,7 @@ function hostDisplayQuestion() {
                 });
                 console.log("endplayers: " + endscores); // Debug
                 console.log("endnickname: " + endNickName);
-                plotChart(endGameChart, "endGameChart", endNickName, endscores);
+                plotChart( "endGameChart", endNickName, endscores);
                 getWinner();
                 showScreen("resultScreen");
             }
@@ -96,7 +96,7 @@ function hostDisplayQuestion() {
                 stopTimer();
                 chartDataset = msg.content;
                 console.log("ChartDataset nef mas: " + chartDataset);
-                plotChart(chartBetweenQuestions, "chartBetweenQuestions", [answer1, answer2, answer3, answer4], chartDataset);
+                plotChart("chartBetweenQuestions", [answer1, answer2, answer3, answer4], chartDataset);
                 showScreen("questionResultScreen");
             }
         });
@@ -175,19 +175,18 @@ function hostEndQuestion() {
 
 
 let myColor = [];
-function plotChart(chart, elementFilledIn, labels, data) {
-    if (chart) {
-        chart.destroy();
-    }
+function plotChart(elementFilledIn, labels, data) {
     if (elementFilledIn === "chartBetweenQuestions") {
         $.each(labels, function (idx, value) {
             if (value === correctAnswer) {
                 myColor[idx] = 'rgb(19,104,206)';
             } else myColor[idx] = 'rgba(245,27,66,0.75)';
         });
-    } else myColor = ['rgb(255,15,0)', 'rgb(19,104,206)', 'rgb(216,158,0)', 'rgba(41,143,13,0.99)',];0
+    } else myColor = ['rgb(255,15,0)', 'rgb(19,104,206)', 'rgb(216,158,0)', 'rgba(41,143,13,0.99)'];
     let ctx = document.getElementById(elementFilledIn);
-    chart = new Chart(ctx, {
+    if (window.bar != undefined)
+        window.bar.destroy();
+    window.bar = new Chart(ctx, {
         type: 'bar',
         data: {
             labels: labels,
